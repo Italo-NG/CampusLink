@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusLink</title>
+  <meta name="description" content="CampusLink conecta a estudiantes, docentes y personal de soporte para reportar, ubicar y dar seguimiento a incidencias de infraestructura, bienestar y seguridad dentro del campus" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="recursos/logo/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="saltoEnlace" href="#inicio">Saltar al contenido</a>
+
+  <header class="cabeceraSitio">
+    <div class="contenedor-cabeceraSitioInterior">
+      <a class="marca" href="#inicio" aria-label="CampusLink, ir al inicio">
+        <img class="marcaLogo" src="recursos/logo/campusLink-fondo-blanco.png" alt="CampusLink" />
+      </a>
+
+      <button class="navAlternar" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir o cerrar el menú de navegación">
+        <span class="navAlternarBarra"></span>
+        <span class="navAlternarBarra"></span>
+        <span class="navAlternarBarra"></span>
+      </button>
+
+      <nav class="navPrincipal" id="nav-principal" aria-label="Navegación principal">
+        <ul class="navLista">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#problema">Problema</a></li>
+          <li><a href="#solucion">Solución</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#vista-app">Vista de la app</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button class="boton-botonFantasma-navAcceso" type="button">Iniciar sesión</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <section class="seccion-portada" id="inicio" aria-labelledby="portada-titulo">
+      <div class="contenedor-portadaInterior">
+        <h1 class="portadaTitulo" id="portada-titulo">Reporta incidencias al instante</h1>
+        <p class="portadaSubtitulo">CampusLink conecta a estudiantes, docentes y personal de soporte para reportar, ubicar y dar seguimiento a incidencias de infraestructura, bienestar y seguridad dentro del campus</p>
+
+        <div class="portadaMedia-marcador-marcadorAncho" role="img" aria-label="Espacio reservado para el mockup principal de CampusLink (pendiente)">
+          <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false" aria-hidden="true">
+            <line x1="0" y1="0" x2="100" y2="100"></line>
+            <line x1="100" y1="0" x2="0" y2="100"></line>
+          </svg>
+          <span class="marcadorEtiqueta">[PENDIENTE: insertar mockup principal de CampusLink]</span>
+        </div>
+
+        <ul class="portadaPuntos" aria-hidden="true">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion-seccionSuave-problema" id="problema" aria-labelledby="problema-titulo">
+      <div class="contenedor">
+        <header class="seccionEncabezado-seccionEncabezadoCentro">
+          <h2 class="seccionTitulo" id="problema-titulo">Problema actual</h2>
+          <p class="seccionBajada">La falta de un canal eficiente y centralizado para reportar incidencias de infraestructura, bienestar y seguridad en el campus genera demoras, poca visibilidad y frustración para los usuarios</p>
+        </header>
+
+        <ul class="problemaGrilla">
+          <li class="problemaElemento">
+            <span class="marcador-marcadorVertical" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <h3 class="problemaEtiqueta">Reportes dispersos</h3>
+          </li>
+          <li class="problemaElemento">
+            <span class="marcador-marcadorVertical" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <h3 class="problemaEtiqueta">Falta de seguimiento</h3>
+          </li>
+          <li class="problemaElemento">
+            <span class="marcador-marcadorVertical" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <h3 class="problemaEtiqueta">Información incompleta para soporte</h3>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion-solucion" id="solucion" aria-labelledby="solucion-titulo">
+      <div class="contenedor-solucionInterior">
+        <div class="solucionTexto">
+          <h2 class="seccionTitulo" id="solucion-titulo">Nuestra solución</h2>
+          <p class="seccionBajada">CampusLink centraliza el reporte, ubicación, evidencia y seguimiento de incidencias para mejorar la respuesta operativa dentro del campus</p>
+        </div>
+
+        <ul class="solucionPanel">
+          <li class="solucionFila">
+            <span class="solucionIcono-marcador" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <span class="solucionPaso">Escanear QR</span>
+          </li>
+          <li class="solucionFila">
+            <span class="solucionIcono-marcador" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <span class="solucionPaso">Adjuntar foto</span>
+          </li>
+          <li class="solucionFila">
+            <span class="solucionIcono-marcador" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <span class="solucionPaso">Enviar reporte</span>
+          </li>
+          <li class="solucionFila">
+            <span class="solucionIcono-marcador" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <span class="solucionPaso">Seguimiento</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion-seccionSuave-como" id="como-funciona" aria-labelledby="como-titulo">
+      <div class="contenedor">
+        <header class="seccionEncabezado-seccionEncabezadoCentro">
+          <h2 class="seccionTitulo" id="como-titulo">Cómo funciona</h2>
+        </header>
+
+        <ol class="comoPasos">
+          <li class="comoPaso">
+            <span class="comoNumero" aria-hidden="true">1</span>
+            <p class="comoTexto">El usuario detecta una incidencia</p>
+          </li>
+          <li class="comoPaso">
+            <span class="comoNumero" aria-hidden="true">2</span>
+            <p class="comoTexto">Escanea o identifica el ambiente</p>
+          </li>
+          <li class="comoPaso">
+            <span class="comoNumero" aria-hidden="true">3</span>
+            <p class="comoTexto">Registra evidencia y descripción</p>
+          </li>
+          <li class="comoPaso">
+            <span class="comoNumero" aria-hidden="true">4</span>
+            <p class="comoTexto">Soporte recibe información clara</p>
+          </li>
+          <li class="comoPaso">
+            <span class="comoNumero" aria-hidden="true">5</span>
+            <p class="comoTexto">El usuario revisa el seguimiento</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="seccion-beneficios" id="beneficios" aria-labelledby="beneficios-titulo">
+      <div class="contenedor">
+        <header class="seccionEncabezado-seccionEncabezadoCentro">
+          <h2 class="seccionTitulo" id="beneficios-titulo">Beneficios</h2>
+        </header>
+
+        <ul class="beneficiosGrilla">
+          <li class="beneficio">
+            <span class="antetitulo-beneficioIndice">01</span>
+            <h3 class="beneficioTitulo">Mayor rapidez para reportar</h3>
+          </li>
+          <li class="beneficio">
+            <span class="antetitulo-beneficioIndice">02</span>
+            <h3 class="beneficioTitulo">Mejor visibilidad del estado</h3>
+          </li>
+          <li class="beneficio">
+            <span class="antetitulo-beneficioIndice">03</span>
+            <h3 class="beneficioTitulo">Información más precisa</h3>
+          </li>
+          <li class="beneficio">
+            <span class="antetitulo-beneficioIndice">04</span>
+            <h3 class="beneficioTitulo">Bienestar y seguridad en campus</h3>
+          </li>
+          <li class="beneficio">
+            <span class="antetitulo-beneficioIndice">05</span>
+            <h3 class="beneficioTitulo">Menos incertidumbre</h3>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion-seccionSuave-publico" id="para-quienes" aria-labelledby="publico-titulo">
+      <div class="contenedor">
+        <header class="seccionEncabezado-seccionEncabezadoCentro">
+          <h2 class="seccionTitulo" id="publico-titulo">Para quiénes</h2>
+        </header>
+
+        <ul class="publicoGrilla">
+          <li class="publicoColumna">
+            <span class="pastilla">Estudiantes</span>
+            <div class="tarjeta-publicoTarjeta">
+              <p>Reportan incidencias del campus de manera rápida y visible</p>
+            </div>
+          </li>
+          <li class="publicoColumna">
+            <span class="pastilla">Docentes</span>
+            <div class="tarjeta-publicoTarjeta">
+              <p>Solicitan atención cuando una falla afecta la continuidad de su clase</p>
+            </div>
+          </li>
+          <li class="publicoColumna">
+            <span class="pastilla">Personal de soporte y operaciones</span>
+            <div class="tarjeta-publicoTarjeta">
+              <p>Reciben reportes con información más clara para priorizar y resolver</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion-vista" id="vista-app" aria-labelledby="vista-titulo">
+      <div class="contenedor">
+        <header class="seccionEncabezado-seccionEncabezadoCentro">
+          <h2 class="seccionTitulo" id="vista-titulo">Vista de la app</h2>
+          <p class="seccionBajada">[PENDIENTE: insertar mockups móviles de CampusLink]</p>
+        </header>
+
+        <ul class="vistaGrilla">
+          <li class="vistaElemento">
+            <span class="marcador-marcadorTelefono" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <p class="vistaLeyenda">Pantalla de reporte de incidencia</p>
+          </li>
+          <li class="vistaElemento">
+            <span class="marcador-marcadorTelefono" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <p class="vistaLeyenda">Pantalla de seguimiento</p>
+          </li>
+          <li class="vistaElemento">
+            <span class="marcador-marcadorTelefono" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <p class="vistaLeyenda">Vista del personal de soporte</p>
+          </li>
+          <li class="vistaElemento">
+            <span class="marcador-marcadorTelefono" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <p class="vistaLeyenda">Prototipo móvil principal</p>
+          </li>
+          <li class="vistaElemento">
+            <span class="marcador-marcadorTelefono" aria-hidden="true">
+              <svg class="marcadorX" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+                <line x1="0" y1="0" x2="100" y2="100"></line>
+                <line x1="100" y1="0" x2="0" y2="100"></line>
+              </svg>
+            </span>
+            <p class="vistaLeyenda">Prototipo móvil secundario</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion-seccionSuave-planes" id="planes" aria-labelledby="planes-titulo">
+      <div class="contenedor">
+        <header class="seccionEncabezado-seccionEncabezadoCentro">
+          <h2 class="seccionTitulo" id="planes-titulo">Nuestros planes</h2>
+        </header>
+
+        <ul class="planesGrilla">
+          <li class="tarjeta-plan">
+            <h3 class="planNombre">[PENDIENTE: nombre del plan]</h3>
+            <p class="planPrecio">[PENDIENTE: precio]</p>
+            <p class="planDescripcion">[PENDIENTE: descripción del plan]</p>
+            <button class="boton-botonInhabilitado" type="button" disabled>Comprar</button>
+          </li>
+          <li class="tarjeta-plan">
+            <h3 class="planNombre">[PENDIENTE: nombre del plan]</h3>
+            <p class="planPrecio">[PENDIENTE: precio]</p>
+            <p class="planDescripcion">[PENDIENTE: descripción del plan]</p>
+            <button class="boton-botonInhabilitado" type="button" disabled>Comprar</button>
+          </li>
+          <li class="tarjeta-plan">
+            <h3 class="planNombre">[PENDIENTE: nombre del plan]</h3>
+            <p class="planPrecio">[PENDIENTE: precio]</p>
+            <p class="planDescripcion">[PENDIENTE: descripción del plan]</p>
+            <button class="boton-botonInhabilitado" type="button" disabled>Comprar</button>
+          </li>
+        </ul>
+
+        <p class="planesNota">Esta sección será completada cuando se definan los planes comerciales de CampusLink</p>
+      </div>
+    </section>
+
+    <section class="seccion-contacto" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="contenedor">
+        <header class="seccionEncabezado-seccionEncabezadoCentro">
+          <h2 class="seccionTitulo" id="contacto-titulo">Conoce CampusLink</h2>
+          <p class="seccionBajada">Déjanos tus datos y tu mensaje para recibir más información sobre CampusLink</p>
+        </header>
+
+        <form class="tarjeta-contactoFormulario" id="formulario-contacto" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required />
+          </div>
+          <div class="campo">
+            <label for="correo">Correo</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" required />
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+          <button class="boton-botonPrimario" type="submit">Solicitar información</button>
+          <p class="contactoEstado" id="estado-contacto" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pieSitio">
+    <div class="contenedor-pieSitioInterior">
+      <a class="pieSitioMarca" href="#inicio" aria-label="CampusLink, ir al inicio">
+        <img class="pieSitioLogo" src="recursos/logo/campusLink-fondo-negro.png" alt="CampusLink" />
+      </a>
+      <span class="pieSitioPor">por Montimin</span>
+      <p class="pieSitioTexto">Reporte, ubicación, evidencia y seguimiento de incidencias del campus en un solo lugar</p>
+      <p class="pieSitioLegal">© 2026 CampusLink · Montimin</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
