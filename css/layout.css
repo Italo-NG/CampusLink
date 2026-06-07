@@ -1,0 +1,27 @@
+/* layout.css — contenedores, secciones y estructura general */
+
+.contenedor,
+.contenedor-cabeceraSitioInterior,
+.contenedor-portadaInterior,
+.contenedor-solucionInterior,
+.contenedor-pieSitioInterior {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.seccion-portada,
+.seccion-seccionSuave-problema,
+.seccion-solucion,
+.seccion-seccionSuave-como,
+.seccion-beneficios,
+.seccion-seccionSuave-publico,
+.seccion-vista,
+.seccion-contacto {
+  padding-block: 64px;
+  scroll-margin-top: 112px;
+}
+.seccion-seccionSuave-problema,
+.seccion-seccionSuave-como,
+.seccion-seccionSuave-publico { background: #F5F7FB; }

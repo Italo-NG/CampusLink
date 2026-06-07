@@ -1,0 +1,144 @@
+/* responsive.css — media queries (desktop, tablet y movil) */
+
+@media (max-width: 1120px) {
+  .navAlternar { display: flex; }
+
+  .navPrincipal {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 16px 0 24px;
+    background: #FFFFFF;
+  }
+  .navPrincipal.estaAbierto { display: flex; }
+
+  .navLista {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .navLista a {
+    display: block;
+    padding: 12px 0;
+    font-size: 1rem;
+    color: #1F2933;
+  }
+  .boton-botonFantasma-navAcceso {
+    align-self: flex-start;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contenedor-solucionInterior { grid-template-columns: 1fr; gap: 32px; }
+  .comoLayout { grid-template-columns: 1fr; gap: 32px; }
+  .comoImagen { max-height: 560px; }
+  .vistaImagen { max-height: 380px; }
+}
+
+@media (max-width: 900px) {
+  .beneficiosGrilla {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+  .beneficioDestacado {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .publicoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .seccion-portada,
+  .seccion-seccionSuave-problema,
+  .seccion-solucion,
+  .seccion-seccionSuave-como,
+  .seccion-beneficios,
+  .seccion-seccionSuave-publico,
+  .seccion-vista,
+  .seccion-contacto { padding-block: 48px; }
+  .seccionEncabezado-seccionEncabezadoCentro { margin-bottom: 32px; }
+
+  .problemaGrilla {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+  .publicoGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+  .vistaGrilla {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+    margin-inline: auto;
+    row-gap: 32px;
+  }
+  .vistaImagen { max-height: 420px; }
+  .portadaCategoria { width: 84px; }
+  .portadaCategoriaIcono { width: 64px; height: 64px; }
+  .portadaCategoriaIcono svg { width: 28px; height: 28px; }
+}
+
+@media (max-width: 560px) {
+  .comoLayout { gap: 28px; }
+  .comoLista { padding-left: 24px; }
+  .comoPaso::before,
+  .comoPaso::after {
+    left: -24px;
+    top: 22px;
+    height: calc(100% - 44px);
+  }
+  .comoPasoBoton {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px;
+    padding: 22px 0;
+  }
+  .comoNumero { font-size: 1.5rem; }
+  .comoImagen { max-height: 500px; }
+  .beneficiosGrilla { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) and (prefers-reduced-motion: reduce) {
+  .comoPaso.estaActivo::after {
+    animation: none;
+    transform: scaleY(1);
+  }
+}
+
+@media (max-width: 430px) {
+  .contenedor,
+  .contenedor-cabeceraSitioInterior,
+  .contenedor-portadaInterior,
+  .contenedor-solucionInterior,
+  .contenedor-pieSitioInterior { padding-inline: 16px; }
+  .tarjeta-contactoFormulario { padding: 24px; }
+  .publicoCard { padding: 22px; }
+  .seccion-portada { padding-top: 32px; }
+  .portadaPuntos { gap: 20px 16px; }
+  .portadaCategoria { width: 80px; }
+  .portadaCategoriaIcono { width: 60px; height: 60px; }
+  .vistaGrilla {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+    margin-inline: auto;
+    row-gap: 32px;
+  }
+  .vistaImagen { max-height: 460px; }
+}
+
+@media (max-width: 375px) {
+  .portadaCategoria { width: 72px; }
+  .portadaCategoriaIcono { width: 56px; height: 56px; }
+  .portadaCategoriaIcono svg { width: 26px; height: 26px; }
+  .seccionBajada { font-size: 1rem; }
+}
