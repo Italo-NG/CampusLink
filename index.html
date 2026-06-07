@@ -159,32 +159,80 @@
 
     <section class="seccion-seccionSuave-como" id="como-funciona" aria-labelledby="como-titulo">
       <div class="contenedor">
-        <header class="seccionEncabezado-seccionEncabezadoCentro">
-          <h2 class="seccionTitulo" id="como-titulo">Cómo funciona</h2>
-        </header>
+        <div class="comoLayout">
+          <div class="comoContenido">
+            <header class="comoEncabezado">
+              <h2 class="seccionTitulo" id="como-titulo">¿Cómo funciona CampusLink?</h2>
+              <p class="seccionBajada">Reporta una incidencia en pocos pasos y permite que soporte reciba información clara desde el primer momento.</p>
+            </header>
 
-        <ol class="comoPasos">
-          <li class="comoPaso">
-            <span class="comoNumero" aria-hidden="true">1</span>
-            <p class="comoTexto">El usuario detecta una incidencia</p>
-          </li>
-          <li class="comoPaso">
-            <span class="comoNumero" aria-hidden="true">2</span>
-            <p class="comoTexto">Escanea o identifica el ambiente</p>
-          </li>
-          <li class="comoPaso">
-            <span class="comoNumero" aria-hidden="true">3</span>
-            <p class="comoTexto">Registra evidencia y descripción</p>
-          </li>
-          <li class="comoPaso">
-            <span class="comoNumero" aria-hidden="true">4</span>
-            <p class="comoTexto">Soporte recibe información clara</p>
-          </li>
-          <li class="comoPaso">
-            <span class="comoNumero" aria-hidden="true">5</span>
-            <p class="comoTexto">El usuario revisa el seguimiento</p>
-          </li>
-        </ol>
+            <ol class="comoLista">
+              <li class="comoPaso estaActivo">
+                <button class="comoPasoBoton" type="button" data-como-paso="0" aria-current="step">
+                  <span class="comoNumero" aria-hidden="true">01</span>
+                  <span class="comoPasoContenido">
+                    <span class="comoPasoTitulo">Detecta una incidencia</span>
+                    <span class="comoTexto">El usuario encuentra una falla en un aula, laboratorio, baño o zona común.</span>
+                  </span>
+                </button>
+              </li>
+              <li class="comoPaso">
+                <button class="comoPasoBoton" type="button" data-como-paso="1">
+                  <span class="comoNumero" aria-hidden="true">02</span>
+                  <span class="comoPasoContenido">
+                    <span class="comoPasoTitulo">Escanea el QR del ambiente</span>
+                    <span class="comoTexto">CampusLink identifica el lugar del reporte sin que el usuario tenga que escribir toda la ubicación.</span>
+                  </span>
+                </button>
+              </li>
+              <li class="comoPaso">
+                <button class="comoPasoBoton" type="button" data-como-paso="2">
+                  <span class="comoNumero" aria-hidden="true">03</span>
+                  <span class="comoPasoContenido">
+                    <span class="comoPasoTitulo">Registra evidencia</span>
+                    <span class="comoTexto">El usuario agrega una foto y una descripción breve del problema.</span>
+                  </span>
+                </button>
+              </li>
+              <li class="comoPaso">
+                <button class="comoPasoBoton" type="button" data-como-paso="3">
+                  <span class="comoNumero" aria-hidden="true">04</span>
+                  <span class="comoPasoContenido">
+                    <span class="comoPasoTitulo">Soporte recibe el reporte</span>
+                    <span class="comoTexto">El personal de soporte visualiza la categoría, ubicación y evidencia para priorizar la atención.</span>
+                  </span>
+                </button>
+              </li>
+              <li class="comoPaso">
+                <button class="comoPasoBoton" type="button" data-como-paso="4">
+                  <span class="comoNumero" aria-hidden="true">05</span>
+                  <span class="comoPasoContenido">
+                    <span class="comoPasoTitulo">Revisa el seguimiento</span>
+                    <span class="comoTexto">El usuario consulta el estado del reporte: pendiente, en proceso o resuelto.</span>
+                  </span>
+                </button>
+              </li>
+            </ol>
+          </div>
+
+          <aside class="comoImagenes" aria-label="Pantallas del flujo de CampusLink">
+            <figure class="comoImagenPanel estaActivo" data-como-imagen="0">
+              <img class="comoImagen" decoding="async" src="recursos/imagenes/como-funciona-campusLink/detecta-una-incidencia.webp" alt="Pantalla de CampusLink para detectar una incidencia en el campus" />
+            </figure>
+            <figure class="comoImagenPanel" data-como-imagen="1" aria-hidden="true">
+              <img class="comoImagen" decoding="async" src="recursos/imagenes/como-funciona-campusLink/pantalla-deteccion-qr.jpg" alt="Pantalla de CampusLink para escanear el QR del ambiente" />
+            </figure>
+            <figure class="comoImagenPanel" data-como-imagen="2" aria-hidden="true">
+              <img class="comoImagen" decoding="async" src="recursos/imagenes/como-funciona-campusLink/pantalla-registra-evidencia.jpg" alt="Pantalla de CampusLink para registrar evidencia de una incidencia" />
+            </figure>
+            <figure class="comoImagenPanel" data-como-imagen="3" aria-hidden="true">
+              <img class="comoImagen" decoding="async" src="recursos/imagenes/como-funciona-campusLink/pantalla-soporte-recibe-reporte.jpg" alt="Pantalla de soporte de CampusLink recibiendo un reporte de incidencia" />
+            </figure>
+            <figure class="comoImagenPanel" data-como-imagen="4" aria-hidden="true">
+              <img class="comoImagen" decoding="async" src="recursos/imagenes/como-funciona-campusLink/pantalla-revisa-seguimiento.jpg" alt="Pantalla de CampusLink para revisar el seguimiento de un reporte" />
+            </figure>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -192,28 +240,39 @@
       <div class="contenedor">
         <header class="seccionEncabezado-seccionEncabezadoCentro">
           <h2 class="seccionTitulo" id="beneficios-titulo">Beneficios</h2>
+          <p class="seccionBajada">Cada función de CampusLink mejora algo concreto para quien reporta y para quien resuelve</p>
         </header>
 
         <ul class="beneficiosGrilla">
-          <li class="beneficio">
+          <li class="beneficio beneficioDestacado">
             <span class="antetitulo-beneficioIndice">01</span>
-            <h3 class="beneficioTitulo">Mayor rapidez para reportar</h3>
+            <h3 class="beneficioTitulo">Reporte más rápido</h3>
+            <p class="beneficioTexto">Reporta desde un QR y un formulario breve, sin perder tiempo buscando a quién avisar</p>
+            <p class="beneficioResultado"><span class="beneficioResultadoEtiqueta">Resultado:</span> Menos fricción para estudiantes y docentes</p>
           </li>
           <li class="beneficio">
             <span class="antetitulo-beneficioIndice">02</span>
-            <h3 class="beneficioTitulo">Mejor visibilidad del estado</h3>
+            <h3 class="beneficioTitulo">Ubicación más precisa</h3>
+            <p class="beneficioTexto">Identifica el ambiente o zona afectada; soporte recibe el lugar exacto del problema</p>
+            <p class="beneficioResultado"><span class="beneficioResultadoEtiqueta">Resultado:</span> Menos confusión y desplazamientos innecesarios</p>
           </li>
           <li class="beneficio">
             <span class="antetitulo-beneficioIndice">03</span>
-            <h3 class="beneficioTitulo">Información más precisa</h3>
+            <h3 class="beneficioTitulo">Evidencia clara</h3>
+            <p class="beneficioTexto">Foto y descripción breve para entender la falla antes de llegar</p>
+            <p class="beneficioResultado"><span class="beneficioResultadoEtiqueta">Resultado:</span> Mejor diagnóstico y atención más preparada</p>
           </li>
           <li class="beneficio">
             <span class="antetitulo-beneficioIndice">04</span>
-            <h3 class="beneficioTitulo">Bienestar y seguridad en campus</h3>
+            <h3 class="beneficioTitulo">Seguimiento transparente</h3>
+            <p class="beneficioTexto">Estados visibles del reporte: pendiente, en proceso y resuelto</p>
+            <p class="beneficioResultado"><span class="beneficioResultadoEtiqueta">Resultado:</span> Menos incertidumbre y mayor confianza</p>
           </li>
           <li class="beneficio">
             <span class="antetitulo-beneficioIndice">05</span>
-            <h3 class="beneficioTitulo">Menos incertidumbre</h3>
+            <h3 class="beneficioTitulo">Priorización operativa</h3>
+            <p class="beneficioTexto">Organiza los reportes por criticidad, categoría, estado o ubicación</p>
+            <p class="beneficioResultado"><span class="beneficioResultadoEtiqueta">Resultado:</span> Atención más eficiente de los casos importantes</p>
           </li>
         </ul>
       </div>
@@ -223,25 +282,61 @@
       <div class="contenedor">
         <header class="seccionEncabezado-seccionEncabezadoCentro">
           <h2 class="seccionTitulo" id="publico-titulo">Para quiénes</h2>
+          <p class="seccionBajada">CampusLink está diseñado para quienes reportan incidencias y para quienes las atienden dentro del campus.</p>
         </header>
 
-        <ul class="publicoGrilla">
-          <li class="publicoColumna">
-            <span class="pastilla">Estudiantes</span>
-            <div class="tarjeta-publicoTarjeta">
-              <p>Reportan incidencias del campus de manera rápida y visible</p>
+        <ul class="publicoGrid">
+          <li class="publicoCard">
+            <h3 class="publicoSegmento">Estudiantes</h3>
+            <p class="publicoDescripcion">Quienes usan los espacios del campus a diario.</p>
+
+            <div class="publicoBloque">
+              <span class="publicoSubtitulo">Problema</span>
+              <p class="publicoTexto">Detectan fallas en aulas, baños, laboratorios o zonas comunes, pero no siempre tienen un canal claro para reportarlas.</p>
+            </div>
+            <div class="publicoBloque">
+              <span class="publicoSubtitulo">Acción</span>
+              <p class="publicoTexto">Reportan incidencias con QR, foto y descripción breve.</p>
+            </div>
+            <div class="publicoBloque publicoBloqueValor">
+              <span class="publicoSubtitulo">Valor</span>
+              <p class="publicoTexto">Saben que su reporte no cae en el vacío y pueden revisar su seguimiento.</p>
             </div>
           </li>
-          <li class="publicoColumna">
-            <span class="pastilla">Docentes</span>
-            <div class="tarjeta-publicoTarjeta">
-              <p>Solicitan atención cuando una falla afecta la continuidad de su clase</p>
+
+          <li class="publicoCard">
+            <h3 class="publicoSegmento">Docentes</h3>
+            <p class="publicoDescripcion">Quienes dictan clase y dependen de los ambientes y equipos.</p>
+
+            <div class="publicoBloque">
+              <span class="publicoSubtitulo">Problema</span>
+              <p class="publicoTexto">Una falla técnica o de infraestructura puede interrumpir el desarrollo de una clase.</p>
+            </div>
+            <div class="publicoBloque">
+              <span class="publicoSubtitulo">Acción</span>
+              <p class="publicoTexto">Solicitan atención cuando un ambiente o equipo afecta la continuidad académica.</p>
+            </div>
+            <div class="publicoBloque publicoBloqueValor">
+              <span class="publicoSubtitulo">Valor</span>
+              <p class="publicoTexto">Reducen pérdida de tiempo y mantienen mayor control durante la sesión.</p>
             </div>
           </li>
-          <li class="publicoColumna">
-            <span class="pastilla">Personal de soporte y operaciones</span>
-            <div class="tarjeta-publicoTarjeta">
-              <p>Reciben reportes con información más clara para priorizar y resolver</p>
+
+          <li class="publicoCard">
+            <h3 class="publicoSegmento">Personal de soporte y operaciones</h3>
+            <p class="publicoDescripcion">Quienes reciben y resuelven los reportes.</p>
+
+            <div class="publicoBloque">
+              <span class="publicoSubtitulo">Problema</span>
+              <p class="publicoTexto">Reciben reportes incompletos, ambiguos o sin ubicación exacta.</p>
+            </div>
+            <div class="publicoBloque">
+              <span class="publicoSubtitulo">Acción</span>
+              <p class="publicoTexto">Visualizan ubicación, categoría, evidencia y estado del reporte.</p>
+            </div>
+            <div class="publicoBloque publicoBloqueValor">
+              <span class="publicoSubtitulo">Valor</span>
+              <p class="publicoTexto">Priorizan mejor y evitan desplazamientos innecesarios.</p>
             </div>
           </li>
         </ul>
@@ -356,8 +451,7 @@
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
           </div>
-          <button class="boton-botonPrimario" type="submit">Solicitar información</button>
-          <p class="contactoEstado" id="estado-contacto" role="status" aria-live="polite" hidden></p>
+          <button class="boton-botonPrimario" type="button">Solicitar información</button>
         </form>
       </div>
     </section>
