@@ -1,10 +1,9 @@
-/* layout.css — contenedores, secciones y estructura general */
-
 .contenedor,
 .contenedor-cabeceraSitioInterior,
 .contenedor-portadaInterior,
 .contenedor-solucionInterior,
 .contenedor-pieSitioInterior {
+  box-sizing: border-box;
   width: 100%;
   max-width: 1120px;
   margin-inline: auto;

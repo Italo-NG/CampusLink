@@ -1,9 +1,7 @@
-// Menu movil: abre y cierra la navegacion principal en pantallas pequenas.
 export function inicializarMenu() {
   var alternador = document.querySelector('.navAlternar');
   var navegacion = document.getElementById('nav-principal');
 
-  // Si no estan los elementos del menu, no hacemos nada (sin errores en consola).
   if (!alternador || !navegacion) return;
 
   function cerrarMenu() {
