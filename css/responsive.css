@@ -52,6 +52,10 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
   }
+  .contactoLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -104,6 +108,8 @@
   .comoNumero { font-size: 1.5rem; }
   .comoImagen { max-height: 500px; }
   .beneficiosGrilla { grid-template-columns: 1fr; }
+  .contactoFormGrid { grid-template-columns: 1fr; }
+  .contactoFormulario { padding: 28px; }
 }
 
 @media (max-width: 560px) and (prefers-reduced-motion: reduce) {
@@ -119,7 +125,7 @@
   .contenedor-portadaInterior,
   .contenedor-solucionInterior,
   .contenedor-pieSitioInterior { padding-inline: 16px; }
-  .tarjeta-contactoFormulario { padding: 24px; }
+  .contactoFormulario { padding: 24px; }
   .publicoCard { padding: 22px; }
   .seccion-portada { padding-top: 32px; }
   .portadaPuntos { gap: 20px 16px; }

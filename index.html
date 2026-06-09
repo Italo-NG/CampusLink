@@ -440,26 +440,94 @@
 
     <section class="seccion-contacto" id="contacto" aria-labelledby="contacto-titulo">
       <div class="contenedor">
-        <header class="seccionEncabezado-seccionEncabezadoCentro">
-          <h2 class="seccionTitulo" id="contacto-titulo">Conoce CampusLink</h2>
-          <p class="seccionBajada">Déjanos tus datos y tu mensaje para recibir más información sobre CampusLink</p>
-        </header>
+        <div class="contactoLayout">
 
-        <form class="tarjeta-contactoFormulario" id="formulario-contacto" novalidate>
-          <div class="campo">
-            <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" autocomplete="name" required />
+          <div class="contactoInfo">
+            <h2 class="contactoTitulo" id="contacto-titulo">Conversemos sobre CampusLink</h2>
+            <p class="contactoTexto">CampusLink ayuda a universidades a centralizar el reporte y seguimiento de incidencias de infraestructura, bienestar y seguridad dentro del campus.</p>
+
+            <a class="boton-botonPrimario" href="#formulario-contacto">Solicitar información</a>
+
+            <ul class="contactoBeneficios">
+              <li class="contactoBeneficio">Reporte rápido mediante QR</li>
+              <li class="contactoBeneficio">Seguimiento del estado del caso</li>
+              <li class="contactoBeneficio">Información más clara para soporte</li>
+              <li class="contactoBeneficio">Mejor coordinación entre usuarios y operaciones</li>
+            </ul>
+
+            <p class="contactoNota">Ideal para instituciones que buscan una gestión más ordenada dentro del campus.</p>
           </div>
-          <div class="campo">
-            <label for="correo">Correo</label>
-            <input id="correo" name="correo" type="email" autocomplete="email" required />
-          </div>
-          <div class="campo">
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-          </div>
-          <button class="boton-botonPrimario" type="button">Solicitar información</button>
-        </form>
+
+          <form class="contactoFormulario" id="formulario-contacto" novalidate>
+            <div class="contactoFormGrid">
+              <div class="campo">
+                <label for="tipo-institucion">Tipo de institución</label>
+                <select id="tipo-institucion" name="tipo-institucion">
+                  <option value="">Selecciona una opción</option>
+                  <option value="universidad">Universidad</option>
+                  <option value="instituto">Instituto</option>
+                  <option value="colegio">Colegio</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="nombre-institucion">Nombre de la institución</label>
+                <input id="nombre-institucion" name="nombre-institucion" type="text" autocomplete="organization" />
+              </div>
+
+              <div class="campo">
+                <label for="nombre-contacto">Nombre del contacto</label>
+                <input id="nombre-contacto" name="nombre-contacto" type="text" autocomplete="name" />
+              </div>
+
+              <div class="campo">
+                <label for="cargo">Cargo</label>
+                <input id="cargo" name="cargo" type="text" autocomplete="organization-title" />
+              </div>
+
+              <div class="campo">
+                <label for="correo-institucional">Correo institucional</label>
+                <input id="correo-institucional" name="correo-institucional" type="email" autocomplete="email" />
+              </div>
+
+              <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" />
+              </div>
+
+              <div class="campo">
+                <label for="numero-estudiantes">Número aproximado de estudiantes</label>
+                <select id="numero-estudiantes" name="numero-estudiantes">
+                  <option value="">Selecciona un rango</option>
+                  <option value="menos-500">Menos de 500</option>
+                  <option value="500-2000">500 a 2000</option>
+                  <option value="2000-5000">2000 a 5000</option>
+                  <option value="mas-5000">Más de 5000</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="interes">¿Qué te interesa conocer?</label>
+                <select id="interes" name="interes">
+                  <option value="">Selecciona una opción</option>
+                  <option value="demo">Una demostración de la app</option>
+                  <option value="funciones">Las funciones principales</option>
+                  <option value="implementacion">Cómo implementarlo en el campus</option>
+                  <option value="general">Información general</option>
+                </select>
+              </div>
+
+              <div class="campo campoAncho">
+                <label for="necesidades">Cuéntanos sobre las necesidades de tu campus</label>
+                <textarea id="necesidades" name="necesidades" rows="4"></textarea>
+              </div>
+
+              <button class="boton-botonPrimario contactoEnviar campoAncho" type="button">Enviar solicitud</button>
+            </div>
+          </form>
+
+        </div>
       </div>
     </section>
 
