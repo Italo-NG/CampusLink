@@ -107,6 +107,37 @@
   }
   .comoNumero { font-size: 1.5rem; }
   .comoImagen { max-height: 500px; }
+  .iphone-15 {
+    width: clamp(250px, 74vw, 280px);
+    border-width: 9px;
+    border-radius: 60px;
+  }
+  .iphone-15::before {
+    left: -10px;
+    top: 94px;
+    width: 4px;
+    height: 34px;
+    box-shadow:
+      0 54px 0 #09090B,
+      0 104px 0 #09090B;
+  }
+  .iphone-15::after {
+    right: -10px;
+    top: 154px;
+    width: 4px;
+    height: 66px;
+  }
+  .isla-dinamica {
+    top: 11px;
+    width: 82px;
+    height: 21px;
+  }
+  .pantalla-scroll { border-radius: 44px; }
+  .pantalla-scroll .comoImagen { border-radius: 44px; }
+  .linea-home {
+    bottom: 9px;
+    width: 96px;
+  }
   .beneficiosGrilla { grid-template-columns: 1fr; }
   .contactoFormGrid { grid-template-columns: 1fr; }
   .contactoFormulario { padding: 28px; }

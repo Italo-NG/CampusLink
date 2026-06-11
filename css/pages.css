@@ -269,6 +269,115 @@
   border-radius: 0;
 }
 
+.iphone-15 {
+  box-sizing: border-box;
+  position: relative;
+  width: clamp(292px, 29vw, 334px);
+  aspect-ratio: 393 / 852;
+  margin-inline: auto;
+  overflow: visible;
+  background: linear-gradient(145deg, #2A2A2F 0%, #07070A 42%, #202026 100%);
+  border: 11px solid #050506;
+  border-radius: 68px;
+  box-shadow:
+    0 28px 52px -18px rgba(15, 23, 42, 0.46),
+    0 0 0 2px #000000,
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08),
+    inset 0 0 0 8px rgba(0, 0, 0, 0.35);
+}
+.iphone-15::before,
+.iphone-15::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: #09090B;
+  border-radius: 999px;
+}
+.iphone-15::before {
+  left: -11px;
+  top: 108px;
+  width: 4px;
+  height: 38px;
+  box-shadow:
+    0 60px 0 #09090B,
+    0 116px 0 #09090B;
+}
+.iphone-15::after {
+  right: -11px;
+  top: 176px;
+  width: 4px;
+  height: 74px;
+}
+
+.isla-dinamica {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  z-index: 4;
+  width: 92px;
+  height: 24px;
+  background: #000000;
+  border-radius: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.pantalla-scroll {
+  --capturaEscala: 108%;
+
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-radius: 50px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.78),
+    inset 0 -34px 42px rgba(0, 0, 0, 0.10);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.pantallaQr { --capturaEscala: 110%; }
+.pantallaRegistro { --capturaEscala: 108%; }
+.pantallaSoporte { --capturaEscala: 108%; }
+.pantallaSeguimiento { --capturaEscala: 108%; }
+.pantalla-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.pantalla-scroll .comoImagen {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: var(--capturaEscala);
+  height: var(--capturaEscala);
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50px;
+  transform: translateX(-50%);
+}
+
+.linea-home {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 4;
+  width: 106px;
+  height: 4px;
+  background: rgba(26, 26, 30, 0.62);
+  border-radius: 10px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
 .beneficiosGrilla {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
