@@ -165,30 +165,29 @@
 
 @media (max-width: 768px) {
   .seccion-vista-prototipo {
-    min-height: 680px;
-    padding-block: 48px;
+    padding-block: 40px;
   }
   .vistaAppMarco {
     padding-inline: 16px;
   }
   .seccion-vista .vistaAppTelefono {
-    width: clamp(292px, 62vw, 360px);
+    width: clamp(278px, 54vw, 324px);
   }
 }
 
 @media (max-width: 560px) {
   .seccion-vista .vistaAppTelefono {
-    width: clamp(284px, 86vw, 334px);
+    width: clamp(266px, 76vw, 306px);
     border-width: 10px;
-    border-radius: 64px;
+    border-radius: 60px;
   }
   .seccion-vista .vistaAppViewport {
-    border-radius: 48px;
+    border-radius: 44px;
   }
 }
 
 @media (max-width: 375px) {
   .seccion-vista .vistaAppTelefono {
-    width: clamp(270px, 88vw, 306px);
+    width: clamp(254px, 84vw, 282px);
   }
 }
