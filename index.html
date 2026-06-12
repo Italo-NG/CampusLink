@@ -11,11 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="icon" type="image/png" href="recursos/logo/favicon.png" />
-  <link rel="stylesheet" href="css/base.css?v=marco-celular-v7" />
-  <link rel="stylesheet" href="css/layout.css?v=marco-celular-v7" />
-  <link rel="stylesheet" href="css/components.css?v=marco-celular-v7" />
-  <link rel="stylesheet" href="css/pages.css?v=marco-celular-v7" />
-  <link rel="stylesheet" href="css/responsive.css?v=marco-celular-v7" />
+  <link rel="stylesheet" href="css/base.css?v=vista-app-prototipo-v1" />
+  <link rel="stylesheet" href="css/layout.css?v=vista-app-prototipo-v1" />
+  <link rel="stylesheet" href="css/components.css?v=vista-app-prototipo-v1" />
+  <link rel="stylesheet" href="css/pages.css?v=vista-app-prototipo-v1" />
+  <link rel="stylesheet" href="css/responsive.css?v=vista-app-prototipo-v1" />
 </head>
 <body>
   <a class="saltoEnlace" href="#inicio">Saltar al contenido</a>
@@ -426,39 +426,16 @@
       </div>
     </section>
 
-    <section class="seccion-vista" id="vista-app" aria-labelledby="vista-titulo">
-      <div class="contenedor">
-        <header class="seccionEncabezado-seccionEncabezadoCentro">
-          <h2 class="seccionTitulo" id="vista-titulo">Vista de la app</h2>
-          <p class="seccionBajada">Así se ve CampusLink en el móvil: desde el inicio del estudiante hasta el panel del personal de soporte.</p>
-        </header>
-
-        <ul class="vistaGrilla">
-          <li class="vistaElemento">
-            <figure class="vistaTarjeta">
-              <img class="vistaImagen" src="recursos/imagenes/vista-de-la-app/pantalla-dashboard-estudiante.jpg" alt="Pantalla de inicio del estudiante en CampusLink" />
-              <figcaption class="vistaLeyenda">Inicio del estudiante</figcaption>
-            </figure>
-          </li>
-          <li class="vistaElemento">
-            <figure class="vistaTarjeta">
-              <img class="vistaImagen" src="recursos/imagenes/vista-de-la-app/pantalla-reporte-nuevo.jpg" alt="Pantalla para crear un nuevo reporte de incidencia en CampusLink" />
-              <figcaption class="vistaLeyenda">Nuevo reporte de incidencia</figcaption>
-            </figure>
-          </li>
-          <li class="vistaElemento">
-            <figure class="vistaTarjeta">
-              <img class="vistaImagen" src="recursos/imagenes/vista-de-la-app/pantalla-de-seguimiento.jpg" alt="Pantalla de seguimiento del estado de un reporte en CampusLink" />
-              <figcaption class="vistaLeyenda">Seguimiento del reporte</figcaption>
-            </figure>
-          </li>
-          <li class="vistaElemento">
-            <figure class="vistaTarjeta">
-              <img class="vistaImagen" src="recursos/imagenes/vista-de-la-app/pantalla-dashboard-soporte.jpg" alt="Panel del personal de soporte en CampusLink" />
-              <figcaption class="vistaLeyenda">Panel del personal de soporte</figcaption>
-            </figure>
-          </li>
-        </ul>
+    <section class="seccion-vista seccion-vista-prototipo" id="vista-app" aria-labelledby="vista-titulo">
+      <h2 class="vistaAppSr" id="vista-titulo">Vista de la app</h2>
+      <div class="vistaAppMarco" data-vista-app>
+        <div class="iphone-15 vistaAppTelefono" aria-label="Prototipo interactivo de CampusLink">
+          <div class="isla-dinamica"></div>
+          <div class="pantalla-scroll vistaAppViewport">
+            <div class="vistaAppEscenario" data-vista-app-escenario></div>
+          </div>
+          <div class="linea-home"></div>
+        </div>
       </div>
     </section>
 

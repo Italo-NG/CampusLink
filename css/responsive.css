@@ -36,7 +36,6 @@
   .contenedor-solucionInterior { grid-template-columns: 1fr; gap: 32px; }
   .comoLayout { grid-template-columns: 1fr; gap: 32px; }
   .comoImagen { max-height: 560px; }
-  .vistaImagen { max-height: 380px; }
 }
 
 @media (max-width: 900px) {
@@ -79,13 +78,6 @@
     max-width: 480px;
     margin-inline: auto;
   }
-  .vistaGrilla {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 560px;
-    margin-inline: auto;
-    row-gap: 32px;
-  }
-  .vistaImagen { max-height: 420px; }
   .portadaCategoria { width: 84px; }
   .portadaCategoriaIcono { width: 64px; height: 64px; }
   .portadaCategoriaIcono svg { width: 28px; height: 28px; }
@@ -162,13 +154,6 @@
   .portadaPuntos { gap: 20px 16px; }
   .portadaCategoria { width: 80px; }
   .portadaCategoriaIcono { width: 60px; height: 60px; }
-  .vistaGrilla {
-    grid-template-columns: 1fr;
-    max-width: 260px;
-    margin-inline: auto;
-    row-gap: 32px;
-  }
-  .vistaImagen { max-height: 460px; }
 }
 
 @media (max-width: 375px) {
@@ -176,4 +161,34 @@
   .portadaCategoriaIcono { width: 56px; height: 56px; }
   .portadaCategoriaIcono svg { width: 26px; height: 26px; }
   .seccionBajada { font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
+  .seccion-vista-prototipo {
+    min-height: 680px;
+    padding-block: 48px;
+  }
+  .vistaAppMarco {
+    padding-inline: 16px;
+  }
+  .seccion-vista .vistaAppTelefono {
+    width: clamp(292px, 62vw, 360px);
+  }
+}
+
+@media (max-width: 560px) {
+  .seccion-vista .vistaAppTelefono {
+    width: clamp(284px, 86vw, 334px);
+    border-width: 10px;
+    border-radius: 64px;
+  }
+  .seccion-vista .vistaAppViewport {
+    border-radius: 48px;
+  }
+}
+
+@media (max-width: 375px) {
+  .seccion-vista .vistaAppTelefono {
+    width: clamp(270px, 88vw, 306px);
+  }
 }
