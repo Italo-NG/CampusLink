@@ -1,9 +1,53 @@
-export const VISTA_APP_MEDIDAS = {
-  ancho: 393,
-  alto: 852
+export const VISTA_APP_PANTALLA_INICIAL = 'login';
+
+export const VISTA_APP_REGLAS = {
+  'cierre-ticket': function (datos) {
+    return !!datos.fotoCierre && String(datos.solucionCierre || '').trim() !== '';
+  },
+  calificacion: function (datos) {
+    return (datos.rating || 0) > 0;
+  }
 };
 
-export const VISTA_APP_PANTALLA_INICIAL = 'login';
+export const VISTA_APP_DATOS_INICIALES = {
+  sede: 'Monterrico',
+  categoria: 'Limpieza',
+  evidencia: true,
+  descripcion: '',
+  problema: 'Proyector',
+  rating: 0,
+  solucionCierre: '',
+  fotoCierre: false,
+  notificarCierre: false,
+  motivoReapertura: '',
+  qrDetectado: false,
+  filtroTickets: 'Todas',
+  requeridos: {},
+  clavesVisibles: {},
+  campos: {}
+};
+
+export function crearDatosIniciales() {
+  var copia = JSON.parse(JSON.stringify(VISTA_APP_DATOS_INICIALES));
+  return copia;
+}
+
+export function leerDato(datos, ruta) {
+  if (!ruta) return undefined;
+  if (ruta.indexOf('campos.') === 0) {
+    return datos.campos[ruta.slice(7)];
+  }
+  return datos[ruta];
+}
+
+export function asignarDato(datos, ruta, valor) {
+  if (!ruta) return;
+  if (ruta.indexOf('campos.') === 0) {
+    datos.campos[ruta.slice(7)] = valor;
+    return;
+  }
+  datos[ruta] = valor;
+}
 
 export const VISTA_APP_ROLES = [
   { id: 'estudiante', etiqueta: 'Estudiante', destino: 'dashboard-estudiante' },
@@ -41,7 +85,10 @@ function pantalla(datos) {
     blocks: datos.blocks || [],
     auth: datos.auth || null,
     form: datos.form || null,
-    success: datos.success || null
+    success: datos.success || null,
+    cta: datos.cta || null,
+    alias: datos.alias || null,
+    preset: datos.preset || null
   };
 }
 
@@ -75,7 +122,7 @@ const headerBackReporte = {
 
 const detalleTicket = [
   ['Ticket', 'SOS-20260512-0007'],
-  ['Problema', 'Proyector'],
+  ['Problema', '{problema}'],
   ['Ubicación', 'Aula B-301']
 ];
 
@@ -110,10 +157,10 @@ const pantallas = [
         ['Correo institucional', 'nombre@upc.edu.pe'],
         ['Contraseña', '••••••••']
       ],
+      enlaceIntermedio: '¿Olvidaste tu contraseña?',
       boton: { texto: 'Iniciar sesión', to: 'config-experiencia' },
       accionesExtra: [
-        { texto: '¿Olvidaste tu contraseña?' },
-        { texto: '¿No tienes cuenta? Crear cuenta', to: 'registro-upc' },
+        { texto: '¿No tienes cuenta?', destacado: 'Crear cuenta', to: 'registro-upc' },
         { texto: 'Conoce cómo protegemos tus datos' }
       ]
     },
@@ -130,18 +177,21 @@ const pantallas = [
       { tipo: 'title', texto: 'Únete a CampusLink' },
       { tipo: 'text', texto: 'Crea tu cuenta institucional para reportar incidencias y revisar su atención.' },
       { tipo: 'inputs', fields: [
-        ['Nombre y apellido', 'Ej. Elena Vargas'],
-        ['Correo institucional', 'nombre.apellido@upc.edu.pe'],
-        ['Código UPC', 'U202612345']
+        { etiqueta: 'Nombre y apellido', placeholder: 'Ej. Elena Vargas', dentro: true },
+        { etiqueta: 'Correo institucional', placeholder: 'nombre.apellido@upc.edu.pe', dentro: true },
+        { etiqueta: 'Código UPC', placeholder: 'U202612345', dentro: true }
       ] },
-      { tipo: 'selectRow', items: [['Tu rol', 'Estudiante'], ['Sede', 'Monterrico']] },
+      { tipo: 'selectRow', items: [
+        { etiqueta: 'Tu rol', valor: 'Estudiante', activo: true },
+        { etiqueta: 'Sede', valor: '{sede}' }
+      ] },
       { tipo: 'inputs', fields: [
-        ['Contraseña', '••••••••'],
-        ['Confirmar contraseña', '••••••••']
+        { etiqueta: 'Contraseña', placeholder: '••••••••', dentro: true },
+        { etiqueta: 'Confirmar contraseña', placeholder: '••••••••', dentro: true }
       ] },
       { tipo: 'buttonGroup', items: [
         { texto: 'Crear cuenta', to: 'config-experiencia', variante: 'primario' },
-        { texto: '¿Ya tienes cuenta? Iniciar sesión', to: 'login-datos', variante: 'texto' }
+        { texto: 'Ya tengo cuenta', destacado: 'Iniciar sesión', to: 'login-datos', variante: 'texto' }
       ] }
     ],
     acciones: [ir('Component / Button / Primary / Create Account', 'config-experiencia')]
@@ -178,14 +228,13 @@ const pantallas = [
     },
     tabbar: tabEstudianteInicio,
     blocks: [
-      { tipo: 'spacer', size: 32 },
+      { tipo: 'spacer', size: 8 },
       { tipo: 'card', titulo: 'Reportar Falla (QR)', texto: 'Escanea el código de un ambiente para reportar incidencias.', icono: 'qr', accent: true, to: 'escaner-qr' },
-      { tipo: 'spacer', size: 24 },
       { tipo: 'gridCards', items: [
         { titulo: 'Mis reportes', icono: 'doc', to: 'mis-reportes-activos' },
         { titulo: 'Mapa del campus', icono: 'map', to: 'ubicacion-manual' }
       ] },
-      { tipo: 'spacer', size: 20 },
+      { tipo: 'spacer', size: 8 },
       { tipo: 'sos', texto: 'S.O.S. Aula', modal: 'modal-confirm-send-sos-estudiante' }
     ],
     acciones: [ir('Component / Card / Action / Report QR', 'escaner-qr'), ir('Component / Tab Bar / Item / Report Center', 'escaner-qr')]
@@ -221,8 +270,8 @@ const pantallas = [
       { tipo: 'bottomPanel', blocks: [
         { tipo: 'text', texto: 'Apunta al código QR ubicado en el aula, laboratorio o ambiente afectado.', centro: true, chico: true, claro: true },
         { tipo: 'buttonGroup', items: [
-          { texto: 'Simular QR válido', to: 'registrar-reporte', variante: 'secundario', icono: 'scan' },
-          { texto: 'Ingresar ubicación manualmente', to: 'ubicacion-manual', variante: 'texto' }
+          { texto: 'Simular QR válido', accion: 'escanear', variante: 'secundario', icono: 'scan' },
+          { texto: 'Ingresar ubicación manualmente', to: 'ubicacion-manual', variante: 'texto', icono: 'teclado' }
         ] }
       ] }
     ],
@@ -243,17 +292,16 @@ const pantallas = [
     blocks: [
       { tipo: 'text', texto: 'Selecciona el ambiente donde ocurre la incidencia.' },
       { tipo: 'dataCard', rows: [
-        ['Sede', 'Monterrico'],
-        ['Pabellón', 'B'],
-        ['Piso', '3'],
-        ['Aula', 'B-301']
+        { etiqueta: 'Sede', valor: '{sede}', to: 'selector-sede', flecha: true },
+        { etiqueta: 'Pabellón', valor: 'B', flecha: true },
+        { etiqueta: 'Piso', valor: '3', flecha: true },
+        { etiqueta: 'Aula', valor: 'B-301', flecha: true }
       ] },
-      { tipo: 'text', texto: 'Esta ubicación será enviada al equipo de soporte.', chico: true },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Continuar', to: 'registrar-reporte', variante: 'primario' },
-        { texto: 'Cambiar sede', to: 'selector-sede', variante: 'secundario' }
-      ] }
+      { tipo: 'banda', texto: 'Esta ubicación será enviada al equipo de soporte.' }
     ],
+    cta: { items: [
+      { texto: 'Continuar', to: 'registrar-reporte', variante: 'primario' }
+    ] },
     acciones: [ir('Component / Button / Primary / Continue', 'registrar-reporte'), ir('Sede', 'selector-sede')]
   }),
   pantalla({
@@ -265,10 +313,10 @@ const pantallas = [
     tabbar: tabEstudianteInicio,
     blocks: [
       { tipo: 'text', texto: 'Elige la sede donde ocurre la incidencia.' },
-      { tipo: 'options', items: [
-        { texto: 'Monterrico', active: true, to: 'ubicacion-manual' },
-        { texto: 'San Isidro', to: 'ubicacion-manual' },
-        { texto: 'Villa', to: 'ubicacion-manual' }
+      { tipo: 'options', agrupado: true, campo: 'sede', to: 'ubicacion-manual', items: [
+        { texto: 'Monterrico' },
+        { texto: 'San Isidro' },
+        { texto: 'Villa' }
       ] }
     ],
     acciones: [ir('Component / Button / Navigation / Back', 'ubicacion-manual')]
@@ -279,24 +327,24 @@ const pantallas = [
     nombre: 'Registrar Reporte',
     usuario: 'shared',
     header: headerBackReporte,
-    tabbar: tabEstudianteInicio,
     blocks: [
       { tipo: 'title', texto: 'Ubicación' },
-      { tipo: 'dataCard', badge: 'Ubicación verificada por QR', rows: [
-        ['Sede', 'Monterrico'],
+      { tipo: 'locationCard', verificada: true, columnas: [
+        ['Sede', '{sede}'],
         ['Pabellón', 'B'],
         ['Aula', 'B-301']
       ] },
       { tipo: 'title', texto: 'Categoría de falla' },
-      { tipo: 'categoryGrid', items: ['Mobiliario', 'Eléctrico', 'Multimedia', 'Limpieza', 'Internet', 'Otro'] },
+      { tipo: 'categoryGrid', campo: 'categoria', items: ['Mobiliario', 'Eléctrico', 'Multimedia', 'Limpieza', 'Internet', 'Otro'] },
       { tipo: 'title', texto: 'Evidencia' },
-      { tipo: 'upload', texto: 'Imagen cargada correctamente' },
-      { tipo: 'inputs', fields: [['Descripción breve', 'Derramaron gaseosa en el aula']] },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Continuar', to: 'resumen-reporte', variante: 'primario' },
-        { texto: 'Cancelar reporte', modal: 'modal-confirm-cancel-report', variante: 'texto' }
+      { tipo: 'upload', campo: 'evidencia', texto: 'Agregar foto de evidencia', textoCargada: 'Imagen cargada correctamente' },
+      { tipo: 'inputs', fields: [
+        { etiqueta: 'Descripción breve', campo: 'descripcion', placeholder: 'Descripción', multilinea: true }
       ] }
     ],
+    cta: { items: [
+      { texto: 'Continuar', to: 'resumen-reporte', variante: 'primario' }
+    ] },
     acciones: [
       ir('Component / Button / Primary / Continue Report', 'resumen-reporte'),
       ir('Component / Button / Navigation / Back', 'escaner-qr'),
@@ -308,22 +356,23 @@ const pantallas = [
     figmaId: '21:611',
     nombre: 'Resumen Reporte',
     usuario: 'shared',
-    header: { tipo: 'claro', titulo: 'Revisa tu reporte', volver: 'registrar-reporte' },
+    header: { tipo: 'claro', titulo: 'Revisa tu reporte', volver: 'registrar-reporte', accionDerecha: { texto: 'Cancelar', modal: 'modal-confirm-cancel-report' } },
     tabbar: tabEstudianteInicio,
     blocks: [
-      { tipo: 'dataCard', rows: [
-        ['Ubicación', 'Monterrico · Pabellón B · Aula B-301'],
-        ['Categoría', 'Limpieza'],
-        ['Evidencia fotográfica', 'Imagen cargada correctamente'],
-        ['Descripción', 'Derramaron gaseosa en el aula']
+      { tipo: 'resumenCard', items: [
+        { icono: 'pin', etiqueta: 'Ubicación', valor: '{ubicacion}' },
+        { icono: 'alert', tono: 'rojo', etiqueta: 'Categoría', valor: '{categoria}' }
       ] },
-      { tipo: 'text', texto: 'El equipo de soporte recibirá la ubicación y evidencia para atender la incidencia.' },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Enviar reporte', modal: 'modal-confirm-send-report', variante: 'primario' },
-        { texto: 'Editar', to: 'registrar-reporte', variante: 'secundario' },
-        { texto: 'Cancelar', modal: 'modal-confirm-cancel-report', variante: 'texto' }
-      ] }
+      { tipo: 'resumenCard', items: [
+        { icono: 'imagen', etiqueta: 'Evidencia fotográfica', imagen: true },
+        { icono: 'chat', etiqueta: 'Descripción', valor: '{descripcion}' }
+      ] },
+      { tipo: 'banda', tono: 'gris', texto: 'El equipo de soporte recibirá la ubicación y evidencia para atender la incidencia.' }
     ],
+    cta: { items: [
+      { texto: 'Enviar reporte', modal: 'modal-confirm-send-report', variante: 'primario' },
+      { texto: 'Editar', to: 'registrar-reporte', variante: 'secundario', atras: true }
+    ] },
     acciones: [
       abrir('Component / Button / Primary / Submit Report', 'modal-confirm-send-report'),
       ir('Component / Button / Text Action / Edit Report', 'registrar-reporte'),
@@ -386,9 +435,9 @@ const pantallas = [
       ] },
       { tipo: 'title', texto: 'Detalles' },
       { tipo: 'dataCard', rows: [
-        ['Ubicación', 'Monterrico · Pabellón B · Aula B-301'],
-        ['Categoría', 'Multimedia'],
-        ['Descripción', 'El proyector del aula no enciende y la clase ya inició.']
+        ['Ubicación', '{ubicacion}'],
+        ['Categoría', '{categoria}'],
+        ['Descripción', '{descripcion}']
       ] },
       { tipo: 'buttonGroup', items: [{ texto: 'Volver al inicio', to: 'home', variante: 'secundario' }] }
     ],
@@ -399,7 +448,7 @@ const pantallas = [
     figmaId: '35:1994',
     nombre: 'Mis reportes Activos',
     usuario: 'shared',
-    header: { tipo: 'claro', titulo: 'Mis reportes' },
+    header: { tipo: 'claro', titulo: 'Mis reportes', volver: 'home' },
     tabbar: tabEstudianteReportes,
     blocks: [
       { tipo: 'text', texto: 'Consulta el avance de las incidencias que registraste.' },
@@ -411,7 +460,7 @@ const pantallas = [
       { tipo: 'reportCards', items: [
         { id: 'TCK-20260512-0001', estado: 'Pendiente', categoria: 'Multimedia', lugar: 'Aula B-301 · Hoy, 10:30 AM', to: 'detalle-reporte-pendiente' },
         { id: 'TCK-20260510-0008', estado: 'En proceso', categoria: 'Mobiliario', lugar: 'Aula C-204 · Hace 2 días', to: 'detalle-reporte-en-proceso' },
-        { id: 'TCK-20260508-0003', estado: 'Internet', categoria: 'Internet', lugar: 'Biblioteca · Hace 4 días', to: 'detalle-reporte-en-proceso' }
+        { id: 'TCK-20260508-0003', estado: 'En proceso', categoria: 'Internet', lugar: 'Biblioteca · Hace 4 días', to: 'detalle-reporte-en-proceso' }
       ] }
     ],
     acciones: [ir('Card', 'detalle-reporte-pendiente'), ir('Card', 'detalle-reporte-en-proceso')]
@@ -421,7 +470,7 @@ const pantallas = [
     figmaId: '35:2069',
     nombre: 'Mis reportes Resueltos',
     usuario: 'shared',
-    header: { tipo: 'claro', titulo: 'Mis reportes' },
+    header: { tipo: 'claro', titulo: 'Mis reportes', volver: 'home' },
     tabbar: tabEstudianteReportes,
     blocks: [
       { tipo: 'text', texto: 'Consulta el avance de las incidencias que registraste.' },
@@ -442,7 +491,7 @@ const pantallas = [
     figmaId: '35:2125',
     nombre: 'Mis reportes Cancelados',
     usuario: 'shared',
-    header: { tipo: 'claro', titulo: 'Mis reportes' },
+    header: { tipo: 'claro', titulo: 'Mis reportes', volver: 'home' },
     tabbar: tabEstudianteReportes,
     blocks: [
       { tipo: 'text', texto: 'Consulta el avance de las incidencias que registraste.' },
@@ -650,12 +699,13 @@ const pantallas = [
     },
     tabbar: tabEstudianteInicio,
     blocks: [
+      { tipo: 'spacer', size: 8 },
       { tipo: 'pill', texto: 'Horario detectado automáticamente' },
       { tipo: 'title', texto: 'Clase actual: Cálculo Aplicado', centro: true },
       { tipo: 'text', texto: 'Aula B-301 · Sede Monterrico', centro: true, chico: true },
-      { tipo: 'spacer', size: 32 },
+      { tipo: 'spacer', size: 12 },
       { tipo: 'sos', texto: 'S.O.S. Aula', docente: true, to: 'confirmacion-datos' },
-      { tipo: 'spacer', size: 32 },
+      { tipo: 'spacer', size: 12 },
       { tipo: 'card', titulo: 'Reportar falla normal', texto: 'Mediante código QR del aula', icono: 'qr', to: 'escaner-qr' },
       { tipo: 'gridCards', items: [
         { titulo: 'Mis reportes', icono: 'doc', to: 'mis-reportes-activos' },
@@ -698,16 +748,16 @@ const pantallas = [
     header: { tipo: 'claro', titulo: '¿Qué problema ocurre?', volver: 'confirmacion-datos' },
     blocks: [
       { tipo: 'text', texto: 'Selecciona una opción para enviar la alerta inmediata.' },
-      { tipo: 'categoryGrid', items: [
-        { texto: 'Proyector', modal: 'modal-confirm-send-sos' },
-        { texto: 'PC del aula', modal: 'modal-confirm-send-sos' },
-        { texto: 'Audio', modal: 'modal-confirm-send-sos' },
-        { texto: 'Internet', modal: 'modal-confirm-send-sos' }
+      { tipo: 'problemGrid', campo: 'problema', items: [
+        { texto: 'Proyector', icono: 'proyector', tinte: 'rojo', modal: 'modal-confirm-send-sos' },
+        { texto: 'PC del aula', icono: 'monitor', tinte: 'azul', modal: 'modal-confirm-send-sos' },
+        { texto: 'Audio', icono: 'audio', tinte: 'verde', modal: 'modal-confirm-send-sos' },
+        { texto: 'Internet', icono: 'wifi', tinte: 'morado', modal: 'modal-confirm-send-sos' }
       ] },
       { tipo: 'buttonGroup', items: [
-        { texto: 'Otro problema', to: 'registrar-reporte', variante: 'texto' }
+        { texto: 'Otro problema', icono: 'otro', to: 'registrar-reporte', variante: 'secundario' }
       ] },
-      { tipo: 'text', texto: 'No se solicitará foto para priorizar la velocidad de atención.', centro: true, chico: true }
+      { tipo: 'banda', tono: 'azul', texto: 'No se solicitará foto para priorizar la velocidad de atención.' }
     ],
     acciones: [abrir('Component / Card / Option / Projector', 'modal-confirm-send-sos')]
   }),
@@ -736,18 +786,16 @@ const pantallas = [
     header: { tipo: 'claro', titulo: 'Alerta crítica', volver: 'dashboard-docente' },
     tabbar: tabEstudianteInicio,
     blocks: [
-      { tipo: 'successInline', titulo: 'Alerta crítica enviada', texto: 'El equipo de soporte fue notificado con prioridad máxima.', badge: 'Prioridad máxima' },
-      { tipo: 'dataCard', rows: [
-        ['SLA', '< 5 min'],
-        ['Ubicación', 'Aula B-301 · Pabellón B'],
-        ['Problema reportado', 'Proyector']
-      ] },
-      { tipo: 'text', texto: 'Buscando técnico disponible...', centro: true },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Ver Seguimiento', to: 'estado-soporte', variante: 'primario' },
-        { texto: 'Cancelar alarma', modal: 'modal-confirm-cancel-sos', variante: 'peligro' }
+      { tipo: 'hero', icono: 'triangulo', titulo: 'Alerta crítica enviada', texto: 'El equipo de soporte fue notificado con prioridad máxima.' },
+      { tipo: 'slaCard', etiqueta: 'Prioridad máxima', badge: 'SLA < 5 min', estado: 'Buscando técnico disponible...', items: [
+        { icono: 'pin', etiqueta: 'Ubicación', valor: 'Aula B-301 · Pabellón B' },
+        { icono: 'alert', etiqueta: 'Problema reportado', valor: '{problema}' }
       ] }
     ],
+    cta: { items: [
+      { texto: 'Ver Seguimiento', to: 'estado-soporte', variante: 'primario' },
+      { texto: 'Cancelar alarma', modal: 'modal-confirm-cancel-sos', variante: 'peligroSuave' }
+    ] },
     acciones: [ir('Component / Button / Critical / Simulate Technician Assigned', 'estado-soporte'), abrir('Component / Button / Destructive / Cancel Alarm', 'modal-confirm-cancel-sos')]
   }),
   pantalla({
@@ -763,12 +811,12 @@ const pantallas = [
       { tipo: 'timeline', items: [
         ['Alerta enviada', '10:42 AM', '', true],
         ['Técnico asignado', '10:43 AM', '', true],
-        ['En camino', 'Acercándose al Pabellón B', '', true],
+        ['En camino', 'Acercándose al Pabellón B', '', true, 'pulso'],
         ['Llegó al aula', '', '', false]
       ] },
       { tipo: 'buttonGroup', items: [
         { texto: 'Confirmar llegada del técnico', to: 'llegada-soporte', variante: 'primario' },
-        { texto: 'Cancelar alarma', modal: 'modal-confirm-cancel-sos', variante: 'peligro' }
+        { texto: 'Cancelar alarma', modal: 'modal-confirm-cancel-sos', variante: 'peligroSuave' }
       ] }
     ],
     acciones: [ir('Component / Button / Critical / Confirm Technician Arrival', 'llegada-soporte')]
@@ -796,7 +844,7 @@ const pantallas = [
     blocks: [
       { tipo: 'text', texto: 'El técnico marcó la incidencia como resuelta.' },
       { tipo: 'dataCard', titulo: 'Resumen', rows: [
-        ['Problema', 'Proyector'],
+        ['Problema', '{problema}'],
         ['Aula', 'B-301'],
         ['Tiempo de atención', '6 min']
       ] },
@@ -813,34 +861,29 @@ const pantallas = [
     figmaId: '33:1462',
     nombre: 'Calificacion de atencion',
     usuario: 'docente',
-    header: { tipo: 'claro', titulo: 'Califica la atención', volver: 'confirmar-solucion' },
+    header: { tipo: 'claro', titulo: 'Califica la atención' },
     blocks: [
       { tipo: 'text', texto: 'Tu respuesta ayuda a mejorar el servicio de soporte de CampusLink.', centro: true },
-      { tipo: 'rating', to: 'calificacion-atencion-seleccionada' },
-      { tipo: 'inputs', fields: [['Comentario opcional', '']] },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Enviar calificación', to: 'alerta-terminada', variante: 'primario' },
-        { texto: 'Omitir', to: 'alerta-terminada', variante: 'secundario' }
+      { tipo: 'spacer', size: 8 },
+      { tipo: 'rating' },
+      { tipo: 'spacer', size: 8 },
+      { tipo: 'inputs', fields: [
+        { etiqueta: 'Comentario opcional', placeholder: '¿Qué tal fue la atención?', multilinea: true, filas: 4, suave: true }
       ] }
     ],
+    cta: { items: [
+      { texto: 'Enviar calificación', to: 'alerta-terminada', variante: 'primario', habilitaCon: 'calificacion' },
+      { texto: 'Omitir', to: 'alerta-terminada', variante: 'secundario' }
+    ] },
     acciones: [ir('Component / Rating / Stars / Support Rating', 'calificacion-atencion-seleccionada'), ir('Component / Button / Secondary / Skip Rating', 'alerta-terminada')]
   }),
   pantalla({
     id: 'calificacion-atencion-seleccionada',
     figmaId: '33:1500',
-    nombre: 'Optimizar diseño para iOS',
+    nombre: 'Calificacion de atencion — Seleccionada',
     usuario: 'docente',
-    header: { tipo: 'claro', titulo: 'Califica la atención', volver: 'confirmar-solucion' },
-    blocks: [
-      { tipo: 'text', texto: 'Tu respuesta ayuda a mejorar el servicio de soporte de CampusLink.', centro: true },
-      { tipo: 'rating', selected: true, to: 'calificacion-atencion-seleccionada' },
-      { tipo: 'inputs', fields: [['Comentario opcional', '']] },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Enviar calificación', to: 'alerta-terminada', variante: 'primario' },
-        { texto: 'Omitir', to: 'alerta-terminada', variante: 'secundario' }
-      ] }
-    ],
-    acciones: [ir('Component / Button / Primary / Submit Rating', 'alerta-terminada')]
+    alias: 'calificacion-atencion',
+    preset: { rating: 5 }
   }),
   pantalla({
     id: 'alerta-terminada',
@@ -905,30 +948,23 @@ const pantallas = [
     blocks: [
       { tipo: 'text', texto: 'Describe por qué el problema continúa.' },
       { tipo: 'dataCard', titulo: 'Resumen', rows: detalleTicket },
-      { tipo: 'inputs', fields: [['Motivo de reapertura', '']] },
+      { tipo: 'inputs', fields: [
+        { etiqueta: 'Motivo de reapertura', campo: 'motivoReapertura', placeholder: 'Ej. El proyector volvió a fallar después de la atención.', multilinea: true, mensajeRequerido: 'Describe el motivo para reabrir el ticket.' }
+      ] },
       { tipo: 'buttonGroup', items: [
-        { texto: 'Enviar reapertura', to: 'reabrir-ticket-required', variante: 'primario' },
-        { texto: 'Cancelar', to: 'confirmar-solucion', variante: 'secundario' }
+        { texto: 'Enviar reapertura', validar: 'motivoReapertura', to: 'ticket-reabierto', variante: 'primario' },
+        { texto: 'Cancelar', to: 'confirmar-solucion', variante: 'secundario', atras: true }
       ] }
     ],
-    acciones: [ir('Component / Button / Primary / Submit Reopen', 'reabrir-ticket-required')]
+    acciones: [ir('Component / Button / Primary / Submit Reopen', 'ticket-reabierto')]
   }),
   pantalla({
     id: 'reabrir-ticket-required',
     figmaId: '1120:86',
     nombre: 'Reabrir ticket — Motivo requerido',
     usuario: 'docente',
-    header: { tipo: 'claro', titulo: 'Reabrir ticket', volver: 'confirmar-solucion' },
-    blocks: [
-      { tipo: 'text', texto: 'Describe por qué el problema continúa.' },
-      { tipo: 'dataCard', titulo: 'Resumen', rows: detalleTicket },
-      { tipo: 'inputs', fields: [['Motivo de reapertura', 'Describe el motivo para reabrir el ticket.']] },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Enviar reapertura', to: 'ticket-reabierto', variante: 'primario' },
-        { texto: 'Cancelar', to: 'confirmar-solucion', variante: 'secundario' }
-      ] }
-    ],
-    acciones: [ir('Component / Button / Primary / Submit Reopen', 'ticket-reabierto')]
+    alias: 'reabrir-ticket',
+    preset: { requeridos: { motivoReapertura: true } }
   }),
   pantalla({
     id: 'reabrir-ticket-error',
@@ -980,8 +1016,8 @@ const pantallas = [
       ] },
       { tipo: 'dataCard', titulo: 'Detalles', rows: [
         ['Ubicación', 'Aula B-301'],
-        ['Problema', 'Proyector'],
-        ['Motivo de reapertura', 'El proyector volvió a fallar después de la atención.'],
+        ['Problema', '{problema}'],
+        ['Motivo de reapertura', '{motivoReapertura}'],
         ['Estado actual', 'El equipo de soporte revisará nuevamente la incidencia.']
       ] },
       { tipo: 'buttonGroup', items: [{ texto: 'Volver a Mis reportes', to: 'mis-reportes-activos', variante: 'secundario' }] }
@@ -994,7 +1030,7 @@ const pantallas = [
     figmaId: '38:2635',
     nombre: 'Dashboard Soporte',
     usuario: 'soporte',
-    fondo: '#FEE2E2',
+    fondo: '#FDE5E5',
     header: { tipo: 'claro', titulo: 'Dashboard' },
     tabbar: tabSoporteInicio,
     blocks: [
@@ -1005,7 +1041,7 @@ const pantallas = [
         ['2', 'En atención', true],
         ['6', 'Resueltas hoy', false, 'verde']
       ] },
-      { tipo: 'card', titulo: 'Nueva alerta prioritaria', texto: 'Aula B-301 · Proyector', icono: '!', danger: true, badge: 'Prioritario', link: 'Ver detalle →', to: 'alerta-sos' },
+      { tipo: 'alertaCard', titulo: 'Nueva alerta prioritaria', texto: 'Aula B-301 · {problema}', badge: 'Prioritario', link: 'Ver detalle →', to: 'alerta-sos' },
       { tipo: 'title', texto: 'Accesos rápidos' },
       { tipo: 'gridCards', items: [
         { titulo: 'Ver incidencias', icono: 'list', to: 'lista-tickets' },
@@ -1031,7 +1067,7 @@ const pantallas = [
       { tipo: 'dataCard', rows: [
         ['Ticket', 'SOS-20260512-0007'],
         ['Ubicación', 'Aula B-301 · Pabellón B'],
-        ['Problema', 'Proyector']
+        ['Problema', '{problema}']
       ] },
       { tipo: 'buttonGroup', items: [
         { texto: 'Ver ficha técnica', to: 'ficha-tecnica', variante: 'primario' },
@@ -1045,27 +1081,27 @@ const pantallas = [
     figmaId: '38:2795',
     nombre: 'Ficha tecnica',
     usuario: 'soporte',
-    fondo: '#FEE2E2',
+    fondo: '#FDE5E5',
     header: { tipo: 'claro', titulo: 'Ficha técnica', volver: 'alerta-sos' },
     blocks: [
-      { tipo: 'dataCard', badge: 'Prioritario', rows: [['SOS-20260512-0007', '']] },
-      { tipo: 'dataCard', titulo: 'Ubicación', rows: [
+      { tipo: 'fichaCabecera', id: 'SOS-20260512-0007', badge: 'Prioritario' },
+      { tipo: 'dataCard', titulo: 'Ubicación', caps: true, rows: [
         ['Sede', 'Monterrico'],
         ['Pabellón', 'B'],
         ['Aula', 'B-301']
       ] },
-      { tipo: 'dataCard', titulo: 'Detalle', rows: [
-        ['Problema', 'Proyector'],
+      { tipo: 'dataCard', titulo: 'Detalle', caps: true, rows: [
+        ['Problema', '{problema}'],
         ['Reportado por', 'Docente'],
         ['Fecha y hora', 'Hoy, 10:30 AM'],
-        ['Estado', 'Asignado']
+        { etiqueta: 'Estado', badge: 'Asignado' }
       ] },
-      { tipo: 'upload', texto: 'imagen del incidente' },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Iniciar atención', modal: 'modal-confirm-start-attention', variante: 'primario' },
-        { texto: 'Pausar por insumos', modal: 'modal-confirm-pause-ticket', variante: 'secundario' }
-      ] }
+      { tipo: 'fotoCard', titulo: 'Evidencia', texto: 'imagen del incidente' }
     ],
+    cta: { items: [
+      { texto: 'Iniciar atención', modal: 'modal-confirm-start-attention', variante: 'primario' },
+      { texto: 'Pausar por insumos', modal: 'modal-confirm-pause-ticket', variante: 'secundario' }
+    ] },
     acciones: [abrir('Component / Button / Critical / Start Attention', 'modal-confirm-start-attention'), abrir('Component / Button / Secondary / Pause For Supplies', 'modal-confirm-pause-ticket')]
   }),
   pantalla({
@@ -1081,7 +1117,7 @@ const pantallas = [
         ['Estado', 'En atención'],
         ['Ticket', 'SOS-20260512-0007'],
         ['Ubicación', 'Aula B-301'],
-        ['Problema', 'Proyector']
+        ['Problema', '{problema}']
       ],
       botones: [
         { texto: 'Registrar solución', to: 'cerrar-ticket', variante: 'primario' },
@@ -1098,11 +1134,13 @@ const pantallas = [
     header: { tipo: 'claro', titulo: 'Cerrar ticket', volver: 'iniciar-atencion' },
     blocks: [
       { tipo: 'dataCard', titulo: 'Ticket a cerrar', rows: detalleTicket },
-      { tipo: 'upload', texto: 'Adjuntar foto', to: 'cerrar-ticket-foto' },
-      { tipo: 'inputs', fields: [['Descripción de solución aplicada', 'Ej. Se reconectó el cable de alimentación...']] },
+      { tipo: 'upload', campo: 'fotoCierre', texto: 'Adjuntar foto', textoCargada: 'Foto final.jpg' },
+      { tipo: 'inputs', fields: [
+        { etiqueta: 'Descripción de solución aplicada', campo: 'solucionCierre', placeholder: 'Ej. Se reconectó el cable de alimentación...', multilinea: true }
+      ] },
+      { tipo: 'checkRow', campo: 'notificarCierre', texto: 'Notificar al usuario reportante' },
       { tipo: 'buttonGroup', items: [
-        { texto: 'Notificar al usuario reportante', to: 'cerrar-ticket-opcion', variante: 'secundario' },
-        { texto: 'Cerrar ticket', disabled: true, variante: 'primario' }
+        { texto: 'Cerrar ticket', modal: 'modal-confirm-close-ticket', variante: 'primario', habilitaCon: 'cierre-ticket' }
       ] }
     ],
     acciones: [ir('Component / Upload Area / Evidence / Add Final Photo', 'cerrar-ticket-foto'), ir('Component / Checkbox / Notification / Notify Reporter Unchecked', 'cerrar-ticket-opcion')]
@@ -1110,51 +1148,26 @@ const pantallas = [
   pantalla({
     id: 'cerrar-ticket-opcion',
     figmaId: '39:2908',
-    nombre: 'Cerrar ticker opcion seleccionada',
+    nombre: 'Cerrar ticket — Notificación seleccionada',
     usuario: 'soporte',
-    header: { tipo: 'claro', titulo: 'Cerrar ticket', volver: 'cerrar-ticket' },
-    blocks: [
-      { tipo: 'dataCard', titulo: 'Ticket a cerrar', rows: detalleTicket },
-      { tipo: 'upload', texto: 'Adjuntar foto', to: 'cerrar-ticket-foto' },
-      { tipo: 'inputs', fields: [['Descripción de solución aplicada', 'Ej. Se reconectó el cable de alimentación...']] },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Notificar al usuario reportante', variante: 'secundario' },
-        { texto: 'Cerrar ticket', disabled: true, variante: 'primario' }
-      ] }
-    ],
-    acciones: [ir('Component / Upload Area / Evidence / Add Final Photo', 'cerrar-ticket-foto')]
+    alias: 'cerrar-ticket',
+    preset: { notificarCierre: true }
   }),
   pantalla({
     id: 'cerrar-ticket-foto',
     figmaId: '39:3001',
-    nombre: 'Cerrar ticker foto adjuntada',
+    nombre: 'Cerrar ticket — Foto adjuntada',
     usuario: 'soporte',
-    header: { tipo: 'claro', titulo: 'Cerrar ticket', volver: 'cerrar-ticket-opcion' },
-    blocks: [
-      { tipo: 'dataCard', titulo: 'Ticket a cerrar', rows: detalleTicket },
-      { tipo: 'upload', texto: 'Foto final.jpg', to: 'cerrar-ticket-opcion' },
-      { tipo: 'inputs', fields: [['Descripción de solución aplicada', 'Ej. Se reconectó el cable de alimentación...']] },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Cerrar ticket', to: 'cierre-ticket-completo', variante: 'primario' }
-      ] }
-    ],
-    acciones: [ir('Component / Button / Primary / Close Ticket', 'cierre-ticket-completo')]
+    alias: 'cerrar-ticket',
+    preset: { fotoCierre: true }
   }),
   pantalla({
     id: 'cierre-ticket-completo',
     figmaId: '39:3050',
     nombre: 'Cierre de ticket formulario completo',
     usuario: 'soporte',
-    header: { tipo: 'claro', titulo: 'Cerrar ticket', volver: 'cerrar-ticket-foto' },
-    blocks: [
-      { tipo: 'dataCard', titulo: 'Ticket a cerrar', rows: detalleTicket },
-      { tipo: 'upload', texto: 'Foto final.jpg' },
-      { tipo: 'inputs', fields: [['Descripción de solución aplicada', 'Se reconectó el cable de alimentación y se validó el proyector.']] },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Cerrar ticket', modal: 'modal-confirm-close-ticket', variante: 'primario' }
-      ] }
-    ],
-    acciones: [abrir('Component / Button / Primary / Close Ticket', 'modal-confirm-close-ticket')]
+    alias: 'cerrar-ticket',
+    preset: { fotoCierre: true, notificarCierre: true, solucionCierre: 'Se reconectó el cable de alimentación y se validó el proyector.' }
   }),
   pantalla({
     id: 'cierre-ticket-error-sim',
@@ -1195,24 +1208,16 @@ const pantallas = [
     figmaId: '39:3228',
     nombre: 'Lista de Tickets',
     usuario: 'soporte',
+    fondo: '#FDECEC',
     header: { tipo: 'claro', titulo: 'Lista de Tickets', volver: 'dashboard-soporte' },
     tabbar: tabSoporteTickets,
     blocks: [
-      { tipo: 'segmented', active: 'Todas', items: [
-        { texto: 'Todas' },
-        { texto: 'Prioritarias' },
-        { texto: 'Asignadas' }
-      ] },
-      { tipo: 'segmented', active: 'En atención', items: [
-        { texto: 'En atención' },
-        { texto: 'Resueltas' },
-        { texto: 'Todas' }
-      ] },
+      { tipo: 'filterChips', campo: 'filtroTickets', items: ['Todas', 'Prioritarias', 'Asignadas', 'En atención'] },
       { tipo: 'inputs', fields: [['Buscar', 'Buscar por ID, ubicación...']] },
-      { tipo: 'reportCards', items: [
-        { id: 'SOS-20260512-0007', estado: 'Prioritario', categoria: 'Proyector', lugar: 'Aula B-301 · Estado: Asignado', to: 'ficha-tecnica' },
-        { id: 'TCK-20260512-0010', estado: 'Normal', categoria: 'Internet', lugar: 'Biblioteca' },
-        { id: 'TCK-20260511-0004', estado: 'Asignado', categoria: 'Mobiliario', lugar: 'Aula C-204' }
+      { tipo: 'ticketCards', items: [
+        { id: 'SOS-20260512-0007', badge: 'Prioritario', prioridad: true, titulo: '{problema}', lugar: 'Aula B-301', estadoTexto: 'Asignado', etiquetas: ['Prioritarias', 'Asignadas'], to: 'ficha-tecnica' },
+        { id: 'TCK-20260512-0010', badge: 'Normal', titulo: 'Internet', lugar: 'Biblioteca', estadoTexto: 'Asignado', etiquetas: ['Asignadas'], to: 'ficha-tecnica' },
+        { id: 'TCK-20260511-0004', badge: 'Normal', titulo: 'Eléctrico', lugar: 'Aula D-105', estadoTexto: 'En atención', etiquetas: ['En atención'], to: 'ficha-tecnica' }
       ] }
     ],
     acciones: [ir('Component / Tab Bar / Item / Home Inactive', 'dashboard-soporte'), ir('Component / Tab Bar / Item / Map Inactive', 'mapa-operativo')]
@@ -1226,13 +1231,13 @@ const pantallas = [
     blocks: [
       { tipo: 'dataCard', titulo: 'Ticket', rows: detalleTicket },
       { tipo: 'inputs', fields: [
-        ['Insumo requerido', 'Cable HDMI / adaptador'],
-        ['Comentario opcional', 'Indica el insumo necesario para continuar la atención.']
+        { etiqueta: 'Insumo requerido', placeholder: 'Cable HDMI / adaptador' },
+        { etiqueta: 'Comentario opcional', placeholder: 'Indica el insumo necesario para continuar la atención.', multilinea: true }
       ] },
-      { tipo: 'upload', texto: 'Adjuntar foto del insumo' },
+      { tipo: 'upload', campo: 'campos.foto-insumo', texto: 'Adjuntar foto del insumo', textoCargada: 'Foto del insumo adjuntada' },
       { tipo: 'buttonGroup', items: [
         { texto: 'Confirmar pausa', to: 'ticket-pausado', variante: 'primario' },
-        { texto: 'Volver a atención', to: 'iniciar-atencion', variante: 'secundario' }
+        { texto: 'Volver a atención', to: 'iniciar-atencion', variante: 'secundario', atras: true }
       ] }
     ],
     acciones: [ir('Component / Button / Primary / Confirm Pause', 'ticket-pausado')]
@@ -1247,7 +1252,7 @@ const pantallas = [
       titulo: 'Ticket pausado',
       texto: 'El ticket fue pausado por falta de insumos. Se reanudará cuando el material requerido esté disponible.',
       rows: [['Estado', 'Pausado']],
-      icono: 'Ⅱ',
+      icono: 'pausa',
       botones: [
         { texto: 'Volver al dashboard', to: 'dashboard-soporte', variante: 'primario' },
         { texto: 'Ver incidencias', to: 'lista-tickets', variante: 'secundario' }
@@ -1264,8 +1269,7 @@ const pantallas = [
     tabbar: tabSoporteMapa,
     blocks: [
       { tipo: 'inputs', fields: [['Buscar ambiente', 'Buscar ambiente...']] },
-      { tipo: 'map', selected: false },
-      { tipo: 'legend', items: ['Prioritario', 'Asignado', 'En atención', 'Resuelto'] }
+      { tipo: 'map', leyenda: ['Prioritario', 'Asignado', 'En atención', 'Resuelto'] }
     ],
     acciones: [ir('Component / Map Marker / Status / Building B Priority', 'mapa-operativo-seleccion')]
   }),
@@ -1278,8 +1282,8 @@ const pantallas = [
     tabbar: tabSoporteMapa,
     blocks: [
       { tipo: 'inputs', fields: [['Buscar ambiente', 'Buscar ambiente...']] },
-      { tipo: 'map', selected: true },
-      { tipo: 'mapSheet', titulo: 'Proyector', texto: 'Aula B-301 · Pabellón B', badge: 'Prioritario', to: 'ficha-tecnica' }
+      { tipo: 'map', selected: true, leyenda: ['Prioritario', 'Asignado', 'En atención', 'Resuelto'] },
+      { tipo: 'mapSheet', titulo: '{problema}', texto: 'Aula B-301 · Pabellón B', badge: 'Prioritario', to: 'ficha-tecnica' }
     ],
     acciones: [ir('Component / Button / Critical / View Technical Sheet', 'ficha-tecnica')]
   }),
@@ -1461,8 +1465,8 @@ const modales = [
     titulo: '¿Cerrar ticket?',
     texto: 'Se marcará la incidencia como resuelta.',
     acciones: [
-      ir('Cerrar ticket', 'ticket-resuelto'),
-      cerrar('Revisar solución')
+      cerrar('Revisar solución'),
+      ir('Cerrar ticket', 'ticket-resuelto')
     ]
   }),
   modal({
@@ -1485,8 +1489,8 @@ const modales = [
     titulo: 'No se pudo cerrar el ticket',
     texto: 'Revisa tu conexión e inténtalo nuevamente. La información ingresada se mantendrá guardada.',
     acciones: [
-      ir('Reintentar cierre', 'ticket-resuelto'),
-      ir('Volver a revisar', 'cierre-ticket-error-sim')
+      ir('Volver a revisar', 'cierre-ticket-error-sim'),
+      ir('Reintentar cierre', 'ticket-resuelto')
     ]
   }),
   modal({
@@ -1497,8 +1501,8 @@ const modales = [
     titulo: '¿Cerrar ticket?',
     texto: 'Se marcará la incidencia como resuelta.',
     acciones: [
-      ir('Cerrar ticket', 'modal-close-ticket-error'),
-      cerrar('Revisar solución')
+      cerrar('Revisar solución'),
+      ir('Cerrar ticket', 'modal-close-ticket-error')
     ]
   }),
   modal({
@@ -1509,8 +1513,8 @@ const modales = [
     titulo: '¿Pausar ticket?',
     texto: 'El ticket quedará en espera hasta contar con el insumo requerido.',
     acciones: [
-      ir('Pausar ticket', 'registrar-insumo'),
-      cerrar('Mantener atención')
+      cerrar('Mantener atención'),
+      ir('Pausar ticket', 'registrar-insumo')
     ]
   }),
   modal({
