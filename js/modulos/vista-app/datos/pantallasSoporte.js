@@ -1,5 +1,3 @@
-// vista-app/datos/pantallasSoporte.js — flujo del equipo de soporte
-
 import { ir, abrir, pantalla, detalleTicket, tabSoporteInicio, tabSoporteMapa, tabSoporteTickets, tabSoportePerfil } from './fabricas.js';
 
 export const pantallasSoporte = [

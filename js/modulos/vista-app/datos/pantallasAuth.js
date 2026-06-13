@@ -1,5 +1,3 @@
-// vista-app/datos/pantallasAuth.js — login, registro y configuracion inicial
-
 import { ir, pantalla } from './fabricas.js';
 
 export const pantallasAuth = [

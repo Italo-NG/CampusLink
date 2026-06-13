@@ -1,4 +1,3 @@
-// vista-app/render/bloquesFormulario.js — bloques de entrada (inputs, opciones, chips, upload, rating)
 import { icono } from './iconos.js';
 import { t, textoSeguro, slugCampo, accionAtributos, normalizarCampo, autoTipoCampo, obtenerDatos } from './helpers.js';
 import { leerDato } from '../datos/index.js';

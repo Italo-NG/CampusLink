@@ -1,5 +1,3 @@
-// vista-app/datos/datosIniciales.js — reglas, datos por defecto, helpers de lectura/escritura y roles
-
 export const VISTA_APP_PANTALLA_INICIAL = 'login';
 
 export const VISTA_APP_REGLAS = {

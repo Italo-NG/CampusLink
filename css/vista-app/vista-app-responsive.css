@@ -1,4 +1,3 @@
-/* css/vista-app/vista-app-responsive.css — media queries especificas de la seccion vista-app */
 @media (max-width: 768px) {
   .seccion-vista-prototipo {
     padding-block: 40px;

@@ -1,4 +1,3 @@
-// vista-app/vistaAppAnimacion.js — pintar pantallas, overlays, escala y respeto a prefers-reduced-motion
 import { renderizarPantalla, renderizarModalVistaApp } from './render/index.js';
 
 var DURACION_PANTALLA = 360;

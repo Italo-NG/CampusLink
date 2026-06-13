@@ -1,5 +1,3 @@
-// vista-app/datos/modales.js — definiciones de los modales/overlays
-
 import { ir, cerrar, logout, modal } from './fabricas.js';
 
 export const modales = [

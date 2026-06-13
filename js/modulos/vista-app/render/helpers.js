@@ -1,4 +1,3 @@
-// vista-app/render/helpers.js — estado de render compartido + utilidades base (escape, plantillas, acciones, boton)
 import { icono } from './iconos.js';
 import { VISTA_APP_REGLAS } from '../datos/index.js';
 

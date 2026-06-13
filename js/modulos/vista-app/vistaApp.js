@@ -1,4 +1,3 @@
-// vista-app/vistaApp.js — inicializa el demo: crea el contexto, conecta eventos y pinta la primera pantalla
 import { crearContexto } from './vistaAppEstado.js';
 import { conectarEventos } from './vistaAppEventos.js';
 import { pintarPantalla } from './vistaAppAnimacion.js';

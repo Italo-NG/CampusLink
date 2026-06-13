@@ -1,5 +1,3 @@
-// vista-app/datos/pantallasDocente.js — flujo S.O.S. del docente
-
 import { ir, abrir, pantalla, detalleTicket, tabEstudianteInicio, tabEstudiantePerfil } from './fabricas.js';
 
 export const pantallasDocente = [

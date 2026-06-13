@@ -1,5 +1,3 @@
-/* css/vista-app/vista-app-frame.css — overrides del marco iPhone para el prototipo (el marco base .iphone-15 sigue en pages.css, compartido con 'Como funciona') */
-/* Vista de la app: prototipo interactivo */
 .seccion-vista-prototipo {
   display: grid;
   place-items: center;

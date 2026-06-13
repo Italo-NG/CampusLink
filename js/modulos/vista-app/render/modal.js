@@ -1,4 +1,3 @@
-// vista-app/render/modal.js — render del overlay/modal
 import { icono } from './iconos.js';
 import { t, accionAtributos, fijarEstadoRender } from './helpers.js';
 import { VISTA_APP_MODALES } from '../datos/index.js';

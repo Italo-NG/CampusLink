@@ -1,4 +1,3 @@
-// vista-app/vistaAppNavegacion.js — destinos, permisos por rol, historial y navegacion entre pantallas/modales
 import { VISTA_APP_MODALES, VISTA_APP_PANTALLAS, VISTA_APP_ROLES } from './datos/index.js';
 import { rolValido } from './vistaAppEstado.js';
 import { cancelarTemporizador, pintarPantalla, ponerOverlay } from './vistaAppAnimacion.js';

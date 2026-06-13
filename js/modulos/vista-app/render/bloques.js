@@ -1,4 +1,3 @@
-// vista-app/render/bloques.js — cabecera, tabbar y el dispatcher renderBloque
 import { icono } from './iconos.js';
 import { t, textoSeguro, accionAtributos, boton, obtenerDatos } from './helpers.js';
 import { leerDato } from '../datos/index.js';

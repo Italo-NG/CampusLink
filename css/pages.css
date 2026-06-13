@@ -473,7 +473,6 @@
 .publicoBloqueValor .publicoTexto { color: #1F2933; }
 
 
-/* Contacto: seccion clara estilo ChatGPT, 2 columnas */
 .seccion-contacto {
   background: #F5F7FB;
 }
@@ -484,7 +483,6 @@
   align-items: start;
 }
 
-/* Columna izquierda: contenido informativo */
 .contactoInfo {
   display: flex;
   flex-direction: column;
@@ -500,7 +498,6 @@
   color: #4B5563;
   font-size: 1.0625rem;
 }
-/* Boton izquierdo: secundario claro con borde fino */
 .contactoInfo .boton-botonPrimario {
   align-self: flex-start;
   padding: 12px 28px;
@@ -536,7 +533,6 @@
   font-size: 0.9375rem;
 }
 
-/* Columna derecha: formulario dentro de una card clara */
 .contactoFormulario {
   box-sizing: border-box;
   padding: 40px;
@@ -554,7 +550,6 @@
 .contactoFormulario .campo label {
   color: #1F2933;
 }
-/* Asterisco naranja como indicador visual de campo obligatorio */
 .contactoFormulario .campo:has(:required) label::after {
   content: "*";
   margin-left: 4px;
@@ -572,14 +567,12 @@
   background: #FFFFFF;
   border: 1px solid #D1D5DB;
 }
-/* Inputs y selects: esquinas redondeadas moderadas */
 .contactoFormulario .campo input,
 .contactoFormulario .campo select {
   height: 46px;
   padding: 0 16px;
   border-radius: 10px;
 }
-/* Caja de texto: altura fija, no redimensionable */
 .contactoFormulario .campo textarea {
   height: 150px;
   padding: 14px 16px;
@@ -595,7 +588,6 @@
 .contactoFormulario .campo textarea:focus {
   border-color: #1F2933;
 }
-/* Boton de envio: negro, texto blanco, ancho completo */
 .contactoEnviar {
   width: 100%;
   min-height: 48px;
@@ -608,7 +600,6 @@
 .contactoEnviar:hover {
   background: #1F2933;
 }
-/* Aviso de tratamiento de datos bajo el boton */
 .contactoTratamiento {
   margin-top: 4px;
   color: #6B7280;

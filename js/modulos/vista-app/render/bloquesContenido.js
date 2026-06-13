@@ -1,4 +1,3 @@
-// vista-app/render/bloquesContenido.js — bloques de presentacion (cards, listas, timeline, metricas, mapa)
 import { icono, ICONO_CATEGORIA, COLORES_LEYENDA } from './iconos.js';
 import { t, textoSeguro, accionAtributos, boton, obtenerDatos } from './helpers.js';
 import { leerDato } from '../datos/index.js';

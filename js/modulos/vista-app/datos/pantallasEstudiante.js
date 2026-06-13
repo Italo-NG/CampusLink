@@ -1,5 +1,3 @@
-// vista-app/datos/pantallasEstudiante.js — pantallas del estudiante y seguimiento de Mis reportes
-
 import { ir, abrir, pantalla, tabEstudianteInicio, tabEstudianteReportes, tabEstudiantePerfil } from './fabricas.js';
 
 export const pantallasEstudiante = [

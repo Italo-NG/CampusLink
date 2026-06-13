@@ -1,5 +1,3 @@
-// vista-app/render/iconos.js — mapa de iconos SVG y helper icono()
-
 export const ICONOS = {
   home: '<svg class="vistaAppSvg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg>',
   u: '<svg class="vistaAppSvg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.4-4 4.1-6 8-6s6.6 2 8 6"/></svg>',

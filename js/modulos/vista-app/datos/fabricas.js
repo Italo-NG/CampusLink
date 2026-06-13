@@ -1,5 +1,3 @@
-// vista-app/datos/fabricas.js — fabricas (pantalla/modal/acciones) y constantes compartidas
-
 export function ir(control, destino) {
   return { control: control, tipo: 'pantalla', destino: destino };
 }

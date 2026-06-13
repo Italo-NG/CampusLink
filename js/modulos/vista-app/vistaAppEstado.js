@@ -1,4 +1,3 @@
-// vista-app/vistaAppEstado.js — contexto del demo, estado inicial, reinicio y validacion de rol
 import { VISTA_APP_PANTALLA_INICIAL, VISTA_APP_ROLES, crearDatosIniciales } from './datos/index.js';
 
 export function crearEstadoInicial() {
@@ -10,7 +9,6 @@ export function crearEstadoInicial() {
   };
 }
 
-// El "contexto" agrupa todo lo que las funciones del demo necesitan compartir.
 export function crearContexto(raiz, escenario) {
   return {
     raiz: raiz,

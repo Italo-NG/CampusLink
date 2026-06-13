@@ -1,5 +1,3 @@
-// vista-app/datos/pantallasReporte.js — flujo de creación de reporte de incidencias (compartido estudiante/docente)
-
 import { ir, abrir, pantalla, headerBackReporte, tabEstudianteInicio } from './fabricas.js';
 
 export const pantallasReporte = [

@@ -1,4 +1,3 @@
-// vista-app/datos/index.js — arma los mapas de pantallas/modales y reexpone los datos
 import {
   VISTA_APP_PANTALLA_INICIAL,
   VISTA_APP_REGLAS,

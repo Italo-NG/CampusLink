@@ -1,4 +1,3 @@
-// vista-app/render/plantillas.js — plantillas de pantalla (auth, registro, config, estandar, exito) + renderizarPantalla
 import { icono, ICONOS } from './iconos.js';
 import { t, textoSeguro, boton, fijarEstadoRender } from './helpers.js';
 import { header, tabbar, botonIcono, renderBloques } from './bloques.js';

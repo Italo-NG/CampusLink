@@ -1,4 +1,3 @@
-// vista-app/vistaAppEventos.js — eventos del demo (click, input, Escape, resize, ResizeObserver)
 import { asignarDato, leerDato, VISTA_APP_REGLAS } from './datos/index.js';
 import { reiniciarEstado, rolValido } from './vistaAppEstado.js';
 import { ajustarEscala, cancelarTemporizador, pintarPantalla, quitarOverlay } from './vistaAppAnimacion.js';
