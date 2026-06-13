@@ -1,0 +1,29 @@
+/* css/vista-app/vista-app-responsive.css — media queries especificas de la seccion vista-app */
+@media (max-width: 768px) {
+  .seccion-vista-prototipo {
+    padding-block: 40px;
+  }
+  .vistaAppMarco {
+    padding-inline: 16px;
+  }
+  .seccion-vista .vistaAppTelefono {
+    width: clamp(278px, 54vw, 324px);
+  }
+}
+
+@media (max-width: 560px) {
+  .seccion-vista .vistaAppTelefono {
+    width: clamp(266px, 76vw, 306px);
+    border-width: 10px;
+    border-radius: 60px;
+  }
+  .seccion-vista .vistaAppViewport {
+    border-radius: 44px;
+  }
+}
+
+@media (max-width: 375px) {
+  .seccion-vista .vistaAppTelefono {
+    width: clamp(254px, 84vw, 282px);
+  }
+}

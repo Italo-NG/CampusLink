@@ -1,0 +1,903 @@
+/* css/vista-app/vista-app-componentes.css — componentes del prototipo: cards, listas, inputs, botones, estados y animaciones */
+/* Vista de la app: interacción y componentes nuevos */
+.vistaAppBotonera {
+  display: grid;
+  gap: 8px;
+}
+.vistaAppCampos {
+  display: grid;
+  gap: 12px;
+}
+.vistaAppCardCuerpo {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+.vistaAppCardLink {
+  color: #E30613;
+  font-weight: 700;
+}
+.vistaAppBadge--centrado {
+  margin-inline: auto;
+}
+.vistaAppMetricNumero--rojo {
+  color: #E30613;
+}
+.vistaAppMetricNumero--verde {
+  color: #00A63E;
+}
+.vistaAppFieldLabel {
+  color: #1F2933;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+input.vistaAppInput,
+textarea.vistaAppInput {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  color: #1F2933;
+  outline: none;
+  caret-color: #E30613;
+  font-weight: 500;
+}
+.vistaAppInput::placeholder {
+  color: #9CA3AF;
+  font-weight: 400;
+}
+.vistaAppInput:focus {
+  border-color: #E30613;
+}
+.vistaAppInput--area {
+  min-height: 96px;
+  padding-top: 14px;
+  line-height: 24px;
+  resize: none;
+}
+.vistaAppFieldCaja {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: 10px 16px 12px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+}
+.vistaAppFieldCaja:focus-within {
+  border-color: #E30613;
+}
+.vistaAppFieldCajaLabel {
+  color: #6B7280;
+  font-size: 13px;
+  line-height: 18px;
+}
+.vistaAppFieldCajaValor {
+  color: #1F2933;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.vistaAppFieldCaja--activa {
+  background: #FEF2F2;
+  border-color: #E30613;
+}
+.vistaAppFieldCaja--activa .vistaAppFieldCajaLabel,
+.vistaAppFieldCaja--activa .vistaAppFieldCajaValor {
+  color: #E30613;
+}
+.vistaAppInputPlano {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-height: 26px;
+  padding: 0 36px 0 0;
+  color: #1F2933;
+  background: transparent;
+  border: 0;
+  outline: none;
+  caret-color: #E30613;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.vistaAppInputPlano::placeholder {
+  color: #9CA3AF;
+  font-weight: 400;
+}
+.vistaAppFieldCaja .vistaAppInputOjo {
+  right: 10px;
+}
+.vistaAppField--error .vistaAppInput {
+  border-color: #E30613;
+}
+.vistaAppFieldError {
+  color: #E30613;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.vistaAppInputGrupo {
+  position: relative;
+  display: block;
+}
+.vistaAppInputGrupo .vistaAppInput {
+  padding-right: 54px;
+}
+.vistaAppInputOjo {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: #9CA3AF;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  transform: translateY(-50%);
+}
+.vistaAppInputOjo .vistaAppSvg {
+  width: 21px;
+  height: 21px;
+}
+.vistaAppBuscador {
+  position: relative;
+  display: block;
+}
+.vistaAppBuscadorLupa {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  color: #9CA3AF;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.vistaAppInput--busqueda {
+  min-height: 48px;
+  padding-left: 44px;
+  border-radius: 999px;
+}
+.vistaAppChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.vistaAppChip {
+  min-height: 46px;
+  padding: 12px 20px;
+  color: #1F2933;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.vistaAppChip--activa {
+  color: #FFFFFF;
+  background: #E30613;
+  border-color: #E30613;
+}
+.vistaAppChip:not(.vistaAppChip--activa):hover {
+  border-color: #C7CDD6;
+}
+.vistaAppUbicacion {
+  gap: 14px;
+}
+.vistaAppUbicacionCols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.vistaAppUbicacionCol {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  padding-inline: 12px;
+  border-left: 1px solid #E5E7EB;
+}
+.vistaAppUbicacionCol:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.vistaAppUbicacionValor {
+  color: #1F2933;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.vistaAppUbicacionBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  color: #00A63E;
+  background: #ECFDF5;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.vistaAppUbicacionCandado {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+.vistaAppUpload--campo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  min-height: 76px;
+  text-align: left;
+}
+.vistaAppUpload--cargada {
+  border-style: solid;
+}
+.vistaAppUploadIcono {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  color: #6B7280;
+  background: #F3F4F6;
+  border-radius: 12px;
+}
+.vistaAppUploadIcono .vistaAppSvg {
+  width: 22px;
+  height: 22px;
+}
+.vistaAppUploadTexto {
+  flex: 1;
+  color: #6B7280;
+  font-size: 15px;
+  line-height: 20px;
+}
+.vistaAppUploadQuitar {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  color: #9CA3AF;
+}
+.vistaAppUploadQuitar .vistaAppSvg {
+  width: 18px;
+  height: 18px;
+}
+.vistaAppCheckRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 14px 16px;
+  color: #1F2933;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+}
+.vistaAppCheckRow--activo {
+  background: #FEF2F2;
+  border-color: #E30613;
+}
+.vistaAppCheck {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  color: #FFFFFF;
+  background: #FFFFFF;
+  border: 1.5px solid #C7CDD6;
+  border-radius: 7px;
+}
+.vistaAppCheckRow--activo .vistaAppCheck {
+  background: #E30613;
+  border-color: #E30613;
+}
+.vistaAppCheck .vistaAppSvg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 3;
+}
+.vistaAppLista {
+  display: grid;
+  gap: 12px;
+}
+.vistaAppListaItem {
+  display: grid;
+}
+.vistaAppVacio {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  padding: 32px 16px;
+  color: #6B7280;
+}
+.vistaAppVacioIcono {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: #9CA3AF;
+  background: #F3F4F6;
+  border-radius: 999px;
+}
+.vistaAppVacioIcono .vistaAppSvg {
+  width: 22px;
+  height: 22px;
+}
+.vistaAppOculto {
+  display: none;
+}
+.vistaAppCtaBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px 30px;
+  background: inherit;
+}
+.vistaAppCtaBar--sobreTabbar {
+  bottom: 86px;
+  padding-bottom: 14px;
+}
+.vistaAppInner--conCta {
+  padding-bottom: 170px;
+}
+.vistaAppInner--conCtaTabbar {
+  padding-bottom: 250px;
+}
+.vistaAppDataRow--link {
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  text-align: left;
+  font: inherit;
+}
+.vistaAppDataDerecha {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+.vistaAppDataFlecha {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: #C7CDD6;
+}
+.vistaAppBanda {
+  padding: 14px 16px;
+  color: #00A63E;
+  background: #ECFDF5;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.vistaAppBanda--gris {
+  color: #6B7280;
+  background: #EEF1F6;
+  text-align: center;
+  font-weight: 500;
+}
+.vistaAppResumen {
+  gap: 0;
+}
+.vistaAppResumenFila {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-block: 12px;
+  border-bottom: 1px solid #EEF1F6;
+}
+.vistaAppResumenFila:first-child {
+  padding-top: 0;
+}
+.vistaAppResumenFila:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.vistaAppResumenIcono {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  color: #4B5563;
+  background: #F3F4F6;
+  border-radius: 10px;
+}
+.vistaAppResumenIcono .vistaAppSvg {
+  width: 20px;
+  height: 20px;
+}
+.vistaAppResumenIcono--rojo {
+  color: #E30613;
+  background: #FEF2F2;
+}
+.vistaAppResumenCuerpo {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+.vistaAppResumenValor {
+  color: #1F2933;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+.vistaAppResumenImagen {
+  display: grid;
+  place-items: center;
+  height: 96px;
+  margin-top: 6px;
+  color: #9CA3AF;
+  background: #E5E7EB;
+  border-radius: 10px;
+}
+.vistaAppResumenImagen .vistaAppSvg {
+  width: 30px;
+  height: 30px;
+}
+.vistaAppTicket {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 14px;
+}
+.vistaAppTicket .vistaAppCardIcon {
+  width: 44px;
+  height: 44px;
+}
+.vistaAppTicketCuerpo {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+.vistaAppTicketId {
+  color: #1F2933;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.vistaAppTicket .vistaAppBadge {
+  flex: none;
+  border-radius: 999px;
+}
+.vistaAppOpcionesGrupo {
+  gap: 0;
+  padding: 4px 16px;
+}
+.vistaAppOpcionFila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+  padding: 14px 0;
+  color: #1F2933;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #EEF1F6;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
+}
+.vistaAppOpcionFila:last-child {
+  border-bottom: 0;
+}
+.vistaAppOpcionFila--activa {
+  font-weight: 700;
+}
+.vistaAppPillIcono {
+  display: inline-grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  margin-right: 6px;
+  flex: none;
+}
+.vistaAppBanda--azul {
+  color: #1D4ED8;
+  background: #EFF6FF;
+  text-align: center;
+  font-weight: 500;
+}
+.vistaAppHero {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding-block: 8px;
+  text-align: center;
+}
+.vistaAppHeroIcono {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  color: #FFFFFF;
+  background: #E30613;
+  border-radius: 999px;
+  box-shadow: 0 12px 32px rgba(227, 6, 19, 0.35);
+}
+.vistaAppHeroIcono .vistaAppSvg {
+  width: 44px;
+  height: 44px;
+}
+.vistaAppSla {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.vistaAppSlaCabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #FEF2F2;
+}
+.vistaAppSlaEtiqueta {
+  color: #E30613;
+  font-size: 14px;
+  font-weight: 700;
+}
+.vistaAppSlaCabecera .vistaAppBadge {
+  border-radius: 999px;
+}
+.vistaAppSlaCuerpo {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+.vistaAppSla .vistaAppResumenFila {
+  padding-block: 0;
+  border-bottom: 0;
+}
+.vistaAppSlaIcono {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  color: #9CA3AF;
+}
+.vistaAppSlaIcono .vistaAppSvg {
+  width: 20px;
+  height: 20px;
+}
+.vistaAppSlaEstado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  color: #4B5563;
+  background: #F3F4F6;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.vistaAppSlaPunto {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  background: #3B82F6;
+  border-radius: 999px;
+  animation: vistaAppPuntoLate 1.4s ease-in-out infinite;
+}
+@keyframes vistaAppPuntoLate {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.78); }
+}
+.vistaAppProblemas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.vistaAppProblema {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 14px;
+  min-height: 162px;
+}
+.vistaAppProblema--activa {
+  border-color: #E30613;
+}
+.vistaAppProblemaIcono {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+}
+.vistaAppProblemaIcono .vistaAppSvg {
+  width: 26px;
+  height: 26px;
+}
+.vistaAppProblemaIcono--rojo {
+  color: #E30613;
+  background: #FEF2F2;
+}
+.vistaAppProblemaIcono--azul {
+  color: #1D4ED8;
+  background: #EFF6FF;
+}
+.vistaAppProblemaIcono--verde {
+  color: #00A63E;
+  background: #ECFDF5;
+}
+.vistaAppProblemaIcono--morado {
+  color: #7C3AED;
+  background: #F5F3FF;
+}
+.vistaAppProblemaTexto {
+  color: #1F2933;
+  font-size: 17px;
+  font-weight: 700;
+}
+.vistaAppBoton--peligroSuave {
+  color: #E30613;
+  background: #FFFFFF;
+  border-color: #FECACA;
+}
+.vistaAppBoton--peligroSuave:not([disabled]):hover {
+  background: #FEF2F2;
+  border-color: #FECACA;
+}
+.vistaAppFieldLabel--suave {
+  color: #6B7280;
+  font-size: 13px;
+  font-weight: 500;
+}
+.vistaAppMetric--activa {
+  border-color: #E30613;
+}
+.vistaAppAlerta {
+  border-color: #E30613;
+  text-align: left;
+}
+.vistaAppAlertaCabecera {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vistaAppAlertaIcono {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  color: #E30613;
+}
+.vistaAppAlertaIcono .vistaAppSvg {
+  width: 21px;
+  height: 21px;
+}
+.vistaAppAlertaTitulo {
+  color: #E30613;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.vistaAppAlertaPie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.vistaAppFiltros {
+  display: flex;
+  gap: 10px;
+  width: calc(100% + 32px);
+  margin-inline: -16px;
+  padding-inline: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.vistaAppFiltros::-webkit-scrollbar {
+  display: none;
+}
+.vistaAppChip--filtro {
+  flex: none;
+  min-height: 42px;
+  padding: 10px 18px;
+}
+.vistaAppTicketSoporte {
+  gap: 10px;
+  text-align: left;
+}
+.vistaAppTicketSoporteFila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.vistaAppTicketLugar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #4B5563;
+  font-size: 13px;
+  line-height: 18px;
+}
+.vistaAppTicketPin {
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  flex: none;
+  color: #9CA3AF;
+}
+.vistaAppTicketSoportePie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #EEF1F6;
+}
+.vistaAppFichaCabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.vistaAppFichaChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 14px;
+  color: #1F2933;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.vistaAppBadge--suaveRojo {
+  color: #FFFFFF;
+  background: #F87171;
+  border-radius: 999px;
+}
+.vistaAppCardTituloCaps {
+  color: #4B5563;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 18px;
+}
+.vistaAppFotoFila {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.vistaAppFotoCuadro {
+  width: 80px;
+  height: 80px;
+  flex: none;
+  background: #C7CDD6;
+  border-radius: 10px;
+}
+.vistaAppBoton--header {
+  width: auto;
+  min-height: 44px;
+  margin: 0;
+  padding-inline: 4px;
+  color: #1F2933;
+  font-size: 15px;
+  font-weight: 600;
+}
+.vistaAppBotonNormal {
+  color: #4B5563;
+  font-weight: 500;
+}
+.vistaAppBotonDestacado {
+  color: #E30613;
+  font-weight: 700;
+}
+.vistaAppBottomPanel .vistaAppBoton--texto {
+  color: #FFFFFF;
+  font-size: 15px;
+}
+@keyframes vistaAppMarcadorPulso {
+  0% { box-shadow: 0 10px 20px rgba(227, 6, 19, 0.35), 0 0 0 0 rgba(227, 6, 19, 0.40); }
+  70% { box-shadow: 0 10px 20px rgba(227, 6, 19, 0.35), 0 0 0 16px rgba(227, 6, 19, 0); }
+  100% { box-shadow: 0 10px 20px rgba(227, 6, 19, 0.35), 0 0 0 0 rgba(227, 6, 19, 0); }
+}
+.vistaAppDot--pulso {
+  animation: vistaAppDotPulso 1.6s ease-out infinite;
+}
+@keyframes vistaAppDotPulso {
+  0% { box-shadow: 0 0 0 0 rgba(227, 6, 19, 0.45); }
+  70% { box-shadow: 0 0 0 10px rgba(227, 6, 19, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(227, 6, 19, 0); }
+}
+.vistaAppSos {
+  animation: vistaAppSosLatido 2.4s ease-in-out infinite;
+}
+@keyframes vistaAppSosLatido {
+  0%, 100% { box-shadow: 0 8px 24px rgba(227, 6, 19, 0.42); }
+  50% { box-shadow: 0 10px 36px rgba(227, 6, 19, 0.62); }
+}
+.vistaAppScreen button:not([disabled]) {
+  transition: transform 0.12s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+.vistaAppScreen button:not([disabled]):active {
+  transform: scale(0.97);
+}
+.vistaAppScreen .vistaAppTab:not([disabled]):active,
+.vistaAppScreen .vistaAppIconBtn:not([disabled]):active,
+.vistaAppScreen .vistaAppEstrella:not([disabled]):active {
+  transform: scale(0.9);
+}
+.vistaAppScreen .vistaAppSos:not([disabled]):active {
+  transform: scale(0.94);
+}
+.vistaAppScreen .vistaAppInputOjo:not([disabled]):active {
+  transform: translateY(-50%) scale(0.9);
+}
+.vistaAppBoton--primario:not([disabled]):hover,
+.vistaAppBoton--peligro:not([disabled]):hover,
+.vistaAppBoton--critico:not([disabled]):hover {
+  background: #C90511;
+  border-color: #C90511;
+}
+.vistaAppBoton--secundario:not([disabled]):hover {
+  background: #F8F9FB;
+}
+button.vistaAppCard:hover,
+.vistaAppOption:hover,
+.vistaAppCheckRow:hover {
+  border-color: #C7CDD6;
+}
+.vistaAppOption--active:hover,
+.vistaAppCheckRow--activo:hover {
+  border-color: #E30613;
+}
+.vistaAppTab:not(.vistaAppTab--active):not([disabled]):hover {
+  color: #4B5563;
+}
+@media (prefers-reduced-motion: reduce) {
+  .vistaAppScreen--entraDer,
+  .vistaAppScreen--saleIzq,
+  .vistaAppScreen--entraIzq,
+  .vistaAppScreen--saleDer,
+  .vistaAppScreen--fadeIn,
+  .vistaAppScreen--fadeOut,
+  .vistaAppOverlay,
+  .vistaAppOverlay--cierra,
+  .vistaAppModal,
+  .vistaAppOverlay--cierra .vistaAppModal,
+  .vistaAppScannerLinea,
+  .vistaAppMarker,
+  .vistaAppDot--pulso,
+  .vistaAppSos {
+    animation: none;
+  }
+  .vistaAppScreen button:not([disabled]) {
+    transition: none;
+  }
+}
