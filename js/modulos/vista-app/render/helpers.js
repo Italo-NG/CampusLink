@@ -4,7 +4,6 @@ import { VISTA_APP_REGLAS } from '../datos/index.js';
 
 var estadoActual = null;
 export function fijarEstadoRender(estado) { estadoActual = estado; }
-export function obtenerEstado() { return estadoActual; }
 export function obtenerDatos() { return estadoActual ? estadoActual.datos : null; }
 
 export function textoSeguro(valor) {

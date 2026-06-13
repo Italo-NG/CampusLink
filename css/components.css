@@ -11,10 +11,10 @@
 }
 .saltoEnlace:focus { top: 8px; }
 
-.seccionEncabezado-seccionEncabezadoCentro { margin-bottom: 48px; }
 .seccionEncabezado-seccionEncabezadoCentro {
   max-width: 760px;
   margin-inline: auto;
+  margin-bottom: 48px;
   text-align: center;
 }
 .seccionTitulo {

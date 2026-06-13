@@ -6,7 +6,6 @@
   text-align: center;
   gap: 24px;
 }
-.portadaAntetitulo { margin: 0; }
 .portadaTitulo {
   max-width: 16ch;
   font-size: clamp(2rem, 1.3rem + 3.2vw, 3.25rem);
@@ -156,9 +155,6 @@
   gap: 0;
   padding-left: 32px;
 }
-.comoLista::before {
-  content: none;
-}
 .comoPaso {
   position: relative;
 }
@@ -206,9 +202,6 @@
   padding: 28px 0;
   text-align: left;
   background: transparent;
-}
-.comoPaso.estaActivo .comoPasoBoton {
-  box-shadow: none;
 }
 .comoPaso + .comoPaso {
   border-top: 1px solid #E5E7EB;
@@ -342,9 +335,6 @@
   -ms-overflow-style: none;
 }
 .pantallaQr { --capturaEscala: 110%; }
-.pantallaRegistro { --capturaEscala: 108%; }
-.pantallaSoporte { --capturaEscala: 108%; }
-.pantallaSeguimiento { --capturaEscala: 108%; }
 .pantalla-scroll::-webkit-scrollbar {
   width: 0;
   height: 0;

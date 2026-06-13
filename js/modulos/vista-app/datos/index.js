@@ -2,7 +2,6 @@
 import {
   VISTA_APP_PANTALLA_INICIAL,
   VISTA_APP_REGLAS,
-  VISTA_APP_DATOS_INICIALES,
   crearDatosIniciales,
   leerDato,
   asignarDato,
@@ -30,7 +29,6 @@ export const VISTA_APP_MODALES = modales.reduce(function (mapa, item) {
 export {
   VISTA_APP_PANTALLA_INICIAL,
   VISTA_APP_REGLAS,
-  VISTA_APP_DATOS_INICIALES,
   crearDatosIniciales,
   leerDato,
   asignarDato,
