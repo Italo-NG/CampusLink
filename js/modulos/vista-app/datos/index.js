@@ -10,11 +10,12 @@ import {
 } from './datosIniciales.js';
 import { pantallasAuth } from './pantallasAuth.js';
 import { pantallasEstudiante } from './pantallasEstudiante.js';
+import { pantallasReporte } from './pantallasReporte.js';
 import { pantallasDocente } from './pantallasDocente.js';
 import { pantallasSoporte } from './pantallasSoporte.js';
 import { modales } from './modales.js';
 
-var pantallas = [].concat(pantallasAuth, pantallasEstudiante, pantallasDocente, pantallasSoporte);
+var pantallas = [].concat(pantallasAuth, pantallasEstudiante, pantallasReporte, pantallasDocente, pantallasSoporte);
 
 export const VISTA_APP_PANTALLAS = pantallas.reduce(function (mapa, item) {
   mapa[item.id] = item;
