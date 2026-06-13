@@ -39,6 +39,7 @@
           <li><a href="#solucion">Solución</a></li>
           <li><a href="#como-funciona">Cómo funciona</a></li>
           <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#para-quienes">Para quiénes</a></li>
           <li><a href="#vista-app">Vista de la app</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -427,7 +428,9 @@
     </section>
 
     <section class="seccion-vista seccion-vista-prototipo" id="vista-app" aria-labelledby="vista-titulo">
-      <h2 class="vistaAppSr" id="vista-titulo">Vista de la app</h2>
+      <header class="seccionEncabezado-seccionEncabezadoCentro">
+        <h2 class="seccionTitulo" id="vista-titulo">Vista de la app</h2>
+      </header>
       <div class="vistaAppMarco" data-vista-app>
         <div class="iphone-15 vistaAppTelefono" aria-label="Prototipo interactivo de CampusLink">
           <div class="isla-dinamica"></div>
@@ -459,11 +462,11 @@
             <p class="contactoNota">Ideal para instituciones que buscan una gestión más ordenada dentro del campus.</p>
           </div>
 
-          <form class="contactoFormulario" id="formulario-contacto" novalidate>
+          <form class="contactoFormulario" id="formulario-contacto">
             <div class="contactoFormGrid">
               <div class="campo">
                 <label for="tipo-institucion">Tipo de institución</label>
-                <select id="tipo-institucion" name="tipo-institucion">
+                <select id="tipo-institucion" name="tipo-institucion" required>
                   <option value="">Selecciona una opción</option>
                   <option value="universidad">Universidad</option>
                   <option value="instituto">Instituto</option>
@@ -474,32 +477,32 @@
 
               <div class="campo">
                 <label for="nombre-institucion">Nombre de la institución</label>
-                <input id="nombre-institucion" name="nombre-institucion" type="text" autocomplete="organization" />
+                <input id="nombre-institucion" name="nombre-institucion" type="text" autocomplete="organization" placeholder="Ej. Universidad Nacional de Ingeniería" required />
               </div>
 
               <div class="campo">
                 <label for="nombre-contacto">Nombre del contacto</label>
-                <input id="nombre-contacto" name="nombre-contacto" type="text" autocomplete="name" />
+                <input id="nombre-contacto" name="nombre-contacto" type="text" autocomplete="name" placeholder="Ej. María Fernández" required />
               </div>
 
               <div class="campo">
                 <label for="cargo">Cargo</label>
-                <input id="cargo" name="cargo" type="text" autocomplete="organization-title" />
+                <input id="cargo" name="cargo" type="text" autocomplete="organization-title" placeholder="Ej. Jefa de Servicios Generales" required />
               </div>
 
               <div class="campo">
                 <label for="correo-institucional">Correo institucional</label>
-                <input id="correo-institucional" name="correo-institucional" type="email" autocomplete="email" />
+                <input id="correo-institucional" name="correo-institucional" type="email" autocomplete="email" placeholder="nombre@institucion.edu.pe" required />
               </div>
 
               <div class="campo">
                 <label for="telefono">Teléfono</label>
-                <input id="telefono" name="telefono" type="tel" autocomplete="tel" />
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="Ej. 987 654 321" required />
               </div>
 
               <div class="campo">
                 <label for="numero-estudiantes">Número aproximado de estudiantes</label>
-                <select id="numero-estudiantes" name="numero-estudiantes">
+                <select id="numero-estudiantes" name="numero-estudiantes" required>
                   <option value="">Selecciona un rango</option>
                   <option value="menos-500">Menos de 500</option>
                   <option value="500-2000">500 a 2000</option>
@@ -510,7 +513,7 @@
 
               <div class="campo">
                 <label for="interes">¿Qué te interesa conocer?</label>
-                <select id="interes" name="interes">
+                <select id="interes" name="interes" required>
                   <option value="">Selecciona una opción</option>
                   <option value="demo">Una demostración de la app</option>
                   <option value="funciones">Las funciones principales</option>
@@ -521,10 +524,14 @@
 
               <div class="campo campoAncho">
                 <label for="necesidades">Cuéntanos sobre las necesidades de tu campus</label>
-                <textarea id="necesidades" name="necesidades" rows="4"></textarea>
+                <textarea id="necesidades" name="necesidades" rows="4" placeholder="Cuéntanos qué incidencias de infraestructura, bienestar o seguridad quieres gestionar mejor en tu campus." required></textarea>
               </div>
 
-              <button class="boton-botonPrimario contactoEnviar campoAncho" type="button">Enviar solicitud</button>
+              <button class="boton-botonPrimario contactoEnviar campoAncho" type="submit">Enviar solicitud</button>
+
+              <p class="contactoTratamiento campoAncho">
+                Al enviar tu solicitud aceptas que CampusLink trate los datos proporcionados con la única finalidad de responder tu consulta y contactarte vía WhatsApp. No compartimos tu información con terceros.
+              </p>
             </div>
           </form>
 
