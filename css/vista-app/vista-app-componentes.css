@@ -14,20 +14,20 @@
   text-align: left;
 }
 .vistaAppCardLink {
-  color: #E30613;
+  color: #e30613;
   font-weight: 700;
 }
 .vistaAppBadge--centrado {
   margin-inline: auto;
 }
 .vistaAppMetricNumero--rojo {
-  color: #E30613;
+  color: #e30613;
 }
 .vistaAppMetricNumero--verde {
-  color: #00A63E;
+  color: #00a63e;
 }
 .vistaAppFieldLabel {
-  color: #1F2933;
+  color: #1f2933;
   font-size: 15px;
   font-weight: 700;
   line-height: 20px;
@@ -37,17 +37,17 @@ textarea.vistaAppInput {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
-  color: #1F2933;
+  color: #1f2933;
   outline: none;
-  caret-color: #E30613;
+  caret-color: #e30613;
   font-weight: 500;
 }
 .vistaAppInput::placeholder {
-  color: #9CA3AF;
+  color: #9ca3af;
   font-weight: 400;
 }
 .vistaAppInput:focus {
-  border-color: #E30613;
+  border-color: #e30613;
 }
 .vistaAppInput--area {
   min-height: 96px;
@@ -60,31 +60,31 @@ textarea.vistaAppInput {
   display: grid;
   gap: 2px;
   padding: 10px 16px 12px;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
 }
 .vistaAppFieldCaja:focus-within {
-  border-color: #E30613;
+  border-color: #e30613;
 }
 .vistaAppFieldCajaLabel {
-  color: #6B7280;
+  color: #6b7280;
   font-size: 13px;
   line-height: 18px;
 }
 .vistaAppFieldCajaValor {
-  color: #1F2933;
+  color: #1f2933;
   font-size: 17px;
   font-weight: 600;
   line-height: 24px;
 }
 .vistaAppFieldCaja--activa {
-  background: #FEF2F2;
-  border-color: #E30613;
+  background: #fef2f2;
+  border-color: #e30613;
 }
 .vistaAppFieldCaja--activa .vistaAppFieldCajaLabel,
 .vistaAppFieldCaja--activa .vistaAppFieldCajaValor {
-  color: #E30613;
+  color: #e30613;
 }
 .vistaAppInputPlano {
   appearance: none;
@@ -92,27 +92,27 @@ textarea.vistaAppInput {
   width: 100%;
   min-height: 26px;
   padding: 0 36px 0 0;
-  color: #1F2933;
+  color: #1f2933;
   background: transparent;
   border: 0;
   outline: none;
-  caret-color: #E30613;
+  caret-color: #e30613;
   font-size: 17px;
   font-weight: 500;
   line-height: 24px;
 }
 .vistaAppInputPlano::placeholder {
-  color: #9CA3AF;
+  color: #9ca3af;
   font-weight: 400;
 }
 .vistaAppFieldCaja .vistaAppInputOjo {
   right: 10px;
 }
 .vistaAppField--error .vistaAppInput {
-  border-color: #E30613;
+  border-color: #e30613;
 }
 .vistaAppFieldError {
-  color: #E30613;
+  color: #e30613;
   font-size: 13px;
   font-weight: 600;
   line-height: 18px;
@@ -132,7 +132,7 @@ textarea.vistaAppInput {
   place-items: center;
   width: 40px;
   height: 40px;
-  color: #9CA3AF;
+  color: #9ca3af;
   background: transparent;
   border: 0;
   border-radius: 999px;
@@ -152,7 +152,7 @@ textarea.vistaAppInput {
   left: 14px;
   width: 20px;
   height: 20px;
-  color: #9CA3AF;
+  color: #9ca3af;
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -169,20 +169,20 @@ textarea.vistaAppInput {
 .vistaAppChip {
   min-height: 46px;
   padding: 12px 20px;
-  color: #1F2933;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  color: #1f2933;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 999px;
   font-size: 15px;
   font-weight: 600;
 }
 .vistaAppChip--activa {
-  color: #FFFFFF;
-  background: #E30613;
-  border-color: #E30613;
+  color: #ffffff;
+  background: #e30613;
+  border-color: #e30613;
 }
 .vistaAppChip:not(.vistaAppChip--activa):hover {
-  border-color: #C7CDD6;
+  border-color: #c7cdd6;
 }
 .vistaAppUbicacion {
   gap: 14px;
@@ -196,14 +196,14 @@ textarea.vistaAppInput {
   gap: 4px;
   align-content: start;
   padding-inline: 12px;
-  border-left: 1px solid #E5E7EB;
+  border-left: 1px solid #e5e7eb;
 }
 .vistaAppUbicacionCol:first-child {
   padding-left: 0;
   border-left: 0;
 }
 .vistaAppUbicacionValor {
-  color: #1F2933;
+  color: #1f2933;
   font-size: 17px;
   font-weight: 700;
   line-height: 22px;
@@ -214,8 +214,8 @@ textarea.vistaAppInput {
   gap: 8px;
   min-height: 40px;
   padding: 8px 12px;
-  color: #00A63E;
-  background: #ECFDF5;
+  color: #00a63e;
+  background: #ecfdf5;
   border-radius: 10px;
   font-size: 13px;
   font-weight: 700;
@@ -244,8 +244,8 @@ textarea.vistaAppInput {
   width: 44px;
   height: 44px;
   flex: none;
-  color: #6B7280;
-  background: #F3F4F6;
+  color: #6b7280;
+  background: #f3f4f6;
   border-radius: 12px;
 }
 .vistaAppUploadIcono .vistaAppSvg {
@@ -254,7 +254,7 @@ textarea.vistaAppInput {
 }
 .vistaAppUploadTexto {
   flex: 1;
-  color: #6B7280;
+  color: #6b7280;
   font-size: 15px;
   line-height: 20px;
 }
@@ -264,7 +264,7 @@ textarea.vistaAppInput {
   width: 32px;
   height: 32px;
   flex: none;
-  color: #9CA3AF;
+  color: #9ca3af;
 }
 .vistaAppUploadQuitar .vistaAppSvg {
   width: 18px;
@@ -276,17 +276,17 @@ textarea.vistaAppInput {
   gap: 12px;
   min-height: 56px;
   padding: 14px 16px;
-  color: #1F2933;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  color: #1f2933;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   font-size: 15px;
   font-weight: 600;
   text-align: left;
 }
 .vistaAppCheckRow--activo {
-  background: #FEF2F2;
-  border-color: #E30613;
+  background: #fef2f2;
+  border-color: #e30613;
 }
 .vistaAppCheck {
   display: grid;
@@ -294,14 +294,14 @@ textarea.vistaAppInput {
   width: 24px;
   height: 24px;
   flex: none;
-  color: #FFFFFF;
-  background: #FFFFFF;
-  border: 1.5px solid #C7CDD6;
+  color: #ffffff;
+  background: #ffffff;
+  border: 1.5px solid #c7cdd6;
   border-radius: 7px;
 }
 .vistaAppCheckRow--activo .vistaAppCheck {
-  background: #E30613;
-  border-color: #E30613;
+  background: #e30613;
+  border-color: #e30613;
 }
 .vistaAppCheck .vistaAppSvg {
   width: 14px;
@@ -320,15 +320,15 @@ textarea.vistaAppInput {
   place-items: center;
   gap: 10px;
   padding: 32px 16px;
-  color: #6B7280;
+  color: #6b7280;
 }
 .vistaAppVacioIcono {
   display: grid;
   place-items: center;
   width: 48px;
   height: 48px;
-  color: #9CA3AF;
-  background: #F3F4F6;
+  color: #9ca3af;
+  background: #f3f4f6;
   border-radius: 999px;
 }
 .vistaAppVacioIcono .vistaAppSvg {
@@ -380,20 +380,20 @@ textarea.vistaAppInput {
   width: 16px;
   height: 16px;
   flex: none;
-  color: #C7CDD6;
+  color: #c7cdd6;
 }
 .vistaAppBanda {
   padding: 14px 16px;
-  color: #00A63E;
-  background: #ECFDF5;
+  color: #00a63e;
+  background: #ecfdf5;
   border-radius: 12px;
   font-size: 13px;
   font-weight: 600;
   line-height: 18px;
 }
 .vistaAppBanda--gris {
-  color: #6B7280;
-  background: #EEF1F6;
+  color: #6b7280;
+  background: #eef1f6;
   text-align: center;
   font-weight: 500;
 }
@@ -405,7 +405,7 @@ textarea.vistaAppInput {
   align-items: flex-start;
   gap: 12px;
   padding-block: 12px;
-  border-bottom: 1px solid #EEF1F6;
+  border-bottom: 1px solid #eef1f6;
 }
 .vistaAppResumenFila:first-child {
   padding-top: 0;
@@ -420,8 +420,8 @@ textarea.vistaAppInput {
   width: 40px;
   height: 40px;
   flex: none;
-  color: #4B5563;
-  background: #F3F4F6;
+  color: #4b5563;
+  background: #f3f4f6;
   border-radius: 10px;
 }
 .vistaAppResumenIcono .vistaAppSvg {
@@ -429,8 +429,8 @@ textarea.vistaAppInput {
   height: 20px;
 }
 .vistaAppResumenIcono--rojo {
-  color: #E30613;
-  background: #FEF2F2;
+  color: #e30613;
+  background: #fef2f2;
 }
 .vistaAppResumenCuerpo {
   display: grid;
@@ -439,7 +439,7 @@ textarea.vistaAppInput {
   flex: 1;
 }
 .vistaAppResumenValor {
-  color: #1F2933;
+  color: #1f2933;
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
@@ -449,8 +449,8 @@ textarea.vistaAppInput {
   place-items: center;
   height: 96px;
   margin-top: 6px;
-  color: #9CA3AF;
-  background: #E5E7EB;
+  color: #9ca3af;
+  background: #e5e7eb;
   border-radius: 10px;
 }
 .vistaAppResumenImagen .vistaAppSvg {
@@ -474,7 +474,7 @@ textarea.vistaAppInput {
   text-align: left;
 }
 .vistaAppTicketId {
-  color: #1F2933;
+  color: #1f2933;
   font-size: 13px;
   font-weight: 600;
   line-height: 18px;
@@ -494,10 +494,10 @@ textarea.vistaAppInput {
   gap: 12px;
   min-height: 56px;
   padding: 14px 0;
-  color: #1F2933;
+  color: #1f2933;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid #EEF1F6;
+  border-bottom: 1px solid #eef1f6;
   font-size: 17px;
   font-weight: 600;
   text-align: left;
@@ -517,8 +517,8 @@ textarea.vistaAppInput {
   flex: none;
 }
 .vistaAppBanda--azul {
-  color: #1D4ED8;
-  background: #EFF6FF;
+  color: #1d4ed8;
+  background: #eff6ff;
   text-align: center;
   font-weight: 500;
 }
@@ -534,8 +534,8 @@ textarea.vistaAppInput {
   place-items: center;
   width: 96px;
   height: 96px;
-  color: #FFFFFF;
-  background: #E30613;
+  color: #ffffff;
+  background: #e30613;
   border-radius: 999px;
   box-shadow: 0 12px 32px rgba(227, 6, 19, 0.35);
 }
@@ -554,10 +554,10 @@ textarea.vistaAppInput {
   justify-content: space-between;
   gap: 12px;
   padding: 14px 16px;
-  background: #FEF2F2;
+  background: #fef2f2;
 }
 .vistaAppSlaEtiqueta {
-  color: #E30613;
+  color: #e30613;
   font-size: 14px;
   font-weight: 700;
 }
@@ -579,7 +579,7 @@ textarea.vistaAppInput {
   width: 24px;
   height: 24px;
   flex: none;
-  color: #9CA3AF;
+  color: #9ca3af;
 }
 .vistaAppSlaIcono .vistaAppSvg {
   width: 20px;
@@ -590,8 +590,8 @@ textarea.vistaAppInput {
   align-items: center;
   gap: 10px;
   padding: 14px 16px;
-  color: #4B5563;
-  background: #F3F4F6;
+  color: #4b5563;
+  background: #f3f4f6;
   border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
@@ -600,13 +600,20 @@ textarea.vistaAppInput {
   width: 9px;
   height: 9px;
   flex: none;
-  background: #3B82F6;
+  background: #3b82f6;
   border-radius: 999px;
   animation: vistaAppPuntoLate 1.4s ease-in-out infinite;
 }
 @keyframes vistaAppPuntoLate {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.45; transform: scale(0.78); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.78);
+  }
 }
 .vistaAppProblemas {
   display: grid;
@@ -621,7 +628,7 @@ textarea.vistaAppInput {
   min-height: 162px;
 }
 .vistaAppProblema--activa {
-  border-color: #E30613;
+  border-color: #e30613;
 }
 .vistaAppProblemaIcono {
   display: grid;
@@ -635,45 +642,45 @@ textarea.vistaAppInput {
   height: 26px;
 }
 .vistaAppProblemaIcono--rojo {
-  color: #E30613;
-  background: #FEF2F2;
+  color: #e30613;
+  background: #fef2f2;
 }
 .vistaAppProblemaIcono--azul {
-  color: #1D4ED8;
-  background: #EFF6FF;
+  color: #1d4ed8;
+  background: #eff6ff;
 }
 .vistaAppProblemaIcono--verde {
-  color: #00A63E;
-  background: #ECFDF5;
+  color: #00a63e;
+  background: #ecfdf5;
 }
 .vistaAppProblemaIcono--morado {
-  color: #7C3AED;
-  background: #F5F3FF;
+  color: #7c3aed;
+  background: #f5f3ff;
 }
 .vistaAppProblemaTexto {
-  color: #1F2933;
+  color: #1f2933;
   font-size: 17px;
   font-weight: 700;
 }
 .vistaAppBoton--peligroSuave {
-  color: #E30613;
-  background: #FFFFFF;
-  border-color: #FECACA;
+  color: #e30613;
+  background: #ffffff;
+  border-color: #fecaca;
 }
 .vistaAppBoton--peligroSuave:not([disabled]):hover {
-  background: #FEF2F2;
-  border-color: #FECACA;
+  background: #fef2f2;
+  border-color: #fecaca;
 }
 .vistaAppFieldLabel--suave {
-  color: #6B7280;
+  color: #6b7280;
   font-size: 13px;
   font-weight: 500;
 }
 .vistaAppMetric--activa {
-  border-color: #E30613;
+  border-color: #e30613;
 }
 .vistaAppAlerta {
-  border-color: #E30613;
+  border-color: #e30613;
   text-align: left;
 }
 .vistaAppAlertaCabecera {
@@ -687,14 +694,14 @@ textarea.vistaAppInput {
   width: 24px;
   height: 24px;
   flex: none;
-  color: #E30613;
+  color: #e30613;
 }
 .vistaAppAlertaIcono .vistaAppSvg {
   width: 21px;
   height: 21px;
 }
 .vistaAppAlertaTitulo {
-  color: #E30613;
+  color: #e30613;
   font-size: 17px;
   font-weight: 700;
   line-height: 22px;
@@ -736,7 +743,7 @@ textarea.vistaAppInput {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #4B5563;
+  color: #4b5563;
   font-size: 13px;
   line-height: 18px;
 }
@@ -746,7 +753,7 @@ textarea.vistaAppInput {
   width: 15px;
   height: 15px;
   flex: none;
-  color: #9CA3AF;
+  color: #9ca3af;
 }
 .vistaAppTicketSoportePie {
   display: flex;
@@ -754,7 +761,7 @@ textarea.vistaAppInput {
   justify-content: space-between;
   gap: 12px;
   padding-top: 10px;
-  border-top: 1px solid #EEF1F6;
+  border-top: 1px solid #eef1f6;
 }
 .vistaAppFichaCabecera {
   display: flex;
@@ -767,20 +774,20 @@ textarea.vistaAppInput {
   align-items: center;
   min-height: 36px;
   padding: 6px 14px;
-  color: #1F2933;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  color: #1f2933;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 10px;
   font-size: 13px;
   font-weight: 700;
 }
 .vistaAppBadge--suaveRojo {
-  color: #FFFFFF;
-  background: #F87171;
+  color: #ffffff;
+  background: #f87171;
   border-radius: 999px;
 }
 .vistaAppCardTituloCaps {
-  color: #4B5563;
+  color: #4b5563;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -796,7 +803,7 @@ textarea.vistaAppInput {
   width: 80px;
   height: 80px;
   flex: none;
-  background: #C7CDD6;
+  background: #c7cdd6;
   border-radius: 10px;
 }
 .vistaAppBoton--header {
@@ -804,44 +811,72 @@ textarea.vistaAppInput {
   min-height: 44px;
   margin: 0;
   padding-inline: 4px;
-  color: #1F2933;
+  color: #1f2933;
   font-size: 15px;
   font-weight: 600;
 }
 .vistaAppBotonNormal {
-  color: #4B5563;
+  color: #4b5563;
   font-weight: 500;
 }
 .vistaAppBotonDestacado {
-  color: #E30613;
+  color: #e30613;
   font-weight: 700;
 }
 .vistaAppBottomPanel .vistaAppBoton--texto {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 15px;
 }
 @keyframes vistaAppMarcadorPulso {
-  0% { box-shadow: 0 10px 20px rgba(227, 6, 19, 0.35), 0 0 0 0 rgba(227, 6, 19, 0.40); }
-  70% { box-shadow: 0 10px 20px rgba(227, 6, 19, 0.35), 0 0 0 16px rgba(227, 6, 19, 0); }
-  100% { box-shadow: 0 10px 20px rgba(227, 6, 19, 0.35), 0 0 0 0 rgba(227, 6, 19, 0); }
+  0% {
+    box-shadow:
+      0 10px 20px rgba(227, 6, 19, 0.35),
+      0 0 0 0 rgba(227, 6, 19, 0.4);
+  }
+  70% {
+    box-shadow:
+      0 10px 20px rgba(227, 6, 19, 0.35),
+      0 0 0 16px rgba(227, 6, 19, 0);
+  }
+  100% {
+    box-shadow:
+      0 10px 20px rgba(227, 6, 19, 0.35),
+      0 0 0 0 rgba(227, 6, 19, 0);
+  }
 }
 .vistaAppDot--pulso {
   animation: vistaAppDotPulso 1.6s ease-out infinite;
 }
 @keyframes vistaAppDotPulso {
-  0% { box-shadow: 0 0 0 0 rgba(227, 6, 19, 0.45); }
-  70% { box-shadow: 0 0 0 10px rgba(227, 6, 19, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(227, 6, 19, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(227, 6, 19, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(227, 6, 19, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(227, 6, 19, 0);
+  }
 }
 .vistaAppSos {
   animation: vistaAppSosLatido 2.4s ease-in-out infinite;
 }
 @keyframes vistaAppSosLatido {
-  0%, 100% { box-shadow: 0 8px 24px rgba(227, 6, 19, 0.42); }
-  50% { box-shadow: 0 10px 36px rgba(227, 6, 19, 0.62); }
+  0%,
+  100% {
+    box-shadow: 0 8px 24px rgba(227, 6, 19, 0.42);
+  }
+  50% {
+    box-shadow: 0 10px 36px rgba(227, 6, 19, 0.62);
+  }
 }
 .vistaAppScreen button:not([disabled]) {
-  transition: transform 0.12s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+  transition:
+    transform 0.12s ease,
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
 }
 .vistaAppScreen button:not([disabled]):active {
   transform: scale(0.97);
@@ -860,23 +895,23 @@ textarea.vistaAppInput {
 .vistaAppBoton--primario:not([disabled]):hover,
 .vistaAppBoton--peligro:not([disabled]):hover,
 .vistaAppBoton--critico:not([disabled]):hover {
-  background: #C90511;
-  border-color: #C90511;
+  background: #c90511;
+  border-color: #c90511;
 }
 .vistaAppBoton--secundario:not([disabled]):hover {
-  background: #F8F9FB;
+  background: #f8f9fb;
 }
 button.vistaAppCard:hover,
 .vistaAppOption:hover,
 .vistaAppCheckRow:hover {
-  border-color: #C7CDD6;
+  border-color: #c7cdd6;
 }
 .vistaAppOption--active:hover,
 .vistaAppCheckRow--activo:hover {
-  border-color: #E30613;
+  border-color: #e30613;
 }
 .vistaAppTab:not(.vistaAppTab--active):not([disabled]):hover {
-  color: #4B5563;
+  color: #4b5563;
 }
 @media (prefers-reduced-motion: reduce) {
   .vistaAppScreen--entraDer,
