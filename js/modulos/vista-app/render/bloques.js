@@ -4,7 +4,7 @@ import { leerDato } from '../datos/index.js';
 import {
   card, metrics, alertaCard, filterChips, ticketCards, fichaCabecera, fotoCard,
   dataCard, banda, resumenCard, locationCard, timeline, reportCards, scanner,
-  sos, profile, list, map, legend, mapSheet
+  sos, profile, settingsCard, list, map, legend, mapSheet, ticketHeader, searchFilter
 } from './bloquesContenido.js';
 import {
   inputs, selectRow, options, categoryGrid, upload, segmented, checkRow, rating
@@ -31,6 +31,27 @@ export function header(pantalla) {
           notificacion +
         '</div>' +
         prompt +
+      '</header>';
+  }
+
+  if (data.tipo === 'perfil') {
+    var editar = data.accionDerecha
+      ? '<button class="vistaAppPerfilEditar"' + accionAtributos(data.accionDerecha) + '>' + t(data.accionDerecha.texto) + '</button>'
+      : '';
+    return '' +
+      '<header class="vistaAppHeaderPerfil">' +
+        '<div class="vistaAppHeaderFila">' +
+          '<h3 class="vistaAppTitulo">' + t(data.titulo) + '</h3>' +
+          editar +
+        '</div>' +
+        '<div class="vistaAppPerfilCabecera">' +
+          '<span class="vistaAppAvatar vistaAppAvatar--grande">' + t(data.initials) + '</span>' +
+          '<div class="vistaAppPerfilDatos">' +
+            '<h2 class="vistaAppPerfilNombre">' + t(data.nombre) + '</h2>' +
+            '<p class="vistaAppPerfilRol">' + t(data.rol) + '</p>' +
+            '<p class="vistaAppPerfilCorreo">' + t(data.email) + '</p>' +
+          '</div>' +
+        '</div>' +
       '</header>';
   }
 
@@ -178,10 +199,12 @@ export function renderBloque(block, estado) {
   if (block.tipo === 'metrics') return metrics(block.items);
   if (block.tipo === 'alertaCard') return alertaCard(block);
   if (block.tipo === 'filterChips') return filterChips(block);
+  if (block.tipo === 'searchFilter') return searchFilter(block);
   if (block.tipo === 'ticketCards') return ticketCards(block);
   if (block.tipo === 'fichaCabecera') return fichaCabecera(block);
   if (block.tipo === 'fotoCard') return fotoCard(block);
   if (block.tipo === 'dataCard') return dataCard(block);
+  if (block.tipo === 'ticketHeader') return ticketHeader(block);
   if (block.tipo === 'banda') return banda(block);
   if (block.tipo === 'resumenCard') return resumenCard(block);
   if (block.tipo === 'locationCard') return locationCard(block);
@@ -201,6 +224,7 @@ export function renderBloque(block, estado) {
   if (block.tipo === 'bottomPanel') return '<div class="vistaAppBottomPanel">' + renderBloques(block.blocks, estado) + '</div>';
   if (block.tipo === 'sos') return sos(block);
   if (block.tipo === 'profile') return profile(block);
+  if (block.tipo === 'settingsCard') return settingsCard(block);
   if (block.tipo === 'list') return list(block.items);
   if (block.tipo === 'rating') return rating(block);
   if (block.tipo === 'map') return map(block);

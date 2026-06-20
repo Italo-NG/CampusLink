@@ -3,7 +3,7 @@ import { ir, pantalla } from './fabricas.js';
 export const pantallasAuth = [
   pantalla({
     id: 'login',
-    figmaId: '19:186',
+    figmaId: '1233:115',
     nombre: 'Login',
     usuario: 'general',
     template: 'auth',
@@ -13,13 +13,14 @@ export const pantallasAuth = [
       subtitulo: 'Gestión inteligente del campus',
       descripcion: 'Reporta incidencias, sigue su estado y ayuda a mejorar tu entorno universitario.',
       boton: { texto: 'Ingresar con cuenta UPC', to: 'login-datos' },
+      registro: { texto: '¿No tienes cuenta?', destacado: 'Crear cuenta', to: 'registro-upc' },
       enlace: 'Conoce cómo protegemos tus datos'
     },
     acciones: [ir('Component / Button / Primary / UPC Login', 'login-datos')]
   }),
   pantalla({
     id: 'login-datos',
-    figmaId: '1216:55',
+    figmaId: '1233:609',
     nombre: 'Login / Datos',
     usuario: 'general',
     template: 'authForm',
@@ -42,7 +43,7 @@ export const pantallasAuth = [
   }),
   pantalla({
     id: 'registro-upc',
-    figmaId: '1218:2',
+    figmaId: '1233:643',
     nombre: 'Registro / Usuario UPC',
     usuario: 'general',
     template: 'register',
@@ -72,7 +73,7 @@ export const pantallasAuth = [
   }),
   pantalla({
     id: 'config-experiencia',
-    figmaId: '19:208',
+    figmaId: '1233:136',
     nombre: 'Configuracion experiencia',
     usuario: 'general',
     template: 'config',

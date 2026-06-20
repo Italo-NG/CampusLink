@@ -13,11 +13,11 @@
 @media (max-width: 560px) {
   .seccion-vista .vistaAppTelefono {
     width: clamp(266px, 76vw, 306px);
-    border-width: 10px;
-    border-radius: 60px;
+    padding: 9px;
+    border-radius: 50px;
   }
   .seccion-vista .vistaAppViewport {
-    border-radius: 44px;
+    border-radius: 41px;
   }
 }
 

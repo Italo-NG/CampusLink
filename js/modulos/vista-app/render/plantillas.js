@@ -1,7 +1,7 @@
 import { icono, ICONOS } from './iconos.js';
 import { t, textoSeguro, boton, fijarEstadoRender } from './helpers.js';
 import { header, tabbar, botonIcono, renderBloques } from './bloques.js';
-import { dataCard } from './bloquesContenido.js';
+import { dataCard, claseBadge } from './bloquesContenido.js';
 import { authFields, selectRow, options } from './bloquesFormulario.js';
 import { VISTA_APP_PANTALLAS, VISTA_APP_ROLES } from '../datos/index.js';
 
@@ -14,7 +14,11 @@ export function renderAuth(pantalla) {
         '<div><h3 class="vistaAppMarcaTitulo">' + t(data.titulo) + '</h3><h4 class="vistaAppTitulo vistaAppTitulo--chico vistaAppTitulo--centro">' + t(data.subtitulo) + '</h4></div>' +
         '<p class="vistaAppTexto vistaAppTexto--centro">' + t(data.descripcion) + '</p>' +
       '</div>' +
-      '<div class="vistaAppAuthActions">' + boton({ texto: data.boton.texto, to: data.boton.to, variante: 'primario', clase: 'vistaAppBoton--alto' }) + '<button class="vistaAppBoton vistaAppBoton--texto">' + t(data.enlace) + '</button></div>' +
+      '<div class="vistaAppAuthActions">' +
+        boton({ texto: data.boton.texto, to: data.boton.to, variante: 'primario', clase: 'vistaAppBoton--alto' }) +
+        (data.registro ? boton({ texto: data.registro.texto, destacado: data.registro.destacado, to: data.registro.to, variante: 'texto' }) : '') +
+        '<button class="vistaAppBoton vistaAppBoton--texto">' + t(data.enlace) + '</button>' +
+      '</div>' +
     '</div>' +
   '</div>';
 }
@@ -120,15 +124,25 @@ export function renderStandard(pantalla, estado) {
   '</div>';
 }
 
+function successResumen(data) {
+  var badge = data.badge ? '<span class="vistaAppBadge' + claseBadge(data.badge) + '">' + t(data.badge) + '</span>' : '';
+  return '<div class="vistaAppCard vistaAppSuccessResumen">' +
+    '<span class="vistaAppCardTituloCaps">' + t(data.label || 'Ticket ID') + '</span>' +
+    '<span class="vistaAppSuccessId">' + t(data.id) + '</span>' +
+    badge +
+  '</div>';
+}
+
 export function renderSuccess(pantalla, estado) {
   var data = pantalla.success;
+  var iconoClase = 'vistaAppSuccessIcon' + (data.tono ? ' vistaAppSuccessIcon--' + textoSeguro(data.tono) : '');
   return '<div class="vistaAppScreen" data-vista-pantalla="' + textoSeguro(pantalla.id) + '">' +
     '<div class="vistaAppSuccess">' +
       '<div class="vistaAppSuccessCuerpo">' +
-        '<span class="vistaAppSuccessIcon">' + (data.icono ? (ICONOS[data.icono] ? icono(data.icono) : '<span class="vistaAppSuccessTextoIcono">' + t(data.icono) + '</span>') : icono('check')) + '</span>' +
+        '<span class="' + iconoClase + '">' + (data.icono ? (ICONOS[data.icono] ? icono(data.icono) : '<span class="vistaAppSuccessTextoIcono">' + t(data.icono) + '</span>') : icono('check')) + '</span>' +
         '<h3 class="vistaAppTitulo">' + t(data.titulo) + '</h3>' +
         '<p class="vistaAppTexto vistaAppTexto--centro">' + t(data.texto) + '</p>' +
-        (data.rows ? dataCard({ rows: data.rows }) : '') +
+        (data.resumen ? successResumen(data.resumen) : (data.rows ? dataCard({ rows: data.rows }) : '')) +
         (data.nota ? '<p class="vistaAppTexto vistaAppTexto--chico vistaAppTexto--centro">' + t(data.nota) + '</p>' : '') +
       '</div>' +
       '<div class="vistaAppSuccessAcciones">' + (data.botones || []).map(boton).join('') + '</div>' +
