@@ -61,10 +61,12 @@
   .seccion-portada,
   .seccion-seccionSuave-problema,
   .seccion-solucion,
+  .seccion-seccionSuave-producto,
   .seccion-seccionSuave-como,
   .seccion-beneficios,
   .seccion-seccionSuave-publico,
   .seccion-vista,
+  .seccion-seccionSuave-nosotros,
   .seccion-contacto { padding-block: 48px; }
   .seccionEncabezado-seccionEncabezadoCentro { margin-bottom: 32px; }
 
@@ -77,6 +79,10 @@
     grid-template-columns: 1fr;
     max-width: 480px;
     margin-inline: auto;
+  }
+  .nosotrosEquipo {
+    grid-template-columns: 1fr;
+    max-width: 480px;
   }
   .portadaCategoria { width: 84px; }
   .portadaCategoriaIcono { width: 64px; height: 64px; }
