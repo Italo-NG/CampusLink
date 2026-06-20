@@ -109,43 +109,108 @@
   height: 88px;
   width: auto;
 }
+.cabeceraAcciones {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+}
+
 .navPrincipal {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 .navLista {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 4px;
 }
-.navLista a {
-  font-size: 0.875rem;
+.navLista > li { position: relative; }
+.navLista a,
+.navGrupoDisparador {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 0.9375rem;
   font-weight: 500;
-  color: #4B5563;
-  padding-block: 8px;
+  color: #1F2933;
+  white-space: nowrap;
   transition: color 0.15s ease;
 }
-.navLista a:hover { color: #1F2933; }
+.navLista a:hover,
+.navGrupoDisparador:hover,
+.navLista a.estaActivo,
+.navGrupoDisparador.estaActivo { color: #E30613; }
 
-.boton-botonFantasma-navAcceso { flex: none; padding: 8px 16px; }
+.navGrupoFlecha {
+  box-sizing: border-box;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.navGrupo[data-abierto="true"] .navGrupoFlecha {
+  transform: translateY(1px) rotate(225deg);
+}
+.navSubmenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 60;
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  padding: 8px 0;
+  background: #FFFFFF;
+  border: 1px solid #EEF1F6;
+}
+.navGrupo[data-abierto="true"] .navSubmenu { display: flex; }
+.navSubmenu a { width: 100%; padding: 10px 18px; }
+
+.boton-botonFantasma-navAcceso {
+  flex: none;
+  padding: 8px 16px;
+}
 
 .navAlternar {
   box-sizing: border-box;
   display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  flex: none;
+  color: #1F2933;
+}
+.navAlternarIcono {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 48px;
-  height: 48px;
-  padding: 12px;
-  flex: none;
+  width: 22px;
+  height: 16px;
 }
 .navAlternarBarra {
   display: block;
   width: 100%;
   height: 2px;
-  background: #1F2933;
+  background: currentColor;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.navAlternarTexto {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+.navAlternar[aria-expanded="true"] .navAlternarBarra:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navAlternar[aria-expanded="true"] .navAlternarBarra:nth-child(2) {
+  opacity: 0;
+}
+.navAlternar[aria-expanded="true"] .navAlternarBarra:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .marcador-marcadorVertical {

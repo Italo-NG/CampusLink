@@ -1,9 +1,9 @@
-import { ir, abrir, pantalla, headerBackReporte, tabEstudianteInicio } from './fabricas.js';
+import { ir, abrir, pantalla, headerBackReporte, tabEstudianteInicio, tabEstudianteReportar } from './fabricas.js';
 
 export const pantallasReporte = [
   pantalla({
     id: 'escaner-qr',
-    figmaId: '19:257',
+    figmaId: '1233:180',
     nombre: 'Escaner QR',
     usuario: 'shared',
     fondo: '#000000',
@@ -27,7 +27,7 @@ export const pantallasReporte = [
   }),
   pantalla({
     id: 'ubicacion-manual',
-    figmaId: '1036:14',
+    figmaId: '1233:1268',
     nombre: 'Ubicación manual',
     usuario: 'shared',
     header: headerBackReporte,
@@ -49,7 +49,7 @@ export const pantallasReporte = [
   }),
   pantalla({
     id: 'selector-sede',
-    figmaId: '1048:32',
+    figmaId: '1233:1422',
     nombre: 'Ubicación manual — Selector Sede',
     usuario: 'shared',
     header: { tipo: 'claro', titulo: 'Seleccionar sede', volver: 'ubicacion-manual' },
@@ -66,7 +66,7 @@ export const pantallasReporte = [
   }),
   pantalla({
     id: 'registrar-reporte',
-    figmaId: '21:456',
+    figmaId: '1233:224',
     nombre: 'Registrar Reporte',
     usuario: 'shared',
     header: headerBackReporte,
@@ -96,11 +96,11 @@ export const pantallasReporte = [
   }),
   pantalla({
     id: 'resumen-reporte',
-    figmaId: '21:611',
+    figmaId: '1233:308',
     nombre: 'Resumen Reporte',
     usuario: 'shared',
     header: { tipo: 'claro', titulo: 'Revisa tu reporte', volver: 'registrar-reporte', accionDerecha: { texto: 'Cancelar', modal: 'modal-confirm-cancel-report' } },
-    tabbar: tabEstudianteInicio,
+    tabbar: tabEstudianteReportar,
     blocks: [
       { tipo: 'resumenCard', items: [
         { icono: 'pin', etiqueta: 'Ubicación', valor: '{ubicacion}' },
@@ -124,7 +124,7 @@ export const pantallasReporte = [
   }),
   pantalla({
     id: 'resumen-reporte-error',
-    figmaId: '1006:3',
+    figmaId: '1233:1140',
     nombre: 'Resumen Reporte — Simulación error de envío',
     usuario: 'shared',
     header: { tipo: 'claro', titulo: 'Revisa tu reporte', volver: 'registrar-reporte' },
@@ -146,26 +146,27 @@ export const pantallasReporte = [
   }),
   pantalla({
     id: 'reporte-confirmado',
-    figmaId: '21:681',
+    figmaId: '1233:424',
     nombre: 'Reporte confirmado',
     usuario: 'shared',
     template: 'success',
     success: {
+      tono: 'verde',
       titulo: 'Reporte enviado',
       texto: 'Tu incidencia fue registrada correctamente.',
-      rows: [['Ticket ID', 'TCK-20260512-0001'], ['Estado', 'Recibido']],
+      resumen: { label: 'Ticket ID', id: 'TCK-20260512-0001', badge: 'Recibido' },
       nota: 'Recibirás notificaciones cuando el estado cambie.',
       botones: [
         { texto: 'Ver seguimiento', to: 'detalles-reporte', variante: 'primario' },
         { texto: 'Volver al inicio', to: 'home', variante: 'secundario' }
       ]
     },
-    tabbar: tabEstudianteInicio,
+    tabbar: tabEstudianteReportar,
     acciones: [ir('Component / Button / Primary / View Tracking', 'detalles-reporte'), ir('Component / Button / Secondary / Back Home', 'home')]
   }),
   pantalla({
     id: 'detalles-reporte',
-    figmaId: '21:785',
+    figmaId: '1233:503',
     nombre: 'Detalles del Reporte',
     usuario: 'shared',
     header: { tipo: 'claro', titulo: 'Detalle del reporte', volver: 'reporte-confirmado' },
@@ -188,11 +189,12 @@ export const pantallasReporte = [
   }),
   pantalla({
     id: 'reporte-descartado',
-    figmaId: '985:2',
+    figmaId: '1233:1117',
     nombre: 'Reporte descartado',
     usuario: 'shared',
     template: 'success',
     success: {
+      tono: 'verde',
       titulo: 'Reporte descartado',
       texto: 'Tu reporte no fue enviado y la información ingresada fue eliminada.',
       botones: [{ texto: 'Volver al inicio', to: 'home', variante: 'primario' }]

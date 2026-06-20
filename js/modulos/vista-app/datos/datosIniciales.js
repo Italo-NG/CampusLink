@@ -22,6 +22,8 @@ export const VISTA_APP_DATOS_INICIALES = {
   motivoReapertura: '',
   qrDetectado: false,
   filtroTickets: 'Todas',
+  prefNotificaciones: true,
+  prefCorreo: true,
   requeridos: {},
   clavesVisibles: {},
   campos: {}

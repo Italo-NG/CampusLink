@@ -52,37 +52,57 @@
           />
         </a>
 
-        <button
-          class="navAlternar"
-          type="button"
-          aria-expanded="false"
-          aria-controls="nav-principal"
-          aria-label="Abrir o cerrar el menú de navegación"
-        >
-          <span class="navAlternarBarra"></span>
-          <span class="navAlternarBarra"></span>
-          <span class="navAlternarBarra"></span>
-        </button>
-
         <nav
           class="navPrincipal"
           id="nav-principal"
           aria-label="Navegación principal"
         >
           <ul class="navLista">
-            <li><a href="#inicio">Inicio</a></li>
             <li><a href="#problema">Problema</a></li>
-            <li><a href="#solucion">Solución</a></li>
-            <li><a href="#como-funciona">Cómo funciona</a></li>
+            <li class="navGrupo">
+              <button
+                class="navGrupoDisparador"
+                type="button"
+                aria-expanded="false"
+                aria-controls="nav-producto"
+              >
+                Producto
+                <span class="navGrupoFlecha" aria-hidden="true"></span>
+              </button>
+              <ul class="navSubmenu" id="nav-producto">
+                <li><a href="#solucion">Solución</a></li>
+                <li><a href="#producto">Sobre el producto</a></li>
+                <li><a href="#como-funciona">Cómo funciona</a></li>
+                <li><a href="#vista-app">Vista de la app</a></li>
+              </ul>
+            </li>
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#para-quienes">Para quiénes</a></li>
-            <li><a href="#vista-app">Vista de la app</a></li>
+            <li><a href="#quienes-somos">Quiénes somos</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
-          <button class="boton-botonFantasma-navAcceso" type="button">
-            Iniciar sesión
-          </button>
         </nav>
+
+        <div class="cabeceraAcciones">
+          <a class="boton-botonFantasma-navAcceso" href="login.html">
+            Iniciar sesión
+          </a>
+
+          <button
+            class="navAlternar"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-principal"
+            aria-label="Abrir o cerrar el menú de navegación"
+          >
+            <span class="navAlternarIcono" aria-hidden="true">
+              <span class="navAlternarBarra"></span>
+              <span class="navAlternarBarra"></span>
+              <span class="navAlternarBarra"></span>
+            </span>
+            <span class="navAlternarTexto">Menú</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -381,6 +401,32 @@
               </span>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section
+        class="seccion-seccionSuave-producto"
+        id="producto"
+        aria-labelledby="producto-titulo"
+      >
+        <div class="contenedor">
+          <header class="seccionEncabezado-seccionEncabezadoCentro">
+            <h2 class="seccionTitulo" id="producto-titulo">Sobre el producto</h2>
+            <p class="seccionBajada">
+              Mira en un minuto cómo CampusLink facilita reportar y dar
+              seguimiento a las incidencias de tu campus.
+            </p>
+          </header>
+
+          <div class="productoVideo">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/VX7CX0OjY3k"
+              title="CampusLink — video de presentación del producto"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </section>
 
@@ -774,6 +820,45 @@
             </div>
             <div class="linea-home"></div>
           </div>
+        </div>
+      </section>
+
+      <section
+        class="seccion-seccionSuave-nosotros"
+        id="quienes-somos"
+        aria-labelledby="quienes-somos-titulo"
+      >
+        <div class="contenedor">
+          <header class="seccionEncabezado-seccionEncabezadoCentro">
+            <h2 class="seccionTitulo" id="quienes-somos-titulo">Quiénes somos</h2>
+            <p class="seccionBajada">
+              Montimin es un equipo de estudiantes de Ingeniería de Software
+              enfocado en crear soluciones digitales para mejorar la experiencia
+              universitaria. Con CampusLink, buscamos facilitar el reporte y
+              seguimiento de incidencias dentro del campus de forma rápida, clara
+              y accesible.
+            </p>
+          </header>
+
+          <ul class="nosotrosEquipo">
+            <li class="nosotrosCard">
+              <h3 class="nosotrosNombre">Diego Yahir Chilingano Salas</h3>
+              <p class="nosotrosDescripcion">
+                Estudiante de Ingeniería de Software. Aporta pensamiento lógico,
+                análisis de requerimientos y enfoque técnico para estructurar
+                funcionalidades claras, viables y orientadas a resolver
+                necesidades reales del campus.
+              </p>
+            </li>
+            <li class="nosotrosCard">
+              <h3 class="nosotrosNombre">Italo Gabriel Ninahuanca Garcia</h3>
+              <p class="nosotrosDescripcion">
+                Estudiante de Ingeniería de Software. Aporta organización de
+                contenido y desarrollo del landing page, comunicando la propuesta
+                de valor de CampusLink de manera clara y funcional.
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
 

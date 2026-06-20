@@ -51,7 +51,7 @@ export const modales = [
   }),
   modal({
     id: 'modal-cancelar-reporte',
-    figmaId: '35:2248',
+    figmaId: '1233:1083',
     nombre: 'Overlay / Modal / Cancelar reporte',
     usuario: 'shared',
     titulo: '¿Cancelar reporte?',
@@ -71,6 +71,18 @@ export const modales = [
     acciones: [
       cerrar('Revisar'),
       ir('Enviar S.O.S.', 'sos-estudiante-enviada')
+    ]
+  }),
+  modal({
+    id: 'modal-sos-ayuda',
+    figmaId: '1898:15',
+    nombre: 'SOS Help Overlay',
+    usuario: 'shared',
+    sinIcono: true,
+    titulo: '¿Qué es S.O.S. Aula?',
+    texto: 'Envía una alerta prioritaria al equipo de soporte cuando una falla en el aula requiere atención inmediata. Incluye tu aula actual para que puedan ubicarte rápido. Úsalo solo para urgencias reales.',
+    acciones: [
+      cerrar('Entendido')
     ]
   }),
   modal({
@@ -204,6 +216,23 @@ export const modales = [
       cerrar('Mantener atención'),
       ir('Pausar ticket', 'registrar-insumo')
     ]
+  }),
+  modal({
+    id: 'modal-filtros-soporte',
+    figmaId: '1898:28',
+    nombre: 'Advanced Filters Overlay / Support Tickets',
+    usuario: 'soporte',
+    tipo: 'sheetFiltros',
+    titulo: 'Filtros avanzados',
+    grupos: [
+      { label: 'Prioridad', chips: ['Todas', 'Prioritarias', 'Normal'], activo: 'Todas' },
+      { label: 'Estado', chips: ['Asignado', 'En atención', 'Resuelto'], activo: 'Asignado' },
+      { label: 'Asignación', chips: ['Mis tickets', 'Sin asignar', 'Equipo'], activo: 'Mis tickets' },
+      { label: 'Ubicación', campos: [['Sede', 'Todas'], ['Aula', 'Aula o ambiente']] },
+      { label: 'SLA', chips: ['Vence hoy', '+24 h', 'Críticos'], activo: 'Críticos' },
+      { label: 'Ordenar por', chips: ['Urgencia', 'Más reciente', 'SLA'], activo: 'Urgencia' }
+    ],
+    acciones: [cerrar('Aplicar filtros')]
   }),
   modal({
     id: 'modal-cerrar-sesion',

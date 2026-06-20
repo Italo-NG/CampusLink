@@ -3,36 +3,32 @@ import { ir, abrir, pantalla, detalleTicket, tabSoporteInicio, tabSoporteMapa, t
 export const pantallasSoporte = [
   pantalla({
     id: 'perfil-soporte',
-    figmaId: 'inferred:perfil-soporte',
+    figmaId: '1322:6970',
     nombre: 'Perfil / Soporte',
     usuario: 'soporte',
-    header: { tipo: 'claro', titulo: 'Perfil', volver: 'dashboard-soporte' },
+    header: { tipo: 'perfil', titulo: 'Perfil', initials: 'RT', nombre: 'Ricardo Torres', rol: 'Soporte audiovisual', email: 'ricardo.torres@upc.edu.pe', accionDerecha: { texto: 'Editar' } },
     tabbar: tabSoportePerfil,
     blocks: [
-      { tipo: 'profile', initials: 'RT', nombre: 'Ricardo Torres', rol: 'Soporte audiovisual', email: 'ricardo.torres@upc.edu.pe' },
       { tipo: 'dataCard', titulo: 'Datos institucionales', rows: [
         ['Código interno', 'SOP-2048'],
         ['Sede', 'Monterrico'],
         ['Área', 'Soporte audiovisual']
       ] },
-      { tipo: 'metrics', items: [
-        ['6', 'Tickets resueltos'],
-        ['11m', 'Promedio'],
-        ['2', 'Prioritarios']
+      { tipo: 'settingsCard', titulo: 'Preferencias', rows: [
+        { insignia: 'N', etiqueta: 'Notificaciones', switch: 'prefNotificaciones' },
+        { insignia: '@', etiqueta: 'Actualizaciones por correo', switch: 'prefCorreo' }
       ] },
-      { tipo: 'dataCard', titulo: 'Seguridad y cuenta', rows: [
-        ['Cambiar contraseña', '›'],
-        ['Privacidad de datos', '›']
-      ] },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Cerrar sesión', modal: 'modal-cerrar-sesion', variante: 'peligro' }
+      { tipo: 'settingsCard', titulo: 'Seguridad y cuenta', rows: [
+        { insignia: '*', etiqueta: 'Cambiar contraseña', flecha: true },
+        { insignia: 'P', etiqueta: 'Privacidad de datos', flecha: true },
+        { insignia: 'S', etiqueta: 'Cerrar sesión', peligro: true, modal: 'modal-cerrar-sesion' }
       ] }
     ],
     acciones: [abrir('Component / Button / Destructive / Logout', 'modal-cerrar-sesion')]
   }),
   pantalla({
     id: 'dashboard-soporte',
-    figmaId: '38:2635',
+    figmaId: '1322:5660',
     nombre: 'Dashboard Soporte',
     usuario: 'soporte',
     fondo: '#FDE5E5',
@@ -63,7 +59,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'alerta-sos',
-    figmaId: '38:2738',
+    figmaId: '1322:5764',
     nombre: 'Alerta SOS',
     usuario: 'soporte',
     header: { tipo: 'claro', titulo: 'Alerta Prioritaria', volver: 'dashboard-soporte' },
@@ -83,7 +79,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'ficha-tecnica',
-    figmaId: '38:2795',
+    figmaId: '1322:5820',
     nombre: 'Ficha tecnica',
     usuario: 'soporte',
     fondo: '#FDE5E5',
@@ -111,11 +107,12 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'iniciar-atencion',
-    figmaId: '39:2877',
+    figmaId: '1322:5901',
     nombre: 'Iniciar Atencion',
     usuario: 'soporte',
     template: 'success',
     success: {
+      tono: 'verde',
       titulo: 'Atención iniciada',
       texto: 'El ticket fue marcado como En atención',
       rows: [
@@ -133,7 +130,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'cerrar-ticket',
-    figmaId: '39:2956',
+    figmaId: '1322:5985',
     nombre: 'Cerrar ticket',
     usuario: 'soporte',
     header: { tipo: 'claro', titulo: 'Cerrar ticket', volver: 'iniciar-atencion' },
@@ -152,7 +149,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'cerrar-ticket-opcion',
-    figmaId: '39:2908',
+    figmaId: '1322:5935',
     nombre: 'Cerrar ticket — Notificación seleccionada',
     usuario: 'soporte',
     alias: 'cerrar-ticket',
@@ -160,7 +157,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'cerrar-ticket-foto',
-    figmaId: '39:3001',
+    figmaId: '1322:6032',
     nombre: 'Cerrar ticket — Foto adjuntada',
     usuario: 'soporte',
     alias: 'cerrar-ticket',
@@ -168,7 +165,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'cierre-ticket-completo',
-    figmaId: '39:3050',
+    figmaId: '1322:6083',
     nombre: 'Cierre de ticket formulario completo',
     usuario: 'soporte',
     alias: 'cerrar-ticket',
@@ -176,7 +173,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'cierre-ticket-error-sim',
-    figmaId: '1074:24',
+    figmaId: '1322:6641',
     nombre: 'Cierre de ticket — Simulación error',
     usuario: 'soporte',
     header: { tipo: 'claro', titulo: 'Cerrar ticket', volver: 'cerrar-ticket-foto' },
@@ -192,14 +189,15 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'ticket-resuelto',
-    figmaId: '39:3099',
+    figmaId: '1322:6134',
     nombre: 'Ticket resuelto',
     usuario: 'soporte',
     template: 'success',
     success: {
+      tono: 'verde',
       titulo: 'Ticket resuelto',
       texto: 'La incidencia fue cerrada correctamente.',
-      rows: [['SOS-20260512-0007', 'Resuelto'], ['Estado', 'Completado']],
+      resumen: { label: 'Ticket', id: 'SOS-20260512-0007', badge: 'Resuelto' },
       nota: 'Se notificó al usuario reportante.',
       botones: [
         { texto: 'Volver al dashboard', to: 'dashboard-soporte', variante: 'primario' },
@@ -210,7 +208,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'lista-tickets',
-    figmaId: '39:3228',
+    figmaId: '1322:6163',
     nombre: 'Lista de Tickets',
     usuario: 'soporte',
     fondo: '#FDECEC',
@@ -218,7 +216,7 @@ export const pantallasSoporte = [
     tabbar: tabSoporteTickets,
     blocks: [
       { tipo: 'filterChips', campo: 'filtroTickets', items: ['Todas', 'Prioritarias', 'Asignadas', 'En atención'] },
-      { tipo: 'inputs', fields: [['Buscar', 'Buscar por ID, ubicación...']] },
+      { tipo: 'searchFilter', campo: 'campos.buscar', placeholder: 'Buscar ID o aula', modal: 'modal-filtros-soporte' },
       { tipo: 'ticketCards', items: [
         { id: 'SOS-20260512-0007', badge: 'Prioritario', prioridad: true, titulo: '{problema}', lugar: 'Aula B-301', estadoTexto: 'Asignado', etiquetas: ['Prioritarias', 'Asignadas'], to: 'ficha-tecnica' },
         { id: 'TCK-20260512-0010', badge: 'Normal', titulo: 'Internet', lugar: 'Biblioteca', estadoTexto: 'Asignado', etiquetas: ['Asignadas'], to: 'ficha-tecnica' },
@@ -229,7 +227,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'registrar-insumo',
-    figmaId: '1079:14',
+    figmaId: '1322:6726',
     nombre: 'Registrar insumo requerido',
     usuario: 'soporte',
     header: { tipo: 'claro', titulo: 'Registrar insumo', volver: 'iniciar-atencion' },
@@ -249,7 +247,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'ticket-pausado',
-    figmaId: '1079:35',
+    figmaId: '1322:6747',
     nombre: 'Ticket pausado por insumos',
     usuario: 'soporte',
     template: 'success',
@@ -267,7 +265,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'mapa-operativo',
-    figmaId: '39:3314',
+    figmaId: '1322:6278',
     nombre: 'Mapa Operativo',
     usuario: 'soporte',
     header: { tipo: 'claro', titulo: 'Mapa operativo', volver: 'dashboard-soporte' },
@@ -280,7 +278,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'mapa-operativo-seleccion',
-    figmaId: '39:3397',
+    figmaId: '1322:6391',
     nombre: 'Mapa Operativo con seleccion',
     usuario: 'soporte',
     header: { tipo: 'claro', titulo: 'Mapa operativo', volver: 'mapa-operativo' },
@@ -294,7 +292,7 @@ export const pantallasSoporte = [
   }),
   pantalla({
     id: 'productividad-diaria',
-    figmaId: '39:3480',
+    figmaId: '1322:6504',
     nombre: 'Productividad diaria',
     usuario: 'soporte',
     header: { tipo: 'claro', titulo: 'Mi productividad', volver: 'dashboard-soporte' },
