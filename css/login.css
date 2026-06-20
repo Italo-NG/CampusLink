@@ -1,0 +1,229 @@
+.loginSalto {
+  position: absolute;
+  left: 8px;
+  top: -64px;
+  z-index: 10;
+  padding: 8px 16px;
+  background: #1F2933;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.loginSalto:focus {
+  top: 8px;
+}
+
+.loginPagina {
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 24px;
+  background: #F5F7FB;
+}
+
+.loginPanel {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 456px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 36px;
+  background: #FFFFFF;
+  border: 1px solid #EEF1F6;
+}
+
+.loginVolver {
+  align-self: flex-start;
+  color: #4B5563;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.loginVolver:hover {
+  color: #E30613;
+}
+
+.loginMarca {
+  display: flex;
+  justify-content: center;
+}
+
+.loginLogo {
+  width: 216px;
+  height: auto;
+}
+
+.loginEncabezado {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.loginTitulo {
+  color: #1F2933;
+  font-size: clamp(1.75rem, 1.25rem + 1.8vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.loginTexto {
+  color: #4B5563;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.loginFormulario {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.loginCampo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.loginCampo label {
+  color: #1F2933;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.loginCampo input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  color: #1F2933;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+}
+
+.loginCampo input::placeholder {
+  color: #9CA3AF;
+}
+
+.loginCampo input:focus {
+  border-color: #1F2933;
+}
+
+.loginCampo.estaInvalido input {
+  border-color: #E02030;
+}
+
+.loginAyuda,
+.loginError,
+.loginEstado,
+.loginRegistro {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.loginAyuda {
+  color: #6B7280;
+}
+
+.loginError {
+  min-height: 0;
+  color: #B00020;
+  font-weight: 600;
+}
+
+.loginError:not(:empty) {
+  min-height: 1.3em;
+}
+
+.loginEnlace {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  min-height: 32px;
+  padding: 0;
+  color: #E02030;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.loginEnlace:hover {
+  color: #B00020;
+}
+
+.loginEnlaceSecundario {
+  align-self: center;
+  color: #4B5563;
+  font-weight: 600;
+  text-align: center;
+}
+
+.loginEnlaceSecundario:hover {
+  color: #E30613;
+}
+
+.loginBoton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: #E02030;
+  color: #FFFFFF;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.loginBoton:hover {
+  background: #B00020;
+}
+
+.loginEstado {
+  min-height: 1.4em;
+  color: #166534;
+  text-align: center;
+  font-weight: 700;
+}
+
+.loginEstado.estaError {
+  color: #B00020;
+}
+
+.loginRegistro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 8px;
+  color: #6B7280;
+  text-align: center;
+}
+
+.loginRegistro span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+@media (max-width: 560px) {
+  .loginPagina {
+    align-items: start;
+    padding: 20px 16px;
+  }
+
+  .loginPanel {
+    gap: 24px;
+    padding: 28px 22px;
+  }
+
+  .loginLogo {
+    width: 188px;
+  }
+}
