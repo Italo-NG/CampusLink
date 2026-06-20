@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesi&oacute;n | CampusLink</title>
+    <meta
+      name="description"
+      content="Acceso basico a CampusLink con correo institucional UPC"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="recursos/logo/favicon.png" />
+    <link rel="stylesheet" href="css/base.css?v=login-basico-v1" />
+    <link rel="stylesheet" href="css/login.css?v=login-basico-v1" />
+  </head>
+  <body>
+    <a class="loginSalto" href="#formulario-login">Saltar al formulario</a>
+
+    <main class="loginPagina">
+      <section class="loginPanel" aria-labelledby="login-titulo">
+        <a
+          class="loginVolver"
+          href="index.html"
+          aria-label="Volver a la landing de CampusLink"
+        >
+          Volver
+        </a>
+
+        <div class="loginMarca">
+          <img
+            class="loginLogo"
+            src="recursos/logo/campusLink-fondo-blanco.png"
+            alt="CampusLink"
+          />
+        </div>
+
+        <div class="loginEncabezado">
+          <h1 class="loginTitulo" id="login-titulo">Iniciar sesi&oacute;n</h1>
+          <p class="loginTexto">
+            Ingresa con tu correo institucional UPC para continuar en CampusLink.
+          </p>
+        </div>
+
+        <form class="loginFormulario" id="formulario-login" novalidate>
+          <div class="loginCampo" data-login-campo="correo">
+            <label for="correo">Correo institucional</label>
+            <input
+              id="correo"
+              name="correo"
+              type="email"
+              inputmode="email"
+              autocomplete="username"
+              placeholder="nombre@upc.edu.pe"
+              required
+              aria-describedby="correo-ayuda correo-error"
+            />
+            <p class="loginAyuda" id="correo-ayuda">
+              Usa tu cuenta institucional terminada en @upc.edu.pe.
+            </p>
+            <p class="loginError" id="correo-error" aria-live="polite"></p>
+          </div>
+
+          <div class="loginCampo" data-login-campo="clave">
+            <label for="clave">Contrase&ntilde;a</label>
+            <input
+              id="clave"
+              name="clave"
+              type="password"
+              autocomplete="current-password"
+              placeholder="M&iacute;nimo 8 caracteres"
+              minlength="8"
+              required
+              aria-describedby="clave-ayuda clave-error"
+            />
+            <p class="loginAyuda" id="clave-ayuda">
+              Usa la contrase&ntilde;a de tu cuenta institucional.
+            </p>
+            <p class="loginError" id="clave-error" aria-live="polite"></p>
+            <button
+              class="loginEnlace loginEnlaceSecundario"
+              type="button"
+              data-login-accion="recuperar"
+            >
+              &iquest;Olvidaste tu contrase&ntilde;a?
+            </button>
+          </div>
+
+          <button class="loginBoton" type="submit">Iniciar sesi&oacute;n</button>
+
+          <p class="loginRegistro">
+            <span>&iquest;No tienes cuenta?</span>
+            <button class="loginEnlace" type="button" data-login-accion="registro">
+              Crear cuenta
+            </button>
+          </p>
+
+          <p
+            class="loginEstado"
+            id="login-estado"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+
+      </section>
+    </main>
+
+    <script type="module" src="js/login.js"></script>
+  </body>
+</html>

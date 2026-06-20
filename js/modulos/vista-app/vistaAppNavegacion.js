@@ -6,7 +6,7 @@ var destinosPorRol = {
   estudiante: {
     home: 'dashboard-estudiante',
     perfil: 'perfil-estudiante',
-    mapa: 'ubicacion-manual',
+    mapa: 'mapa-campus',
     reportes: 'mis-reportes-activos',
     tickets: 'mis-reportes-activos',
     reportar: 'escaner-qr'

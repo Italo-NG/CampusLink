@@ -1,37 +1,34 @@
-import { ir, abrir, pantalla, detalleTicket, tabEstudianteInicio, tabEstudiantePerfil } from './fabricas.js';
+import { ir, abrir, pantalla, detalleTicket, tabEstudianteInicio, tabEstudianteReportar, tabEstudiantePerfil } from './fabricas.js';
 
 export const pantallasDocente = [
   pantalla({
     id: 'perfil-docente',
-    figmaId: 'inferred:perfil-docente',
+    figmaId: '1322:4269',
     nombre: 'Perfil / Docente',
     usuario: 'docente',
-    header: { tipo: 'claro', titulo: 'Perfil' },
+    header: { tipo: 'perfil', titulo: 'Perfil', initials: 'EV', nombre: 'Elena Vargas', rol: 'Docente', email: 'elena.vargas@upc.edu.pe', accionDerecha: { texto: 'Editar' } },
     tabbar: tabEstudiantePerfil,
     blocks: [
-      { tipo: 'profile', initials: 'EV', nombre: 'Elena Vargas', rol: 'Docente', email: 'elena.vargas@upc.edu.pe' },
       { tipo: 'dataCard', titulo: 'Datos institucionales', rows: [
         ['Código UPC', 'D202645678'],
         ['Sede', 'Monterrico'],
         ['Rol', 'Docente']
       ] },
-      { tipo: 'dataCard', titulo: 'Preferencias', rows: [
-        ['Notificaciones S.O.S.', 'Activadas'],
-        ['Aula detectada', 'Automática']
+      { tipo: 'settingsCard', titulo: 'Preferencias', rows: [
+        { insignia: 'N', etiqueta: 'Notificaciones', switch: 'prefNotificaciones' },
+        { insignia: '@', etiqueta: 'Actualizaciones por correo', switch: 'prefCorreo' }
       ] },
-      { tipo: 'dataCard', titulo: 'Seguridad y cuenta', rows: [
-        ['Cambiar contraseña', '›'],
-        ['Privacidad de datos', '›']
-      ] },
-      { tipo: 'buttonGroup', items: [
-        { texto: 'Cerrar sesión', modal: 'modal-cerrar-sesion', variante: 'peligro' }
+      { tipo: 'settingsCard', titulo: 'Seguridad y cuenta', rows: [
+        { insignia: '*', etiqueta: 'Cambiar contraseña', flecha: true },
+        { insignia: 'P', etiqueta: 'Privacidad de datos', flecha: true },
+        { insignia: 'S', etiqueta: 'Cerrar sesión', peligro: true, modal: 'modal-cerrar-sesion' }
       ] }
     ],
     acciones: [abrir('Component / Button / Destructive / Logout', 'modal-cerrar-sesion')]
   }),
   pantalla({
     id: 'dashboard-docente',
-    figmaId: '33:875',
+    figmaId: '1322:4531',
     nombre: 'Dashboard Docente',
     usuario: 'docente',
     header: {
@@ -49,7 +46,7 @@ export const pantallasDocente = [
       { tipo: 'title', texto: 'Clase actual: Cálculo Aplicado', centro: true },
       { tipo: 'text', texto: 'Aula B-301 · Sede Monterrico', centro: true, chico: true },
       { tipo: 'spacer', size: 12 },
-      { tipo: 'sos', texto: 'S.O.S. Aula', docente: true, to: 'confirmacion-datos' },
+      { tipo: 'sos', texto: 'S.O.S. Aula', docente: true, to: 'confirmacion-datos', ayuda: 'modal-sos-ayuda' },
       { tipo: 'spacer', size: 12 },
       { tipo: 'card', titulo: 'Reportar falla normal', texto: 'Mediante código QR del aula', icono: 'qr', to: 'escaner-qr' },
       { tipo: 'gridCards', items: [
@@ -65,7 +62,7 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'confirmacion-datos',
-    figmaId: '33:986',
+    figmaId: '1322:4668',
     nombre: 'Confirmacion de datos',
     usuario: 'docente',
     header: { tipo: 'claro', titulo: 'Confirmar aula', volver: 'dashboard-docente' },
@@ -87,7 +84,7 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'selector-problema',
-    figmaId: '33:1139',
+    figmaId: '1322:4822',
     nombre: 'Selector rapido de problema',
     usuario: 'docente',
     header: { tipo: 'claro', titulo: '¿Qué problema ocurre?', volver: 'confirmacion-datos' },
@@ -125,11 +122,11 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'confirmacion-alerta',
-    figmaId: '33:1201',
+    figmaId: '1322:4888',
     nombre: 'Confirmacion de alerta',
     usuario: 'docente',
     header: { tipo: 'claro', titulo: 'Alerta crítica', volver: 'dashboard-docente' },
-    tabbar: tabEstudianteInicio,
+    tabbar: tabEstudianteReportar,
     blocks: [
       { tipo: 'hero', icono: 'triangulo', titulo: 'Alerta crítica enviada', texto: 'El equipo de soporte fue notificado con prioridad máxima.' },
       { tipo: 'slaCard', etiqueta: 'Prioridad máxima', badge: 'SLA < 5 min', estado: 'Buscando técnico disponible...', items: [
@@ -145,11 +142,11 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'estado-soporte',
-    figmaId: '33:1309',
+    figmaId: '1322:4994',
     nombre: 'Estado de soporte',
     usuario: 'docente',
     header: { tipo: 'claro', titulo: 'Soporte en camino', volver: 'confirmacion-alerta' },
-    tabbar: tabEstudianteInicio,
+    tabbar: tabEstudianteReportar,
     blocks: [
       { tipo: 'profile', initials: 'CM', nombre: 'Carlos Méndez', rol: 'Soporte audiovisual', email: 'En camino al aula' },
       { tipo: 'dataCard', rows: [['Tiempo estimado', '4 min']] },
@@ -168,11 +165,12 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'llegada-soporte',
-    figmaId: '33:1385',
+    figmaId: '1322:5113',
     nombre: 'Confirmacion de llegada de soporte',
     usuario: 'docente',
     template: 'success',
     success: {
+      tono: 'verde',
       titulo: 'Técnico en puerta',
       texto: 'Carlos Méndez llegó al aula B-301.',
       nota: 'Estado: Atendiendo en aula',
@@ -182,7 +180,7 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'confirmar-solucion',
-    figmaId: '33:1409',
+    figmaId: '1322:5137',
     nombre: 'Confirmar solucion',
     usuario: 'docente',
     header: { tipo: 'claro', titulo: 'Validar solución', volver: 'estado-soporte' },
@@ -203,7 +201,7 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'calificacion-atencion',
-    figmaId: '33:1462',
+    figmaId: '1322:5189',
     nombre: 'Calificacion de atencion',
     usuario: 'docente',
     header: { tipo: 'claro', titulo: 'Califica la atención' },
@@ -232,14 +230,15 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'alerta-terminada',
-    figmaId: '33:1538',
+    figmaId: '1322:5263',
     nombre: 'Alerta terminada',
     usuario: 'docente',
     template: 'success',
     success: {
+      tono: 'verde',
       titulo: 'Estado del Ticket',
       texto: 'El ticket de emergencia fue cerrado correctamente.',
-      rows: [['ID del ticket', 'SOS-20260512-0007'], ['Estado', 'Resuelto']],
+      resumen: { label: 'ID del ticket', id: 'SOS-20260512-0007', badge: 'Resuelto' },
       botones: [
         { texto: 'Volver al inicio', to: 'dashboard-docente-final', variante: 'primario' },
         { texto: 'Ver historial', to: 'mis-reportes-resueltos', variante: 'secundario' }
@@ -249,7 +248,7 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'dashboard-docente-final',
-    figmaId: '33:1567',
+    figmaId: '1322:5226',
     nombre: 'Optimizar diseño para iOS',
     usuario: 'docente',
     header: {
@@ -266,7 +265,7 @@ export const pantallasDocente = [
       { tipo: 'pill', texto: 'Horario detectado automáticamente' },
       { tipo: 'title', texto: 'Clase actual: Cálculo Aplicado', centro: true },
       { tipo: 'text', texto: 'Aula B-301 · Sede Monterrico', centro: true, chico: true },
-      { tipo: 'sos', texto: 'S.O.S. Aula', docente: true, to: 'confirmacion-datos' },
+      { tipo: 'sos', texto: 'S.O.S. Aula', docente: true, to: 'confirmacion-datos', ayuda: 'modal-sos-ayuda' },
       { tipo: 'card', titulo: 'Reportar falla normal', texto: 'Mediante código QR del aula', icono: 'qr', to: 'escaner-qr' }
     ],
     acciones: [ir('Component / Banner / Success / SOS Finished', 'notificaciones')]
@@ -286,7 +285,7 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'reabrir-ticket',
-    figmaId: '1114:16',
+    figmaId: '1353:352',
     nombre: 'Reabrir ticket',
     usuario: 'docente',
     header: { tipo: 'claro', titulo: 'Reabrir ticket', volver: 'confirmar-solucion' },
@@ -330,14 +329,15 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'ticket-reabierto',
-    figmaId: '1114:71',
+    figmaId: '1353:406',
     nombre: 'Ticket reabierto',
     usuario: 'docente',
     template: 'success',
     success: {
+      tono: 'verde',
       titulo: 'Ticket reabierto',
       texto: 'El equipo de soporte revisará nuevamente la incidencia.',
-      rows: [['SOS-20260512-0007', 'Reabierto']],
+      resumen: { label: 'Ticket', id: 'SOS-20260512-0007', badge: 'Reabierto' },
       botones: [
         { texto: 'Ver seguimiento', to: 'detalle-ticket-reabierto', variante: 'primario' },
         { texto: 'Volver a Mis reportes', to: 'mis-reportes-activos', variante: 'secundario' }
@@ -347,7 +347,7 @@ export const pantallasDocente = [
   }),
   pantalla({
     id: 'detalle-ticket-reabierto',
-    figmaId: '1120:2',
+    figmaId: '1353:430',
     nombre: 'Detalle del ticket reabierto',
     usuario: 'docente',
     header: { tipo: 'claro', titulo: 'Detalle del ticket', volver: 'ticket-reabierto' },

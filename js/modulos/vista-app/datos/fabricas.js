@@ -44,11 +44,17 @@ export function modal(datos) {
     titulo: datos.titulo,
     texto: datos.texto,
     icono: datos.icono || '!',
+    sinIcono: datos.sinIcono || false,
+    tipo: datos.tipo || 'alerta',
+    grupos: datos.grupos || null,
+    ubicacion: datos.ubicacion || null,
     acciones: datos.acciones || []
   };
 }
 
 export const tabEstudianteInicio = { tipo: 'student', activo: 'inicio' };
+export const tabEstudianteMapa = { tipo: 'student', activo: 'mapa' };
+export const tabEstudianteReportar = { tipo: 'student', activo: 'reportar' };
 export const tabEstudianteReportes = { tipo: 'student', activo: 'reportes' };
 export const tabEstudiantePerfil = { tipo: 'student', activo: 'perfil' };
 export const tabSoporteInicio = { tipo: 'support', activo: 'inicio' };

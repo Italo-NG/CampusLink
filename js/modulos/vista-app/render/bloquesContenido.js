@@ -66,6 +66,17 @@ export function filterChips(block) {
   }).join('') + '</div>';
 }
 
+export function searchFilter(block) {
+  var datos = obtenerDatos();
+  var valor = leerDato(datos, block.campo) || '';
+  return '<div class="vistaAppBuscarFila">' +
+    '<label class="vistaAppBuscador vistaAppBuscador--flex">' +
+      '<span class="vistaAppBuscadorLupa">' + icono('lupa') + '</span>' +
+      '<input class="vistaAppInput vistaAppInput--busqueda" type="search" value="' + textoSeguro(valor) + '" data-vista-campo="' + textoSeguro(block.campo) + '" placeholder="' + textoSeguro(block.placeholder || 'Buscar') + '" aria-label="Buscar" />' +
+    '</label>' +
+    '<button class="vistaAppFiltrosBtn" data-vista-accion="modal" data-vista-destino="' + textoSeguro(block.modal) + '"><span class="vistaAppFiltrosBtnIcono">' + icono('filtros') + '</span><span>Filtros</span></button>' +
+  '</div>';
+}
 export function ticketCards(block) {
   var datos = obtenerDatos();
   var filtro = datos.filtroTickets || 'Todas';
@@ -183,14 +194,23 @@ export function locationCard(block) {
 
 export function timeline(items) {
   return '<div class="vistaAppCard"><div class="vistaAppTimeline">' + items.map(function (item) {
-    var dotClass = item[3] ? 'vistaAppDot' : 'vistaAppDot vistaAppDot--gris';
+    var activo = item[3];
+    var dotClass = activo ? 'vistaAppDot' : 'vistaAppDot vistaAppDot--gris';
     if (item[4] === 'pulso') dotClass += ' vistaAppDot--pulso';
-    return '<div class="vistaAppTimelineItem"><span class="' + dotClass + '">' + (item[3] ? icono('check') : '') + '</span><div>' +
-      '<h4 class="vistaAppTitulo vistaAppTitulo--chico">' + t(item[0]) + '</h4>' +
+    var tituloClass = 'vistaAppTitulo vistaAppTitulo--chico' + (activo ? '' : ' vistaAppTimelineTitulo--inactivo');
+    return '<div class="vistaAppTimelineItem"><span class="' + dotClass + '">' + (activo ? icono('check') : '') + '</span><div>' +
+      '<h4 class="' + tituloClass + '">' + t(item[0]) + '</h4>' +
       (item[1] ? '<p class="vistaAppTexto vistaAppTexto--chico">' + t(item[1]) + '</p>' : '') +
       (item[2] ? '<p class="vistaAppTexto vistaAppTexto--chico">' + t(item[2]) + '</p>' : '') +
     '</div></div>';
   }).join('') + '</div></div>';
+}
+export function ticketHeader(block) {
+  var badge = block.badge ? '<span class="vistaAppBadge' + claseBadge(block.badge) + '">' + t(block.badge) + '</span>' : '';
+  return '<div class="vistaAppTicketHeader">' +
+    '<div class="vistaAppTicketHeaderFila"><h3 class="vistaAppTitulo">' + t(block.id) + '</h3>' + badge + '</div>' +
+    (block.fecha ? '<span class="vistaAppTexto vistaAppTexto--chico">' + t(block.fecha) + '</span>' : '') +
+  '</div>';
 }
 export function reportCards(block) {
   var items = Array.isArray(block) ? block : block.items;
@@ -223,9 +243,13 @@ export function scanner(block) {
   '</div>';
 }
 export function sos(block) {
-  return '<button class="vistaAppSos ' + (block.docente ? 'vistaAppSos--docente' : '') + '"' + accionAtributos(block) + '>' +
+  var botonSos = '<button class="vistaAppSos ' + (block.docente ? 'vistaAppSos--docente' : '') + '"' + accionAtributos(block) + '>' +
     '<span class="vistaAppSosIcon">!</span><span class="vistaAppSosTexto">' + t(block.texto) + '</span>' +
   '</button>';
+  if (!block.ayuda) return botonSos;
+  return '<div class="vistaAppSosWrap">' + botonSos +
+    '<button class="vistaAppSosAyuda" data-vista-accion="modal" data-vista-destino="' + textoSeguro(block.ayuda) + '" aria-label="Qué es S.O.S. Aula">?</button>' +
+  '</div>';
 }
 export function profile(block) {
   return '<div class="vistaAppCard vistaAppCard--row">' +
@@ -235,9 +259,47 @@ export function profile(block) {
     '<p class="vistaAppTexto vistaAppTexto--chico">' + t(block.email) + '</p></div>' +
   '</div>';
 }
+export function settingsCard(block) {
+  var datos = obtenerDatos();
+  var titulo = block.titulo ? '<h3 class="vistaAppTitulo vistaAppTitulo--chico">' + t(block.titulo) + '</h3>' : '';
+  var filas = (block.rows || []).map(function (row) {
+    var insignia = '<span class="vistaAppMonograma' + (row.peligro ? ' vistaAppMonograma--peligro' : '') + '">' + textoSeguro(row.insignia) + '</span>';
+    var etiqueta = '<span class="vistaAppSettingsLabel' + (row.peligro ? ' vistaAppSettingsLabel--peligro' : '') + '">' + t(row.etiqueta) + '</span>';
+    var derecha = '';
+    var tag = 'div';
+    var attrs = '';
+
+    if (row.switch) {
+      var activo = !!leerDato(datos, row.switch);
+      derecha = '<span class="vistaAppSwitch' + (activo ? ' vistaAppSwitch--on' : '') + '" role="switch" aria-checked="' + (activo ? 'true' : 'false') + '"><span class="vistaAppSwitchKnob"></span></span>';
+      tag = 'button';
+      attrs = ' data-vista-accion="toggle" data-vista-campo="' + textoSeguro(row.switch) + '"';
+    } else {
+      if (row.flecha) derecha = '<span class="vistaAppDataFlecha">' + icono('chevron') + '</span>';
+      tag = row.to || row.modal ? 'button' : 'div';
+      attrs = accionAtributos(row);
+    }
+
+    return '<' + tag + ' class="vistaAppSettingsRow' + (row.peligro ? ' vistaAppSettingsRow--peligro' : '') + '"' + attrs + '>' +
+      insignia + etiqueta + derecha +
+    '</' + tag + '>';
+  }).join('');
+  return '<div class="vistaAppCard vistaAppSettings">' + titulo + '<div class="vistaAppSettingsList">' + filas + '</div></div>';
+}
 export function list(items) {
   return '<div class="vistaAppLista">' + items.map(function (item) {
-    return '<div class="vistaAppCard"><p class="vistaAppTexto">' + t(item[0]) + '</p><span class="vistaAppTexto vistaAppTexto--chico">' + t(item[1]) + '</span></div>';
+    if (Array.isArray(item)) {
+      return '<div class="vistaAppCard"><p class="vistaAppTexto">' + t(item[0]) + '</p><span class="vistaAppTexto vistaAppTexto--chico">' + t(item[1]) + '</span></div>';
+    }
+    var dot = item.nuevo ? '<span class="vistaAppNotifDot" aria-label="No leída"></span>' : '';
+    return '<div class="vistaAppCard vistaAppNotif' + (item.nuevo ? ' vistaAppNotif--nueva' : '') + '">' +
+      '<span class="vistaAppNotifIcono vistaAppNotifIcono--' + textoSeguro(item.tono || 'azul') + '">' + icono(item.icono || 'bell') + '</span>' +
+      '<div class="vistaAppNotifCuerpo">' +
+        '<p class="vistaAppNotifTexto">' + t(item.texto) + '</p>' +
+        '<span class="vistaAppTexto vistaAppTexto--chico">' + t(item.hora) + '</span>' +
+      '</div>' +
+      dot +
+    '</div>';
   }).join('') + '</div>';
 }
 export function map(block) {
@@ -247,6 +309,12 @@ export function map(block) {
       }).join('') + '</div>'
     : '';
 
+  var contenidoB = '<span class="vistaAppPinMapa vistaAppPinMapa--rojo">!</span><span class="vistaAppEdificioNombre">Pab B</span>';
+  var edificioB = block.estatico
+    ? '<div class="vistaAppEdificio vistaAppEdificio--b">' + contenidoB + '</div>'
+    : '<button class="vistaAppEdificio vistaAppEdificio--b" data-vista-accion="pantalla" data-vista-destino="' + textoSeguro(block.to || 'mapa-operativo-seleccion') + '" aria-label="Ver incidencia prioritaria del pabellón B">' + contenidoB + '</button>';
+  var ubicar = block.ubicar ? '<span class="vistaAppMapUbicar" aria-hidden="true">' + icono('mira') + '</span>' : '';
+
   return '<div class="vistaAppMap">' +
     '<span class="vistaAppMapCalle vistaAppMapCalle--v" aria-hidden="true"></span>' +
     '<span class="vistaAppMapCalle vistaAppMapCalle--h" aria-hidden="true"></span>' +
@@ -254,10 +322,8 @@ export function map(block) {
       '<span class="vistaAppPinMapa vistaAppPinMapa--azul">2</span>' +
       '<span class="vistaAppEdificioNombre">Pab A</span>' +
     '</div>' +
-    '<button class="vistaAppEdificio vistaAppEdificio--b" data-vista-accion="pantalla" data-vista-destino="mapa-operativo-seleccion" aria-label="Ver incidencia prioritaria del pabellón B">' +
-      '<span class="vistaAppPinMapa vistaAppPinMapa--rojo">!</span>' +
-      '<span class="vistaAppEdificioNombre">Pab B</span>' +
-    '</button>' +
+    edificioB +
+    ubicar +
     leyenda +
   '</div>';
 }
