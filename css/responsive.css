@@ -1,5 +1,5 @@
-@media (max-width: 1120px) {
-  .navAlternar { display: flex; }
+@media (max-width: 1024px) {
+  .navAlternar { display: inline-flex; }
 
   .navPrincipal {
     position: absolute;
@@ -7,32 +7,35 @@
     left: 0;
     right: 0;
     display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 16px 0 24px;
+    padding: 8px 0;
     background: #FFFFFF;
+    border-bottom: 1px solid #EEF1F6;
   }
-  .navPrincipal.estaAbierto { display: flex; }
+  .navPrincipal.estaAbierto { display: block; }
 
   .navLista {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
   }
-  .navLista a {
-    display: block;
+  .navLista > li { position: static; }
+  .navLista a,
+  .navGrupoDisparador {
+    justify-content: center;
+    width: 100%;
     padding: 12px 0;
     font-size: 1rem;
-    color: #1F2933;
   }
-  .boton-botonFantasma-navAcceso {
-    align-self: flex-start;
-    margin-top: 16px;
-  }
-}
 
-@media (max-width: 1024px) {
+  .navSubmenu {
+    position: static;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    background: #F5F7FB;
+  }
+  .navSubmenu a { padding: 12px 0; }
+
   .contenedor-solucionInterior { grid-template-columns: 1fr; gap: 32px; }
   .comoLayout { grid-template-columns: 1fr; gap: 32px; }
   .comoImagen { max-height: 560px; }
@@ -154,6 +157,7 @@
   .contenedor-portadaInterior,
   .contenedor-solucionInterior,
   .contenedor-pieSitioInterior { padding-inline: 16px; }
+  .marcaLogo { height: 64px; }
   .contactoFormulario { padding: 24px; }
   .publicoCard { padding: 22px; }
   .seccion-portada { padding-top: 32px; }

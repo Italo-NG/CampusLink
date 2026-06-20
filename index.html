@@ -52,37 +52,57 @@
           />
         </a>
 
-        <button
-          class="navAlternar"
-          type="button"
-          aria-expanded="false"
-          aria-controls="nav-principal"
-          aria-label="Abrir o cerrar el menú de navegación"
-        >
-          <span class="navAlternarBarra"></span>
-          <span class="navAlternarBarra"></span>
-          <span class="navAlternarBarra"></span>
-        </button>
-
         <nav
           class="navPrincipal"
           id="nav-principal"
           aria-label="Navegación principal"
         >
           <ul class="navLista">
-            <li><a href="#inicio">Inicio</a></li>
             <li><a href="#problema">Problema</a></li>
-            <li><a href="#solucion">Solución</a></li>
-            <li><a href="#como-funciona">Cómo funciona</a></li>
+            <li class="navGrupo">
+              <button
+                class="navGrupoDisparador"
+                type="button"
+                aria-expanded="false"
+                aria-controls="nav-producto"
+              >
+                Producto
+                <span class="navGrupoFlecha" aria-hidden="true"></span>
+              </button>
+              <ul class="navSubmenu" id="nav-producto">
+                <li><a href="#solucion">Solución</a></li>
+                <li><a href="#producto">Sobre el producto</a></li>
+                <li><a href="#como-funciona">Cómo funciona</a></li>
+                <li><a href="#vista-app">Vista de la app</a></li>
+              </ul>
+            </li>
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#para-quienes">Para quiénes</a></li>
-            <li><a href="#vista-app">Vista de la app</a></li>
+            <li><a href="#quienes-somos">Quiénes somos</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
-          <button class="boton-botonFantasma-navAcceso" type="button">
-            Iniciar sesión
-          </button>
         </nav>
+
+        <div class="cabeceraAcciones">
+          <a class="boton-botonFantasma-navAcceso" href="login.html">
+            Iniciar sesión
+          </a>
+
+          <button
+            class="navAlternar"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-principal"
+            aria-label="Abrir o cerrar el menú de navegación"
+          >
+            <span class="navAlternarIcono" aria-hidden="true">
+              <span class="navAlternarBarra"></span>
+              <span class="navAlternarBarra"></span>
+              <span class="navAlternarBarra"></span>
+            </span>
+            <span class="navAlternarTexto">Menú</span>
+          </button>
+        </div>
       </div>
     </header>
 
