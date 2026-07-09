@@ -18,6 +18,7 @@
 .seccion-beneficios,
 .seccion-seccionSuave-publico,
 .seccion-vista,
+.seccion-seccionSuave-videoEquipo,
 .seccion-seccionSuave-nosotros,
 .seccion-contacto {
   padding-block: 64px;
@@ -27,4 +28,5 @@
 .seccion-seccionSuave-producto,
 .seccion-seccionSuave-como,
 .seccion-seccionSuave-publico,
+.seccion-seccionSuave-videoEquipo,
 .seccion-seccionSuave-nosotros { background: #F5F7FB; }
