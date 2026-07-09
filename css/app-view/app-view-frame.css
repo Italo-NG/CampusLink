@@ -1,0 +1,78 @@
+.section-appView-prototype {
+  display: grid;
+  place-items: center;
+  padding-block: 48px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+.appViewFrame {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  width: min(100%, 384px);
+  margin-inline: auto;
+  padding-inline: 18px;
+}
+.section-appView .appViewPhone {
+  width: clamp(292px, 30vw, 340px);
+  height: auto;
+  aspect-ratio: auto;
+  padding: 10px;
+  border: 0;
+  border-radius: 56px;
+  background: linear-gradient(135deg, #6f6f75 0%, #35353b 24%, #222226 50%, #45454b 76%, #1c1c20 100%);
+  box-shadow:
+    0 0 0 1px #0b0b0f,
+    0 24px 46px -18px rgba(15, 23, 42, 0.5);
+}
+.section-appView .appViewPhone::before {
+  left: -2.5px;
+  top: 92px;
+  width: 3px;
+  height: 22px;
+  background: #2c2c31;
+  border-radius: 3px;
+  box-shadow:
+    0 40px 0 #2c2c31,
+    0 80px 0 #2c2c31;
+}
+.section-appView .appViewPhone::after {
+  right: -2.5px;
+  top: 150px;
+  width: 3px;
+  height: 58px;
+  background: #2c2c31;
+  border-radius: 3px;
+}
+.section-appView .dynamic-island {
+  top: 18px;
+  width: 98px;
+  height: 28px;
+  border-radius: 16px;
+}
+.section-appView .home-line {
+  bottom: 16px;
+  width: 108px;
+  height: 5px;
+}
+.section-appView .appViewViewport {
+  height: auto;
+  aspect-ratio: 393 / 852;
+  background: #FFFFFF;
+  border-radius: 46px;
+  box-shadow:
+    0 0 0 4px #050507,
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+.appViewStage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 393px;
+  height: 852px;
+  transform-origin: 0 0;
+}
+.appViewStage,
+.appViewStage * {
+  box-sizing: border-box;
+}

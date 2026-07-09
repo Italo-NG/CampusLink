@@ -1,0 +1,1339 @@
+.appViewScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 393px;
+  height: 852px;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Arial, sans-serif;
+  color: #1F2933;
+  background: #F5F7FB;
+  letter-spacing: 0;
+}
+.appViewScreen--enterRight {
+  z-index: 3;
+  animation: appViewEnterRight 0.36s cubic-bezier(0.32, 0.72, 0.3, 1) both;
+}
+.appViewScreen--exitLeft {
+  z-index: 1;
+  animation: appViewExitLeft 0.36s cubic-bezier(0.32, 0.72, 0.3, 1) both;
+}
+.appViewScreen--enterLeft {
+  z-index: 1;
+  animation: appViewEnterLeft 0.36s cubic-bezier(0.32, 0.72, 0.3, 1) both;
+}
+.appViewScreen--exitRight {
+  z-index: 3;
+  animation: appViewExitRight 0.36s cubic-bezier(0.32, 0.72, 0.3, 1) both;
+}
+.appViewScreen--fadeIn {
+  z-index: 3;
+  animation: appViewFadeIn 0.22s ease both;
+}
+.appViewScreen--fadeOut {
+  z-index: 1;
+  animation: appViewFadeOut 0.22s ease both;
+}
+@keyframes appViewEnterRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+@keyframes appViewExitLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-24%); }
+}
+@keyframes appViewEnterLeft {
+  from { transform: translateX(-24%); }
+  to { transform: translateX(0); }
+}
+@keyframes appViewExitRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+@keyframes appViewFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes appViewFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.appViewScreen button,
+.appViewScreen input,
+.appViewScreen textarea {
+  font-family: inherit;
+}
+.appViewScreen button {
+  cursor: pointer;
+}
+.appViewSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.appViewScroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.appViewScroll::-webkit-scrollbar { display: none; }
+.appViewInner {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  padding: 0 16px 104px;
+}
+.appViewInner--top {
+  padding-top: 56px;
+}
+.appViewHeaderRed {
+  position: relative;
+  height: 187px;
+  padding: 67px 16px 16px;
+  color: #FFFFFF;
+  background: #E30613;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+.appViewHeaderRed--teacher {
+  height: 147px;
+  padding-top: 64px;
+}
+.appViewHeaderLight {
+  position: relative;
+  height: 104px;
+  padding: 56px 16px 14px;
+  margin-bottom: 6px;
+  background: transparent;
+}
+.appViewHeaderDark {
+  position: relative;
+  height: 120px;
+  padding: 56px 16px 16px;
+  color: #FFFFFF;
+  background: #000000;
+}
+.appViewHeaderProfile {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  height: 212px;
+  padding: 56px 20px 22px;
+  color: #FFFFFF;
+  background: #E30613;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+.appViewProfileEdit {
+  color: #FFFFFF;
+  background: transparent;
+  border: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+}
+.appViewProfileHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.appViewAvatar--large {
+  width: 64px;
+  height: 64px;
+  color: #E30613;
+  background: #FFFFFF;
+  font-size: 24px;
+  font-weight: 800;
+}
+.appViewProfileData {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.appViewProfileName {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 28px;
+}
+.appViewProfileRole {
+  margin: 0;
+  color: #FFFFFF;
+  opacity: 0.92;
+  font-size: 14px;
+  line-height: 19px;
+}
+.appViewProfileEmail {
+  margin: 0;
+  color: #FFFFFF;
+  opacity: 0.85;
+  font-size: 13px;
+  line-height: 18px;
+}
+.appViewHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.appViewProfileMini {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.appViewAvatar {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: none;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  font-size: 23px;
+  font-weight: 600;
+}
+.appViewAvatar--gray {
+  color: #E30613;
+  background: #FEE2E2;
+}
+.appViewAvatar .appViewSvg {
+  width: 26px;
+  height: 26px;
+}
+.appViewLabel {
+  display: block;
+  color: inherit;
+  opacity: 0.82;
+  font-size: 13px;
+  line-height: 18px;
+}
+.appViewTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+}
+.appViewTitle--small {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.appViewTitle--center {
+  text-align: center;
+}
+.appViewText {
+  color: #4B5563;
+  font-size: 17px;
+  line-height: 24px;
+}
+.appViewText--small {
+  font-size: 13px;
+  line-height: 18px;
+}
+.appViewText--center {
+  text-align: center;
+}
+.appViewText--muted {
+  color: #99A1AF;
+}
+.appViewIconBtn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 24px;
+  line-height: 1;
+}
+.appViewIconBtn .appViewSvg {
+  width: 22px;
+  height: 22px;
+}
+.appViewIconBtn--light {
+  color: #1F2933;
+  background: transparent;
+}
+.appViewNotification {
+  position: relative;
+}
+.appViewNotification::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: #FDC700;
+  border-radius: 999px;
+}
+.appViewButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  color: #1F2933;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+}
+.appViewButton--tall {
+  min-height: 56px;
+}
+.appViewButtonIcon {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+.appViewButton--primary {
+  color: #FFFFFF;
+  background: #E30613;
+  border-color: #E30613;
+}
+.appViewButton--secondary {
+  color: #1F2933;
+  background: #FFFFFF;
+}
+.appViewButton--text {
+  width: auto;
+  min-height: 44px;
+  margin-inline: auto;
+  color: #5B2CCB;
+  background: transparent;
+  border-color: transparent;
+  font-size: 13px;
+  font-weight: 500;
+}
+.appViewButton--danger {
+  color: #FFFFFF;
+  background: #E30613;
+  border-color: #E30613;
+}
+.appViewButton--critical {
+  color: #FFFFFF;
+  background: #E30613;
+  border-color: #FFE2E2;
+}
+.appViewButton[disabled] {
+  opacity: 0.55;
+  cursor: default;
+}
+.appViewCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1.2px solid #E5E7EB;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14);
+}
+.appViewCard--accent {
+  border-color: rgba(227, 6, 19, 0.24);
+  background: linear-gradient(158deg, #FFFFFF 0%, #FEF2F2 100%);
+}
+.appViewCard--danger {
+  border-color: #E30613;
+}
+.appViewCard--row {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+.appViewCardIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: none;
+  color: #4B5563;
+  background: #F3F4F6;
+  border-radius: 999px;
+  font-size: 24px;
+  line-height: 1;
+}
+.appViewCardIcon .appViewSvg {
+  width: 24px;
+  height: 24px;
+}
+.appViewCardIcon--red {
+  color: #FFFFFF;
+  background: #E30613;
+  border-radius: 16px;
+}
+.appViewGrid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.appViewGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.appViewMetric {
+  display: grid;
+  place-items: center;
+  min-height: 96px;
+  text-align: center;
+}
+.appViewMetricNumber {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 30px;
+}
+.appViewBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  min-height: 26px;
+  padding: 4px 8px;
+  color: #FFFFFF;
+  background: #E30613;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+}
+.appViewBadge--blue {
+  color: #1D4ED8;
+  background: #DBEAFE;
+}
+.appViewBadge--green {
+  color: #008236;
+  background: #DCFCE7;
+}
+.appViewBadge--gray {
+  color: #4B5563;
+  background: #F3F4F6;
+}
+.appViewBadge--amber {
+  color: #C2410C;
+  background: #FFF7ED;
+}
+.appViewSpacer8 { height: 8px; }
+.appViewSpacer12 { height: 12px; }
+.appViewSpacer16 { height: 16px; }
+.appViewSpacer24 { height: 24px; }
+.appViewSpacer32 { height: 32px; }
+.appViewSos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 192px;
+  height: 192px;
+  margin-inline: auto;
+  color: #FFFFFF;
+  background: #E30613;
+  border: 5px solid #FFE2E2;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(227, 6, 19, 0.42);
+}
+.appViewSos--teacher {
+  width: 176px;
+  height: 176px;
+}
+.appViewSosIcon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 6px solid #FFFFFF;
+  border-radius: 999px;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+}
+.appViewSosText {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 30px;
+}
+.appViewSosWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.appViewSosHelp {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: #E30613;
+  background: #FFFFFF;
+  border: 1.5px solid #E30613;
+  border-radius: 999px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+.appViewTabbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  display: grid;
+  align-items: start;
+  height: 86px;
+  padding: 10px 16px 18px;
+  background: #FFFFFF;
+  border-top: 1px solid #E5E7EB;
+}
+.appViewTabbar--student {
+  grid-template-columns: repeat(5, 1fr);
+}
+.appViewTabbar--support {
+  grid-template-columns: repeat(4, 1fr);
+}
+.appViewTab {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  color: #99A1AF;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.appViewTab--active {
+  color: #E30613;
+}
+.appViewTabIcon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+}
+.appViewTabIcon .appViewSvg {
+  width: 23px;
+  height: 23px;
+}
+.appViewAuth {
+  display: flex;
+  min-height: 852px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 75px 16px 58px;
+}
+.appViewAuth--login {
+  padding: 75px 16px 58px;
+}
+.appViewAuth--data {
+  padding: 74px 16px 42px;
+}
+.appViewAuthContent {
+  display: grid;
+  gap: 32px;
+  width: 100%;
+}
+.appViewAuthTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.appViewAuthTop--data {
+  gap: 24px;
+}
+.appViewAuthBrand {
+  display: grid;
+  gap: 0;
+}
+.appViewAppLogo {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.appViewAppLogo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+.appViewBrandTitle {
+  color: #E30613;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 40px;
+}
+.appViewAuthActions {
+  display: grid;
+  gap: 14px;
+}
+.appViewAuthActions--data {
+  gap: 8px;
+}
+.appViewAuthFields {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+}
+.appViewAuthField {
+  display: grid;
+  gap: 8px;
+  color: #1F2933;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+}
+.appViewField {
+  display: grid;
+  gap: 8px;
+}
+.appViewInput {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 8px 16px;
+  color: #4B5563;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  font-size: 17px;
+  line-height: 24px;
+}
+.appViewInput--auth {
+  min-height: 56px;
+  padding: 0 16px;
+  font-weight: 500;
+}
+.appViewSelectRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.appViewOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  color: #1F2933;
+  font-size: 17px;
+  font-weight: 600;
+}
+.appViewOption--active {
+  border-color: #E30613;
+  background: #FEF2F2;
+  color: #E30613;
+}
+.appViewOptionIcon {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  color: #E30613;
+}
+.appViewRegister {
+  display: flex;
+  min-height: 852px;
+  max-height: 852px;
+  flex-direction: column;
+  padding: 56px 16px 42px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.appViewRegister::-webkit-scrollbar {
+  display: none;
+}
+.appViewRegisterHeader {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  height: 64px;
+  flex: none;
+}
+.appViewRegisterHeader .appViewTitle {
+  text-align: center;
+}
+.appViewRegisterBody {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+}
+.appViewRegisterIntro {
+  display: grid;
+  gap: 8px;
+  min-height: 70px;
+  align-content: start;
+}
+.appViewRegisterForm {
+  display: grid;
+  gap: 16px;
+}
+.appViewRegister .appViewAuthFields {
+  gap: 12px;
+}
+.appViewRegisterActions {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 18px;
+}
+.appViewSegmented {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  padding: 4px;
+  background: #ECEEF2;
+  border-radius: 999px;
+}
+.appViewSegmented button {
+  min-height: 38px;
+  border-radius: 999px;
+  color: #6B7280;
+  font-size: 13px;
+  font-weight: 600;
+}
+.appViewSegmented .isActive {
+  color: #1F2933;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
+  font-weight: 700;
+}
+.appViewTimeline {
+  display: grid;
+  gap: 0;
+}
+.appViewTimelineItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 10px;
+  min-height: 52px;
+}
+.appViewTimelineItem::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 28px;
+  bottom: -10px;
+  width: 2px;
+  background: #E5E7EB;
+}
+.appViewTimelineItem:last-child::before {
+  display: none;
+}
+.appViewDot {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 1px;
+  color: #FFFFFF;
+  background: #E30613;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.appViewDot .appViewSvg {
+  width: 14px;
+  height: 14px;
+}
+.appViewDot--gray {
+  color: #9CA3AF;
+  background: #F3F4F6;
+}
+.appViewDataList {
+  display: grid;
+  gap: 0;
+}
+.appViewDataRow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 12px;
+  padding-block: 10px;
+  border-bottom: 1px solid #E5E7EB;
+}
+.appViewDataRow:last-child {
+  border-bottom: 0;
+}
+.appViewDataLabel {
+  color: #6B7280;
+  font-size: 13px;
+  line-height: 18px;
+}
+.appViewDataValue {
+  color: #1F2933;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 20px;
+  text-align: right;
+}
+.appViewScanner {
+  display: block;
+  width: calc(100% + 32px);
+  height: 480px;
+  margin-inline: -16px;
+  padding-top: 104px;
+  background: #141B2D;
+}
+.appViewScannerArea {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 265px;
+  height: 272px;
+  margin-inline: auto;
+  overflow: hidden;
+  background: rgba(16, 185, 129, 0.14);
+  border: 0;
+}
+.appViewScannerArea--ok {
+  background: rgba(0, 166, 62, 0.30);
+}
+.appViewScannerArea::before,
+.appViewScannerArea::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 4px solid #E30613;
+  border-radius: 8px;
+  clip-path: polygon(0 0, 34px 0, 34px 4px, 4px 4px, 4px 34px, 0 34px, 0 0, 100% 0, 100% 34px, calc(100% - 4px) 34px, calc(100% - 4px) 4px, calc(100% - 34px) 4px, calc(100% - 34px) 0);
+}
+.appViewScannerArea::after {
+  transform: rotate(180deg);
+}
+.appViewScannerLine {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 0;
+  height: 2px;
+  background: rgba(0, 200, 83, 0.85);
+  box-shadow: 0 0 12px rgba(0, 200, 83, 0.8);
+  animation: appViewScan 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes appViewScan {
+  0% { transform: translateY(20px); }
+  50% { transform: translateY(238px); }
+  100% { transform: translateY(20px); }
+}
+.appViewScannerStatus {
+  display: grid;
+  place-items: center;
+  width: 200px;
+  min-height: 64px;
+  padding: 8px 16px;
+  color: #E5E7EB;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: center;
+}
+.appViewScannerStatus--ok {
+  color: #00C853;
+  font-weight: 800;
+}
+.appViewBottomPanel {
+  width: calc(100% + 32px);
+  margin-inline: -16px;
+  padding: 28px 16px 104px;
+  background: #000000;
+}
+.appViewCategoryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.appViewCategory {
+  display: grid;
+  place-items: center;
+  min-height: 88px;
+  padding: 12px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  color: #1F2933;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+}
+.appViewUpload {
+  display: grid;
+  place-items: center;
+  min-height: 92px;
+  padding: 16px;
+  color: #4B5563;
+  background: #FFFFFF;
+  border: 1px dashed #CBD5E1;
+  border-radius: 16px;
+  text-align: center;
+}
+.appViewSuccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 852px;
+  padding: 88px 16px 80px;
+  text-align: center;
+}
+.appViewSuccessBody {
+  display: grid;
+  place-items: center;
+  gap: 16px;
+  width: 100%;
+}
+.appViewSuccessActions {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  margin-top: auto;
+}
+.appViewSuccessTextIcon {
+  font-size: 34px;
+  font-weight: 800;
+}
+.appViewSuccessIcon {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  color: #FFFFFF;
+  background: #E30613;
+  border-radius: 999px;
+  font-size: 42px;
+  font-weight: 800;
+}
+.appViewSuccessIcon .appViewSvg {
+  width: 44px;
+  height: 44px;
+  stroke-width: 2.4;
+}
+.appViewSuccessIcon--green {
+  color: #16A34A;
+  background: #DCFCE7;
+}
+.appViewSuccessIcon--softRed {
+  color: #E30613;
+  background: #FEE2E2;
+}
+.appViewSuccessSummary {
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.appViewSuccessId {
+  padding: 8px 16px;
+  color: #1F2933;
+  background: #F3F4F6;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 22px;
+}
+.appViewRating {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.appViewStar {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  color: #E5E7EB;
+  background: transparent;
+  border: 0;
+}
+.appViewStar .appViewSvgStar {
+  width: 44px;
+  height: 44px;
+  fill: #E5E7EB;
+  stroke: none;
+}
+.appViewStar:hover .appViewSvgStar {
+  fill: #D6DAE1;
+}
+.appViewStar--active .appViewSvgStar,
+.appViewStar--active:hover .appViewSvgStar {
+  fill: #FACC15;
+}
+.appViewMap {
+  position: relative;
+  width: calc(100% + 32px);
+  height: 540px;
+  margin-inline: -16px;
+  overflow: hidden;
+  background: #F6D3D3;
+}
+.appViewMapStreet {
+  position: absolute;
+  background: #FAE2E2;
+}
+.appViewMapStreet--v {
+  left: 120px;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+}
+.appViewMapStreet--h {
+  left: 0;
+  right: 0;
+  top: 300px;
+  height: 48px;
+}
+.appViewBuilding {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  padding: 18px 14px;
+  color: #9C8585;
+  background: #FBE7E7;
+  border: 0;
+  border-radius: 18px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.appViewBuilding--a {
+  left: 22px;
+  top: 96px;
+  width: 96px;
+  height: 120px;
+}
+.appViewBuilding--b {
+  left: 210px;
+  top: 110px;
+  width: 130px;
+  height: 150px;
+}
+.appViewBuildingName {
+  font-size: 13px;
+  font-weight: 700;
+}
+.appViewMapPin {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: #FFFFFF;
+  border-radius: 999px 999px 999px 4px;
+  font-size: 15px;
+  font-weight: 800;
+  transform: rotate(0deg);
+}
+.appViewMapPin--blue {
+  background: #2B7FFF;
+}
+.appViewMapPin--red {
+  background: #E30613;
+  animation: appViewMarkerPulse 2.2s ease-out infinite;
+}
+.appViewLegend {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  gap: 7px;
+  padding: 12px 14px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+  font-size: 12px;
+  font-weight: 600;
+  color: #1F2933;
+}
+.appViewLegendRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.appViewLegendDot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border-radius: 999px;
+}
+.appViewLegendDot--red { background: #E30613; }
+.appViewLegendDot--blue { background: #2B7FFF; }
+.appViewLegendDot--amber { background: #F59E0B; }
+.appViewLegendDot--green { background: #00C853; }
+.appViewLegendDot--gray { background: #9CA3AF; }
+.appViewMapLocate {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: #1F2933;
+  background: #FFFFFF;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+}
+.appViewMapLocate .appViewSvg {
+  width: 24px;
+  height: 24px;
+}
+.appViewMapSheet {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 96px;
+  z-index: 9;
+  border-color: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.16);
+}
+.appViewMapSheetHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.appViewMapSheetClose {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: #6B7280;
+  background: #F3F4F6;
+  border: 0;
+  border-radius: 999px;
+}
+.appViewMapSheetClose .appViewSvg {
+  width: 16px;
+  height: 16px;
+}
+.appViewOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(17, 24, 39, 0.46);
+  animation: appViewFadeIn 0.2s ease both;
+}
+.appViewModal {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  width: 324px;
+  padding: 20px 12px 0;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+  text-align: center;
+  animation: appViewModalEnter 0.24s cubic-bezier(0.2, 0.9, 0.35, 1.12) both;
+}
+@keyframes appViewModalEnter {
+  from { opacity: 0; transform: scale(0.86); }
+  to { opacity: 1; transform: scale(1); }
+}
+.appViewOverlay--closing {
+  animation: appViewFadeOut 0.18s ease both;
+}
+.appViewOverlay--closing .appViewModal {
+  animation: appViewModalExit 0.18s ease both;
+}
+@keyframes appViewModalExit {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.9); }
+}
+.appViewModalIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-inline: auto;
+  color: #E30613;
+  background: #FFFFFF;
+  border: 2.5px solid #E30613;
+  border-radius: 999px;
+  font-weight: 800;
+}
+.appViewModalIcon .appViewSvg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.2;
+}
+.appViewModal .appViewText {
+  padding-inline: 8px;
+}
+.appViewModalActions {
+  display: grid;
+  margin: 8px -12px 0;
+  border-top: 1px solid #E5E7EB;
+}
+.appViewModalAction {
+  min-height: 52px;
+  padding: 12px 16px;
+  color: #1F2933;
+  background: #FFFFFF;
+  border: 0;
+  border-bottom: 1px solid #E5E7EB;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.appViewModalAction:last-child {
+  border-bottom: 0;
+}
+.appViewModalAction--highlighted {
+  color: #E30613;
+  background: #F8F9FB;
+}
+.appViewModalAction:hover {
+  background: #F3F4F6;
+}
+.appViewOverlay--sheet {
+  align-items: end;
+  padding: 0;
+}
+.appViewSheet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 20px 22px;
+  background: #F5F7FB;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.22);
+  animation: appViewSheetUp 0.3s cubic-bezier(0.32, 0.72, 0.3, 1) both;
+}
+.appViewOverlay--closing .appViewSheet {
+  animation: appViewSheetDown 0.2s ease both;
+}
+@keyframes appViewSheetUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes appViewSheetDown {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+.appViewSheetHandle {
+  width: 40px;
+  height: 5px;
+  margin: 0 auto 14px;
+  background: #C7CDD6;
+  border-radius: 999px;
+}
+.appViewSheetHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.appViewSheetHead .appViewTitle {
+  flex: 1;
+  font-size: 20px;
+}
+.appViewSheetClear {
+  color: #E30613;
+  background: transparent;
+  border: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+.appViewSheetClose {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  color: #6B7280;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 999px;
+}
+.appViewSheetClose .appViewSvg {
+  width: 16px;
+  height: 16px;
+}
+.appViewSheetBody {
+  display: grid;
+  gap: 16px;
+}
+.appViewSheetGroup {
+  display: grid;
+  gap: 10px;
+}
+.appViewSheetLabel {
+  color: #6B7280;
+  font-size: 14px;
+  font-weight: 600;
+}
+.appViewSheetChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.appViewSheet .appViewChip {
+  min-height: 40px;
+  padding: 8px 16px;
+}
+.appViewSheetLocation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.appViewSheetField {
+  box-sizing: border-box;
+  display: grid;
+  gap: 2px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+}
+.appViewSheetFieldValue {
+  color: #1F2933;
+  font-size: 15px;
+  font-weight: 600;
+}
+.appViewSheetActions {
+  display: grid;
+  gap: 4px;
+  margin-top: 16px;
+}
+

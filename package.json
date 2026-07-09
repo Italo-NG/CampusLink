@@ -1,7 +1,7 @@
 {
   "name": "campuslink-main",
   "version": "1.0.0",
-  "description": "Landing estática de **CampusLink** (Montimin), hecha con HTML, CSS y JavaScript, sin frameworks ni dependencias.",
+  "description": "Static landing page for CampusLink (Montimin), built with HTML, CSS, and JavaScript, with no frameworks or dependencies.",
   "main": "index.js",
   "scripts": {
     "test:acceptance": "cucumber-js --tags \"@automated\""

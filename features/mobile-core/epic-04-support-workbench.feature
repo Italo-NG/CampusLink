@@ -1,248 +1,248 @@
 # language: en
 
 @mobile-core @prototype @manual @E4
-Feature: E4 - Panel de Trabajo para Soporte
+Feature: E4 - Support Work Panel
 
-Esta épica agrupa las historias relacionadas con el trabajo operativo del personal de soporte: visualización de tickets, atención de emergencias, mapa de incidencias, revisión de ficha técnica, inicio de reparación, pausa por insumos, cierre del ticket y seguimiento de productividad.
+This epic groups the stories related to the operational work of support staff: viewing tickets, handling emergencies, incident map, reviewing the technical sheet, starting repairs, pausing for supplies, closing the ticket, and productivity tracking.
 
-Rule: US27 - Dashboard Técnico de Incidencias Pendientes
+Rule: US27 - Technical Dashboard of Pending Incidents
 
 
-# Como Personal de Soporte Resolutor
-# Quiero visualizar una lista centralizada de todos los reportes asignados
-# Para organizar mi jornada laboral sin depender de órdenes físicas o llamadas.
-
-@US27
-Scenario: US27 - Scenario 1: Carga de lista de tareas
-  Given que el técnico accede con su rol de Resolutor
-  When abre el Dashboard técnico
-  Then el sistema muestra una lista de "Tickets Pendientes"
-  And muestra el ID de cada ticket
-  And muestra la ubicación exacta
-  And muestra un cronómetro con el tiempo transcurrido desde el reporte
+# As Support Staff (Resolver)
+# I want to view a centralized list of all assigned reports
+# So that I can organize my workday without relying on physical orders or calls.
 
 @US27
-Scenario: US27 - Scenario 2: Priorización por criticidad
-  Given que existen múltiples reportes en la lista
-  When se renderiza la interfaz
-  Then el sistema coloca los tickets de tipo "S.O.S. Académico" en la parte superior
-  And muestra un indicador visual de urgencia
-  And usa una alerta visual roja parpadeante
+Scenario: US27 - Scenario 1: Task list load
+  Given the technician logs in with their Resolver role
+  When they open the technical Dashboard
+  Then the system shows a "Pending Tickets" list
+  And shows the ID of each ticket
+  And shows the exact location
+  And shows a timer with the time elapsed since the report
 
 @US27
-Scenario: US27 - Scenario 3: Sincronización de lista
-  Given que el técnico intenta actualizar su lista
-  When hay una falla de conexión con el servidor central
-  Then la app activa el "Modo Consulta Offline"
-  And permite visualizar los tickets cargados en la última sesión exitosa
+Scenario: US27 - Scenario 2: Prioritization by criticality
+  Given there are multiple reports in the list
+  When the interface renders
+  Then the system places "Academic S.O.S." type tickets at the top
+  And shows a visual urgency indicator
+  And uses a blinking red visual alert
+
+@US27
+Scenario: US27 - Scenario 3: List synchronization
+  Given the technician tries to refresh their list
+  When there is a connection failure with the central server
+  Then the app activates "Offline Query Mode"
+  And allows viewing the tickets loaded during the last successful session
 
 
-Rule: US28 - Notificación de Emergencia S.O.S. en Tiempo Real
+Rule: US28 - Real-Time S.O.S. Emergency Notification
 
 
-# Como Personal de Soporte
-# Quiero recibir una alerta intrusiva y sonora ante un S.O.S. docente
-# Para acudir al aula inmediatamente y minimizar la pérdida de horas de clase.
-
-@US28
-Scenario: US28 - Scenario 1: Alerta de pantalla completa
-  Given que la app está en ejecución en primer o segundo plano
-  When un docente activa un S.O.S.
-  Then el sistema despliega un modal de pantalla completa
-  And reproduce un sonido de alerta
-  And muestra información del aula
-
-@US28
-Scenario: US28 - Scenario 2: Persistencia de emergencia
-  Given que llega una alerta S.O.S.
-  When el técnico no interactúa con el modal
-  Then la alerta sonora se repite cada 10 segundos
-  And se mantiene hasta que el técnico presione "Aceptar Misión"
-  And se mantiene hasta que el sistema derive la emergencia por falta de respuesta
+# As Support Staff
+# I want to receive an intrusive, audible alert on a teacher's S.O.S.
+# So that I can go to the classroom immediately and minimize lost class time.
 
 @US28
-Scenario: US28 - Scenario 3: Filtrado por geolocalización
-  Given que se emite un S.O.S. en una sede específica
-  When el sistema detecta vía GPS que el técnico está en una sede distinta
-  Then omite el envío de la alerta a ese técnico
-  And evita desplazamientos imposibles
+Scenario: US28 - Scenario 1: Full-screen alert
+  Given the app is running in the foreground or background
+  When a teacher activates an S.O.S.
+  Then the system displays a full-screen modal
+  And plays an alert sound
+  And shows classroom information
+
+@US28
+Scenario: US28 - Scenario 2: Emergency persistence
+  Given an S.O.S. alert arrives
+  When the technician does not interact with the modal
+  Then the alert sound repeats every 10 seconds
+  And continues until the technician presses "Accept Mission"
+  And continues until the system reroutes the emergency due to lack of response
+
+@US28
+Scenario: US28 - Scenario 3: Filtering by geolocation
+  Given an S.O.S. is issued at a specific campus
+  When the system detects via GPS that the technician is at a different campus
+  Then it skips sending the alert to that technician
+  And avoids impossible travel
 
 
-Rule: US29 - Mapa Interactivo de Incidencias
+Rule: US29 - Interactive Incident Map
 
 
-# Como Personal de Soporte
-# Quiero visualizar los reportes sobre el croquis del campus
-# Para trazar rutas de atención eficientes basadas en la cercanía física.
+# As Support Staff
+# I want to view reports over the campus layout
+# So that I can plan efficient service routes based on physical proximity.
 
 @US29
-Scenario: US29 - Scenario 1: Visualización geolocalizada
-  Given que el técnico selecciona la vista de "Mapa"
-  When carga el croquis interactivo
-  Then visualiza pines de colores sobre los pabellones
-  And los pines representan cada reporte activo
+Scenario: US29 - Scenario 1: Geolocated display
+  Given the technician selects the "Map" view
+  When the interactive layout loads
+  Then they see colored pins over the buildings
+  And the pins represent each active report
 
 @US29
-Scenario: US29 - Scenario 2: Semántica de colores en mapa
-  Given que se muestran los pines
-  When el sistema evalúa el tipo de ticket
-  Then debe pintar de rojo los S.O.S.
-  And debe pintar de amarillo los tickets "En Proceso"
-  And debe pintar de gris los reportes estándar pendientes
+Scenario: US29 - Scenario 2: Color semantics on the map
+  Given the pins are displayed
+  When the system evaluates the ticket type
+  Then it must color S.O.S. tickets red
+  And it must color "In Progress" tickets yellow
+  And it must color pending standard reports gray
 
 @US29
-Scenario: US29 - Scenario 3: Agrupación de pines
-  Given que existen múltiples reportes en un mismo pabellón o aula
-  When el nivel de zoom es bajo
-  Then el sistema agrupa los pines en un indicador numérico
-  And el indicador se expande al tocarlo
-  And muestra la lista individual de reportes
+Scenario: US29 - Scenario 3: Pin clustering
+  Given there are multiple reports in the same building or room
+  When the zoom level is low
+  Then the system groups the pins into a numeric indicator
+  And the indicator expands when tapped
+  And shows the individual list of reports
 
 
-Rule: US30 - Ficha Técnica de Detalle y Contacto
+Rule: US30 - Technical Sheet Detail and Contact
 
 
-# Como Personal de Soporte
-# Quiero revisar la evidencia y datos del reportante
-# Para preparar las herramientas necesarias antes de desplazarme al aula.
-
-@US30
-Scenario: US30 - Scenario 1: Inspección de evidencia
-  Given que el técnico abre el detalle de un ticket
-  When visualiza la ficha técnica
-  Then el sistema muestra la foto
-  And muestra el audio de descripción si existe
-  And muestra la categoría de la falla
+# As Support Staff
+# I want to review the reporter's evidence and data
+# So that I can prepare the necessary tools before heading to the classroom.
 
 @US30
-Scenario: US30 - Scenario 2: Interacción con evidencia visual
-  Given que el técnico necesita ver detalles del daño
-  When toca la imagen adjunta
-  Then la app la expande a pantalla completa
-  And permite realizar "pinch-to-zoom"
+Scenario: US30 - Scenario 1: Evidence inspection
+  Given the technician opens a ticket's detail
+  When they view the technical sheet
+  Then the system shows the photo
+  And shows the description audio if it exists
+  And shows the issue category
 
 @US30
-Scenario: US30 - Scenario 3: Canal de comunicación
-  Given que la información del reporte es insuficiente para hallar la falla
-  When el técnico está en el lugar
-  Then el sistema habilita un botón de "Contactar Reportante"
-  And permite iniciar un chat o llamada rápida
+Scenario: US30 - Scenario 2: Interaction with visual evidence
+  Given the technician needs to see damage details
+  When they tap the attached image
+  Then the app expands it to full screen
+  And allows "pinch-to-zoom"
+
+@US30
+Scenario: US30 - Scenario 3: Communication channel
+  Given the report information is insufficient to locate the issue
+  When the technician is on-site
+  Then the system enables a "Contact Reporter" button
+  And allows starting a quick chat or call
 
 
-Rule: US31 - Marcado de Inicio de Atención
+Rule: US31 - Marking the Start of Service
 
 
-# Como Personal de Soporte
-# Quiero registrar el inicio de la reparación al llegar al sitio
-# Para que el Alumno/Docente reciba feedback de atención y el sistema mida el tiempo de respuesta real.
-
-@US31
-Scenario: US31 - Scenario 1: Cambio de estado a En Proceso
-  Given que el técnico llega al aula
-  When presiona el botón "Iniciar Reparación"
-  Then el estado del ticket cambia a "En Proceso"
-  And se dispara la notificación al Alumno/Docente reportante
-
-@US31
-Scenario: US31 - Scenario 2: Restricción de simultaneidad
-  Given que el técnico ya tiene una tarea activa
-  When intenta iniciar otra reparación
-  Then el sistema bloquea la acción
-  And exige finalizar o pausar la tarea previa
+# As Support Staff
+# I want to record the start of the repair upon arriving on-site
+# So that the Student/Teacher gets service feedback and the system measures the real response time.
 
 @US31
-Scenario: US31 - Scenario 3: Validación de proximidad
-  Given que el técnico intenta iniciar la reparación
-  When el GPS detecta que está a más de 50 metros del aula asignada
-  Then el sistema solicita una confirmación adicional
-  And asegura que el técnico se encuentra en la ubicación correcta
+Scenario: US31 - Scenario 1: Status change to In Progress
+  Given the technician arrives at the classroom
+  When they press the "Start Repair" button
+  Then the ticket status changes to "In Progress"
+  And a notification is triggered to the reporting Student/Teacher
+
+@US31
+Scenario: US31 - Scenario 2: Concurrency restriction
+  Given the technician already has an active task
+  When they try to start another repair
+  Then the system blocks the action
+  And requires finishing or pausing the previous task
+
+@US31
+Scenario: US31 - Scenario 3: Proximity validation
+  Given the technician tries to start the repair
+  When the GPS detects they are more than 50 meters from the assigned classroom
+  Then the system requests additional confirmation
+  And ensures the technician is at the correct location
 
 
-Rule: US32 - Gestión de Pausa por Repuestos e Insumos
+Rule: US32 - Managing Pauses for Parts and Supplies
 
 
-# Como Personal de Soporte
-# Quiero marcar un ticket como pendiente por materiales
-# Para justificar la demora y solicitar el insumo al almacén central.
+# As Support Staff
+# I want to mark a ticket as pending due to materials
+# So that I can justify the delay and request the supply from the central warehouse.
 
 @US32
-Scenario: US32 - Scenario 1: Solicitud de material
-  Given que la reparación requiere un repuesto no disponible en el momento
-  When el técnico selecciona "Pausar por Insumos"
-  Then el sistema abre un catálogo rápido de piezas comunes
-  And permite seleccionar el material requerido
+Scenario: US32 - Scenario 1: Material request
+  Given the repair requires a part not currently available
+  When the technician selects "Pause for Supplies"
+  Then the system opens a quick catalog of common parts
+  And allows selecting the required material
 
 @US32
-Scenario: US32 - Scenario 2: Evidencia de necesidad
-  Given que se pausa el ticket por falta de materiales
-  When el técnico guarda el estado
-  Then el sistema obliga a adjuntar una foto de la pieza a sustituir
-  And registra la evidencia para control de inventario
+Scenario: US32 - Scenario 2: Evidence of need
+  Given the ticket is paused due to lack of materials
+  When the technician saves the status
+  Then the system requires attaching a photo of the part to be replaced
+  And records the evidence for inventory control
 
 @US32
-Scenario: US32 - Scenario 3: Comunicación de retraso
-  Given que se registra la pausa por insumos
-  When se confirma la acción
-  Then el sistema envía automáticamente un mensaje al Alumno/Docente
-  And el mensaje indica "Tu reporte requiere repuestos externos; el tiempo de atención se extenderá"
+Scenario: US32 - Scenario 3: Delay communication
+  Given the pause for supplies is recorded
+  When the action is confirmed
+  Then the system automatically sends a message to the Student/Teacher
+  And the message states "Your report requires external parts; service time will be extended"
 
 
-Rule: US33 - Registro de Resolución y Cierre de Ticket
+Rule: US33 - Recording the Resolution and Closing the Ticket
 
 
-# Como Personal de Soporte
-# Quiero registrar la solución y adjuntar evidencia del trabajo terminado
-# Para cerrar el caso y generar el registro de cumplimiento SLA.
-
-@US33
-Scenario: US33 - Scenario 1: Cierre formal
-  Given que la falla fue corregida
-  When el técnico presiona "Finalizar"
-  And sube la foto del equipo operativo
-  Then el ticket se marca como "Resuelto"
-  And se registra el tiempo total de atención
+# As Support Staff
+# I want to record the solution and attach evidence of the finished work
+# So that I can close the case and generate the SLA compliance record.
 
 @US33
-Scenario: US33 - Scenario 2: Validación de evidencia final
-  Given que el sistema exige foto de cierre
-  When el técnico intenta subir la misma imagen del reporte inicial
-  Then el sistema rechaza el archivo
-  And solicita una captura real de la solución
+Scenario: US33 - Scenario 1: Formal closing
+  Given the issue was fixed
+  When the technician presses "Finish"
+  And uploads a photo of the working equipment
+  Then the ticket is marked as "Resolved"
+  And the total service time is recorded
 
 @US33
-Scenario: US33 - Scenario 3: Justificación de cierre
-  Given que el técnico intenta cerrar el ticket
-  When el campo de "Acción Realizada" está vacío
-  Then el sistema bloquea el cierre
-  And resalta el campo de texto como obligatorio
+Scenario: US33 - Scenario 2: Final evidence validation
+  Given the system requires a closing photo
+  When the technician tries to upload the same image from the initial report
+  Then the system rejects the file
+  And requests a real capture of the solution
+
+@US33
+Scenario: US33 - Scenario 3: Closing justification
+  Given the technician tries to close the ticket
+  When the "Action Taken" field is empty
+  Then the system blocks the closing
+  And highlights the text field as required
 
 
-Rule: US34 - Resumen de Productividad Diaria
+Rule: US34 - Daily Productivity Summary
 
 
-# Como Personal de Soporte
-# Quiero visualizar mi desempeño diario en la aplicación
-# Para realizar un seguimiento personal de mis metas y eficiencia.
-
-@US34
-Scenario: US34 - Scenario 1: Visualización de métricas
-  Given que el técnico accede a su perfil
-  When consulta la sección "Mi Productividad"
-  Then visualiza un contador de tickets resueltos hoy
-  And visualiza su tiempo promedio de reparación
-
-@US34
-Scenario: US34 - Scenario 2: Reinicio de ciclo
-  Given que el sistema mide la jornada diaria
-  When inicia un nuevo día a las 00:00
-  Then los contadores visuales se reinician a cero
-  And los datos anteriores se archivan en el historial histórico de rendimiento
+# As Support Staff
+# I want to view my daily performance in the app
+# So that I can personally track my goals and efficiency.
 
 @US34
-Scenario: US34 - Scenario 3: Comparativa de equipo
-  Given que el técnico finaliza su turno
-  When revisa su resumen
-  Then la app muestra un indicador comparativo
-  And el indicador puede mostrar un mensaje como "Estás un 5% sobre el promedio de atención del equipo"
-  And fomenta la mejora continua mediante gamificación
+Scenario: US34 - Scenario 1: Metrics display
+  Given the technician accesses their profile
+  When they check the "My Productivity" section
+  Then they see a counter of tickets resolved today
+  And they see their average repair time
+
+@US34
+Scenario: US34 - Scenario 2: Cycle reset
+  Given the system measures the daily workday
+  When a new day starts at 00:00
+  Then the visual counters reset to zero
+  And previous data is archived in the historical performance record
+
+@US34
+Scenario: US34 - Scenario 3: Team comparison
+  Given the technician ends their shift
+  When they review their summary
+  Then the app shows a comparative indicator
+  And the indicator may show a message such as "You're 5% above the team's average service rate"
+  And it encourages continuous improvement through gamification
 

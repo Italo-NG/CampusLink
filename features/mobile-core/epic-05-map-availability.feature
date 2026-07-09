@@ -1,237 +1,237 @@
 # language: en
 
 @mobile-core @prototype @manual @E5
-Feature: E5 - Mapa y Disponibilidad de Aulas
+Feature: E5 - Campus Map and Room Availability
 
-Esta épica agrupa las historias relacionadas con la visualización del mapa del campus, disponibilidad de aulas, pines de operatividad, búsqueda, filtros, navegación táctil, geolocalización, cambio de piso y leyenda de símbolos.
+This epic groups the stories related to viewing the campus map, room availability, operational status pins, search, filters, touch navigation, geolocation, floor switching, and the symbol legend.
 
-Rule: US35 - Acceso al Croquis Interactivo del Campus
+Rule: US35 - Access to the Interactive Campus Layout
 
 
-# Como Usuario (Estudiante/Docente/Soporte)
-# Quiero visualizar una representación gráfica de los pabellones de mi sede
-# Para identificar la ubicación de las áreas comunes y aulas de forma espacial.
-
-@US35
-Scenario: US35 - Scenario 1: Carga del mapa base
-  Given que el usuario presiona el botón "Mapa" en la barra de navegación
-  When la app identifica la sede mediante perfil o GPS
-  Then renderiza un croquis 2D optimizado
-  And muestra etiquetas legibles de los pabellones
+# As a User (Student/Teacher/Support)
+# I want to view a graphical representation of my campus's buildings
+# So that I can identify the location of common areas and rooms spatially.
 
 @US35
-Scenario: US35 - Scenario 2: Cambio de sede manual
-  Given que el usuario consulta una sede distinta a la actual
-  When selecciona una sede diferente en el menú superior
-  Then el sistema reemplaza el croquis en menos de 2 segundos
-  And garantiza la fluidez de la navegación
+Scenario: US35 - Scenario 1: Base map load
+  Given the user presses the "Map" button in the navigation bar
+  When the app identifies the campus via profile or GPS
+  Then it renders an optimized 2D layout
+  And shows readable building labels
 
 @US35
-Scenario: US35 - Scenario 3: Falla de carga de recursos
-  Given que la conexión es inestable
-  When el mapa no logra descargar la imagen base
-  Then se muestra un estado de carga progresivo
-  And se muestra un botón de "Reintentar carga"
+Scenario: US35 - Scenario 2: Manual campus change
+  Given the user checks a campus other than the current one
+  When they select a different campus in the top menu
+  Then the system replaces the layout in under 2 seconds
+  And ensures smooth navigation
+
+@US35
+Scenario: US35 - Scenario 3: Resource load failure
+  Given the connection is unstable
+  When the map fails to download the base image
+  Then a progressive loading state is shown
+  And a "Retry loading" button is shown
 
 
-Rule: US36 - Visualización de Pines de Estado
+Rule: US36 - Display of Status Pins
 
 
-# Como Usuario
-# Quiero ver pines de colores sobre las aulas en el mapa
-# Para conocer el estado de los equipos multimedia o mobiliario de un vistazo.
-
-@US36
-Scenario: US36 - Scenario 1: Identificación visual
-  Given que el mapa está cargado
-  When existen reportes activos en la base de datos
-  Then el sistema dibuja pines de estado sobre las aulas
-  And usa Verde para "Operativo"
-  And usa Amarillo para "Incidencia leve"
-  And usa Rojo para "Fuera de servicio"
+# As a User
+# I want to see colored pins over the rooms on the map
+# So that I can tell the status of multimedia equipment or furniture at a glance.
 
 @US36
-Scenario: US36 - Scenario 2: Prioridad de gravedad
-  Given que un aula tiene múltiples reportes de distinta gravedad
-  When el sistema asigna el color al pin de esa aula
-  Then debe prevalecer el color del fallo más crítico
-  And se aplica la prioridad Rojo sobre Amarillo
-  And se aplica la prioridad Amarillo sobre Verde
+Scenario: US36 - Scenario 1: Visual identification
+  Given the map is loaded
+  When there are active reports in the database
+  Then the system draws status pins over the rooms
+  And uses Green for "Operational"
+  And uses Yellow for "Minor issue"
+  And uses Red for "Out of service"
 
 @US36
-Scenario: US36 - Scenario 3: Aula sin reportes activos
-  Given que un aula no tiene reportes activos asociados
-  When el sistema renderiza el estado del aula en el mapa
-  Then el pin del aula se muestra en color Verde
-  And el sistema comunica que el aula se encuentra operativa
+Scenario: US36 - Scenario 2: Severity priority
+  Given a room has multiple reports of different severity
+  When the system assigns the color to that room's pin
+  Then the color of the most critical issue must prevail
+  And Red takes priority over Yellow
+  And Yellow takes priority over Green
+
+@US36
+Scenario: US36 - Scenario 3: Room with no active reports
+  Given a room has no associated active reports
+  When the system renders the room's status on the map
+  Then the room's pin is shown in Green
+  And the system communicates that the room is operational
 
 
-Rule: US37 - Búsqueda Rápida de Aula
+Rule: US37 - Quick Room Search
 
 
-# Como Usuario con prisa
-# Quiero buscar un aula específica por su nombre
-# Para que el mapa se centre automáticamente en su ubicación y estado.
-
-@US37
-Scenario: US37 - Scenario 1: Búsqueda exitosa de aula
-  Given que el usuario abre el campo de búsqueda del mapa
-  When ingresa el nombre de un aula existente
-  Then el mapa se centra automáticamente en la ubicación del aula
-  And muestra el estado actual del aula seleccionada
-
-@US37
-Scenario: US37 - Scenario 2: Sugerencias durante la búsqueda
-  Given que el usuario empieza a escribir el nombre de un aula
-  When el sistema encuentra coincidencias parciales
-  Then se muestran sugerencias de aulas relacionadas
-  And el usuario puede seleccionar una sugerencia para centrar el mapa
+# As a User in a hurry
+# I want to search for a specific room by its name
+# So that the map automatically centers on its location and status.
 
 @US37
-Scenario: US37 - Scenario 3: Aula no encontrada
-  Given que el usuario escribe el nombre de un aula inexistente
-  When ejecuta la búsqueda
-  Then el sistema muestra el mensaje "Aula no encontrada"
-  And mantiene visible el campo de búsqueda para intentar nuevamente
+Scenario: US37 - Scenario 1: Successful room search
+  Given the user opens the map's search field
+  When they enter the name of an existing room
+  Then the map automatically centers on the room's location
+  And shows the selected room's current status
+
+@US37
+Scenario: US37 - Scenario 2: Suggestions while searching
+  Given the user starts typing a room name
+  When the system finds partial matches
+  Then related room suggestions are shown
+  And the user can select a suggestion to center the map
+
+@US37
+Scenario: US37 - Scenario 3: Room not found
+  Given the user types the name of a nonexistent room
+  When they run the search
+  Then the system shows the message "Room not found"
+  And keeps the search field visible to try again
 
 
-Rule: US38 - Detalle de Fallos por Aula
+Rule: US38 - Failure Detail per Room
 
 
-# Como Usuario
-# Quiero tocar un pin para ver el detalle de los fallos de esa aula
-# Para decidir si el aula es apta para mi actividad o si debo buscar otra.
-
-@US38
-Scenario: US38 - Scenario 1: Visualización del detalle de aula
-  Given que el usuario visualiza un pin sobre un aula
-  When toca el pin del aula
-  Then el sistema muestra una tarjeta con el detalle de fallos
-  And muestra el nombre del aula
-  And muestra el estado de operatividad actual
-
-@US38
-Scenario: US38 - Scenario 2: Aula con múltiples fallos
-  Given que el aula tiene más de un reporte activo
-  When el usuario abre el detalle del pin
-  Then el sistema lista los fallos asociados al aula
-  And muestra la categoría de cada falla
-  And muestra el nivel de gravedad correspondiente
+# As a User
+# I want to tap a pin to see the failure detail for that room
+# So that I can decide whether the room is fit for my activity or I should look for another.
 
 @US38
-Scenario: US38 - Scenario 3: Aula sin incidencias
-  Given que el usuario toca el pin de un aula operativa
-  When el sistema consulta los reportes asociados
-  Then muestra el mensaje "Aula operativa"
-  And permite al usuario cerrar la tarjeta de detalle sin cambiar de vista
+Scenario: US38 - Scenario 1: Room detail display
+  Given the user views a pin over a room
+  When they tap the room's pin
+  Then the system shows a card with the failure detail
+  And shows the room's name
+  And shows the current operational status
+
+@US38
+Scenario: US38 - Scenario 2: Room with multiple failures
+  Given the room has more than one active report
+  When the user opens the pin's detail
+  Then the system lists the failures associated with the room
+  And shows the category of each issue
+  And shows the corresponding severity level
+
+@US38
+Scenario: US38 - Scenario 3: Room with no incidents
+  Given the user taps the pin of an operational room
+  When the system checks the associated reports
+  Then it shows the message "Operational room"
+  And allows the user to close the detail card without switching views
 
 
-Rule: US39 - Filtro de Pines por Tipo de Falla
+Rule: US39 - Filtering Pins by Failure Type
 
 
-# Como Usuario de la vista de mapa
-# Quiero filtrar los pines por tipo de falla
-# Para no saturar la vista con información irrelevante en ese momento.
+# As a User of the map view
+# I want to filter pins by failure type
+# So that I don't clutter the view with irrelevant information at that moment.
 
 @US39
-Scenario: US39 - Scenario 1: Aplicación de filtros
-  Given que el usuario abre el menú de categorías
-  When selecciona una opción como "Multimedia"
-  Then el mapa oculta todos los pines que no correspondan a esa categoría de falla
+Scenario: US39 - Scenario 1: Applying filters
+  Given the user opens the category menu
+  When they select an option such as "Multimedia"
+  Then the map hides all pins that don't match that failure category
 
 @US39
-Scenario: US39 - Scenario 2: Limpieza de filtros
-  Given que existen filtros activos en el mapa
-  When el usuario presiona "Limpiar filtros"
-  Then el mapa vuelve a mostrar todos los pines de estado inmediatamente
+Scenario: US39 - Scenario 2: Clearing filters
+  Given there are active filters on the map
+  When the user presses "Clear filters"
+  Then the map immediately shows all status pins again
 
 @US39
-Scenario: US39 - Scenario 3: Persistencia de filtros
-  Given que el usuario aplicó filtros y sale de la sección de mapa
-  When regresa al mapa en la misma sesión
-  Then el sistema mantiene los filtros aplicados previamente
-  And ahorra tiempo al usuario durante la navegación
+Scenario: US39 - Scenario 3: Filter persistence
+  Given the user applied filters and leaves the map section
+  When they return to the map in the same session
+  Then the system keeps the previously applied filters
+  And saves the user time during navigation
 
 
-Rule: US40 - Navegación Táctil y Re-centrado
+Rule: US40 - Touch Navigation and Re-centering
 
 
-# Como Usuario móvil
-# Quiero usar gestos para acercar o alejar el mapa
-# Para observar con precisión la distribución de los equipos en el pabellón.
-
-@US40
-Scenario: US40 - Scenario 1: Zoom y Pan fluido
-  Given que el usuario usa gestos de pinza o deslizamiento
-  When interactúa con el croquis
-  Then el mapa responde con una escala fluida
-  And el mapa responde con movimiento sin saltos visuales
+# As a mobile User
+# I want to use gestures to zoom in or out on the map
+# So that I can precisely observe the layout of the equipment in the building.
 
 @US40
-Scenario: US40 - Scenario 2: Límites de navegación
-  Given que el usuario arrastra el mapa hacia los bordes
-  When llega al límite de la imagen de la sede
-  Then el sistema detiene el desplazamiento
-  And evita que el usuario visualice un fondo vacío
+Scenario: US40 - Scenario 1: Smooth zoom and pan
+  Given the user uses pinch or swipe gestures
+  When they interact with the layout
+  Then the map responds with smooth scaling
+  And the map responds with movement without visual jumps
 
 @US40
-Scenario: US40 - Scenario 3: Botón de re-centrado
-  Given que el usuario se ha desplazado lejos del centro
-  When presiona el icono de "Brújula/Inicio"
-  Then el mapa regresa instantáneamente a la vista general de la sede completa
+Scenario: US40 - Scenario 2: Navigation limits
+  Given the user drags the map toward the edges
+  When they reach the limit of the campus image
+  Then the system stops the panning
+  And prevents the user from seeing an empty background
+
+@US40
+Scenario: US40 - Scenario 3: Re-center button
+  Given the user has moved far from the center
+  When they press the "Compass/Home" icon
+  Then the map instantly returns to the full campus overview
 
 
-Rule: US41 - Geolocalización y Cambio de Piso
+Rule: US41 - Geolocation and Floor Switching
 
 
-# Como Usuario en el campus
-# Quiero ver mi posición actual y cambiar de nivel en el mapa
-# Para orientarme correctamente dentro de pabellones de varios pisos.
-
-@US41
-Scenario: US41 - Scenario 1: Ubicación en tiempo real
-  Given que el GPS está activo
-  When el usuario visualiza el mapa
-  Then se muestra un punto azul indicando su posición aproximada dentro del predio
-
-@US41
-Scenario: US41 - Scenario 2: Navegación por niveles o pisos
-  Given que un pabellón tiene varios niveles
-  When el usuario selecciona un piso en el selector lateral
-  Then el croquis cambia para mostrar la distribución de aulas de ese nivel específico
+# As a User on campus
+# I want to see my current position and switch levels on the map
+# So that I can correctly orient myself within multi-floor buildings.
 
 @US41
-Scenario: US41 - Scenario 3: GPS desactivado
-  Given que el usuario tiene la ubicación apagada
-  When intenta usar la geolocalización
-  Then el sistema muestra un mensaje persuasivo solicitando los permisos necesarios para la función
+Scenario: US41 - Scenario 1: Real-time location
+  Given the GPS is active
+  When the user views the map
+  Then a blue dot is shown indicating their approximate position within the premises
+
+@US41
+Scenario: US41 - Scenario 2: Navigation by levels or floors
+  Given a building has several levels
+  When the user selects a floor in the side selector
+  Then the layout changes to show the room distribution for that specific level
+
+@US41
+Scenario: US41 - Scenario 3: GPS disabled
+  Given the user has location turned off
+  When they try to use geolocation
+  Then the system shows a persuasive message requesting the permissions needed for the feature
 
 
-Rule: US42 - Leyenda Dinámica de Simbología
+Rule: US42 - Dynamic Symbol Legend
 
 
-# Como Usuario poco frecuente
-# Quiero consultar una leyenda de símbolos y colores
-# Para interpretar correctamente la información de operatividad del mapa.
-
-@US42
-Scenario: US42 - Scenario 1: Consulta de leyenda
-  Given que el usuario tiene dudas sobre un icono
-  When toca el botón de información
-  Then se despliega una ventana flotante
-  And la ventana explica el significado de colores e iconos de categorías
-
-@US42
-Scenario: US42 - Scenario 2: Accesibilidad
-  Given que el usuario tiene activo el "Modo Noche"
-  When abre la leyenda
-  Then los contrastes se ajustan para garantizar una lectura cómoda
-  And los colores de los iconos se adaptan al modo activo
+# As an infrequent User
+# I want to check a legend of symbols and colors
+# So that I can correctly interpret the map's operational-status information.
 
 @US42
-Scenario: US42 - Scenario 3: Descarte de ayuda
-  Given que la leyenda está abierta
-  When el usuario toca cualquier zona fuera del cuadro informativo
-  Then la leyenda se cierra automáticamente
-  And no obstruye la navegación del mapa
+Scenario: US42 - Scenario 1: Checking the legend
+  Given the user has questions about an icon
+  When they tap the info button
+  Then a floating window is displayed
+  And the window explains the meaning of the category colors and icons
+
+@US42
+Scenario: US42 - Scenario 2: Accessibility
+  Given the user has "Night Mode" active
+  When they open the legend
+  Then the contrasts adjust to ensure comfortable reading
+  And the icon colors adapt to the active mode
+
+@US42
+Scenario: US42 - Scenario 3: Dismissing the help
+  Given the legend is open
+  When the user taps any area outside the info box
+  Then the legend closes automatically
+  And does not obstruct map navigation
 

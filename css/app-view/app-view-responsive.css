@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+  .section-appView-prototype {
+    padding-block: 40px;
+  }
+  .appViewFrame {
+    padding-inline: 16px;
+  }
+  .section-appView .appViewPhone {
+    width: clamp(278px, 54vw, 324px);
+  }
+}
+
+@media (max-width: 560px) {
+  .section-appView .appViewPhone {
+    width: clamp(266px, 76vw, 306px);
+    padding: 9px;
+    border-radius: 50px;
+  }
+  .section-appView .appViewViewport {
+    border-radius: 41px;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-appView .appViewPhone {
+    width: clamp(254px, 84vw, 282px);
+  }
+}

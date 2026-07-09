@@ -1,4 +1,4 @@
-.saltoEnlace {
+.skipLink {
   position: absolute;
   left: 8px;
   top: -64px;
@@ -9,27 +9,27 @@
   font-weight: 600;
   transition: top 0.15s ease;
 }
-.saltoEnlace:focus { top: 8px; }
+.skipLink:focus { top: 8px; }
 
-.seccionEncabezado-seccionEncabezadoCentro {
+.sectionHeader-sectionHeaderCenter {
   max-width: 760px;
   margin-inline: auto;
   margin-bottom: 48px;
   text-align: center;
 }
-.seccionTitulo {
+.sectionTitle {
   font-size: clamp(1.75rem, 1.15rem + 2.4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.2;
   color: #1F2933;
 }
-.seccionBajada {
+.sectionSubhead {
   margin-top: 16px;
   color: #4B5563;
   font-size: 1.0625rem;
 }
 
-.antetitulo-beneficioIndice {
+.eyebrow-benefitIndex {
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 700;
@@ -38,8 +38,8 @@
   color: #E30613;
 }
 
-.boton-botonFantasma-navAcceso,
-.boton-botonPrimario {
+.button-ghostButton-navAccess,
+.button-primaryButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -52,23 +52,23 @@
   color: #1F2933;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
-.boton-botonPrimario { background: #E02030; color: #FFFFFF; }
-.boton-botonPrimario:hover { background: #B00020; }
-.boton-botonFantasma-navAcceso { background: #F5F7FB; color: #1F2933; }
-.boton-botonFantasma-navAcceso:hover { color: #E30613; }
+.button-primaryButton { background: #E02030; color: #FFFFFF; }
+.button-primaryButton:hover { background: #B00020; }
+.button-ghostButton-navAccess { background: #F5F7FB; color: #1F2933; }
+.button-ghostButton-navAccess:hover { color: #E30613; }
 
-.campo {
+.field {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.campo label {
+.field label {
   font-size: 0.875rem;
   font-weight: 600;
   color: #1F2933;
 }
-.campo input,
-.campo textarea {
+.field input,
+.field textarea {
   box-sizing: border-box;
   width: 100%;
   padding: 16px;
@@ -79,17 +79,17 @@
   border: 0;
   resize: vertical;
 }
-.campo input::placeholder,
-.campo textarea::placeholder { color: #9CA3AF; }
+.field input::placeholder,
+.field textarea::placeholder { color: #9CA3AF; }
 
-.cabeceraSitio {
+.siteHeader {
   position: sticky;
   top: 0;
   z-index: 50;
   background: #FFFFFF;
   border-bottom: 1px solid #EEF1F6;
 }
-.contenedor-cabeceraSitioInterior {
+.container-siteHeaderInner {
   position: relative;
   display: flex;
   align-items: center;
@@ -99,46 +99,46 @@
   padding-block: 8px;
 }
 
-.marca {
+.brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   flex: none;
 }
-.marcaLogo {
+.brandLogo {
   height: 88px;
   width: auto;
 }
-.cabeceraAcciones {
+.headerActions {
   display: flex;
   align-items: center;
   gap: 12px;
   flex: none;
 }
-.navIdiomaMovil {
+.navLangMobile {
   display: none;
   text-align: center;
 }
-.selectorIdioma--cabecera {
+.langSelector--header {
   flex: none;
   background: #F8FAFC;
 }
-.selectorIdioma--nav {
+.langSelector--nav {
   margin: 10px auto 4px;
 }
 
-.navPrincipal {
+.mainNav {
   display: flex;
   align-items: center;
 }
-.navLista {
+.navList {
   display: flex;
   align-items: center;
   gap: 4px;
 }
-.navLista > li { position: relative; }
-.navLista a,
-.navGrupoDisparador {
+.navList > li { position: relative; }
+.navList a,
+.navGroupTrigger {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -149,12 +149,12 @@
   white-space: nowrap;
   transition: color 0.15s ease;
 }
-.navLista a:hover,
-.navGrupoDisparador:hover,
-.navLista a.estaActivo,
-.navGrupoDisparador.estaActivo { color: #E30613; }
+.navList a:hover,
+.navGroupTrigger:hover,
+.navList a.isActive,
+.navGroupTrigger.isActive { color: #E30613; }
 
-.navGrupoFlecha {
+.navGroupArrow {
   box-sizing: border-box;
   width: 7px;
   height: 7px;
@@ -163,7 +163,7 @@
   transform: translateY(-2px) rotate(45deg);
   transition: transform 0.15s ease;
 }
-.navGrupo[data-abierto="true"] .navGrupoFlecha {
+.navGroup[data-open="true"] .navGroupArrow {
   transform: translateY(1px) rotate(225deg);
 }
 .navSubmenu {
@@ -178,15 +178,15 @@
   background: #FFFFFF;
   border: 1px solid #EEF1F6;
 }
-.navGrupo[data-abierto="true"] .navSubmenu { display: flex; }
+.navGroup[data-open="true"] .navSubmenu { display: flex; }
 .navSubmenu a { width: 100%; padding: 10px 18px; }
 
-.boton-botonFantasma-navAcceso {
+.button-ghostButton-navAccess {
   flex: none;
   padding: 8px 16px;
 }
 
-.navAlternar {
+.navToggle {
   box-sizing: border-box;
   display: none;
   align-items: center;
@@ -195,7 +195,7 @@
   flex: none;
   color: #1F2933;
 }
-.navAlternarIcono {
+.navToggleIcon {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -203,28 +203,28 @@
   width: 22px;
   height: 16px;
 }
-.navAlternarBarra {
+.navToggleBar {
   display: block;
   width: 100%;
   height: 2px;
   background: currentColor;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.navAlternarTexto {
+.navToggleText {
   font-size: 0.9375rem;
   font-weight: 600;
 }
-.navAlternar[aria-expanded="true"] .navAlternarBarra:nth-child(1) {
+.navToggle[aria-expanded="true"] .navToggleBar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-.navAlternar[aria-expanded="true"] .navAlternarBarra:nth-child(2) {
+.navToggle[aria-expanded="true"] .navToggleBar:nth-child(2) {
   opacity: 0;
 }
-.navAlternar[aria-expanded="true"] .navAlternarBarra:nth-child(3) {
+.navToggle[aria-expanded="true"] .navToggleBar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-.marcador-marcadorVertical {
+.marker-verticalMarker {
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -235,10 +235,10 @@
   overflow: hidden;
   background: #F5F7FB;
 }
-.seccion-seccionSuave-problema .marcador-marcadorVertical,
-.seccion-seccionSuave-como .marcador-marcadorVertical,
-.seccion-seccionSuave-publico .marcador-marcadorVertical { background: #FFFFFF; }
-.marcador-marcadorVertical {
+.section-softSection-problem .marker-verticalMarker,
+.section-softSection-how .marker-verticalMarker,
+.section-softSection-audience .marker-verticalMarker { background: #FFFFFF; }
+.marker-verticalMarker {
   aspect-ratio: 3 / 4;
   width: 100%;
 }

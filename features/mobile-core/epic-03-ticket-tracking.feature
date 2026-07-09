@@ -1,189 +1,189 @@
 # language: en
 
 @mobile-core @prototype @manual @E3
-Feature: E3 - Seguimiento y Transparencia de Tickets
+Feature: E3 - Ticket Tracking and Transparency
 
-Esta épica agrupa las historias relacionadas con la consulta de reportes enviados, visualización de estados, detalle del ticket, avance de atención, notificaciones y bandeja interna.
+This epic groups the stories related to viewing submitted reports, status display, ticket detail, service progress, notifications, and the internal inbox.
 
-Rule: US19 - Historial de reportes enviados
+Rule: US19 - History of submitted reports
 
 
-# Como Alumno/Docente Reportante
-# Quiero visualizar una lista de mis reportes enviados
-# Para consultar rápidamente el estado general de mis incidencias.
-
-@US19
-Scenario: US19 - Scenario 1: Visualización de lista
-  Given que el Alumno/Docente presiona "Mis Reportes" en el menú de navegación
-  When la pantalla carga los datos desde el servidor
-  Then el sistema muestra una lista de tarjetas con el ícono de la categoría
-  And muestra el ID del ticket
-  And muestra la fecha de creación
+# As a Reporting Student/Teacher
+# I want to view a list of my submitted reports
+# So that I can quickly check the overall status of my incidents.
 
 @US19
-Scenario: US19 - Scenario 2: Ordenamiento cronológico
-  Given que el Alumno/Docente tiene múltiples reportes en su historial
-  When visualiza la lista
-  Then las tarjetas deben mostrarse en orden descendente
-  And se muestra primero el reporte más reciente
-  And se muestra al final el reporte más antiguo
+Scenario: US19 - Scenario 1: List display
+  Given the Student/Teacher presses "My Reports" in the navigation menu
+  When the screen loads the data from the server
+  Then the system shows a list of cards with the category icon
+  And shows the ticket ID
+  And shows the creation date
 
 @US19
-Scenario: US19 - Scenario 3: Estado vacío del historial
-  Given que un Alumno/Docente nuevo ingresa al historial sin haber reportado antes
-  When el sistema detecta que no existen registros asociados a su ID
-  Then muestra una ilustración amigable
-  And muestra el mensaje "Aún no has reportado nada"
-  And muestra un botón para "Crear nuevo reporte"
+Scenario: US19 - Scenario 2: Chronological ordering
+  Given the Student/Teacher has multiple reports in their history
+  When they view the list
+  Then the cards must be displayed in descending order
+  And the most recent report is shown first
+  And the oldest report is shown last
+
+@US19
+Scenario: US19 - Scenario 3: Empty history state
+  Given a new Student/Teacher enters the history without having reported before
+  When the system detects there are no records associated with their ID
+  Then it shows a friendly illustration
+  And shows the message "You haven't reported anything yet"
+  And shows a "Create new report" button
 
 
-Rule: US20 - Filtro de reportes por estado
+Rule: US20 - Filtering reports by status
 
 
-# Como Alumno/Docente Reportante
-# Quiero filtrar mis reportes por estado
-# Para encontrar rápidamente los tickets activos, resueltos o cancelados.
-
-@US20
-Scenario: US20 - Scenario 1: Navegación por pestañas
-  Given que el usuario está en la pantalla de "Mis Reportes"
-  When toca la pestaña superior de "Resueltos"
-  Then la lista se filtra automáticamente
-  And muestra únicamente los tickets con estado finalizado
-
-@US20
-Scenario: US20 - Scenario 2: Indicador visual de selección
-  Given que el usuario navega entre categorías de estado
-  When una pestaña es seleccionada
-  Then el sistema aplica un estilo visual distintivo
-  And usa color de marca
-  And muestra subrayado para confirmar la selección activa
+# As a Reporting Student/Teacher
+# I want to filter my reports by status
+# So that I can quickly find active, resolved, or canceled tickets.
 
 @US20
-Scenario: US20 - Scenario 3: Navegación entre reportes activos, resueltos y cancelados
-  Given que el usuario se encuentra en la pantalla de "Mis Reportes"
-  When alterna entre las pestañas "Activos", "Resueltos" y "Cancelados"
-  Then el sistema muestra los reportes correspondientes a cada estado
-  And no mezcla tickets de otras categorías
+Scenario: US20 - Scenario 1: Tab navigation
+  Given the user is on the "My Reports" screen
+  When they tap the top "Resolved" tab
+  Then the list is automatically filtered
+  And shows only the tickets with a finished status
+
+@US20
+Scenario: US20 - Scenario 2: Visual selection indicator
+  Given the user navigates between status categories
+  When a tab is selected
+  Then the system applies a distinctive visual style
+  And uses the brand color
+  And shows an underline to confirm the active selection
+
+@US20
+Scenario: US20 - Scenario 3: Navigation between active, resolved, and canceled reports
+  Given the user is on the "My Reports" screen
+  When they switch between the "Active", "Resolved", and "Canceled" tabs
+  Then the system shows the reports corresponding to each status
+  And does not mix tickets from other categories
 
 
-Rule: US21 - Detalle de reporte enviado
+Rule: US21 - Submitted report detail
 
 
-# Como Alumno/Docente Reportante
-# Quiero abrir el detalle de un ticket enviado
-# Para revisar la evidencia, ubicación, descripción y datos registrados en el reporte.
-
-@US21
-Scenario: US21 - Scenario 1: Acceso al detalle
-  Given que el Alumno/Docente visualiza su lista de reportes
-  When hace "tap" sobre la tarjeta de un ticket específico
-  Then la app navega a la pantalla "Detalle del Reporte"
-  And muestra la foto adjunta
-  And muestra el mapa de ubicación
-  And muestra la descripción completa
-
-@US21
-Scenario: US21 - Scenario 2: Inmutabilidad del reporte enviado
-  Given que el Alumno/Docente está visualizando un ticket ya emitido
-  When interactúa con la pantalla de detalle
-  Then el sistema no muestra opciones de edición de texto
-  And no permite cambiar la imagen
-  And preserva la integridad del reporte
+# As a Reporting Student/Teacher
+# I want to open the detail of a submitted ticket
+# So that I can review the evidence, location, description, and data recorded in the report.
 
 @US21
-Scenario: US21 - Scenario 3: Falla de carga de evidencia
-  Given que el servidor de imágenes no responde
-  When el Alumno/Docente entra al detalle del ticket
-  Then el sistema muestra un recuadro de error en lugar de la foto
-  And muestra el mensaje "La evidencia visual no pudo cargar"
+Scenario: US21 - Scenario 1: Access to the detail
+  Given the Student/Teacher views their list of reports
+  When they tap a specific ticket's card
+  Then the app navigates to the "Report Detail" screen
+  And shows the attached photo
+  And shows the location map
+  And shows the full description
+
+@US21
+Scenario: US21 - Scenario 2: Immutability of the submitted report
+  Given the Student/Teacher is viewing an already-submitted ticket
+  When they interact with the detail screen
+  Then the system shows no text editing options
+  And does not allow changing the image
+  And preserves the integrity of the report
+
+@US21
+Scenario: US21 - Scenario 3: Evidence load failure
+  Given the image server is not responding
+  When the Student/Teacher enters the ticket detail
+  Then the system shows an error box instead of the photo
+  And shows the message "The visual evidence could not load"
 
 
-Rule: US22 - Visualización del avance del ticket
+Rule: US22 - Display of ticket progress
 
 
-# Como Alumno/Docente Reportante
-# Quiero visualizar el avance de atención de mi ticket
-# Para saber si mi reporte fue recibido, está en proceso o ya fue resuelto.
+# As a Reporting Student/Teacher
+# I want to view the service progress of my ticket
+# So that I know whether my report was received, is in progress, or has already been resolved.
 
 @US22
-Scenario: US22 - Scenario 1: Progreso visual
-  Given que el usuario revisa el detalle de un ticket activo
-  When visualiza la parte superior de la pantalla
-  Then se muestra un stepper de 3 puntos
-  And el stepper muestra "Recibido", "En Proceso" y "Resuelto"
-  And el estado actual aparece resaltado
+Scenario: US22 - Scenario 1: Visual progress
+  Given the user reviews the detail of an active ticket
+  When they view the top of the screen
+  Then a 3-point stepper is shown
+  And the stepper shows "Received", "In Progress", and "Resolved"
+  And the current status appears highlighted
 
 @US22
-Scenario: US22 - Scenario 2: Semántica de colores
-  Given que el sistema actualiza el estado del ticket
-  When el estado es "En Proceso" o "Resuelto"
-  Then el estado "En Proceso" se ilumina en ámbar
-  And el estado "Resuelto" cambia a verde
+Scenario: US22 - Scenario 2: Color semantics
+  Given the system updates the ticket status
+  When the status is "In Progress" or "Resolved"
+  Then the "In Progress" status lights up amber
+  And the "Resolved" status turns green
 
 @US22
-Scenario: US22 - Scenario 3: Notificación de rechazo
-  Given que soporte técnico rechaza el ticket por falta de evidencia
-  When el usuario entra al detalle
-  Then el stepper se muestra en color rojo
-  And visualiza el motivo del rechazo de forma obligatoria
+Scenario: US22 - Scenario 3: Rejection notification
+  Given technical support rejects the ticket due to lack of evidence
+  When the user enters the detail
+  Then the stepper is shown in red
+  And mandatorily displays the reason for rejection
 
 
-Rule: US23 - Notificaciones de actualización de ticket
+Rule: US23 - Ticket update notifications
 
 
-# Como Alumno/Docente Reportante
-# Quiero recibir notificaciones cuando cambie el estado de mi ticket
-# Para enterarme oportunamente del avance sin revisar manualmente la aplicación.
-
-@US23
-Scenario: US23 - Scenario 1: Deep Linking desde notificación
-  Given que el usuario recibe una notificación de ticket resuelto
-  When toca la notificación en la pantalla de bloqueo
-  Then la aplicación se abre automáticamente en la pantalla de detalle
-  And muestra el ticket específico asociado a la notificación
+# As a Reporting Student/Teacher
+# I want to receive notifications when my ticket's status changes
+# So that I find out about progress promptly without manually checking the app.
 
 @US23
-Scenario: US23 - Scenario 2: Respeto a permisos nativos
-  Given que el usuario desactivó las notificaciones en los ajustes del sistema operativo
-  When ocurre una actualización de ticket
-  Then la app no emite alerta sonora
-  And la app no emite alerta visual
-  And acumula la notificación solo en la bandeja interna
+Scenario: US23 - Scenario 1: Deep linking from a notification
+  Given the user receives a notification that a ticket was resolved
+  When they tap the notification on the lock screen
+  Then the app opens automatically on the detail screen
+  And shows the specific ticket associated with the notification
 
 @US23
-Scenario: US23 - Scenario 3: Solicitud de permisos
-  Given que es el primer reporte del usuario
-  When termina el envío
-  Then el sistema verifica si los permisos Push están inactivos
-  And solicita su activación mediante un modal explicativo
+Scenario: US23 - Scenario 2: Respecting native permissions
+  Given the user disabled notifications in the OS settings
+  When a ticket update occurs
+  Then the app does not emit a sound alert
+  And the app does not emit a visual alert
+  And only accumulates the notification in the internal inbox
+
+@US23
+Scenario: US23 - Scenario 3: Permission request
+  Given it is the user's first report
+  When the submission finishes
+  Then the system checks whether Push permissions are inactive
+  And requests activation via an explanatory modal
 
 
-Rule: US24 - Bandeja interna de notificaciones
+Rule: US24 - Internal notification inbox
 
 
-# Como Alumno/Docente Reportante
-# Quiero tener una bandeja interna de notificaciones
-# Para consultar las novedades de mis reportes incluso si no vi la alerta push.
-
-@US24
-Scenario: US24 - Scenario 1: Insignia de lectura
-  Given que el usuario tiene 2 novedades sin leer
-  When abre la app
-  Then el ícono de la campana muestra un círculo rojo
-  And el círculo rojo muestra el número de alertas pendientes
-
-@US24
-Scenario: US24 - Scenario 2: Marcado de lectura
-  Given que el usuario entra a la bandeja
-  When toca una alerta sombreada
-  Then el sistema marca el mensaje como leído
-  And el contador del badge disminuye en una unidad
+# As a Reporting Student/Teacher
+# I want to have an internal notification inbox
+# So that I can check updates on my reports even if I missed the push alert.
 
 @US24
-Scenario: US24 - Scenario 3: Limpieza automática
-  Given que existen notificaciones con más de 30 días de antigüedad
-  When se inicia la aplicación
-  Then el sistema elimina automáticamente esos registros
-  And optimiza el almacenamiento local
+Scenario: US24 - Scenario 1: Read badge
+  Given the user has 2 unread updates
+  When they open the app
+  Then the bell icon shows a red circle
+  And the red circle shows the number of pending alerts
+
+@US24
+Scenario: US24 - Scenario 2: Marking as read
+  Given the user enters the inbox
+  When they tap a highlighted alert
+  Then the system marks the message as read
+  And the badge counter decreases by one
+
+@US24
+Scenario: US24 - Scenario 3: Automatic cleanup
+  Given there are notifications older than 30 days
+  When the app starts
+  Then the system automatically deletes those records
+  And optimizes local storage
 

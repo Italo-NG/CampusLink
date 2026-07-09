@@ -1,9 +1,9 @@
 @media (max-width: 1359px) {
-  .navAlternar { display: inline-flex; }
-  .selectorIdioma--cabecera { display: none; }
-  .navIdiomaMovil { display: block; }
+  .navToggle { display: inline-flex; }
+  .langSelector--header { display: none; }
+  .navLangMobile { display: block; }
 
-  .navPrincipal {
+  .mainNav {
     position: absolute;
     top: 100%;
     left: 0;
@@ -13,16 +13,16 @@
     background: #FFFFFF;
     border-bottom: 1px solid #EEF1F6;
   }
-  .navPrincipal.estaAbierto { display: block; }
+  .mainNav.isOpen { display: block; }
 
-  .navLista {
+  .navList {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
   }
-  .navLista > li { position: static; }
-  .navLista a,
-  .navGrupoDisparador {
+  .navList > li { position: static; }
+  .navList a,
+  .navGroupTrigger {
     justify-content: center;
     width: 100%;
     padding: 12px 0;
@@ -40,79 +40,79 @@
 }
 
 @media (max-width: 1024px) {
-  .contenedor-solucionInterior { grid-template-columns: 1fr; gap: 32px; }
-  .comoLayout { grid-template-columns: 1fr; gap: 32px; }
-  .comoImagen { max-height: 560px; }
+  .container-solutionInner { grid-template-columns: 1fr; gap: 32px; }
+  .howLayout { grid-template-columns: 1fr; gap: 32px; }
+  .howImage { max-height: 560px; }
 }
 
 @media (max-width: 900px) {
-  .beneficiosGrilla {
+  .benefitsGrid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
   }
-  .beneficioDestacado {
+  .benefitHighlight {
     grid-column: 1 / -1;
     grid-row: auto;
   }
-  .publicoGrid {
+  .audienceGrid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
   }
-  .contactoLayout {
+  .contactLayout {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 }
 
 @media (max-width: 768px) {
-  .seccion-portada,
-  .seccion-seccionSuave-problema,
-  .seccion-solucion,
-  .seccion-seccionSuave-producto,
-  .seccion-seccionSuave-como,
-  .seccion-beneficios,
-  .seccion-seccionSuave-publico,
-  .seccion-vista,
-  .seccion-seccionSuave-videoEquipo,
-  .seccion-seccionSuave-nosotros,
-  .seccion-contacto { padding-block: 48px; }
-  .seccionEncabezado-seccionEncabezadoCentro { margin-bottom: 32px; }
+  .section-hero,
+  .section-softSection-problem,
+  .section-solution,
+  .section-softSection-product,
+  .section-softSection-how,
+  .section-benefits,
+  .section-softSection-audience,
+  .section-appView,
+  .section-softSection-teamVideo,
+  .section-softSection-about,
+  .section-contact { padding-block: 48px; }
+  .sectionHeader-sectionHeaderCenter { margin-bottom: 32px; }
 
-  .problemaGrilla {
+  .problemGrid {
     grid-template-columns: 1fr;
     max-width: 420px;
     margin-inline: auto;
   }
-  .publicoGrid {
+  .audienceGrid {
     grid-template-columns: 1fr;
     max-width: 480px;
     margin-inline: auto;
   }
-  .nosotrosEquipo {
+  .aboutTeam {
     grid-template-columns: 1fr;
     max-width: 480px;
   }
-  .portadaCategoria { width: 84px; }
-  .portadaCategoriaIcono { width: 64px; height: 64px; }
-  .portadaCategoriaIcono svg { width: 28px; height: 28px; }
+  .heroCategory { width: 84px; }
+  .heroCategoryIcon { width: 64px; height: 64px; }
+  .heroCategoryIcon svg { width: 28px; height: 28px; }
 }
 
 @media (max-width: 560px) {
-  .comoLayout { gap: 28px; }
-  .comoLista { padding-left: 24px; }
-  .comoPaso::before,
-  .comoPaso::after {
+  .howLayout { gap: 28px; }
+  .howList { padding-left: 24px; }
+  .howStep::before,
+  .howStep::after {
     left: -24px;
     top: 22px;
     height: calc(100% - 44px);
   }
-  .comoPasoBoton {
+  .howStepButton {
     grid-template-columns: 48px minmax(0, 1fr);
     gap: 12px;
     padding: 22px 0;
   }
-  .comoNumero { font-size: 1.5rem; }
-  .comoImagen { max-height: 500px; }
+  .howNumber { font-size: 1.5rem; }
+  .howImage { max-height: 500px; }
   .iphone-15 {
     width: clamp(250px, 74vw, 280px);
     border-width: 9px;
@@ -133,57 +133,57 @@
     width: 4px;
     height: 66px;
   }
-  .isla-dinamica {
+  .dynamic-island {
     top: 11px;
     width: 82px;
     height: 21px;
   }
-  .pantalla-scroll { border-radius: 44px; }
-  .pantalla-scroll .comoImagen { border-radius: 44px; }
-  .linea-home {
+  .screen-scroll { border-radius: 44px; }
+  .screen-scroll .howImage { border-radius: 44px; }
+  .home-line {
     bottom: 9px;
     width: 96px;
   }
-  .beneficiosGrilla { grid-template-columns: 1fr; }
-  .contactoFormGrid { grid-template-columns: 1fr; }
-  .contactoFormulario { padding: 28px; }
+  .benefitsGrid { grid-template-columns: 1fr; }
+  .contactFormGrid { grid-template-columns: 1fr; }
+  .contactForm { padding: 28px; }
 }
 
 @media (max-width: 560px) and (prefers-reduced-motion: reduce) {
-  .comoPaso.estaActivo::after {
+  .howStep.isActive::after {
     animation: none;
     transform: scaleY(1);
   }
 }
 
 @media (max-width: 430px) {
-  .contenedor,
-  .contenedor-cabeceraSitioInterior,
-  .contenedor-portadaInterior,
-  .contenedor-solucionInterior,
-  .contenedor-pieSitioInterior { padding-inline: 16px; }
-  .marcaLogo { height: 64px; }
-  .cabeceraAcciones { gap: 8px; }
-  .boton-botonFantasma-navAcceso { padding-inline: 12px; }
-  .navAlternar {
+  .container,
+  .container-siteHeaderInner,
+  .container-heroInner,
+  .container-solutionInner,
+  .container-siteFooterInner { padding-inline: 16px; }
+  .brandLogo { height: 64px; }
+  .headerActions { gap: 8px; }
+  .button-ghostButton-navAccess { padding-inline: 12px; }
+  .navToggle {
     width: 44px;
     height: 44px;
     justify-content: center;
     padding: 0;
   }
-  .navAlternarTexto { display: none; }
-  .contactoFormulario { padding: 24px; }
-  .publicoCard { padding: 22px; }
-  .seccion-portada { padding-top: 32px; }
-  .portadaPuntos { gap: 20px 16px; }
-  .portadaCategoria { width: 80px; }
-  .portadaCategoriaIcono { width: 60px; height: 60px; }
+  .navToggleText { display: none; }
+  .contactForm { padding: 24px; }
+  .audienceCard { padding: 22px; }
+  .section-hero { padding-top: 32px; }
+  .heroDots { gap: 20px 16px; }
+  .heroCategory { width: 80px; }
+  .heroCategoryIcon { width: 60px; height: 60px; }
 }
 
 @media (max-width: 375px) {
-  .portadaCategoria { width: 72px; }
-  .portadaCategoriaIcono { width: 56px; height: 56px; }
-  .portadaCategoriaIcono svg { width: 26px; height: 26px; }
-  .seccionBajada { font-size: 1rem; }
+  .heroCategory { width: 72px; }
+  .heroCategoryIcon { width: 56px; height: 56px; }
+  .heroCategoryIcon svg { width: 26px; height: 26px; }
+  .sectionSubhead { font-size: 1rem; }
 }
 

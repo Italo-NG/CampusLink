@@ -1,34 +1,34 @@
 # CampusLink
 
-Landing estatica de **CampusLink** (Montimin), hecha con HTML, CSS y JavaScript, sin frameworks ni dependencias.
+Static landing page for **CampusLink** (Montimin), built with HTML, CSS, and JavaScript, with no frameworks or dependencies.
 
-## Version para descargar
+## Version to download
 
-Para revisar o presentar el proyecto, descarga siempre la version mas reciente publicada:
+To review or present the project, always download the latest published version:
 
-- **Version actual:** `v1.1.0`
-- **Descargar ZIP:** [CampusLink v1.1.0](https://github.com/Italo-NG/CampusLink/archive/refs/tags/v1.1.0.zip)
+- **Current version:** `v1.1.0`
+- **Download ZIP:** [CampusLink v1.1.0](https://github.com/Italo-NG/CampusLink/archive/refs/tags/v1.1.0.zip)
 
-Si GitHub muestra varias versiones o tags, usa la mas reciente para evitar descargar una entrega anterior.
+If GitHub shows several versions or tags, use the latest one to avoid downloading an earlier submission.
 
-## Landing publicada
+## Published landing page
 
-La landing tambien esta disponible en estos enlaces:
+The landing page is also available at these links:
 
 - [https://www.campuslinks.site/](https://www.campuslinks.site/)
 - [https://campuslink.nilla.online/](https://campuslink.nilla.online/)
 
-## Como abrir el proyecto localmente
+## How to open the project locally
 
-El proyecto usa modulos de JavaScript (`<script type="module">`).
+The project uses JavaScript modules (`<script type="module">`).
 
-1. Abre la carpeta en Visual Studio Code.
-2. Instala la extension **Live Server**.
-3. Click derecho en `index.html` y selecciona **Open with Live Server**.
-4. Se abrira en `http://127.0.0.1:5500/` o un puerto similar.
+1. Open the folder in Visual Studio Code.
+2. Install the **Live Server** extension.
+3. Right-click `index.html` and select **Open with Live Server**.
+4. It will open at `http://127.0.0.1:5500/` or a similar port.
 
-## Estructura de estilos
+## Stylesheet structure
 
-Los CSS se cargan en este orden:
+The CSS files load in this order:
 
 `base` -> `layout` -> `components` -> `pages` -> `responsive`

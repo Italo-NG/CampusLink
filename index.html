@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CampusLink</title>
     <meta
       name="description"
-      content="CampusLink conecta a estudiantes, docentes y personal de soporte para reportar, ubicar y dar seguimiento a incidencias de infraestructura, bienestar y seguridad dentro del campus"
+      content="CampusLink connects students, teachers, and support staff to report, locate, and track infrastructure, wellbeing, and security incidents on campus"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,140 +16,140 @@
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/png" href="recursos/logo/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png" />
     <link rel="stylesheet" href="css/base.css?v=i18n-v2" />
     <link rel="stylesheet" href="css/layout.css?v=i18n-v2" />
     <link rel="stylesheet" href="css/components.css?v=i18n-v2" />
     <link rel="stylesheet" href="css/pages.css?v=vista-app-prototipo-v1" />
     <link
       rel="stylesheet"
-      href="css/vista-app/vista-app-frame.css?v=vista-app-prototipo-v1"
+      href="css/app-view/app-view-frame.css?v=vista-app-prototipo-v1"
     />
     <link
       rel="stylesheet"
-      href="css/vista-app/vista-app-screen.css?v=vista-app-prototipo-v1"
+      href="css/app-view/app-view-screen.css?v=vista-app-prototipo-v1"
     />
     <link
       rel="stylesheet"
-      href="css/vista-app/vista-app-componentes.css?v=vista-app-prototipo-v1"
+      href="css/app-view/app-view-components.css?v=vista-app-prototipo-v1"
     />
     <link
       rel="stylesheet"
-      href="css/vista-app/vista-app-responsive.css?v=vista-app-prototipo-v1"
+      href="css/app-view/app-view-responsive.css?v=vista-app-prototipo-v1"
     />
     <link rel="stylesheet" href="css/responsive.css?v=i18n-v2" />
   </head>
   <body>
-    <a class="saltoEnlace" href="#inicio">Saltar al contenido</a>
+    <a class="skipLink" href="#home">Skip to content</a>
 
-    <header class="cabeceraSitio">
-      <div class="contenedor-cabeceraSitioInterior">
-        <a class="marca" href="#inicio" aria-label="CampusLink, ir al inicio">
+    <header class="siteHeader">
+      <div class="container-siteHeaderInner">
+        <a class="brand" href="#home" aria-label="CampusLink, go to home">
           <img
-            class="marcaLogo"
-            src="recursos/logo/campusLink-fondo-blanco.png"
+            class="brandLogo"
+            src="assets/logo/campuslink-white-bg.png"
             alt="CampusLink"
           />
         </a>
 
         <nav
-          class="navPrincipal"
+          class="mainNav"
           id="nav-principal"
-          aria-label="Navegación principal"
+          aria-label="Primary navigation"
         >
-          <ul class="navLista">
-            <li><a href="#problema">Problema</a></li>
-            <li class="navGrupo">
+          <ul class="navList">
+            <li><a href="#problem">Problem</a></li>
+            <li class="navGroup">
               <button
-                class="navGrupoDisparador"
+                class="navGroupTrigger"
                 type="button"
                 aria-expanded="false"
-                aria-controls="nav-producto"
+                aria-controls="nav-product"
               >
-                Producto
-                <span class="navGrupoFlecha" aria-hidden="true"></span>
+                Product
+                <span class="navGroupArrow" aria-hidden="true"></span>
               </button>
-              <ul class="navSubmenu" id="nav-producto">
-                <li><a href="#solucion">Solución</a></li>
-                <li><a href="#producto">Sobre el producto</a></li>
-                <li><a href="#como-funciona">Cómo funciona</a></li>
-                <li><a href="#vista-app">Vista de la app</a></li>
+              <ul class="navSubmenu" id="nav-product">
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#product">About the product</a></li>
+                <li><a href="#how-it-works">How it works</a></li>
+                <li><a href="#app-view">App view</a></li>
               </ul>
             </li>
-            <li><a href="#beneficios">Beneficios</a></li>
-            <li><a href="#para-quienes">Para quiénes</a></li>
-            <li><a href="#video-equipo">Video del equipo</a></li>
-            <li><a href="#quienes-somos">Quiénes somos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li class="navIdiomaMovil">
-              <div class="selectorIdioma selectorIdioma--nav" role="group" aria-label="Selector de idioma">
-                <button type="button" data-idioma="es">ES</button>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#who-its-for">Who it is for</a></li>
+            <li><a href="#team-video">Team video</a></li>
+            <li><a href="#about-us">Who we are</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="navLangMobile">
+              <div class="langSelector langSelector--nav" role="group" aria-label="Language selector">
+                <button type="button" data-lang="es">ES</button>
                 <span aria-hidden="true">|</span>
-                <button type="button" data-idioma="en">EN</button>
+                <button type="button" data-lang="en">EN</button>
               </div>
             </li>
           </ul>
         </nav>
 
-        <div class="cabeceraAcciones">
-          <div class="selectorIdioma selectorIdioma--cabecera" role="group" aria-label="Selector de idioma">
-            <button type="button" data-idioma="es">ES</button>
+        <div class="headerActions">
+          <div class="langSelector langSelector--header" role="group" aria-label="Language selector">
+            <button type="button" data-lang="es">ES</button>
             <span aria-hidden="true">|</span>
-            <button type="button" data-idioma="en">EN</button>
+            <button type="button" data-lang="en">EN</button>
           </div>
 
-          <a class="boton-botonFantasma-navAcceso" href="login.html" data-preserva-idioma>
-            Iniciar sesión
+          <a class="button-ghostButton-navAccess" href="login.html" data-preserve-lang>
+            Log in
           </a>
 
           <button
-            class="navAlternar"
+            class="navToggle"
             type="button"
             aria-expanded="false"
             aria-controls="nav-principal"
-            aria-label="Abrir o cerrar el menú de navegación"
+            aria-label="Open or close navigation menu"
           >
-            <span class="navAlternarIcono" aria-hidden="true">
-              <span class="navAlternarBarra"></span>
-              <span class="navAlternarBarra"></span>
-              <span class="navAlternarBarra"></span>
+            <span class="navToggleIcon" aria-hidden="true">
+              <span class="navToggleBar"></span>
+              <span class="navToggleBar"></span>
+              <span class="navToggleBar"></span>
             </span>
-            <span class="navAlternarTexto">Menú</span>
+            <span class="navToggleText">Menu</span>
           </button>
         </div>
       </div>
     </header>
 
-    <main id="contenido">
+    <main id="content">
       <section
-        class="seccion-portada"
-        id="inicio"
-        aria-labelledby="portada-titulo"
+        class="section-hero"
+        id="home"
+        aria-labelledby="hero-title"
       >
-        <div class="contenedor-portadaInterior">
-          <h1 class="portadaTitulo" id="portada-titulo">
-            Reporta incidencias al instante
+        <div class="container-heroInner">
+          <h1 class="heroTitle" id="hero-title">
+            Report incidents instantly
           </h1>
-          <p class="portadaSubtitulo">
-            CampusLink conecta a estudiantes, docentes y personal de soporte
-            para reportar, ubicar y dar seguimiento a incidencias de
-            infraestructura, bienestar y seguridad dentro del campus
+          <p class="heroSubtitle">
+            CampusLink connects students, teachers, and support staff
+            to report, locate, and track incidents of
+            infrastructure, wellbeing, and security on campus
           </p>
 
-          <figure class="portadaMedia">
+          <figure class="heroMedia">
             <img
-              class="portadaImagen"
-              src="recursos/imagenes/primera-imagen.webp"
-              alt="Estudiante usando CampusLink para reportar una incidencia del campus: escanea un QR, registra la falla con evidencia y el personal de soporte la atiende"
+              class="heroImage"
+              src="assets/images/first-image.webp"
+              alt="Student using CampusLink to report a campus incident: scanning a QR code, recording the issue with evidence, and support staff resolving it"
             />
           </figure>
 
           <ul
-            class="portadaPuntos"
-            aria-label="Categorías de incidencia que puedes reportar"
+            class="heroDots"
+            aria-label="Incident categories you can report"
           >
-            <li class="portadaCategoria">
-              <span class="portadaCategoriaIcono" aria-hidden="true">
+            <li class="heroCategory">
+              <span class="heroCategoryIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -165,10 +165,10 @@
                   <path d="M17 16v3" />
                 </svg>
               </span>
-              <span class="portadaCategoriaEtiqueta">Mobiliario</span>
+              <span class="heroCategoryLabel">Furniture</span>
             </li>
-            <li class="portadaCategoria">
-              <span class="portadaCategoriaIcono" aria-hidden="true">
+            <li class="heroCategory">
+              <span class="heroCategoryIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -181,10 +181,10 @@
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                 </svg>
               </span>
-              <span class="portadaCategoriaEtiqueta">Eléctrico</span>
+              <span class="heroCategoryLabel">Electrical</span>
             </li>
-            <li class="portadaCategoria">
-              <span class="portadaCategoriaIcono" aria-hidden="true">
+            <li class="heroCategory">
+              <span class="heroCategoryIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -199,10 +199,10 @@
                   <path d="M12 17v4" />
                 </svg>
               </span>
-              <span class="portadaCategoriaEtiqueta">Multimedia</span>
+              <span class="heroCategoryLabel">Multimedia</span>
             </li>
-            <li class="portadaCategoria">
-              <span class="portadaCategoriaIcono" aria-hidden="true">
+            <li class="heroCategory">
+              <span class="heroCategoryIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -217,10 +217,10 @@
                   />
                 </svg>
               </span>
-              <span class="portadaCategoriaEtiqueta">Limpieza</span>
+              <span class="heroCategoryLabel">Cleaning</span>
             </li>
-            <li class="portadaCategoria">
-              <span class="portadaCategoriaIcono" aria-hidden="true">
+            <li class="heroCategory">
+              <span class="heroCategoryIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -236,10 +236,10 @@
                   <line x1="12" y1="20" x2="12.01" y2="20" />
                 </svg>
               </span>
-              <span class="portadaCategoriaEtiqueta">Internet</span>
+              <span class="heroCategoryLabel">Internet</span>
             </li>
-            <li class="portadaCategoria">
-              <span class="portadaCategoriaIcono" aria-hidden="true">
+            <li class="heroCategory">
+              <span class="heroCategoryIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -251,58 +251,58 @@
                   <circle cx="19" cy="12" r="1.6" />
                 </svg>
               </span>
-              <span class="portadaCategoriaEtiqueta">Otro</span>
+              <span class="heroCategoryLabel">Other</span>
             </li>
           </ul>
         </div>
       </section>
 
       <section
-        class="seccion-seccionSuave-problema"
-        id="problema"
-        aria-labelledby="problema-titulo"
+        class="section-softSection-problem"
+        id="problem"
+        aria-labelledby="problem-title"
       >
-        <div class="contenedor">
-          <header class="seccionEncabezado-seccionEncabezadoCentro">
-            <h2 class="seccionTitulo" id="problema-titulo">Problema actual</h2>
-            <p class="seccionBajada">
-              La falta de un canal eficiente y centralizado para reportar
-              incidencias de infraestructura, bienestar y seguridad en el campus
-              genera demoras, poca visibilidad y frustración para los usuarios
+        <div class="container">
+          <header class="sectionHeader-sectionHeaderCenter">
+            <h2 class="sectionTitle" id="problem-title">Current problem</h2>
+            <p class="sectionSubhead">
+              The lack of an efficient, centralized channel for reporting
+              infrastructure, wellbeing, and security incidents on campus
+              creates delays, low visibility, and frustration for users
             </p>
           </header>
 
-          <ul class="problemaGrilla">
-            <li class="problemaElemento">
-              <span class="marcador-marcadorVertical" aria-hidden="true">
+          <ul class="problemGrid">
+            <li class="problemItem">
+              <span class="marker-verticalMarker" aria-hidden="true">
                 <img
-                  class="problemaImagen"
-                  src="recursos/imagenes/problema-actual/reportes-dispersos.webp"
+                  class="problemImage"
+                  src="assets/images/current-problem/scattered-reports.webp"
                   alt=""
                 />
               </span>
-              <h3 class="problemaEtiqueta">Reportes dispersos</h3>
+              <h3 class="problemLabel">Scattered reports</h3>
             </li>
-            <li class="problemaElemento">
-              <span class="marcador-marcadorVertical" aria-hidden="true">
+            <li class="problemItem">
+              <span class="marker-verticalMarker" aria-hidden="true">
                 <img
-                  class="problemaImagen"
-                  src="recursos/imagenes/problema-actual/falta-de-seguimiento.webp"
+                  class="problemImage"
+                  src="assets/images/current-problem/lack-of-followup.webp"
                   alt=""
                 />
               </span>
-              <h3 class="problemaEtiqueta">Falta de seguimiento</h3>
+              <h3 class="problemLabel">Lack of follow-up</h3>
             </li>
-            <li class="problemaElemento">
-              <span class="marcador-marcadorVertical" aria-hidden="true">
+            <li class="problemItem">
+              <span class="marker-verticalMarker" aria-hidden="true">
                 <img
-                  class="problemaImagen"
-                  src="recursos/imagenes/problema-actual/informacion-incompleta-para-soporte.webp"
+                  class="problemImage"
+                  src="assets/images/current-problem/incomplete-information-for-support.webp"
                   alt=""
                 />
               </span>
-              <h3 class="problemaEtiqueta">
-                Información incompleta para soporte
+              <h3 class="problemLabel">
+                Incomplete information for support
               </h3>
             </li>
           </ul>
@@ -310,23 +310,23 @@
       </section>
 
       <section
-        class="seccion-solucion"
-        id="solucion"
-        aria-labelledby="solucion-titulo"
+        class="section-solution"
+        id="solution"
+        aria-labelledby="solution-title"
       >
-        <div class="contenedor-solucionInterior">
-          <div class="solucionTexto">
-            <h2 class="seccionTitulo" id="solucion-titulo">Nuestra solución</h2>
-            <p class="seccionBajada">
-              CampusLink convierte una incidencia del campus en un reporte
-              claro, ubicado y trazable, para que el equipo de soporte pueda
-              actuar con mayor rapidez.
+        <div class="container-solutionInner">
+          <div class="solutionText">
+            <h2 class="sectionTitle" id="solution-title">Our solution</h2>
+            <p class="sectionSubhead">
+              CampusLink turns a campus incident into a clear,
+              located, and traceable report so the support team can
+              act faster.
             </p>
           </div>
 
-          <ul class="solucionPanel">
-            <li class="solucionFila">
-              <span class="solucionIcono" aria-hidden="true">
+          <ul class="solutionPanel">
+            <li class="solutionRow">
+              <span class="solutionIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -344,14 +344,14 @@
                   <line x1="8" y1="17" x2="13" y2="17" />
                 </svg>
               </span>
-              <span class="solucionTextoBloque">
-                <span class="solucionPaso">Reporte rápido</span>
-                <span class="solucionDetalle">QR y formulario breve</span>
+              <span class="solutionTextBlock">
+                <span class="solutionStep">Fast reporting</span>
+                <span class="solutionDetail">QR and short form</span>
               </span>
             </li>
 
-            <li class="solucionFila">
-              <span class="solucionIcono" aria-hidden="true">
+            <li class="solutionRow">
+              <span class="solutionIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -365,14 +365,14 @@
                   <circle cx="12" cy="10" r="3" />
                 </svg>
               </span>
-              <span class="solucionTextoBloque">
-                <span class="solucionPaso">Ubicación precisa</span>
-                <span class="solucionDetalle">Ambiente identificado</span>
+              <span class="solutionTextBlock">
+                <span class="solutionStep">Precise location</span>
+                <span class="solutionDetail">Identified space</span>
               </span>
             </li>
 
-            <li class="solucionFila">
-              <span class="solucionIcono" aria-hidden="true">
+            <li class="solutionRow">
+              <span class="solutionIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -388,14 +388,14 @@
                   <circle cx="12" cy="13" r="4" />
                 </svg>
               </span>
-              <span class="solucionTextoBloque">
-                <span class="solucionPaso">Evidencia clara</span>
-                <span class="solucionDetalle">Foto y descripción</span>
+              <span class="solutionTextBlock">
+                <span class="solutionStep">Clear evidence</span>
+                <span class="solutionDetail">Photo and description</span>
               </span>
             </li>
 
-            <li class="solucionFila">
-              <span class="solucionIcono" aria-hidden="true">
+            <li class="solutionRow">
+              <span class="solutionIcon" aria-hidden="true">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -409,9 +409,9 @@
                   <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
               </span>
-              <span class="solucionTextoBloque">
-                <span class="solucionPaso">Seguimiento visible</span>
-                <span class="solucionDetalle">Estado del reporte</span>
+              <span class="solutionTextBlock">
+                <span class="solutionStep">Visible tracking</span>
+                <span class="solutionDetail">Report status</span>
               </span>
             </li>
           </ul>
@@ -419,23 +419,23 @@
       </section>
 
       <section
-        class="seccion-seccionSuave-producto"
-        id="producto"
-        aria-labelledby="producto-titulo"
+        class="section-softSection-product"
+        id="product"
+        aria-labelledby="product-title"
       >
-        <div class="contenedor">
-          <header class="seccionEncabezado-seccionEncabezadoCentro">
-            <h2 class="seccionTitulo" id="producto-titulo">Sobre el producto</h2>
-            <p class="seccionBajada">
-              Mira en un minuto cómo CampusLink facilita reportar y dar
-              seguimiento a las incidencias de tu campus.
+        <div class="container">
+          <header class="sectionHeader-sectionHeaderCenter">
+            <h2 class="sectionTitle" id="product-title">About the product</h2>
+            <p class="sectionSubhead">
+              See in one minute how CampusLink makes it easier to report and
+              track incidents on your campus.
             </p>
           </header>
 
-          <div class="productoVideo">
+          <div class="productVideo">
             <iframe
               src="https://www.youtube-nocookie.com/embed/VX7CX0OjY3k"
-              title="CampusLink — video de presentación del producto"
+              title="CampusLink - product presentation video"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
@@ -445,105 +445,105 @@
       </section>
 
       <section
-        class="seccion-seccionSuave-como"
-        id="como-funciona"
-        aria-labelledby="como-titulo"
+        class="section-softSection-how"
+        id="how-it-works"
+        aria-labelledby="how-title"
       >
-        <div class="contenedor">
-          <div class="comoLayout">
-            <div class="comoContenido">
-              <header class="comoEncabezado">
-                <h2 class="seccionTitulo" id="como-titulo">
-                  ¿Cómo funciona CampusLink?
+        <div class="container">
+          <div class="howLayout">
+            <div class="howContent">
+              <header class="howHeader">
+                <h2 class="sectionTitle" id="how-title">
+                  How does CampusLink work?
                 </h2>
-                <p class="seccionBajada">
-                  Reporta una incidencia en pocos pasos y permite que soporte
-                  reciba información clara desde el primer momento.
+                <p class="sectionSubhead">
+                  Report an incident in a few steps and help support
+                  receive clear information from the start.
                 </p>
               </header>
 
-              <ol class="comoLista">
-                <li class="comoPaso estaActivo">
+              <ol class="howList">
+                <li class="howStep isActive">
                   <button
-                    class="comoPasoBoton"
+                    class="howStepButton"
                     type="button"
-                    data-como-paso="0"
+                    data-how-step="0"
                     aria-current="step"
                   >
-                    <span class="comoNumero" aria-hidden="true">01</span>
-                    <span class="comoPasoContenido">
-                      <span class="comoPasoTitulo">Detecta una incidencia</span>
-                      <span class="comoTexto"
-                        >El usuario encuentra una falla en un aula, laboratorio,
-                        baño o zona común.</span
+                    <span class="howNumber" aria-hidden="true">01</span>
+                    <span class="howStepContent">
+                      <span class="howStepTitle">Detect an incident</span>
+                      <span class="howText"
+                        >The user finds an issue in a classroom, lab,
+                        restroom, or common area.</span
                       >
                     </span>
                   </button>
                 </li>
-                <li class="comoPaso">
+                <li class="howStep">
                   <button
-                    class="comoPasoBoton"
+                    class="howStepButton"
                     type="button"
-                    data-como-paso="1"
+                    data-how-step="1"
                   >
-                    <span class="comoNumero" aria-hidden="true">02</span>
-                    <span class="comoPasoContenido">
-                      <span class="comoPasoTitulo"
-                        >Escanea el QR del ambiente</span
+                    <span class="howNumber" aria-hidden="true">02</span>
+                    <span class="howStepContent">
+                      <span class="howStepTitle"
+                        >Scan the space QR code</span
                       >
-                      <span class="comoTexto"
-                        >CampusLink identifica el lugar del reporte sin que el
-                        usuario tenga que escribir toda la ubicación.</span
+                      <span class="howText"
+                        >CampusLink identifies the report location without
+                        requiring the user to type the full location.</span
                       >
                     </span>
                   </button>
                 </li>
-                <li class="comoPaso">
+                <li class="howStep">
                   <button
-                    class="comoPasoBoton"
+                    class="howStepButton"
                     type="button"
-                    data-como-paso="2"
+                    data-how-step="2"
                   >
-                    <span class="comoNumero" aria-hidden="true">03</span>
-                    <span class="comoPasoContenido">
-                      <span class="comoPasoTitulo">Registra evidencia</span>
-                      <span class="comoTexto"
-                        >El usuario agrega una foto y una descripción breve del
-                        problema.</span
+                    <span class="howNumber" aria-hidden="true">03</span>
+                    <span class="howStepContent">
+                      <span class="howStepTitle">Record evidence</span>
+                      <span class="howText"
+                        >The user adds a photo and a short description of the
+                        problem.</span
                       >
                     </span>
                   </button>
                 </li>
-                <li class="comoPaso">
+                <li class="howStep">
                   <button
-                    class="comoPasoBoton"
+                    class="howStepButton"
                     type="button"
-                    data-como-paso="3"
+                    data-how-step="3"
                   >
-                    <span class="comoNumero" aria-hidden="true">04</span>
-                    <span class="comoPasoContenido">
-                      <span class="comoPasoTitulo"
-                        >Soporte recibe el reporte</span
+                    <span class="howNumber" aria-hidden="true">04</span>
+                    <span class="howStepContent">
+                      <span class="howStepTitle"
+                        >Support receives the report</span
                       >
-                      <span class="comoTexto"
-                        >El personal de soporte visualiza la categoría,
-                        ubicación y evidencia para priorizar la atención.</span
+                      <span class="howText"
+                        >Support staff see the category, location, and
+                        evidence to prioritize service.</span
                       >
                     </span>
                   </button>
                 </li>
-                <li class="comoPaso">
+                <li class="howStep">
                   <button
-                    class="comoPasoBoton"
+                    class="howStepButton"
                     type="button"
-                    data-como-paso="4"
+                    data-how-step="4"
                   >
-                    <span class="comoNumero" aria-hidden="true">05</span>
-                    <span class="comoPasoContenido">
-                      <span class="comoPasoTitulo">Revisa el seguimiento</span>
-                      <span class="comoTexto"
-                        >El usuario consulta el estado del reporte: pendiente,
-                        en proceso o resuelto.</span
+                    <span class="howNumber" aria-hidden="true">05</span>
+                    <span class="howStepContent">
+                      <span class="howStepTitle">Check the tracking</span>
+                      <span class="howText"
+                        >The user checks the report status: pending,
+                        in progress, or resolved.</span
                       >
                     </span>
                   </button>
@@ -552,80 +552,80 @@
             </div>
 
             <aside
-              class="comoImagenes"
-              aria-label="Pantallas del flujo de CampusLink"
+              class="howImages"
+              aria-label="CampusLink flow screens"
             >
-              <figure class="comoImagenPanel estaActivo" data-como-imagen="0">
+              <figure class="howImagePanel isActive" data-how-image="0">
                 <img
-                  class="comoImagen"
-                  src="recursos/imagenes/como-funciona-campusLink/detecta-una-incidencia.webp"
-                  alt="Pantalla de CampusLink para detectar una incidencia en el campus"
+                  class="howImage"
+                  src="assets/images/how-it-works/detect-incident.webp"
+                  alt="CampusLink screen for detecting a campus incident"
                 />
               </figure>
               <figure
-                class="comoImagenPanel"
-                data-como-imagen="1"
+                class="howImagePanel"
+                data-how-image="1"
                 aria-hidden="true"
               >
                 <div class="iphone-15">
-                  <div class="isla-dinamica" aria-hidden="true"></div>
-                  <div class="linea-home" aria-hidden="true"></div>
-                  <div class="pantalla-scroll pantallaQr">
+                  <div class="dynamic-island" aria-hidden="true"></div>
+                  <div class="home-line" aria-hidden="true"></div>
+                  <div class="screen-scroll qrScreen">
                     <img
-                      class="comoImagen"
-                      src="recursos/imagenes/como-funciona-campusLink/pantalla-deteccion-qr.webp"
-                      alt="Pantalla de CampusLink para escanear el QR del ambiente"
+                      class="howImage"
+                      src="assets/images/how-it-works/qr-detection-screen.webp"
+                      alt="CampusLink screen for scanning the space QR code"
                     />
                   </div>
                 </div>
               </figure>
               <figure
-                class="comoImagenPanel"
-                data-como-imagen="2"
+                class="howImagePanel"
+                data-how-image="2"
                 aria-hidden="true"
               >
                 <div class="iphone-15">
-                  <div class="isla-dinamica" aria-hidden="true"></div>
-                  <div class="linea-home" aria-hidden="true"></div>
-                  <div class="pantalla-scroll pantallaRegistro">
+                  <div class="dynamic-island" aria-hidden="true"></div>
+                  <div class="home-line" aria-hidden="true"></div>
+                  <div class="screen-scroll pantallaRegistro">
                     <img
-                      class="comoImagen"
-                      src="recursos/imagenes/como-funciona-campusLink/pantalla-registra-evidencia.webp"
-                      alt="Pantalla de CampusLink para registrar evidencia de una incidencia"
+                      class="howImage"
+                      src="assets/images/how-it-works/record-evidence-screen.webp"
+                      alt="CampusLink screen for recording incident evidence"
                     />
                   </div>
                 </div>
               </figure>
               <figure
-                class="comoImagenPanel"
-                data-como-imagen="3"
+                class="howImagePanel"
+                data-how-image="3"
                 aria-hidden="true"
               >
                 <div class="iphone-15">
-                  <div class="isla-dinamica" aria-hidden="true"></div>
-                  <div class="linea-home" aria-hidden="true"></div>
-                  <div class="pantalla-scroll pantallaSoporte">
+                  <div class="dynamic-island" aria-hidden="true"></div>
+                  <div class="home-line" aria-hidden="true"></div>
+                  <div class="screen-scroll pantallaSoporte">
                     <img
-                      class="comoImagen"
-                      src="recursos/imagenes/como-funciona-campusLink/pantalla-soporte-recibe-reporte.webp"
-                      alt="Pantalla de soporte de CampusLink recibiendo un reporte de incidencia"
+                      class="howImage"
+                      src="assets/images/how-it-works/support-receives-report-screen.webp"
+                      alt="CampusLink support screen receiving an incident report"
                     />
                   </div>
                 </div>
               </figure>
               <figure
-                class="comoImagenPanel"
-                data-como-imagen="4"
+                class="howImagePanel"
+                data-how-image="4"
                 aria-hidden="true"
               >
                 <div class="iphone-15">
-                  <div class="isla-dinamica" aria-hidden="true"></div>
-                  <div class="linea-home" aria-hidden="true"></div>
-                  <div class="pantalla-scroll pantallaSeguimiento">
+                  <div class="dynamic-island" aria-hidden="true"></div>
+                  <div class="home-line" aria-hidden="true"></div>
+                  <div class="screen-scroll pantallaSeguimiento">
                     <img
-                      class="comoImagen"
-                      src="recursos/imagenes/como-funciona-campusLink/pantalla-revisa-seguimiento.webp"
-                      alt="Pantalla de CampusLink para revisar el seguimiento de un reporte"
+                      class="howImage"
+                      src="assets/images/how-it-works/review-tracking-screen.webp"
+                      alt="CampusLink screen for checking report tracking"
                     />
                   </div>
                 </div>
@@ -636,76 +636,76 @@
       </section>
 
       <section
-        class="seccion-beneficios"
-        id="beneficios"
-        aria-labelledby="beneficios-titulo"
+        class="section-benefits"
+        id="benefits"
+        aria-labelledby="benefits-title"
       >
-        <div class="contenedor">
-          <header class="seccionEncabezado-seccionEncabezadoCentro">
-            <h2 class="seccionTitulo" id="beneficios-titulo">Beneficios</h2>
-            <p class="seccionBajada">
-              Cada función de CampusLink mejora algo concreto para quien reporta
-              y para quien resuelve
+        <div class="container">
+          <header class="sectionHeader-sectionHeaderCenter">
+            <h2 class="sectionTitle" id="benefits-title">Benefits</h2>
+            <p class="sectionSubhead">
+              Each CampusLink feature improves something concrete for
+              the person reporting and the person resolving
             </p>
           </header>
 
-          <ul class="beneficiosGrilla">
-            <li class="beneficio beneficioDestacado">
-              <span class="antetitulo-beneficioIndice">01</span>
-              <h3 class="beneficioTitulo">Reporte más rápido</h3>
-              <p class="beneficioTexto">
-                Reporta desde un QR y un formulario breve, sin perder tiempo
-                buscando a quién avisar
+          <ul class="benefitsGrid">
+            <li class="benefit benefitHighlight">
+              <span class="eyebrow-benefitIndex">01</span>
+              <h3 class="benefitTitle">Faster reporting</h3>
+              <p class="benefitText">
+                Report from a QR code and a short form without wasting
+                time finding who to notify
               </p>
-              <p class="beneficioResultado">
-                <span class="beneficioResultadoEtiqueta">Resultado:</span> Menos
-                fricción para estudiantes y docentes
-              </p>
-            </li>
-            <li class="beneficio">
-              <span class="antetitulo-beneficioIndice">02</span>
-              <h3 class="beneficioTitulo">Ubicación más precisa</h3>
-              <p class="beneficioTexto">
-                Identifica el ambiente o zona afectada; soporte recibe el lugar
-                exacto del problema
-              </p>
-              <p class="beneficioResultado">
-                <span class="beneficioResultadoEtiqueta">Resultado:</span> Menos
-                confusión y desplazamientos innecesarios
+              <p class="benefitResult">
+                <span class="benefitResultLabel">Result:</span> Less
+                friction for students and teachers
               </p>
             </li>
-            <li class="beneficio">
-              <span class="antetitulo-beneficioIndice">03</span>
-              <h3 class="beneficioTitulo">Evidencia clara</h3>
-              <p class="beneficioTexto">
-                Foto y descripción breve para entender la falla antes de llegar
+            <li class="benefit">
+              <span class="eyebrow-benefitIndex">02</span>
+              <h3 class="benefitTitle">More precise location</h3>
+              <p class="benefitText">
+                Identify the affected room or area; support receives the
+                exact problem location
               </p>
-              <p class="beneficioResultado">
-                <span class="beneficioResultadoEtiqueta">Resultado:</span> Mejor
-                diagnóstico y atención más preparada
-              </p>
-            </li>
-            <li class="beneficio">
-              <span class="antetitulo-beneficioIndice">04</span>
-              <h3 class="beneficioTitulo">Seguimiento transparente</h3>
-              <p class="beneficioTexto">
-                Estados visibles del reporte: pendiente, en proceso y resuelto
-              </p>
-              <p class="beneficioResultado">
-                <span class="beneficioResultadoEtiqueta">Resultado:</span> Menos
-                incertidumbre y mayor confianza
+              <p class="benefitResult">
+                <span class="benefitResultLabel">Result:</span> Less
+                confusion and fewer unnecessary trips
               </p>
             </li>
-            <li class="beneficio">
-              <span class="antetitulo-beneficioIndice">05</span>
-              <h3 class="beneficioTitulo">Priorización operativa</h3>
-              <p class="beneficioTexto">
-                Organiza los reportes por criticidad, categoría, estado o
-                ubicación
+            <li class="benefit">
+              <span class="eyebrow-benefitIndex">03</span>
+              <h3 class="benefitTitle">Clear evidence</h3>
+              <p class="benefitText">
+                Photo and short description to understand the issue before arriving
               </p>
-              <p class="beneficioResultado">
-                <span class="beneficioResultadoEtiqueta">Resultado:</span>
-                Atención más eficiente de los casos importantes
+              <p class="benefitResult">
+                <span class="benefitResultLabel">Result:</span> Better
+                diagnosis and more prepared service
+              </p>
+            </li>
+            <li class="benefit">
+              <span class="eyebrow-benefitIndex">04</span>
+              <h3 class="benefitTitle">Transparent tracking</h3>
+              <p class="benefitText">
+                Visible report statuses: pending, in progress, and resolved
+              </p>
+              <p class="benefitResult">
+                <span class="benefitResultLabel">Result:</span> Less
+                uncertainty and greater trust
+              </p>
+            </li>
+            <li class="benefit">
+              <span class="eyebrow-benefitIndex">05</span>
+              <h3 class="benefitTitle">Operational prioritization</h3>
+              <p class="benefitText">
+                Organize reports by criticality, category, status, or
+                location
+              </p>
+              <p class="benefitResult">
+                <span class="benefitResultLabel">Result:</span>
+                More efficient handling of important cases
               </p>
             </li>
           </ul>
@@ -713,100 +713,100 @@
       </section>
 
       <section
-        class="seccion-seccionSuave-publico"
-        id="para-quienes"
-        aria-labelledby="publico-titulo"
+        class="section-softSection-audience"
+        id="who-its-for"
+        aria-labelledby="audience-title"
       >
-        <div class="contenedor">
-          <header class="seccionEncabezado-seccionEncabezadoCentro">
-            <h2 class="seccionTitulo" id="publico-titulo">Para quiénes</h2>
-            <p class="seccionBajada">
-              CampusLink está diseñado para quienes reportan incidencias y para
-              quienes las atienden dentro del campus.
+        <div class="container">
+          <header class="sectionHeader-sectionHeaderCenter">
+            <h2 class="sectionTitle" id="audience-title">Who it is for</h2>
+            <p class="sectionSubhead">
+              CampusLink is designed for those who report incidents and for
+              those who handle them on campus.
             </p>
           </header>
 
-          <ul class="publicoGrid">
-            <li class="publicoCard">
-              <h3 class="publicoSegmento">Estudiantes</h3>
-              <p class="publicoDescripcion">
-                Quienes usan los espacios del campus a diario.
+          <ul class="audienceGrid">
+            <li class="audienceCard">
+              <h3 class="audienceSegment">Students</h3>
+              <p class="audienceDescription">
+                People who use campus spaces every day.
               </p>
 
-              <div class="publicoBloque">
-                <span class="publicoSubtitulo">Problema</span>
-                <p class="publicoTexto">
-                  Detectan fallas en aulas, baños, laboratorios o zonas comunes,
-                  pero no siempre tienen un canal claro para reportarlas.
+              <div class="audienceBlock">
+                <span class="audienceSubtitle">Problem</span>
+                <p class="audienceText">
+                  They detect issues in classrooms, restrooms, labs, or common areas,
+                  but they do not always have a clear channel to report them.
                 </p>
               </div>
-              <div class="publicoBloque">
-                <span class="publicoSubtitulo">Acción</span>
-                <p class="publicoTexto">
-                  Reportan incidencias con QR, foto y descripción breve.
+              <div class="audienceBlock">
+                <span class="audienceSubtitle">Action</span>
+                <p class="audienceText">
+                  They report incidents with a QR code, photo, and short description.
                 </p>
               </div>
-              <div class="publicoBloque publicoBloqueValor">
-                <span class="publicoSubtitulo">Valor</span>
-                <p class="publicoTexto">
-                  Saben que su reporte no cae en el vacío y pueden revisar su
-                  seguimiento.
+              <div class="audienceBlock audienceBlockValue">
+                <span class="audienceSubtitle">Value</span>
+                <p class="audienceText">
+                  They know their report does not disappear and can check its
+                  progress.
                 </p>
               </div>
             </li>
 
-            <li class="publicoCard">
-              <h3 class="publicoSegmento">Docentes</h3>
-              <p class="publicoDescripcion">
-                Quienes dictan clase y dependen de los ambientes y equipos.
+            <li class="audienceCard">
+              <h3 class="audienceSegment">Teachers</h3>
+              <p class="audienceDescription">
+                People who teach classes and depend on rooms and equipment.
               </p>
 
-              <div class="publicoBloque">
-                <span class="publicoSubtitulo">Problema</span>
-                <p class="publicoTexto">
-                  Una falla técnica o de infraestructura puede interrumpir el
-                  desarrollo de una clase.
+              <div class="audienceBlock">
+                <span class="audienceSubtitle">Problem</span>
+                <p class="audienceText">
+                  A technical or infrastructure issue can interrupt the
+                  development of a class.
                 </p>
               </div>
-              <div class="publicoBloque">
-                <span class="publicoSubtitulo">Acción</span>
-                <p class="publicoTexto">
-                  Solicitan atención cuando un ambiente o equipo afecta la
-                  continuidad académica.
+              <div class="audienceBlock">
+                <span class="audienceSubtitle">Action</span>
+                <p class="audienceText">
+                  They request support when a room or piece of equipment
+                  affects academic continuity.
                 </p>
               </div>
-              <div class="publicoBloque publicoBloqueValor">
-                <span class="publicoSubtitulo">Valor</span>
-                <p class="publicoTexto">
-                  Reducen pérdida de tiempo y mantienen mayor control durante la
-                  sesión.
+              <div class="audienceBlock audienceBlockValue">
+                <span class="audienceSubtitle">Value</span>
+                <p class="audienceText">
+                  They reduce lost time and keep greater control during the
+                  session.
                 </p>
               </div>
             </li>
 
-            <li class="publicoCard">
-              <h3 class="publicoSegmento">Personal de soporte y operaciones</h3>
-              <p class="publicoDescripcion">
-                Quienes reciben y resuelven los reportes.
+            <li class="audienceCard">
+              <h3 class="audienceSegment">Support and operations staff</h3>
+              <p class="audienceDescription">
+                People who receive and resolve reports.
               </p>
 
-              <div class="publicoBloque">
-                <span class="publicoSubtitulo">Problema</span>
-                <p class="publicoTexto">
-                  Reciben reportes incompletos, ambiguos o sin ubicación exacta.
+              <div class="audienceBlock">
+                <span class="audienceSubtitle">Problem</span>
+                <p class="audienceText">
+                  They receive incomplete, ambiguous reports or reports without an exact location.
                 </p>
               </div>
-              <div class="publicoBloque">
-                <span class="publicoSubtitulo">Acción</span>
-                <p class="publicoTexto">
-                  Visualizan ubicación, categoría, evidencia y estado del
-                  reporte.
+              <div class="audienceBlock">
+                <span class="audienceSubtitle">Action</span>
+                <p class="audienceText">
+                  They see the report location, category, evidence, and
+                  status.
                 </p>
               </div>
-              <div class="publicoBloque publicoBloqueValor">
-                <span class="publicoSubtitulo">Valor</span>
-                <p class="publicoTexto">
-                  Priorizan mejor y evitan desplazamientos innecesarios.
+              <div class="audienceBlock audienceBlockValue">
+                <span class="audienceSubtitle">Value</span>
+                <p class="audienceText">
+                  They prioritize better and avoid unnecessary trips.
                 </p>
               </div>
             </li>
@@ -815,42 +815,42 @@
       </section>
 
       <section
-        class="seccion-vista seccion-vista-prototipo"
-        id="vista-app"
-        aria-labelledby="vista-titulo"
+        class="section-appView section-appView-prototype"
+        id="app-view"
+        aria-labelledby="app-view-title"
       >
-        <header class="seccionEncabezado-seccionEncabezadoCentro">
-          <h2 class="seccionTitulo" id="vista-titulo">Vista de la app</h2>
+        <header class="sectionHeader-sectionHeaderCenter">
+          <h2 class="sectionTitle" id="app-view-title">App view</h2>
         </header>
-        <div class="vistaAppMarco" data-vista-app>
+        <div class="appViewFrame" data-app-view>
           <div
-            class="iphone-15 vistaAppTelefono"
+            class="iphone-15 appViewPhone"
             role="region"
-            aria-label="Prototipo interactivo de CampusLink"
+            aria-label="CampusLink interactive prototype"
           >
-            <div class="isla-dinamica"></div>
-            <div class="pantalla-scroll vistaAppViewport">
-              <div class="vistaAppEscenario" data-vista-app-escenario></div>
+            <div class="dynamic-island"></div>
+            <div class="screen-scroll appViewViewport">
+              <div class="appViewStage" data-app-view-stage></div>
             </div>
-            <div class="linea-home"></div>
+            <div class="home-line"></div>
           </div>
         </div>
       </section>
 
       <section
-        class="seccion-seccionSuave-videoEquipo"
-        id="video-equipo"
-        aria-labelledby="video-equipo-titulo"
+        class="section-softSection-teamVideo"
+        id="team-video"
+        aria-labelledby="team-video-title"
       >
-        <div class="contenedor">
-          <header class="seccionEncabezado-seccionEncabezadoCentro">
-            <h2 class="seccionTitulo" id="video-equipo-titulo">Video del equipo</h2>
+        <div class="container">
+          <header class="sectionHeader-sectionHeaderCenter">
+            <h2 class="sectionTitle" id="team-video-title">Team video</h2>
           </header>
 
-          <div class="productoVideo">
+          <div class="productVideo">
             <iframe
               src="https://www.youtube-nocookie.com/embed/niML0hFwOFY"
-              title="CampusLink - video del equipo"
+              title="CampusLink - team video"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
@@ -860,38 +860,36 @@
       </section>
 
       <section
-        class="seccion-seccionSuave-nosotros"
-        id="quienes-somos"
-        aria-labelledby="quienes-somos-titulo"
+        class="section-softSection-about"
+        id="about-us"
+        aria-labelledby="about-us-title"
       >
-        <div class="contenedor">
-          <header class="seccionEncabezado-seccionEncabezadoCentro">
-            <h2 class="seccionTitulo" id="quienes-somos-titulo">Quiénes somos</h2>
-            <p class="seccionBajada">
-              Montimin es un equipo de estudiantes de Ingeniería de Software
-              enfocado en crear soluciones digitales para mejorar la experiencia
-              universitaria. Con CampusLink, buscamos facilitar el reporte y
-              seguimiento de incidencias dentro del campus de forma rápida, clara
-              y accesible.
+        <div class="container">
+          <header class="sectionHeader-sectionHeaderCenter">
+            <h2 class="sectionTitle" id="about-us-title">Who we are</h2>
+            <p class="sectionSubhead">
+              Montimin is a team of Software Engineering students
+              focused on creating digital solutions to improve the university
+              experience. With CampusLink, we aim to make campus incident
+              reporting and tracking fast, clear, and accessible.
             </p>
           </header>
 
-          <ul class="nosotrosEquipo">
-            <li class="nosotrosCard">
-              <h3 class="nosotrosNombre">Diego Yahir Chilingano Salas</h3>
-              <p class="nosotrosDescripcion">
-                Estudiante de Ingeniería de Software. Aporta pensamiento lógico,
-                análisis de requerimientos y enfoque técnico para estructurar
-                funcionalidades claras, viables y orientadas a resolver
-                necesidades reales del campus.
+          <ul class="aboutTeam">
+            <li class="aboutCard">
+              <h3 class="aboutName">Diego Yahir Chilingano Salas</h3>
+              <p class="aboutDescription">
+                Software Engineering student. Contributes logical thinking,
+                requirements analysis, and a technical approach to structure
+                clear, viable features aimed at solving real campus needs.
               </p>
             </li>
-            <li class="nosotrosCard">
-              <h3 class="nosotrosNombre">Italo Gabriel Ninahuanca Garcia</h3>
-              <p class="nosotrosDescripcion">
-                Estudiante de Ingeniería de Software. Aporta organización de
-                contenido y desarrollo del landing page, comunicando la propuesta
-                de valor de CampusLink de manera clara y funcional.
+            <li class="aboutCard">
+              <h3 class="aboutName">Italo Gabriel Ninahuanca Garcia</h3>
+              <p class="aboutDescription">
+                Software Engineering student. Contributes content organization
+                and landing page development, communicating CampusLink&rsquo;s
+                value proposition clearly and functionally.
               </p>
             </li>
           </ul>
@@ -899,179 +897,178 @@
       </section>
 
       <section
-        class="seccion-contacto"
-        id="contacto"
-        aria-labelledby="contacto-titulo"
+        class="section-contact"
+        id="contact"
+        aria-labelledby="contact-title"
       >
-        <div class="contenedor">
-          <div class="contactoLayout">
-            <div class="contactoInfo">
-              <h2 class="contactoTitulo" id="contacto-titulo">
-                Conversemos sobre CampusLink
+        <div class="container">
+          <div class="contactLayout">
+            <div class="contactInfo">
+              <h2 class="contactTitle" id="contact-title">
+                Let&rsquo;s talk about CampusLink
               </h2>
-              <p class="contactoTexto">
-                CampusLink ayuda a universidades a centralizar el reporte y
-                seguimiento de incidencias de infraestructura, bienestar y
-                seguridad dentro del campus.
+              <p class="contactText">
+                CampusLink helps universities centralize the reporting and
+                tracking of infrastructure, wellbeing, and
+                security incidents on campus.
               </p>
 
-              <a class="boton-botonPrimario" href="#formulario-contacto"
-                >Solicitar información</a
+              <a class="button-primaryButton" href="#contact-form"
+                >Request information</a
               >
 
-              <ul class="contactoBeneficios">
-                <li class="contactoBeneficio">Reporte rápido mediante QR</li>
-                <li class="contactoBeneficio">
-                  Seguimiento del estado del caso
+              <ul class="contactBenefits">
+                <li class="contactBenefit">Fast reporting via QR</li>
+                <li class="contactBenefit">
+                  Case status tracking
                 </li>
-                <li class="contactoBeneficio">
-                  Información más clara para soporte
+                <li class="contactBenefit">
+                  Clearer information for support
                 </li>
-                <li class="contactoBeneficio">
-                  Mejor coordinación entre usuarios y operaciones
+                <li class="contactBenefit">
+                  Better coordination between users and operations
                 </li>
               </ul>
 
-              <p class="contactoNota">
-                Ideal para instituciones que buscan una gestión más ordenada
-                dentro del campus.
+              <p class="contactNote">
+                Ideal for institutions seeking more organized campus
+                management.
               </p>
             </div>
 
-            <form class="contactoFormulario" id="formulario-contacto">
-              <div class="contactoFormGrid">
-                <div class="campo">
-                  <label for="tipo-institucion">Tipo de institución</label>
+            <form class="contactForm" id="contact-form">
+              <div class="contactFormGrid">
+                <div class="field">
+                  <label for="institution-type">Institution type</label>
                   <select
-                    id="tipo-institucion"
-                    name="tipo-institucion"
+                    id="institution-type"
+                    name="institution-type"
                     required
                   >
-                    <option value="">Selecciona una opción</option>
-                    <option value="universidad">Universidad</option>
-                    <option value="instituto">Instituto</option>
-                    <option value="colegio">Colegio</option>
-                    <option value="otro">Otro</option>
+                    <option value="">Select an option</option>
+                    <option value="universidad">University</option>
+                    <option value="instituto">Institute</option>
+                    <option value="colegio">School</option>
                   </select>
                 </div>
 
-                <div class="campo">
-                  <label for="nombre-institucion"
-                    >Nombre de la institución</label
+                <div class="field">
+                  <label for="institution-name"
+                    >Institution name</label
                   >
                   <input
-                    id="nombre-institucion"
-                    name="nombre-institucion"
+                    id="institution-name"
+                    name="institution-name"
                     type="text"
                     autocomplete="organization"
-                    placeholder="Ej. Universidad Nacional de Ingeniería"
+                    placeholder="E.g. National University of Engineering"
                     required
                   />
                 </div>
 
-                <div class="campo">
-                  <label for="nombre-contacto">Nombre del contacto</label>
+                <div class="field">
+                  <label for="contact-name">Contact name</label>
                   <input
-                    id="nombre-contacto"
-                    name="nombre-contacto"
+                    id="contact-name"
+                    name="contact-name"
                     type="text"
                     autocomplete="name"
-                    placeholder="Ej. María Fernández"
+                    placeholder="E.g. Maria Fernandez"
                     required
                   />
                 </div>
 
-                <div class="campo">
-                  <label for="cargo">Cargo</label>
+                <div class="field">
+                  <label for="job-title">Role</label>
                   <input
-                    id="cargo"
-                    name="cargo"
+                    id="job-title"
+                    name="job-title"
                     type="text"
                     autocomplete="organization-title"
-                    placeholder="Ej. Jefa de Servicios Generales"
+                    placeholder="E.g. Head of General Services"
                     required
                   />
                 </div>
 
-                <div class="campo">
-                  <label for="correo-institucional">Correo institucional</label>
+                <div class="field">
+                  <label for="institutional-email">Institutional email</label>
                   <input
-                    id="correo-institucional"
-                    name="correo-institucional"
+                    id="institutional-email"
+                    name="institutional-email"
                     type="email"
                     autocomplete="email"
-                    placeholder="nombre@institucion.edu.pe"
+                    placeholder="name@institution.edu.pe"
                     required
                   />
                 </div>
 
-                <div class="campo">
-                  <label for="telefono">Teléfono</label>
+                <div class="field">
+                  <label for="phone">Phone</label>
                   <input
-                    id="telefono"
-                    name="telefono"
+                    id="phone"
+                    name="phone"
                     type="tel"
                     autocomplete="tel"
-                    placeholder="Ej. 987 654 321"
+                    placeholder="E.g. 987 654 321"
                     required
                   />
                 </div>
 
-                <div class="campo">
-                  <label for="numero-estudiantes"
-                    >Número aproximado de estudiantes</label
+                <div class="field">
+                  <label for="student-count"
+                    >Approximate number of students</label
                   >
                   <select
-                    id="numero-estudiantes"
-                    name="numero-estudiantes"
+                    id="student-count"
+                    name="student-count"
                     required
                   >
-                    <option value="">Selecciona un rango</option>
-                    <option value="menos-500">Menos de 500</option>
-                    <option value="500-2000">500 a 2000</option>
-                    <option value="2000-5000">2000 a 5000</option>
-                    <option value="mas-5000">Más de 5000</option>
+                    <option value="">Select a range</option>
+                    <option value="menos-500">Less than 500</option>
+                    <option value="500-2000">500 to 2000</option>
+                    <option value="2000-5000">2000 to 5000</option>
+                    <option value="mas-5000">More than 5000</option>
                   </select>
                 </div>
 
-                <div class="campo">
-                  <label for="interes">¿Qué te interesa conocer?</label>
-                  <select id="interes" name="interes" required>
-                    <option value="">Selecciona una opción</option>
-                    <option value="demo">Una demostración de la app</option>
-                    <option value="funciones">Las funciones principales</option>
+                <div class="field">
+                  <label for="interest">What would you like to learn about?</label>
+                  <select id="interest" name="interest" required>
+                    <option value="">Select an option</option>
+                    <option value="demo">An app demonstration</option>
+                    <option value="funciones">The main features</option>
                     <option value="implementacion">
-                      Cómo implementarlo en el campus
+                      How to implement it on campus
                     </option>
-                    <option value="general">Información general</option>
+                    <option value="general">General information</option>
                   </select>
                 </div>
 
-                <div class="campo campoAncho">
-                  <label for="necesidades"
-                    >Cuéntanos sobre las necesidades de tu campus</label
+                <div class="field fieldWide">
+                  <label for="needs"
+                    >Tell us about your campus needs</label
                   >
                   <textarea
-                    id="necesidades"
-                    name="necesidades"
+                    id="needs"
+                    name="needs"
                     rows="4"
-                    placeholder="Cuéntanos qué incidencias de infraestructura, bienestar o seguridad quieres gestionar mejor en tu campus."
+                    placeholder="Tell us which infrastructure, wellbeing, or security incidents you want to manage better on your campus."
                     required
                   ></textarea>
                 </div>
 
                 <button
-                  class="boton-botonPrimario contactoEnviar campoAncho"
+                  class="button-primaryButton contactSend fieldWide"
                   type="submit"
                 >
-                  Enviar solicitud
+                  Send request
                 </button>
 
-                <p class="contactoTratamiento campoAncho">
-                  Al enviar tu solicitud aceptas que CampusLink trate los datos
-                  proporcionados con la única finalidad de responder tu consulta
-                  y contactarte vía WhatsApp. No compartimos tu información con
-                  terceros.
+                <p class="contactDataUse fieldWide">
+                  By sending your request, you agree that CampusLink may
+                  process the provided data solely to answer your inquiry
+                  and contact you via WhatsApp. We do not share your
+                  information with third parties.
                 </p>
               </div>
             </form>
@@ -1080,25 +1077,25 @@
       </section>
     </main>
 
-    <footer class="pieSitio">
-      <div class="contenedor-pieSitioInterior">
+    <footer class="siteFooter">
+      <div class="container-siteFooterInner">
         <a
-          class="pieSitioMarca"
-          href="#inicio"
-          aria-label="CampusLink, ir al inicio"
+          class="siteFooterBrand"
+          href="#home"
+          aria-label="CampusLink, go to home"
         >
           <img
-            class="pieSitioLogo"
-            src="recursos/logo/campusLink-fondo-negro.png"
+            class="siteFooterLogo"
+            src="assets/logo/campuslink-black-bg.png"
             alt="CampusLink"
           />
         </a>
-        <span class="pieSitioPor">por Montimin</span>
-        <p class="pieSitioTexto">
-          Reporte, ubicación, evidencia y seguimiento de incidencias del campus
-          en un solo lugar
+        <span class="siteFooterBy">by Montimin</span>
+        <p class="siteFooterText">
+          Campus incident reporting, location, evidence, and tracking
+          in one place
         </p>
-        <p class="pieSitioLegal">© 2026 CampusLink · Montimin</p>
+        <p class="siteFooterLegal">© 2026 CampusLink · Montimin</p>
       </div>
     </footer>
 

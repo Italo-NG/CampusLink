@@ -1,152 +1,152 @@
 # language: en
 
 @landing
-Feature: Secciones informativas del Landing Page
+Feature: Landing Page informational sections
 
-Como visitante del Landing Page
-Quiero revisar las secciones informativas principales de CampusLink
-Para comprender la propuesta de valor, el problema, la solución, el funcionamiento, los beneficios, los usuarios objetivo, la adaptación responsive y el cierre institucional del producto.
-
-@US51 @automated
-Scenario: US51 - Scenario 1: Visualización exitosa de la propuesta de valor
-Given que el visitante ingresa al Landing Page de CampusLink
-When se carga la sección inicial del sitio
-Then el sistema muestra el título principal, una descripción de CampusLink y una imagen representativa del producto
+As a Landing Page visitor
+I want to review CampusLink's main informational sections
+So that I can understand the value proposition, the problem, the solution, how it works, the benefits, the target users, the responsive adaptation, and the institutional closing of the product.
 
 @US51 @automated
-Scenario: US51 - Scenario 2: Comprensión rápida del propósito del producto
-Given que el visitante observa la sección principal del Landing Page
-When lee el mensaje introductorio de CampusLink
-Then el sistema comunica que CampusLink permite reportar, ubicar y hacer seguimiento de incidencias del campus
+Scenario: US51 - Scenario 1: Successful display of the value proposition
+Given the visitor enters the CampusLink Landing Page
+When the site's initial section loads
+Then the system shows the main title, a description of CampusLink, and a representative image of the product
 
 @US51 @automated
-Scenario: US51 - Scenario 3: Acceso inicial a acciones principales del Landing Page
-Given que el visitante se encuentra en la sección inicial del Landing Page
-When revisa los elementos visibles del Hero
-Then el sistema muestra accesos o llamadas a la acción relacionadas con conocer el producto o iniciar el recorrido por la página
+Scenario: US51 - Scenario 2: Quick understanding of the product's purpose
+Given the visitor views the Landing Page's main section
+When they read CampusLink's introductory message
+Then the system communicates that CampusLink allows reporting, locating, and tracking campus incidents
+
+@US51 @automated
+Scenario: US51 - Scenario 3: Initial access to the Landing Page's main actions
+Given the visitor is on the Landing Page's initial section
+When they review the Hero's visible elements
+Then the system shows entry points or calls to action related to learning about the product or starting to browse the page
 
 @US53 @automated
-Scenario: US53 - Scenario 1: Visualización del problema actual
-Given que el visitante navega hacia la sección "Problema"
-When revisa el contenido presentado sobre la situación actual
-Then el sistema muestra los problemas principales que CampusLink busca resolver
+Scenario: US53 - Scenario 1: Display of the current problem
+Given the visitor navigates to the "Problem" section
+When they review the content presented about the current situation
+Then the system shows the main problems that CampusLink seeks to solve
 
 @US53 @automated
-Scenario: US53 - Scenario 2: Identificación de dificultades en la gestión de incidencias
-Given que el visitante se encuentra en la sección "Problema"
-When revisa las tarjetas informativas del problema
-Then el sistema presenta dificultades como reportes dispersos, falta de seguimiento e información incompleta para soporte
+Scenario: US53 - Scenario 2: Identifying difficulties in incident management
+Given the visitor is on the "Problem" section
+When they review the problem's informational cards
+Then the system presents difficulties such as scattered reports, lack of follow-up, and incomplete information for support
 
 @US53 @automated
-Scenario: US53 - Scenario 3: Relación entre el problema y la necesidad del campus
-Given que el visitante analiza la sección "Problema"
-When compara la información presentada con la experiencia de reportar incidencias en un campus
-Then el sistema permite comprender la necesidad de centralizar los reportes de incidencias
+Scenario: US53 - Scenario 3: Relating the problem to the campus's need
+Given the visitor analyzes the "Problem" section
+When they compare the information presented with the experience of reporting incidents on a campus
+Then the system helps them understand the need to centralize incident reporting
 
 @US54 @automated
-Scenario: US54 - Scenario 1: Visualización de la solución propuesta
-Given que el visitante navega hacia la sección "Solución"
-When revisa el contenido presentado sobre CampusLink
-Then el sistema muestra cómo CampusLink ayuda a reportar, ubicar y hacer seguimiento de incidencias
+Scenario: US54 - Scenario 1: Display of the proposed solution
+Given the visitor navigates to the "Solution" section
+When they review the content presented about CampusLink
+Then the system shows how CampusLink helps report, locate, and track incidents
 
 @US54 @automated
-Scenario: US54 - Scenario 2: Identificación de componentes principales de la solución
-Given que el visitante se encuentra en la sección "Solución"
-When revisa las tarjetas informativas de la solución
-Then el sistema presenta componentes como reporte rápido, ubicación precisa, evidencia clara y seguimiento visible
+Scenario: US54 - Scenario 2: Identifying the solution's main components
+Given the visitor is on the "Solution" section
+When they review the solution's informational cards
+Then the system presents components such as fast reporting, precise location, clear evidence, and visible tracking
 
 @US54 @automated
-Scenario: US54 - Scenario 3: Comprensión del valor diferencial de CampusLink
-Given que el visitante analiza la sección "Solución"
-When interpreta la información presentada
-Then el sistema comunica que CampusLink centraliza el proceso de reporte y seguimiento de incidencias del campus
+Scenario: US54 - Scenario 3: Understanding CampusLink's differential value
+Given the visitor analyzes the "Solution" section
+When they interpret the information presented
+Then the system communicates that CampusLink centralizes the campus incident reporting and tracking process
 
 @US55 @automated
-Scenario: US55 - Scenario 1: Visualización del flujo de funcionamiento
-Given que el visitante accede a la sección "Cómo funciona"
-When revisa los pasos presentados
-Then el sistema muestra una secuencia clara del proceso de reporte y seguimiento de incidencias
+Scenario: US55 - Scenario 1: Display of the how-it-works flow
+Given the visitor accesses the "How it works" section
+When they review the steps presented
+Then the system shows a clear sequence of the incident reporting and tracking process
 
 @US55 @automated
-Scenario: US55 - Scenario 2: Comprensión del proceso de reporte
-Given que el visitante se encuentra en la sección "Cómo funciona"
-When revisa el recorrido de uso de CampusLink
-Then el sistema explica que el usuario detecta una incidencia, escanea un QR, registra evidencia y envía el reporte a soporte
+Scenario: US55 - Scenario 2: Understanding the reporting process
+Given the visitor is on the "How it works" section
+When they review CampusLink's usage journey
+Then the system explains that the user detects an incident, scans a QR code, records evidence, and sends the report to support
 
 @US55 @automated
-Scenario: US55 - Scenario 3: Relación entre pasos del proceso y seguimiento del reporte
-Given que el visitante analiza la sección "Cómo funciona"
-When observa la secuencia completa del funcionamiento
-Then el sistema comunica que el reporte puede ser recibido, atendido y seguido por el usuario
+Scenario: US55 - Scenario 3: Relating the process steps to report tracking
+Given the visitor analyzes the "How it works" section
+When they view the complete how-it-works sequence
+Then the system communicates that the report can be received, handled, and tracked by the user
 
 @US56 @automated
-Scenario: US56 - Scenario 1: Visualización exitosa de beneficios
-Given que el visitante accede a la sección "Beneficios"
-When revisa las tarjetas informativas
-Then el sistema muestra los principales beneficios generados por CampusLink
+Scenario: US56 - Scenario 1: Successful display of benefits
+Given the visitor accesses the "Benefits" section
+When they review the informational cards
+Then the system shows the main benefits generated by CampusLink
 
 @US56 @automated
-Scenario: US56 - Scenario 2: Identificación de beneficios operativos
-Given que el visitante se encuentra en la sección "Beneficios"
-When revisa los beneficios presentados
-Then el sistema destaca beneficios como reporte rápido, ubicación precisa, evidencia clara, seguimiento transparente y priorización operativa
+Scenario: US56 - Scenario 2: Identifying operational benefits
+Given the visitor is on the "Benefits" section
+When they review the benefits presented
+Then the system highlights benefits such as fast reporting, precise location, clear evidence, transparent tracking, and operational prioritization
 
 @US56 @automated
-Scenario: US56 - Scenario 3: Comprensión del impacto de los beneficios
-Given que el visitante analiza la sección "Beneficios"
-When relaciona los beneficios con la gestión de incidencias del campus
-Then el sistema permite comprender cómo CampusLink mejora la comunicación entre usuarios y soporte
+Scenario: US56 - Scenario 3: Understanding the impact of the benefits
+Given the visitor analyzes the "Benefits" section
+When they relate the benefits to campus incident management
+Then the system helps them understand how CampusLink improves communication between users and support
 
 @US57 @automated
-Scenario: US57 - Scenario 1: Visualización de usuarios objetivo
-Given que el visitante accede a la sección "Para quiénes"
-When revisa las tarjetas de perfiles
-Then el sistema muestra estudiantes, docentes y personal de soporte u operaciones como usuarios objetivo
+Scenario: US57 - Scenario 1: Display of target users
+Given the visitor accesses the "Who it is for" section
+When they review the profile cards
+Then the system shows students, teachers, and support or operations staff as target users
 
 @US57 @automated
-Scenario: US57 - Scenario 2: Comprensión del valor para estudiantes y docentes
-Given que el visitante se encuentra en la sección "Para quiénes"
-When revisa los perfiles de estudiantes y docentes
-Then el sistema comunica que ambos perfiles pueden reportar incidencias y hacer seguimiento a sus solicitudes
+Scenario: US57 - Scenario 2: Understanding the value for students and teachers
+Given the visitor is on the "Who it is for" section
+When they review the student and teacher profiles
+Then the system communicates that both profiles can report incidents and track their requests
 
 @US57 @automated
-Scenario: US57 - Scenario 3: Comprensión del valor para soporte y operaciones
-Given que el visitante analiza la sección "Para quiénes"
-When revisa el perfil del personal de soporte u operaciones
-Then el sistema comunica que este perfil puede recibir información más clara para atender incidencias
+Scenario: US57 - Scenario 3: Understanding the value for support and operations
+Given the visitor analyzes the "Who it is for" section
+When they review the support or operations staff profile
+Then the system communicates that this profile can receive clearer information to handle incidents
 
 @US60 @automated
-Scenario: US60 - Scenario 1: Visualización responsive del Landing Page
-Given que el visitante abre el Landing Page desde una pantalla móvil
-When navega por las secciones principales del sitio
-Then el sistema adapta textos, imágenes, tarjetas y navegación al tamaño de pantalla
+Scenario: US60 - Scenario 1: Responsive display of the Landing Page
+Given the visitor opens the Landing Page from a mobile screen
+When they navigate through the site's main sections
+Then the system adapts text, images, cards, and navigation to the screen size
 
 @US60 @automated
-Scenario: US60 - Scenario 2: Lectura del contenido en dispositivos móviles
-Given que el visitante revisa el Landing Page desde un dispositivo móvil
-When observa las secciones informativas
-Then el sistema mantiene el contenido legible y ordenado sin generar desplazamiento horizontal innecesario
+Scenario: US60 - Scenario 2: Reading content on mobile devices
+Given the visitor reviews the Landing Page from a mobile device
+When they view the informational sections
+Then the system keeps the content readable and organized without causing unnecessary horizontal scrolling
 
 @US60 @automated
-Scenario: US60 - Scenario 3: Acceso responsive a secciones principales
-Given que el visitante utiliza la versión mobile del Landing Page
-When interactúa con la navegación y las secciones del sitio
-Then el sistema permite acceder al contenido principal sin pérdida de información
+Scenario: US60 - Scenario 3: Responsive access to main sections
+Given the visitor uses the mobile version of the Landing Page
+When they interact with the site's navigation and sections
+Then the system allows access to the main content without losing information
 
 @US62 @automated
-Scenario: US62 - Scenario 1: Visualización del footer
-Given que el visitante llega al final del Landing Page
-When observa la sección final
-Then el sistema muestra el logo o nombre de CampusLink y un mensaje de cierre
+Scenario: US62 - Scenario 1: Display of the footer
+Given the visitor reaches the end of the Landing Page
+When they view the final section
+Then the system shows the CampusLink logo or name and a closing message
 
 @US62 @automated
-Scenario: US62 - Scenario 2: Reconocimiento del equipo responsable
-Given que el visitante se encuentra en el footer del Landing Page
-When revisa la información institucional final
-Then el sistema muestra la referencia al equipo Montimin como responsable del producto
+Scenario: US62 - Scenario 2: Recognizing the responsible team
+Given the visitor is on the Landing Page's footer
+When they review the final institutional information
+Then the system shows the reference to the Montimin team as the product's owner
 
 @US62 @automated
-Scenario: US62 - Scenario 3: Cierre institucional del Landing Page
-Given que el visitante analiza el cierre del Landing Page
-When lee el mensaje final del sitio
-Then el sistema refuerza que CampusLink integra reporte, ubicación, evidencia y seguimiento de incidencias del campus en un solo lugar
+Scenario: US62 - Scenario 3: Institutional closing of the Landing Page
+Given the visitor analyzes the Landing Page's closing
+When they read the site's final message
+Then the system reinforces that CampusLink brings together campus incident reporting, location, evidence, and tracking in one place

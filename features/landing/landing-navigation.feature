@@ -1,26 +1,26 @@
 # language: en
 
 @landing @US52
-Feature: Navegación por secciones informativas del Landing Page
+Feature: Navigation through the Landing Page informational sections
 
-  Como visitante del Landing Page
-  Quiero navegar entre las secciones principales del sitio
-  Para acceder fácilmente a información sobre el problema, la solución, el funcionamiento, los beneficios, los usuarios objetivo, la vista de la app y el contacto.
-
-  @automated
-  Scenario: Navegación exitosa entre secciones
-    Given que el visitante se encuentra en el Landing Page de CampusLink
-    When selecciona una opción del menú superior
-    Then el sistema lo dirige a la sección correspondiente dentro de la misma página
+  As a Landing Page visitor
+  I want to navigate between the site's main sections
+  So that I can easily access information about the problem, the solution, how it works, the benefits, the target users, the app view, and contact.
 
   @automated
-  Scenario: Acceso a la sección de contacto
-    Given que el visitante desea solicitar información sobre CampusLink
-    When selecciona la opción "Contacto"
-    Then el sistema desplaza la página hacia el formulario de contacto
+  Scenario: Successful navigation between sections
+    Given the visitor is on the CampusLink Landing Page
+    When they select an option from the top menu
+    Then the system takes them to the corresponding section within the same page
 
   @automated
-  Scenario: Navegación en dispositivo móvil
-    Given que el visitante accede al Landing Page desde un dispositivo móvil
-    When utiliza el menú responsive
-    Then el sistema le permite navegar por las secciones principales sin pérdida de contenido
+  Scenario: Access to the contact section
+    Given the visitor wants to request information about CampusLink
+    When they select the "Contact" option
+    Then the system scrolls the page to the contact form
+
+  @automated
+  Scenario: Navigation on a mobile device
+    Given the visitor accesses the Landing Page from a mobile device
+    When they use the responsive menu
+    Then the system lets them navigate through the main sections without losing content

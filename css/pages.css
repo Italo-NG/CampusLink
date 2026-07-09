@@ -1,35 +1,35 @@
-.seccion-portada { padding-top: 48px; }
-.contenedor-portadaInterior {
+.section-hero { padding-top: 48px; }
+.container-heroInner {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 24px;
 }
-.portadaTitulo {
+.heroTitle {
   max-width: 16ch;
   font-size: clamp(2rem, 1.3rem + 3.2vw, 3.25rem);
   font-weight: 800;
   line-height: 1.1;
   color: #1F2933;
 }
-.portadaSubtitulo {
+.heroSubtitle {
   max-width: 62ch;
   color: #4B5563;
   font-size: 1.0625rem;
 }
-.portadaMedia {
+.heroMedia {
   width: 100%;
   max-width: 900px;
   margin: 8px auto 0;
 }
-.portadaImagen {
+.heroImage {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.portadaPuntos {
+.heroDots {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -38,7 +38,7 @@
   max-width: 760px;
   margin-top: 24px;
 }
-.portadaCategoria {
+.heroCategory {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +46,7 @@
   width: 92px;
   flex: none;
 }
-.portadaCategoriaIcono {
+.heroCategoryIcon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,24 +56,24 @@
   background: #F5F7FB;
   color: #1F2933;
 }
-.portadaCategoriaIcono svg { width: 32px; height: 32px; }
-.portadaCategoriaEtiqueta {
+.heroCategoryIcon svg { width: 32px; height: 32px; }
+.heroCategoryLabel {
   font-size: 0.8125rem;
   font-weight: 600;
   color: #1F2933;
 }
 
-.problemaGrilla {
+.problemGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
-.problemaElemento {
+.problemItem {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.problemaElemento .problemaImagen {
+.problemItem .problemImage {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -82,94 +82,94 @@
   object-position: center;
   display: block;
 }
-.problemaEtiqueta {
+.problemLabel {
   text-align: center;
   font-size: 1.125rem;
   font-weight: 600;
   color: #1F2933;
 }
 
-.contenedor-solucionInterior {
+.container-solutionInner {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 48px;
   align-items: center;
 }
-.solucionTexto .seccionBajada { margin-top: 24px; }
+.solutionText .sectionSubhead { margin-top: 24px; }
 
-.solucionPanel {
+.solutionPanel {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.solucionFila {
+.solutionRow {
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 20px 24px;
   background: #F5F7FB;
 }
-.solucionIcono {
+.solutionIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex: none;
   color: #1F2933;
 }
-.solucionIcono svg {
+.solutionIcon svg {
   width: 28px;
   height: 28px;
 }
-.solucionTextoBloque {
+.solutionTextBlock {
   display: flex;
   flex-direction: column;
   gap: 2px;
   min-width: 0;
 }
-.solucionPaso {
+.solutionStep {
   font-size: 1.0625rem;
   font-weight: 700;
   color: #1F2933;
 }
-.solucionDetalle {
+.solutionDetail {
   color: #4B5563;
   font-size: 0.9375rem;
   line-height: 1.4;
 }
 
-.productoVideo {
+.productVideo {
   max-width: 880px;
   margin-inline: auto;
   aspect-ratio: 16 / 9;
 }
-.productoVideo iframe {
+.productVideo iframe {
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-.comoLayout {
+.howLayout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
   gap: 56px;
   align-items: center;
 }
-.comoContenido { min-width: 0; }
-.comoEncabezado {
+.howContent { min-width: 0; }
+.howHeader {
   max-width: 620px;
   margin-bottom: 32px;
 }
-.comoLista {
+.howList {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 0;
   padding-left: 32px;
 }
-.comoPaso {
+.howStep {
   position: relative;
 }
-.comoPaso::before {
+.howStep::before {
   content: "";
   position: absolute;
   left: -32px;
@@ -178,7 +178,7 @@
   height: calc(100% - 56px);
   background: #E5E7EB;
 }
-.comoPaso::after {
+.howStep::after {
   content: "";
   position: absolute;
   left: -32px;
@@ -190,21 +190,21 @@
   transform: scaleY(0);
   transform-origin: top;
 }
-.comoPaso.estaActivo::after {
+.howStep.isActive::after {
   opacity: 1;
-  animation: comoBarraActiva 4s linear forwards;
+  animation: howActiveBar 4s linear forwards;
 }
-@keyframes comoBarraActiva {
+@keyframes howActiveBar {
   from { transform: scaleY(0); }
   to { transform: scaleY(1); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .comoPaso.estaActivo::after {
+  .howStep.isActive::after {
     animation: none;
     transform: scaleY(1);
   }
 }
-.comoPasoBoton {
+.howStepButton {
   display: grid;
   grid-template-columns: 52px minmax(0, 1fr);
   gap: 18px;
@@ -214,44 +214,44 @@
   text-align: left;
   background: transparent;
 }
-.comoPaso + .comoPaso {
+.howStep + .howStep {
   border-top: 1px solid #E5E7EB;
 }
-.comoPasoContenido { min-width: 0; }
-.comoNumero {
+.howStepContent { min-width: 0; }
+.howNumber {
   display: block;
   color: #1F2933;
   font-size: 2rem;
   font-weight: 800;
   line-height: 1;
 }
-.comoPaso.estaActivo .comoNumero { color: #E02030; }
-.comoPasoTitulo {
+.howStep.isActive .howNumber { color: #E02030; }
+.howStepTitle {
   display: block;
   color: #1F2933;
   font-size: 1.0625rem;
   font-weight: 700;
   line-height: 1.3;
 }
-.comoPaso.estaActivo .comoPasoTitulo {
+.howStep.isActive .howStepTitle {
   color: #1F2933;
   font-weight: 800;
 }
-.comoTexto {
+.howText {
   display: block;
   margin-top: 6px;
   color: #4B5563;
   font-size: 0.9375rem;
   line-height: 1.55;
 }
-.comoPaso.estaActivo .comoTexto { color: #1F2933; }
-.comoImagenes {
+.howStep.isActive .howText { color: #1F2933; }
+.howImages {
   display: grid;
   width: 100%;
   align-items: center;
   justify-items: center;
 }
-.comoImagenPanel {
+.howImagePanel {
   grid-area: 1 / 1;
   display: flex;
   align-items: center;
@@ -261,11 +261,11 @@
   opacity: 0;
   pointer-events: none;
 }
-.comoImagenPanel.estaActivo {
+.howImagePanel.isActive {
   opacity: 1;
   pointer-events: auto;
 }
-.comoImagen {
+.howImage {
   width: auto;
   max-width: 100%;
   max-height: 640px;
@@ -313,7 +313,7 @@
   height: 74px;
 }
 
-.isla-dinamica {
+.dynamic-island {
   position: absolute;
   top: 12px;
   left: 50%;
@@ -327,7 +327,7 @@
   pointer-events: none;
 }
 
-.pantalla-scroll {
+.screen-scroll {
   --capturaEscala: 108%;
 
   position: relative;
@@ -345,12 +345,12 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.pantallaQr { --capturaEscala: 110%; }
-.pantalla-scroll::-webkit-scrollbar {
+.qrScreen { --capturaEscala: 110%; }
+.screen-scroll::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-.pantalla-scroll .comoImagen {
+.screen-scroll .howImage {
   position: absolute;
   top: 0;
   left: 50%;
@@ -366,7 +366,7 @@
   transform: translateX(-50%);
 }
 
-.linea-home {
+.home-line {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -379,64 +379,64 @@
   pointer-events: none;
 }
 
-.beneficiosGrilla {
+.benefitsGrid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
   grid-auto-rows: 1fr;
   gap: 24px;
 }
-.beneficio {
+.benefit {
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 28px;
   background: #F5F7FB;
 }
-.beneficioDestacado {
+.benefitHighlight {
   grid-column: 1;
   grid-row: 1 / span 2;
   gap: 16px;
   padding: 36px;
   background: #1F2933;
 }
-.antetitulo-beneficioIndice { color: #E30613; }
-.beneficioTitulo {
+.eyebrow-benefitIndex { color: #E30613; }
+.benefitTitle {
   font-size: 1.25rem;
   font-weight: 700;
   color: #1F2933;
 }
-.beneficioDestacado .beneficioTitulo {
+.benefitHighlight .benefitTitle {
   font-size: 1.75rem;
   color: #FFFFFF;
 }
-.beneficioTexto {
+.benefitText {
   color: #4B5563;
   font-size: 0.9375rem;
   line-height: 1.55;
 }
-.beneficioDestacado .beneficioTexto {
+.benefitHighlight .benefitText {
   color: #E5E7EB;
   font-size: 1.0625rem;
 }
-.beneficioResultado {
+.benefitResult {
   margin-top: auto;
   color: #1F2933;
   font-size: 0.9375rem;
   font-weight: 600;
 }
-.beneficioResultadoEtiqueta {
+.benefitResultLabel {
   color: #E02030;
   font-weight: 700;
 }
-.beneficioDestacado .beneficioResultado { color: #FFFFFF; }
+.benefitHighlight .benefitResult { color: #FFFFFF; }
 
-.publicoGrid {
+.audienceGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
   gap: 24px;
 }
-.publicoCard {
+.audienceCard {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -444,98 +444,98 @@
   padding: 28px;
   background: #FFFFFF;
 }
-.publicoSegmento {
+.audienceSegment {
   text-align: center;
   color: #1F2933;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.25;
 }
-.publicoDescripcion {
+.audienceDescription {
   margin-bottom: 8px;
   text-align: center;
   color: #4B5563;
   font-size: 0.9375rem;
   line-height: 1.5;
 }
-.publicoBloque {
+.audienceBlock {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.publicoSubtitulo {
+.audienceSubtitle {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #9CA3AF;
 }
-.publicoTexto {
+.audienceText {
   color: #4B5563;
   font-size: 0.9375rem;
   line-height: 1.55;
 }
-.publicoBloqueValor {
+.audienceBlockValue {
   margin-top: auto;
   padding: 16px;
   background: #F5F7FB;
 }
-.publicoBloqueValor .publicoSubtitulo { color: #E02030; }
-.publicoBloqueValor .publicoTexto { color: #1F2933; }
+.audienceBlockValue .audienceSubtitle { color: #E02030; }
+.audienceBlockValue .audienceText { color: #1F2933; }
 
-.nosotrosEquipo {
+.aboutTeam {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   max-width: 840px;
   margin-inline: auto;
 }
-.nosotrosCard {
+.aboutCard {
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 32px;
   background: #FFFFFF;
 }
-.nosotrosNombre {
+.aboutName {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.3;
   color: #1F2933;
 }
-.nosotrosDescripcion {
+.aboutDescription {
   color: #4B5563;
   font-size: 0.9375rem;
   line-height: 1.6;
 }
 
 
-.seccion-contacto {
+.section-contact {
   background: #F5F7FB;
 }
-.contactoLayout {
+.contactLayout {
   display: grid;
   grid-template-columns: 45fr 55fr;
   gap: 56px;
   align-items: start;
 }
 
-.contactoInfo {
+.contactInfo {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.contactoTitulo {
+.contactTitle {
   font-size: clamp(1.75rem, 1.15rem + 2.4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.2;
   color: #1F2933;
 }
-.contactoTexto {
+.contactText {
   color: #4B5563;
   font-size: 1.0625rem;
 }
-.contactoInfo .boton-botonPrimario {
+.contactInfo .button-primaryButton {
   align-self: flex-start;
   padding: 12px 28px;
   border-radius: 999px;
@@ -543,21 +543,21 @@
   color: #1F2933;
   border: 1px solid #D1D5DB;
 }
-.contactoInfo .boton-botonPrimario:hover {
+.contactInfo .button-primaryButton:hover {
   background: #EEF1F6;
 }
-.contactoBeneficios {
+.contactBenefits {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
-.contactoBeneficio {
+.contactBenefit {
   position: relative;
   padding-left: 30px;
   line-height: 1.5;
   color: #4B5563;
 }
-.contactoBeneficio::before {
+.contactBenefit::before {
   content: "✓";
   position: absolute;
   left: 0;
@@ -565,37 +565,37 @@
   color: #E02030;
   font-weight: 700;
 }
-.contactoNota {
+.contactNote {
   color: #6B7280;
   font-size: 0.9375rem;
 }
 
-.contactoFormulario {
+.contactForm {
   box-sizing: border-box;
   padding: 40px;
   background: #FFFFFF;
   border-radius: 16px;
 }
-.contactoFormGrid {
+.contactFormGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
-.campoAncho {
+.fieldWide {
   grid-column: 1 / -1;
 }
-.contactoFormulario .campo label {
+.contactForm .field label {
   color: #1F2933;
 }
-.contactoFormulario .campo:has(:required) label::after {
+.contactForm .field:has(:required) label::after {
   content: "*";
   margin-left: 4px;
   color: #F97316;
   font-weight: 700;
 }
-.contactoFormulario .campo input,
-.contactoFormulario .campo select,
-.contactoFormulario .campo textarea {
+.contactForm .field input,
+.contactForm .field select,
+.contactForm .field textarea {
   box-sizing: border-box;
   width: 100%;
   font-family: inherit;
@@ -604,28 +604,28 @@
   background: #FFFFFF;
   border: 1px solid #D1D5DB;
 }
-.contactoFormulario .campo input,
-.contactoFormulario .campo select {
+.contactForm .field input,
+.contactForm .field select {
   height: 46px;
   padding: 0 16px;
   border-radius: 10px;
 }
-.contactoFormulario .campo textarea {
+.contactForm .field textarea {
   height: 150px;
   padding: 14px 16px;
   border-radius: 10px;
   resize: none;
 }
-.contactoFormulario .campo input::placeholder,
-.contactoFormulario .campo textarea::placeholder {
+.contactForm .field input::placeholder,
+.contactForm .field textarea::placeholder {
   color: #9CA3AF;
 }
-.contactoFormulario .campo input:focus,
-.contactoFormulario .campo select:focus,
-.contactoFormulario .campo textarea:focus {
+.contactForm .field input:focus,
+.contactForm .field select:focus,
+.contactForm .field textarea:focus {
   border-color: #1F2933;
 }
-.contactoEnviar {
+.contactSend {
   width: 100%;
   min-height: 48px;
   padding: 0 24px;
@@ -634,10 +634,10 @@
   color: #FFFFFF;
   border-radius: 999px;
 }
-.contactoEnviar:hover {
+.contactSend:hover {
   background: #1F2933;
 }
-.contactoTratamiento {
+.contactDataUse {
   margin-top: 4px;
   color: #6B7280;
   font-size: 0.8125rem;
@@ -645,36 +645,36 @@
   text-align: center;
 }
 
-.pieSitio {
+.siteFooter {
   padding-block: 80px;
   background: #000000;
   color: #FFFFFF;
 }
-.contenedor-pieSitioInterior {
+.container-siteFooterInner {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
   text-align: center;
 }
-.pieSitioMarca {
+.siteFooterBrand {
   display: inline-flex;
   align-items: center;
 }
-.pieSitioLogo {
+.siteFooterLogo {
   width: 420px;
   max-width: 100%;
   height: auto;
 }
-.pieSitioPor {
+.siteFooterBy {
   font-weight: 600;
   color: #E5E7EB;
 }
-.pieSitioTexto {
+.siteFooterText {
   max-width: 520px;
   color: #9CA3AF;
 }
-.pieSitioLegal {
+.siteFooterLegal {
   font-size: 0.875rem;
   color: #9CA3AF;
 }

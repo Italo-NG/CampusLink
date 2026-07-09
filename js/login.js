@@ -1,5 +1,5 @@
-import { inicializarI18n } from "./modulos/i18n.js";
-import { inicializarLogin } from "./modulos/login.js";
+import { initI18n } from "./modules/i18n.js";
+import { initLogin } from "./modules/login.js";
 
-inicializarI18n();
-inicializarLogin();
+initI18n();
+initLogin();

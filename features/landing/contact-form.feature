@@ -1,35 +1,35 @@
 # language: en
 
 @landing @US59
-Feature: Solicitud de información institucional sobre CampusLink
+Feature: Request for institutional information about CampusLink
 
-Como representante de una institución educativa
-Quiero completar un formulario de contacto en el Landing Page
-Para solicitar información sobre CampusLink y evaluar su posible implementación en mi campus.
-
-@automated
-Scenario: US59 - Scenario 1: Visualización del formulario de contacto
-Given que el visitante accede a la sección "Contacto"
-When observa el formulario de solicitud institucional
-Then el sistema muestra campos para registrar datos de contacto, información de la institución e interés sobre CampusLink
+As a representative of an educational institution
+I want to fill out a contact form on the Landing Page
+So that I can request information about CampusLink and evaluate a possible implementation on my campus.
 
 @automated
-Scenario: US59 - Scenario 2: Registro de datos institucionales
-Given que el visitante se encuentra en el formulario de contacto
-When completa los campos institucionales requeridos
-| tipoInstitucion | Universidad |
-| institucion     | UPC         |
-| contacto        | Diego       |
-| cargo           | Estudiante  |
-| correo          | [contacto@upc.edu.pe](mailto:contacto@upc.edu.pe) |
-| telefono        | 999999999   |
-| estudiantes     | 10000       |
-| interes         | Conocer CampusLink |
-| necesidades     | Mejorar el reporte y seguimiento de incidencias |
-Then el sistema conserva la información ingresada para preparar la solicitud
+Scenario: US59 - Scenario 1: Display of the contact form
+Given the visitor accesses the "Contact" section
+When they view the institutional request form
+Then the system shows fields to record contact details, institution information, and interest in CampusLink
 
 @automated
-Scenario: US59 - Scenario 3: Envío de solicitud de información
-Given que el visitante completó el formulario de contacto
-When selecciona el botón "Enviar solicitud"
-Then el sistema muestra o prepara la solicitud de información sobre CampusLink
+Scenario: US59 - Scenario 2: Recording institutional data
+Given the visitor is on the contact form
+When they fill in the required institutional fields
+| institutionType | University |
+| institution     | UPC         |
+| contact         | Diego       |
+| role            | Student  |
+| email           | [contacto@upc.edu.pe](mailto:contacto@upc.edu.pe) |
+| phone           | 999999999   |
+| students        | 10000       |
+| interest        | Learn about CampusLink |
+| needs           | Improve incident reporting and tracking |
+Then the system retains the entered information to prepare the request
+
+@automated
+Scenario: US59 - Scenario 3: Submitting the information request
+Given the visitor has completed the contact form
+When they select the "Send request" button
+Then the system displays or prepares the information request about CampusLink

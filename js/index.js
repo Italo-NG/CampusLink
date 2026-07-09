@@ -1,13 +1,13 @@
-import { inicializarI18n } from "./modulos/i18n.js";
-import { inicializarMenu } from "./modulos/menu.js";
-import { inicializarScrollspy } from "./modulos/scrollspy.js";
-import { inicializarComoFunciona } from "./modulos/comoFunciona.js";
-import { inicializarVistaApp } from "./modulos/vistaApp.js";
-import { inicializarContacto } from "./modulos/contacto.js";
+import { initI18n } from "./modules/i18n.js";
+import { initMenu } from "./modules/menu.js";
+import { initScrollspy } from "./modules/scrollspy.js";
+import { initHowItWorks } from "./modules/howItWorks.js";
+import { initAppView } from "./modules/appView.js";
+import { initContact } from "./modules/contact.js";
 
-inicializarI18n();
-inicializarMenu();
-inicializarScrollspy();
-inicializarComoFunciona();
-inicializarVistaApp();
-inicializarContacto();
+initI18n();
+initMenu();
+initScrollspy();
+initHowItWorks();
+initAppView();
+initContact();

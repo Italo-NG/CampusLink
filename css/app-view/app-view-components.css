@@ -1,0 +1,1216 @@
+.appViewButtonGroup {
+  display: grid;
+  gap: 8px;
+}
+.appViewFields {
+  display: grid;
+  gap: 12px;
+}
+.appViewCardBody {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+.appViewCardLink {
+  color: #e30613;
+  font-weight: 700;
+}
+.appViewBadge--centered {
+  margin-inline: auto;
+}
+.appViewMetricNumber--red {
+  color: #e30613;
+}
+.appViewMetricNumber--green {
+  color: #00a63e;
+}
+.appViewFieldLabel {
+  color: #1f2933;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+input.appViewInput,
+textarea.appViewInput {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  color: #1f2933;
+  outline: none;
+  caret-color: #e30613;
+  font-weight: 500;
+}
+.appViewInput::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+.appViewInput:focus {
+  border-color: #e30613;
+}
+.appViewInput--area {
+  min-height: 96px;
+  padding-top: 14px;
+  line-height: 24px;
+  resize: none;
+}
+.appViewFieldBox {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: 10px 16px 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+.appViewFieldBox:focus-within {
+  border-color: #e30613;
+}
+.appViewFieldBoxLabel {
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 18px;
+}
+.appViewFieldBoxValue {
+  color: #1f2933;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.appViewFieldBox--active {
+  background: #fef2f2;
+  border-color: #e30613;
+}
+.appViewFieldBox--active .appViewFieldBoxLabel,
+.appViewFieldBox--active .appViewFieldBoxValue {
+  color: #e30613;
+}
+.appViewInputPlain {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-height: 26px;
+  padding: 0 36px 0 0;
+  color: #1f2933;
+  background: transparent;
+  border: 0;
+  outline: none;
+  caret-color: #e30613;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.appViewInputPlain::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+.appViewFieldBox .appViewInputEye {
+  right: 10px;
+}
+.appViewField--error .appViewInput {
+  border-color: #e30613;
+}
+.appViewFieldError {
+  color: #e30613;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.appViewInputGroup {
+  position: relative;
+  display: block;
+}
+.appViewInputGroup .appViewInput {
+  padding-right: 54px;
+}
+.appViewInputEye {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: #9ca3af;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  transform: translateY(-50%);
+}
+.appViewInputEye .appViewSvg {
+  width: 21px;
+  height: 21px;
+}
+.appViewSearch {
+  position: relative;
+  display: block;
+}
+.appViewSearchIcon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  color: #9ca3af;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.appViewInput--search {
+  min-height: 48px;
+  padding-left: 44px;
+  border-radius: 999px;
+}
+.appViewChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.appViewSearchRow {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+.appViewSearch--flex {
+  flex: 1;
+  min-width: 0;
+}
+.appViewFiltersBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  min-height: 48px;
+  padding: 0 16px;
+  color: #e30613;
+  background: #ffffff;
+  border: 1px solid #e30613;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.appViewFiltersBtnIcon {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+}
+.appViewFiltersBtnIcon .appViewSvg {
+  width: 18px;
+  height: 18px;
+}
+.appViewChip {
+  min-height: 46px;
+  padding: 12px 20px;
+  color: #1f2933;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.appViewChip--active {
+  color: #ffffff;
+  background: #e30613;
+  border-color: #e30613;
+}
+.appViewChip:not(.appViewChip--active):hover {
+  border-color: #c7cdd6;
+}
+.appViewLocation {
+  gap: 14px;
+}
+.appViewLocationCols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.appViewLocationCol {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  padding-inline: 12px;
+  border-left: 1px solid #e5e7eb;
+}
+.appViewLocationCol:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.appViewLocationValue {
+  color: #1f2933;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.appViewLocationBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  color: #00a63e;
+  background: #ecfdf5;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.appViewLocationLock {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+.appViewUpload--field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  min-height: 76px;
+  text-align: left;
+}
+.appViewUpload--loaded {
+  border-style: solid;
+}
+.appViewUploadIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  color: #6b7280;
+  background: #f3f4f6;
+  border-radius: 12px;
+}
+.appViewUploadIcon .appViewSvg {
+  width: 22px;
+  height: 22px;
+}
+.appViewUploadText {
+  flex: 1;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 20px;
+}
+.appViewUploadRemove {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  color: #9ca3af;
+}
+.appViewUploadRemove .appViewSvg {
+  width: 18px;
+  height: 18px;
+}
+.appViewCheckRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 14px 16px;
+  color: #1f2933;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+}
+.appViewCheckRow--active {
+  background: #fef2f2;
+  border-color: #e30613;
+}
+.appViewCheck {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  color: #ffffff;
+  background: #ffffff;
+  border: 1.5px solid #c7cdd6;
+  border-radius: 7px;
+}
+.appViewCheckRow--active .appViewCheck {
+  background: #e30613;
+  border-color: #e30613;
+}
+.appViewCheck .appViewSvg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 3;
+}
+.appViewList {
+  display: grid;
+  gap: 12px;
+}
+.appViewListItem {
+  display: grid;
+}
+.appViewEmpty {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  padding: 32px 16px;
+  color: #6b7280;
+}
+.appViewEmptyIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: #9ca3af;
+  background: #f3f4f6;
+  border-radius: 999px;
+}
+.appViewEmptyIcon .appViewSvg {
+  width: 22px;
+  height: 22px;
+}
+.appViewHidden {
+  display: none;
+}
+.appViewCtaBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px 30px;
+  background: inherit;
+}
+.appViewCtaBar--aboveTabbar {
+  bottom: 86px;
+  padding-bottom: 14px;
+}
+.appViewInner--withCta {
+  padding-bottom: 170px;
+}
+.appViewInner--withCtaTabbar {
+  padding-bottom: 250px;
+}
+.appViewDataRow--link {
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  text-align: left;
+  font: inherit;
+}
+.appViewDataRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+.appViewDataArrow {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: #c7cdd6;
+}
+.appViewSettings {
+  gap: 12px;
+}
+.appViewSettingsList {
+  display: grid;
+  gap: 0;
+}
+.appViewSettingsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 56px;
+  padding: 9px 0;
+  color: #1f2933;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #eef1f6;
+  text-align: left;
+}
+.appViewSettingsRow:last-child {
+  border-bottom: 0;
+}
+.appViewMonogram {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  color: #4b5563;
+  background: #f3f4f6;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+.appViewMonogram--danger {
+  color: #e30613;
+  background: #fee2e2;
+}
+.appViewSettingsLabel {
+  flex: 1;
+  min-width: 0;
+  color: #1f2933;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+.appViewSettingsLabel--danger {
+  color: #e30613;
+}
+.appViewSettingsRow .appViewDataArrow {
+  color: #c7cdd6;
+}
+.appViewSwitch {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 28px;
+  flex: none;
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+.appViewSwitch--on {
+  background: #e30613;
+}
+.appViewSwitchKnob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.18s ease;
+}
+.appViewSwitch--on .appViewSwitchKnob {
+  transform: translateX(20px);
+}
+[data-view-screen="perfil-estudiante"] .appViewHeaderProfile,
+[data-view-screen="perfil-docente"] .appViewHeaderProfile,
+[data-view-screen="perfil-soporte"] .appViewHeaderProfile {
+  height: 180px;
+  padding-top: 50px;
+  gap: 12px;
+}
+[data-view-screen="perfil-estudiante"] .appViewInner,
+[data-view-screen="perfil-docente"] .appViewInner,
+[data-view-screen="perfil-soporte"] .appViewInner {
+  gap: 14px;
+  padding-bottom: 94px;
+}
+[data-view-screen="perfil-estudiante"] .appViewCard,
+[data-view-screen="perfil-docente"] .appViewCard,
+[data-view-screen="perfil-soporte"] .appViewCard {
+  gap: 10px;
+  padding: 14px 16px;
+}
+[data-view-screen="perfil-estudiante"] .appViewDataRow,
+[data-view-screen="perfil-docente"] .appViewDataRow,
+[data-view-screen="perfil-soporte"] .appViewDataRow {
+  padding-block: 8px;
+}
+[data-view-screen="perfil-estudiante"] .appViewSettingsRow,
+[data-view-screen="perfil-docente"] .appViewSettingsRow,
+[data-view-screen="perfil-soporte"] .appViewSettingsRow {
+  min-height: 50px;
+  padding: 7px 0;
+}
+[data-view-screen="dashboard-docente"] .appViewInner,
+[data-view-screen="dashboard-docente-final"] .appViewInner {
+  padding-bottom: 96px;
+}
+[data-view-screen="registro-upc"] .appViewRegister {
+  padding-bottom: 22px;
+}
+[data-view-screen="registro-upc"] .appViewRegisterBody {
+  gap: 14px;
+}
+[data-view-screen="registro-upc"] .appViewRegisterIntro {
+  min-height: 0;
+}
+[data-view-screen="detalle-reporte-pendiente"] .appViewInner,
+[data-view-screen="detalle-reporte-en-proceso"] .appViewInner {
+  gap: 12px;
+}
+[data-view-screen="detalle-reporte-pendiente"] .appViewCard,
+[data-view-screen="detalle-reporte-en-proceso"] .appViewCard {
+  padding: 12px 14px;
+}
+[data-view-screen="detalle-reporte-pendiente"] .appViewDataRow,
+[data-view-screen="detalle-reporte-en-proceso"] .appViewDataRow {
+  padding-block: 6px;
+}
+[data-view-screen="detalle-reporte-en-proceso"] .appViewInner {
+  gap: 10px;
+}
+[data-view-screen="detalle-reporte-pendiente"] .appViewTimelineItem,
+[data-view-screen="detalle-reporte-en-proceso"] .appViewTimelineItem {
+  min-height: 44px;
+}
+[data-view-screen="detalle-reporte-pendiente"] .appViewInner--withCta {
+  padding-bottom: 140px;
+}
+[data-view-screen="detalle-ticket-reabierto"] .appViewInner {
+  gap: 12px;
+}
+[data-view-screen="detalle-ticket-reabierto"] .appViewCard {
+  padding: 12px 14px;
+}
+[data-view-screen="detalle-ticket-reabierto"] .appViewDataRow {
+  padding-block: 5px;
+}
+[data-view-screen="detalle-ticket-reabierto"] .appViewTimelineItem {
+  min-height: 38px;
+}
+[data-view-screen="dashboard-soporte"] .appViewInner {
+  padding-bottom: 96px;
+}
+[data-view-screen="registrar-insumo"] .appViewInner {
+  gap: 12px;
+}
+[data-view-screen="registrar-insumo"] .appViewCard {
+  padding: 12px 14px;
+}
+[data-view-screen="ficha-tecnica"] .appViewInner {
+  gap: 12px;
+}
+[data-view-screen="ficha-tecnica"] .appViewCard {
+  gap: 8px;
+  padding: 12px 14px;
+}
+[data-view-screen="ficha-tecnica"] .appViewDataRow {
+  padding-block: 7px;
+}
+.appViewTimelineTitle--inactive {
+  color: #9ca3af;
+}
+.appViewTicketHeader {
+  display: grid;
+  gap: 6px;
+  padding: 2px 0;
+}
+.appViewTicketHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.appViewNotif {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+.appViewNotifIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 999px;
+}
+.appViewNotifIcon .appViewSvg {
+  width: 20px;
+  height: 20px;
+}
+.appViewNotifIcon--amber {
+  color: #c2410c;
+  background: #fff7ed;
+}
+.appViewNotifIcon--green {
+  color: #008236;
+  background: #dcfce7;
+}
+.appViewNotifIcon--blue {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+.appViewNotifIcon--red {
+  color: #e30613;
+  background: #fee2e2;
+}
+.appViewNotifBody {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+.appViewNotifText {
+  color: #1f2933;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.appViewNotifDot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  margin-top: 4px;
+  background: #e30613;
+  border-radius: 999px;
+}
+.appViewNotif--new {
+  border-color: rgba(227, 6, 19, 0.22);
+  background: #fff7f7;
+}
+.appViewBanner {
+  padding: 14px 16px;
+  color: #00a63e;
+  background: #ecfdf5;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.appViewBanner--gray {
+  color: #6b7280;
+  background: #eef1f6;
+  text-align: center;
+  font-weight: 500;
+}
+.appViewSummary {
+  gap: 0;
+}
+.appViewSummaryRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-block: 12px;
+  border-bottom: 1px solid #eef1f6;
+}
+.appViewSummaryRow:first-child {
+  padding-top: 0;
+}
+.appViewSummaryRow:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.appViewSummaryIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  color: #4b5563;
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+.appViewSummaryIcon .appViewSvg {
+  width: 20px;
+  height: 20px;
+}
+.appViewSummaryIcon--red {
+  color: #e30613;
+  background: #fef2f2;
+}
+.appViewSummaryBody {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+.appViewSummaryValue {
+  color: #1f2933;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+}
+.appViewSummaryImage {
+  display: grid;
+  place-items: center;
+  height: 96px;
+  margin-top: 6px;
+  color: #9ca3af;
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+.appViewSummaryImage .appViewSvg {
+  width: 30px;
+  height: 30px;
+}
+.appViewTicket {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 14px;
+}
+.appViewTicket .appViewCardIcon {
+  width: 44px;
+  height: 44px;
+}
+.appViewTicketBody {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+.appViewTicketId {
+  color: #1f2933;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.appViewTicket .appViewBadge {
+  flex: none;
+  border-radius: 999px;
+}
+.appViewOptionsGroup {
+  gap: 0;
+  padding: 4px 16px;
+}
+.appViewOptionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+  padding: 14px 0;
+  color: #1f2933;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #eef1f6;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
+}
+.appViewOptionRow:last-child {
+  border-bottom: 0;
+}
+.appViewOptionRow--active {
+  font-weight: 700;
+}
+.appViewPillIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  margin-right: 6px;
+  flex: none;
+}
+.appViewBanner--blue {
+  color: #1d4ed8;
+  background: #eff6ff;
+  text-align: center;
+  font-weight: 500;
+}
+.appViewHero {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding-block: 8px;
+  text-align: center;
+}
+.appViewHeroIcon {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  color: #ffffff;
+  background: #e30613;
+  border-radius: 999px;
+  box-shadow: 0 12px 32px rgba(227, 6, 19, 0.35);
+}
+.appViewHeroIcon .appViewSvg {
+  width: 44px;
+  height: 44px;
+}
+.appViewSla {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.appViewSlaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fef2f2;
+}
+.appViewSlaLabel {
+  color: #e30613;
+  font-size: 14px;
+  font-weight: 700;
+}
+.appViewSlaHeader .appViewBadge {
+  border-radius: 999px;
+}
+.appViewSlaBody {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+.appViewSla .appViewSummaryRow {
+  padding-block: 0;
+  border-bottom: 0;
+}
+.appViewSlaIcon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  color: #9ca3af;
+}
+.appViewSlaIcon .appViewSvg {
+  width: 20px;
+  height: 20px;
+}
+.appViewSlaStatus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  color: #4b5563;
+  background: #f3f4f6;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.appViewSlaDot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  background: #3b82f6;
+  border-radius: 999px;
+  animation: appViewDotBeat 1.4s ease-in-out infinite;
+}
+@keyframes appViewDotBeat {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.78);
+  }
+}
+.appViewProblems {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.appViewProblem {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 14px;
+  min-height: 162px;
+}
+.appViewProblem--active {
+  border-color: #e30613;
+}
+.appViewProblemIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+}
+.appViewProblemIcon .appViewSvg {
+  width: 26px;
+  height: 26px;
+}
+.appViewProblemIcon--red {
+  color: #e30613;
+  background: #fef2f2;
+}
+.appViewProblemIcon--blue {
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+.appViewProblemIcon--green {
+  color: #00a63e;
+  background: #ecfdf5;
+}
+.appViewProblemIcon--purple {
+  color: #7c3aed;
+  background: #f5f3ff;
+}
+.appViewProblemText {
+  color: #1f2933;
+  font-size: 17px;
+  font-weight: 700;
+}
+.appViewButton--softDanger {
+  color: #e30613;
+  background: #ffffff;
+  border-color: #fecaca;
+}
+.appViewButton--softDanger:not([disabled]):hover {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+.appViewFieldLabel--soft {
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+}
+.appViewMetric--active {
+  border-color: #e30613;
+}
+.appViewAlert {
+  border-color: #e30613;
+  text-align: left;
+}
+.appViewAlertHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.appViewAlertIcon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  color: #e30613;
+}
+.appViewAlertIcon .appViewSvg {
+  width: 21px;
+  height: 21px;
+}
+.appViewAlertTitle {
+  color: #e30613;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.appViewAlertFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.appViewFilters {
+  display: flex;
+  gap: 10px;
+  width: calc(100% + 32px);
+  margin-inline: -16px;
+  padding-inline: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.appViewFilters::-webkit-scrollbar {
+  display: none;
+}
+.appViewChip--filter {
+  flex: none;
+  min-height: 42px;
+  padding: 10px 18px;
+}
+.appViewTicketSupport {
+  gap: 10px;
+  text-align: left;
+}
+.appViewTicketSupportRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.appViewTicketLocation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 18px;
+}
+.appViewTicketPin {
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  flex: none;
+  color: #9ca3af;
+}
+.appViewTicketSupportFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #eef1f6;
+}
+.appViewSheetHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.appViewSheetChip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 14px;
+  color: #1f2933;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.appViewBadge--softRed {
+  color: #ffffff;
+  background: #f87171;
+  border-radius: 999px;
+}
+.appViewCardTitleCaps {
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 18px;
+}
+.appViewPhotoRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.appViewPhotoFrame {
+  width: 80px;
+  height: 80px;
+  flex: none;
+  background: #c7cdd6;
+  border-radius: 10px;
+}
+.appViewButton--header {
+  width: auto;
+  min-height: 44px;
+  margin: 0;
+  padding-inline: 4px;
+  color: #1f2933;
+  font-size: 15px;
+  font-weight: 600;
+}
+.appViewButtonNormal {
+  color: #4b5563;
+  font-weight: 500;
+}
+.appViewButtonHighlight {
+  color: #e30613;
+  font-weight: 700;
+}
+.appViewBottomPanel .appViewButton--text {
+  color: #ffffff;
+  font-size: 15px;
+}
+@keyframes appViewMarkerPulse {
+  0% {
+    box-shadow:
+      0 10px 20px rgba(227, 6, 19, 0.35),
+      0 0 0 0 rgba(227, 6, 19, 0.4);
+  }
+  70% {
+    box-shadow:
+      0 10px 20px rgba(227, 6, 19, 0.35),
+      0 0 0 16px rgba(227, 6, 19, 0);
+  }
+  100% {
+    box-shadow:
+      0 10px 20px rgba(227, 6, 19, 0.35),
+      0 0 0 0 rgba(227, 6, 19, 0);
+  }
+}
+.appViewDot--pulse {
+  animation: appViewDotPulse 1.6s ease-out infinite;
+}
+@keyframes appViewDotPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(227, 6, 19, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(227, 6, 19, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(227, 6, 19, 0);
+  }
+}
+.appViewSos {
+  animation: appViewSosHeartbeat 2.4s ease-in-out infinite;
+}
+@keyframes appViewSosHeartbeat {
+  0%,
+  100% {
+    box-shadow: 0 8px 24px rgba(227, 6, 19, 0.42);
+  }
+  50% {
+    box-shadow: 0 10px 36px rgba(227, 6, 19, 0.62);
+  }
+}
+.appViewScreen button:not([disabled]) {
+  transition:
+    transform 0.12s ease,
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+}
+.appViewScreen button:not([disabled]):active {
+  transform: scale(0.97);
+}
+.appViewScreen .appViewTab:not([disabled]):active,
+.appViewScreen .appViewIconBtn:not([disabled]):active,
+.appViewScreen .appViewStar:not([disabled]):active {
+  transform: scale(0.9);
+}
+.appViewScreen .appViewSos:not([disabled]):active {
+  transform: scale(0.94);
+}
+.appViewScreen .appViewInputEye:not([disabled]):active {
+  transform: translateY(-50%) scale(0.9);
+}
+.appViewButton--primary:not([disabled]):hover,
+.appViewButton--danger:not([disabled]):hover,
+.appViewButton--critical:not([disabled]):hover {
+  background: #c90511;
+  border-color: #c90511;
+}
+.appViewButton--secondary:not([disabled]):hover {
+  background: #f8f9fb;
+}
+button.appViewCard:hover,
+.appViewOption:hover,
+.appViewCheckRow:hover {
+  border-color: #c7cdd6;
+}
+.appViewOption--active:hover,
+.appViewCheckRow--active:hover {
+  border-color: #e30613;
+}
+.appViewTab:not(.appViewTab--active):not([disabled]):hover {
+  color: #4b5563;
+}
+@media (prefers-reduced-motion: reduce) {
+  .appViewScreen--enterRight,
+  .appViewScreen--exitLeft,
+  .appViewScreen--enterLeft,
+  .appViewScreen--exitRight,
+  .appViewScreen--fadeIn,
+  .appViewScreen--fadeOut,
+  .appViewOverlay,
+  .appViewOverlay--closing,
+  .appViewModal,
+  .appViewOverlay--closing .appViewModal,
+  .appViewScannerLine,
+  .appViewMarker,
+  .appViewDot--pulse,
+  .appViewSos {
+    animation: none;
+  }
+  .appViewScreen button:not([disabled]) {
+    transition: none;
+  }
+}

@@ -1,239 +1,239 @@
 # language: en
 
 @mobile-core @prototype @manual @E6
-Feature: E6 - Configuración de Cuenta y Accesos
+Feature: E6 - Account Settings and Access
 
-Esta épica agrupa las historias relacionadas con autenticación institucional, configuración inicial, perfil, notificaciones, apariencia visual, ayuda, cierre de sesión y políticas de privacidad.
+This epic groups the stories related to institutional authentication, initial setup, profile, notifications, visual appearance, help, logout, and privacy policies.
 
-Rule: US43 - Inicio de sesión con credenciales institucionales
+Rule: US43 - Login with Institutional Credentials
 
 
-# Como Miembro de la comunidad universitaria
-# Quiero iniciar sesión con mis credenciales institucionales de Microsoft 365
-# Para acceder de forma segura sin necesidad de crear o recordar una cuenta nueva.
-
-@US43
-Scenario: US43 - Scenario 1: Inicio de sesión institucional exitoso
-  Given que el Alumno/Docente ingresa con una cuenta institucional válida
-  When el sistema valida las credenciales mediante Microsoft 365
-  Then el usuario accede correctamente a CampusLink
-  And el sistema lo dirige al Dashboard correspondiente según su rol
+# As a Member of the university community
+# I want to log in with my institutional Microsoft 365 credentials
+# So that I can access securely without needing to create or remember a new account.
 
 @US43
-Scenario: US43 - Scenario 2: Restricción de dominio externo
-  Given que el usuario intenta ingresar con un correo personal como "@gmail.com"
-  When el sistema valida el formato del correo
-  Then bloquea el acceso
-  And muestra el mensaje "Acceso restringido: Solo se permiten correos institucionales de la UPC"
+Scenario: US43 - Scenario 1: Successful institutional login
+  Given the Student/Teacher logs in with a valid institutional account
+  When the system validates the credentials via Microsoft 365
+  Then the user accesses CampusLink successfully
+  And the system routes them to the Dashboard corresponding to their role
 
 @US43
-Scenario: US43 - Scenario 3: Error de credenciales
-  Given que el usuario ingresa datos erróneos
-  When el servicio de autenticación rechaza la solicitud
-  Then el sistema resalta los campos
-  And muestra el mensaje "Credenciales incorrectas. Intente nuevamente o recupere su clave en los canales oficiales"
+Scenario: US43 - Scenario 2: External domain restriction
+  Given the user tries to log in with a personal email such as "@gmail.com"
+  When the system validates the email format
+  Then it blocks access
+  And shows the message "Restricted access: Only UPC institutional emails are allowed"
+
+@US43
+Scenario: US43 - Scenario 3: Credential error
+  Given the user enters incorrect data
+  When the authentication service rejects the request
+  Then the system highlights the fields
+  And shows the message "Incorrect credentials. Try again or recover your password through the official channels"
 
 
-Rule: US44 - Selección y Persistencia de Sede Predeterminada
+Rule: US44 - Default Campus Selection and Persistence
 
 
-# Como Alumno/Docente recurrente
-# Quiero elegir mi sede principal tras el primer inicio de sesión
-# Para que la aplicación personalice mi experiencia de navegación y reportes automáticamente.
-
-@US44
-Scenario: US44 - Scenario 1: Configuración inicial
-  Given que es el primer ingreso del Alumno/Docente a la app
-  When se despliega el selector de bienvenida
-  Then el Alumno/Docente elige su sede
-  And el sistema guarda esta preferencia en el perfil de la cuenta
-
-@US44
-Scenario: US44 - Scenario 2: Carga automática de preferencia
-  Given que el Alumno/Docente ya seleccionó una sede en sesiones previas
-  When abre la aplicación en el futuro
-  Then el Dashboard carga por defecto la información de esa sede
-  And no requiere una nueva selección
+# As a returning Student/Teacher
+# I want to choose my main campus after the first login
+# So that the app automatically personalizes my browsing and reporting experience.
 
 @US44
-Scenario: US44 - Scenario 3: Obligatoriedad de selección
-  Given que el Alumno/Docente intenta omitir el paso de selección de sede
-  When presiona fuera del área de selección o intenta avanzar
-  Then el sistema le impide continuar
-  And solicita que elija una opción válida para configurar su entorno
+Scenario: US44 - Scenario 1: Initial setup
+  Given it is the Student/Teacher's first time entering the app
+  When the welcome selector is displayed
+  Then the Student/Teacher chooses their campus
+  And the system saves this preference in the account profile
+
+@US44
+Scenario: US44 - Scenario 2: Automatic preference load
+  Given the Student/Teacher already selected a campus in previous sessions
+  When they open the app in the future
+  Then the Dashboard loads that campus's information by default
+  And does not require a new selection
+
+@US44
+Scenario: US44 - Scenario 3: Mandatory selection
+  Given the Student/Teacher tries to skip the campus selection step
+  When they tap outside the selection area or try to proceed
+  Then the system prevents them from continuing
+  And asks them to choose a valid option to set up their environment
 
 
-Rule: US45 - Visualización de Perfil y Rol Institucional
+Rule: US45 - Profile and Institutional Role Display
 
 
-# Como Alumno/Docente autenticado
-# Quiero consultar mis datos personales y el rol asignado por la universidad
-# Para verificar que mi identidad y permisos de uso son correctos.
+# As an authenticated Student/Teacher
+# I want to check my personal data and the role assigned by the university
+# So that I can verify that my identity and usage permissions are correct.
 
 @US45
-Scenario: US45 - Scenario 1: Consulta de perfil
-  Given que el Alumno/Docente accede a la sección "Mi Perfil"
-  When carga la información desde la base de datos de la universidad
-  Then visualiza su nombre completo
-  And visualiza su código de alumno o trabajador
-  And visualiza una etiqueta distintiva con su rol
+Scenario: US45 - Scenario 1: Profile lookup
+  Given the Student/Teacher accesses the "My Profile" section
+  When the information loads from the university database
+  Then they see their full name
+  And they see their student or employee code
+  And they see a distinctive badge with their role
 
 @US45
-Scenario: US45 - Scenario 2: Protección de categoría de rol
-  Given que el rol es un dato sensible asignado administrativamente
-  When el Alumno/Docente visualiza su perfil
-  Then el campo "Rol" aparece como solo lectura
-  And se impide cualquier intento de edición manual por seguridad
+Scenario: US45 - Scenario 2: Role category protection
+  Given the role is sensitive data assigned administratively
+  When the Student/Teacher views their profile
+  Then the "Role" field appears as read-only
+  And any manual edit attempt is prevented for security
 
 @US45
-Scenario: US45 - Scenario 3: Fallo de sincronización de datos
-  Given que el servidor de perfiles no responde
-  When el Alumno/Docente intenta entrar a su perfil
-  Then el sistema muestra estados de carga
-  And muestra un botón de "Reintentar carga de perfil"
+Scenario: US45 - Scenario 3: Data sync failure
+  Given the profile server is not responding
+  When the Student/Teacher tries to enter their profile
+  Then the system shows loading states
+  And shows a "Retry loading profile" button
 
 
-Rule: US46 - Configuración de Notificaciones Push
+Rule: US46 - Push Notification Settings
 
 
-# Como Alumno/Docente enfocado
-# Quiero personalizar el comportamiento de las notificaciones push
-# Para evitar distracciones sonoras durante actividades académicas críticas.
-
-@US46
-Scenario: US46 - Scenario 1: Activación o desactivación de notificaciones
-  Given que el Alumno/Docente accede a la sección de configuración
-  When modifica el estado de las notificaciones push
-  Then el sistema guarda la preferencia seleccionada
-  And aplica la configuración en futuras alertas
+# As a focused Student/Teacher
+# I want to customize the behavior of push notifications
+# So that I can avoid sound distractions during critical academic activities.
 
 @US46
-Scenario: US46 - Scenario 2: Silenciar notificaciones durante actividades académicas
-  Given que el Alumno/Docente necesita evitar distracciones
-  When activa una opción de silencio o modo enfocado
-  Then el sistema reduce las alertas sonoras
-  And mantiene disponibles las notificaciones dentro de la bandeja interna
+Scenario: US46 - Scenario 1: Enabling or disabling notifications
+  Given the Student/Teacher accesses the settings section
+  When they change the push notification status
+  Then the system saves the selected preference
+  And applies the setting to future alerts
 
 @US46
-Scenario: US46 - Scenario 3: Permisos del sistema desactivados
-  Given que el Alumno/Docente desactivó las notificaciones desde el sistema operativo
-  When intenta activar las notificaciones desde CampusLink
-  Then la aplicación muestra un aviso explicativo
-  And orienta al usuario para habilitar los permisos desde la configuración del dispositivo
+Scenario: US46 - Scenario 2: Muting notifications during academic activities
+  Given the Student/Teacher needs to avoid distractions
+  When they activate a mute or focus mode option
+  Then the system reduces sound alerts
+  And keeps notifications available within the internal inbox
+
+@US46
+Scenario: US46 - Scenario 3: System permissions disabled
+  Given the Student/Teacher disabled notifications from the operating system
+  When they try to enable notifications from CampusLink
+  Then the app shows an explanatory notice
+  And guides the user to enable the permissions from the device settings
 
 
-Rule: US47 - Alternancia entre Tema Claro y Modo Oscuro
+Rule: US47 - Switching Between Light Theme and Dark Mode
 
 
-# Como Alumno/Docente con fatiga visual o en ambientes oscuros
-# Quiero alternar entre el tema claro y el modo oscuro
-# Para mejorar la legibilidad y reducir el cansancio ocular.
-
-@US47
-Scenario: US47 - Scenario 1: Cambio de tema manual
-  Given que el Alumno/Docente selecciona "Modo Oscuro" en los ajustes
-  When confirma la elección
-  Then la interfaz cambia inmediatamente su paleta de colores
-  And usa fondos oscuros y textos de alto contraste
-
-@US47
-Scenario: US47 - Scenario 2: Adaptación automática
-  Given que el Alumno/Docente elige la opción "Sincronizar con el sistema"
-  When el dispositivo móvil cambia de modo por horario o ahorro de energía
-  Then CampusLink ajusta su tema visual automáticamente en tiempo real
+# As a Student/Teacher with eye strain or in dark environments
+# I want to switch between light theme and dark mode
+# So that I can improve readability and reduce eye fatigue.
 
 @US47
-Scenario: US47 - Scenario 3: Contraste en elementos multimedia
-  Given que la app está en modo oscuro
-  When se visualiza una fotografía de evidencia clara
-  Then el sistema aplica un borde o sombreado sutil a la imagen
-  And asegura su diferenciación del fondo oscuro
+Scenario: US47 - Scenario 1: Manual theme change
+  Given the Student/Teacher selects "Dark Mode" in the settings
+  When they confirm the choice
+  Then the interface immediately changes its color palette
+  And uses dark backgrounds and high-contrast text
+
+@US47
+Scenario: US47 - Scenario 2: Automatic adaptation
+  Given the Student/Teacher chooses the "Sync with system" option
+  When the mobile device switches modes based on schedule or power saving
+  Then CampusLink adjusts its visual theme automatically in real time
+
+@US47
+Scenario: US47 - Scenario 3: Contrast on media elements
+  Given the app is in dark mode
+  When a clear evidence photograph is displayed
+  Then the system applies a subtle border or shading to the image
+  And ensures it stands out from the dark background
 
 
-Rule: US48 - Centro de Ayuda y Reporte de Errores Técnicos
+Rule: US48 - Help Center and Technical Error Reporting
 
 
-# Como Alumno/Docente que detecta un fallo en el funcionamiento de la app
-# Quiero enviar un comentario técnico a los desarrolladores
-# Para contribuir a la mejora constante de la herramienta.
+# As a Student/Teacher who detects a malfunction in the app
+# I want to send technical feedback to the developers
+# So that I can contribute to the tool's continuous improvement.
 
 @US48
-Scenario: US48 - Scenario 1: Envío de feedback exitoso
-  Given que el Alumno/Docente redacta una sugerencia en el módulo de "Ayuda"
-  When presiona "Enviar"
-  Then el sistema procesa el mensaje
-  And confirma la recepción con un mensaje de agradecimiento
+Scenario: US48 - Scenario 1: Successful feedback submission
+  Given the Student/Teacher writes a suggestion in the "Help" module
+  When they press "Send"
+  Then the system processes the message
+  And confirms receipt with a thank-you message
 
 @US48
-Scenario: US48 - Scenario 2: Recolección de datos de diagnóstico
-  Given que se envía un reporte de error
-  When el Alumno/Docente confirma el envío
-  Then la aplicación adjunta automáticamente metadatos técnicos
-  And incluye la versión de app y el modelo de dispositivo
+Scenario: US48 - Scenario 2: Diagnostic data collection
+  Given an error report is sent
+  When the Student/Teacher confirms the submission
+  Then the app automatically attaches technical metadata
+  And includes the app version and the device model
 
 @US48
-Scenario: US48 - Scenario 3: Validación de contenido
-  Given que el Alumno/Docente intenta enviar un comentario en blanco
-  When presiona el botón de envío
-  Then el sistema bloquea la acción
-  And solicita ingresar al menos una descripción breve del suceso
+Scenario: US48 - Scenario 3: Content validation
+  Given the Student/Teacher tries to send a blank comment
+  When they press the send button
+  Then the system blocks the action
+  And asks for at least a short description of the issue
 
 
-Rule: US49 - Cierre de Sesión Seguro y Limpieza de Datos
+Rule: US49 - Secure Logout and Data Cleanup
 
 
-# Como Alumno/Docente que utiliza dispositivos compartidos o públicos
-# Quiero cerrar mi sesión de forma definitiva
-# Para proteger mi identidad y el historial de mis reportes.
-
-@US49
-Scenario: US49 - Scenario 1: Salida del sistema
-  Given que el Alumno/Docente presiona "Cerrar Sesión"
-  And confirma en el diálogo
-  When el sistema procesa la petición
-  Then se invalida el token de acceso
-  And se redirige al usuario a la pantalla de bienvenida
+# As a Student/Teacher using shared or public devices
+# I want to permanently log out of my session
+# So that I can protect my identity and my report history.
 
 @US49
-Scenario: US49 - Scenario 2: Protección de caché
-  Given que se ha cerrado la sesión exitosamente
-  When un nuevo usuario intenta abrir la app en el mismo dispositivo
-  Then el sistema asegura que los datos del usuario anterior hayan sido borrados
-  And elimina historial, fotos temporales y datos locales sensibles
+Scenario: US49 - Scenario 1: System sign-out
+  Given the Student/Teacher presses "Log Out"
+  And confirms in the dialog
+  When the system processes the request
+  Then the access token is invalidated
+  And the user is redirected to the welcome screen
 
 @US49
-Scenario: US49 - Scenario 3: Confirmación preventiva
-  Given que el Alumno/Docente pulsa accidentalmente el botón de salida
-  When se detecta la interacción
-  Then el sistema muestra un modal de confirmación obligatoria
-  And evita cierres de sesión no deseados
+Scenario: US49 - Scenario 2: Cache protection
+  Given the session has been closed successfully
+  When a new user tries to open the app on the same device
+  Then the system ensures the previous user's data has been erased
+  And deletes history, temporary photos, and sensitive local data
+
+@US49
+Scenario: US49 - Scenario 3: Preventive confirmation
+  Given the Student/Teacher accidentally taps the logout button
+  When the interaction is detected
+  Then the system shows a mandatory confirmation modal
+  And prevents unwanted logouts
 
 
-Rule: US50 - Transparencia Legal y Políticas de Privacidad
+Rule: US50 - Legal Transparency and Privacy Policies
 
 
-# Como Alumno/Docente consciente de su privacidad
-# Quiero acceder a los términos y condiciones de la aplicación
-# Para conocer el tratamiento legal que reciben mis datos y fotografías dentro del campus.
-
-@US50
-Scenario: US50 - Scenario 1: Consulta de términos
-  Given que el Alumno/Docente entra al menú de "Información Legal"
-  When selecciona "Políticas de Privacidad"
-  Then el sistema despliega el documento oficial actualizado
-  And el documento se muestra conforme a la Ley de Protección de Datos Personales
-
-@US50
-Scenario: US50 - Scenario 2: Identificación de versión
-  Given que el Alumno/Docente revisa la información legal o el pie de página del perfil
-  When visualiza los detalles
-  Then el sistema muestra claramente la versión actual del software instalada
-  And puede visualizar un identificador como "v1.0.0"
+# As a Student/Teacher who cares about their privacy
+# I want to access the app's terms and conditions
+# So that I can understand the legal handling of my data and photographs within the campus.
 
 @US50
-Scenario: US50 - Scenario 3: Disponibilidad Offline
-  Given que el Alumno/Docente intenta leer los términos sin conexión a internet
-  When accede a la sección
-  Then la aplicación carga una versión resumida almacenada localmente
-  And garantiza el acceso a la información básica de privacidad
+Scenario: US50 - Scenario 1: Viewing the terms
+  Given the Student/Teacher enters the "Legal Information" menu
+  When they select "Privacy Policy"
+  Then the system displays the updated official document
+  And the document is shown in accordance with the Personal Data Protection Law
+
+@US50
+Scenario: US50 - Scenario 2: Version identification
+  Given the Student/Teacher reviews the legal information or the profile footer
+  When they view the details
+  Then the system clearly shows the currently installed software version
+  And an identifier such as "v1.0.0" may be displayed
+
+@US50
+Scenario: US50 - Scenario 3: Offline availability
+  Given the Student/Teacher tries to read the terms without an internet connection
+  When they access the section
+  Then the app loads a locally stored summarized version
+  And guarantees access to basic privacy information
 

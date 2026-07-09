@@ -1,26 +1,26 @@
 # language: en
 
 @landing @US58
-Feature: Exploración visual del demo mobile integrado
+Feature: Visual exploration of the embedded mobile demo
 
-Como visitante del Landing Page
-Quiero explorar una vista visual del demo mobile de CampusLink
-Para comprender cómo se vería la experiencia principal del producto en una aplicación móvil.
-
-@automated
-Scenario: US58 - Scenario 1: Visualización de la sección Vista de la app
-Given que el visitante accede a la sección "Vista de la app"
-When observa el contenido visual del demo mobile
-Then el sistema muestra una representación de la interfaz móvil de CampusLink
+As a Landing Page visitor
+I want to explore a visual preview of the CampusLink mobile demo
+So that I can understand what the product's main experience would look like in a mobile app.
 
 @automated
-Scenario: US58 - Scenario 2: Reconocimiento de la experiencia mobile del producto
-Given que el visitante se encuentra en la sección "Vista de la app"
-When revisa la pantalla representativa de la aplicación
-Then el sistema permite identificar una experiencia mobile relacionada con el ingreso o uso de CampusLink
+Scenario: US58 - Scenario 1: Display of the App view section
+Given the visitor accesses the "App view" section
+When they view the mobile demo's visual content
+Then the system shows a representation of the CampusLink mobile interface
 
 @automated
-Scenario: US58 - Scenario 3: Relación del demo mobile con las funcionalidades principales
-Given que el visitante analiza la sección "Vista de la app"
-When interpreta la representación visual del demo
-Then el sistema comunica que CampusLink cuenta con una experiencia móvil orientada al reporte, ubicación, evidencia y seguimiento de incidencias
+Scenario: US58 - Scenario 2: Recognizing the product's mobile experience
+Given the visitor is on the "App view" section
+When they review the representative screen of the application
+Then the system lets them identify a mobile experience related to accessing or using CampusLink
+
+@automated
+Scenario: US58 - Scenario 3: Relating the mobile demo to the main features
+Given the visitor analyzes the "App view" section
+When they interpret the demo's visual representation
+Then the system communicates that CampusLink has a mobile experience focused on reporting, locating, evidencing, and tracking incidents

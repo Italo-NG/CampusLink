@@ -1,26 +1,26 @@
 # language: en
 
 @landing @US61
-Feature: Acceso al inicio de sesión desde el Landing Page
+Feature: Access to login from the Landing Page
 
-Como visitante del Landing Page
-Quiero acceder al inicio de sesión o ingreso a la experiencia de CampusLink
-Para explorar el producto desde una entrada clara hacia la aplicación o demo.
-
-@automated
-Scenario: US61 - Scenario 1: Visualización del acceso de inicio de sesión
-Given que el visitante se encuentra en el Landing Page de CampusLink
-When observa la barra de navegación superior
-Then el sistema muestra una opción visible para iniciar sesión
+As a Landing Page visitor
+I want to access the login or entry point to the CampusLink experience
+So that I can explore the product through a clear entry point into the app or demo.
 
 @automated
-Scenario: US61 - Scenario 2: Selección del botón de inicio de sesión
-Given que el visitante identifica la opción "Iniciar sesión"
-When selecciona el botón "Iniciar sesión"
-Then el sistema prepara el acceso hacia la experiencia de ingreso de CampusLink
+Scenario: US61 - Scenario 1: Display of the login access
+Given the visitor is on the CampusLink Landing Page
+When they view the top navigation bar
+Then the system shows a visible option to log in
 
 @automated
-Scenario: US61 - Scenario 3: Acceso al ingreso desde dispositivo móvil
-Given que el visitante accede al Landing Page desde un dispositivo móvil
-When utiliza la navegación responsive para ubicar el acceso de inicio de sesión
-Then el sistema mantiene disponible la opción de ingreso sin pérdida de visibilidad
+Scenario: US61 - Scenario 2: Selecting the login button
+Given the visitor identifies the "Log in" option
+When they select the "Log in" button
+Then the system prepares access to the CampusLink login experience
+
+@automated
+Scenario: US61 - Scenario 3: Accessing login from a mobile device
+Given the visitor accesses the Landing Page from a mobile device
+When they use the responsive navigation to locate the login access
+Then the system keeps the login option available without losing visibility

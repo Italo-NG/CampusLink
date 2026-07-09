@@ -1,33 +1,33 @@
-.contenedor,
-.contenedor-cabeceraSitioInterior,
-.contenedor-portadaInterior,
-.contenedor-solucionInterior,
-.contenedor-pieSitioInterior {
+.container,
+.container-siteHeaderInner,
+.container-heroInner,
+.container-solutionInner,
+.container-siteFooterInner {
   box-sizing: border-box;
   width: 100%;
   max-width: 1120px;
   margin-inline: auto;
   padding-inline: 24px;
 }
-.contenedor-cabeceraSitioInterior { max-width: 1320px; }
+.container-siteHeaderInner { max-width: 1320px; }
 
-.seccion-portada,
-.seccion-seccionSuave-problema,
-.seccion-solucion,
-.seccion-seccionSuave-producto,
-.seccion-seccionSuave-como,
-.seccion-beneficios,
-.seccion-seccionSuave-publico,
-.seccion-vista,
-.seccion-seccionSuave-videoEquipo,
-.seccion-seccionSuave-nosotros,
-.seccion-contacto {
+.section-hero,
+.section-softSection-problem,
+.section-solution,
+.section-softSection-product,
+.section-softSection-how,
+.section-benefits,
+.section-softSection-audience,
+.section-appView,
+.section-softSection-teamVideo,
+.section-softSection-about,
+.section-contact {
   padding-block: 64px;
   scroll-margin-top: 112px;
 }
-.seccion-seccionSuave-problema,
-.seccion-seccionSuave-producto,
-.seccion-seccionSuave-como,
-.seccion-seccionSuave-publico,
-.seccion-seccionSuave-videoEquipo,
-.seccion-seccionSuave-nosotros { background: #F5F7FB; }
+.section-softSection-problem,
+.section-softSection-product,
+.section-softSection-how,
+.section-softSection-audience,
+.section-softSection-teamVideo,
+.section-softSection-about { background: #F5F7FB; }

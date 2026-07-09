@@ -1,307 +1,307 @@
 # language: en
 
 @mobile-core @prototype @manual @E1
-Feature: E1 - Reporte Rápido con Código QR
+Feature: E1 - Fast Reporting with QR Code
 
-Esta épica agrupa las historias relacionadas con el reporte rápido de incidencias mediante código QR, ubicación automática o manual, evidencia, categoría, descripción, audio, envío del reporte y control de salida del flujo.
+This epic groups the stories related to fast incident reporting via QR code, automatic or manual location, evidence, category, description, audio, report submission, and flow exit control.
 
-Rule: US00 - Dashboard Principal de Acceso Directo
+Rule: US00 - Direct-Access Main Dashboard
 
 
-# Como Alumno/Docente de CampusLink
-# Quiero una pantalla de inicio con botones claros y visibles
-# Para acceder a las funciones críticas (Reporte QR y Botón SOS) sin navegar por menús complejos.
-
-@US00
-Scenario: US00 - Scenario 1: Visualización del Home
-  Given que el Alumno/Docente abre la aplicación y está autenticado
-  When carga la pantalla principal
-  Then el sistema muestra dos botones de alta prioridad: "Reportar Falla (QR)" y "Emergencia (SOS)"
+# As a CampusLink Student/Teacher
+# I want a home screen with clear, visible buttons
+# So that I can access critical functions (QR Report and SOS Button) without navigating complex menus.
 
 @US00
-Scenario: US00 - Scenario 2: Priorización visual
-  Given que el Alumno/Docente está en el Dashboard
-  When visualiza los botones principales
-  Then el botón "SOS" debe tener un color distintivo de alerta
-  And el botón "Reportar Falla (QR)" debe ser prominente para acceder rápidamente al flujo de reporte
+Scenario: US00 - Scenario 1: Home display
+  Given the Student/Teacher opens the app and is authenticated
+  When the main screen loads
+  Then the system shows two high-priority buttons: "Report Issue (QR)" and "Emergency (SOS)"
 
 @US00
-Scenario: US00 - Scenario 3: Falla de carga inicial
-  Given que el Alumno/Docente abre la app sin conexión a internet
-  When el sistema no puede cargar los servicios iniciales
-  Then muestra un mensaje de "Error de conexión"
-  And muestra un botón de "Reintentar" para refrescar el Dashboard
+Scenario: US00 - Scenario 2: Visual prioritization
+  Given the Student/Teacher is on the Dashboard
+  When they view the main buttons
+  Then the "SOS" button must have a distinctive alert color
+  And the "Report Issue (QR)" button must be prominent for quick access to the report flow
+
+@US00
+Scenario: US00 - Scenario 3: Initial load failure
+  Given the Student/Teacher opens the app without an internet connection
+  When the system cannot load the initial services
+  Then it shows a "Connection error" message
+  And shows a "Retry" button to refresh the Dashboard
 
 
-Rule: US01 - Interfaz de escáner QR de infraestructura
+Rule: US01 - Infrastructure QR scanner interface
 
 
-# Como Alumno/Docente Reportante
-# Quiero visualizar un marco de escaneo activo usando la cámara de mi dispositivo
-# Para enfocar y leer rápidamente el código QR pegado en el ambiente afectado.
-
-@US01
-Scenario: US01 - Scenario 1: Activación exitosa del escáner QR
-  Given que el Alumno/Docente presiona el botón "Reportar Falla"
-  When la aplicación tiene los permisos de cámara concedidos
-  Then se muestra la cámara a pantalla completa con un visor de escaneo
-  And el sistema activa el enfoque automático de la lente
-
-@US01
-Scenario: US01 - Scenario 2: Validación de formato y feedback del QR
-  Given que el Alumno/Docente está escaneando un código
-  When la cámara reconoce un código QR
-  Then el sistema debe verificar que el código pertenezca al dominio cifrado de CampusLink
-  And si es válido, el dispositivo debe emitir una vibración corta
-  And el sistema debe redirigir al formulario de reporte
+# As a Reporting Student/Teacher
+# I want to see an active scanning frame using my device's camera
+# So that I can quickly focus on and read the QR code posted in the affected space.
 
 @US01
-Scenario: US01 - Scenario 3: Código QR no reconocido
-  Given que el Alumno/Docente está escaneando un código
-  When el QR leído no pertenece al dominio de CampusLink
-  Then el sistema muestra un mensaje flotante "Código QR no válido para reporte"
-  And mantiene el escáner activo para un nuevo intento
+Scenario: US01 - Scenario 1: Successful QR scanner activation
+  Given the Student/Teacher presses the "Report Issue" button
+  When the app has camera permissions granted
+  Then the full-screen camera is shown with a scanning viewfinder
+  And the system activates automatic lens focus
 
 @US01
-Scenario: US01 - Scenario 4: Permisos de cámara denegados
-  Given que el Alumno/Docente no ha otorgado permisos de cámara
-  When intenta abrir el escáner
-  Then el sistema muestra un modal con el mensaje "Se requiere acceso a la cámara para esta función"
-  And presenta un botón de "Ir a Ajustes" para que el Alumno/Docente pueda activarlo manualmente
+Scenario: US01 - Scenario 2: QR format validation and feedback
+  Given the Student/Teacher is scanning a code
+  When the camera recognizes a QR code
+  Then the system must verify that the code belongs to CampusLink's encrypted domain
+  And if valid, the device must emit a short vibration
+  And the system must redirect to the report form
+
+@US01
+Scenario: US01 - Scenario 3: Unrecognized QR code
+  Given the Student/Teacher is scanning a code
+  When the scanned QR does not belong to the CampusLink domain
+  Then the system shows a floating message "QR code not valid for reporting"
+  And keeps the scanner active for another attempt
+
+@US01
+Scenario: US01 - Scenario 4: Camera permissions denied
+  Given the Student/Teacher has not granted camera permissions
+  When they try to open the scanner
+  Then the system shows a modal with the message "Camera access is required for this feature"
+  And presents a "Go to Settings" button so the Student/Teacher can enable it manually
 
 
-Rule: US02 - Autocompletado de formulario post-escaneo
+Rule: US02 - Post-scan form autofill
 
 
-# Como Alumno/Docente Reportante
-# Quiero que el sistema cargue automáticamente los datos del lugar tras escanear el QR
-# Para no tener que tipear el nombre de la sede, pabellón y aula.
+# As a Reporting Student/Teacher
+# I want the system to automatically load the location data after scanning the QR code
+# So that I don't have to type the campus, building, and room name.
 
 @US02
-Scenario: US02 - Scenario 1: Autocompletado de ubicación
-  Given que el Alumno/Docente escaneó un QR válido del campus
-  When ingresa a la pantalla de "Nuevo Reporte"
-  Then los campos "Sede", "Pabellón" y "Aula" aparecen llenos automáticamente con la información de la base de datos
+Scenario: US02 - Scenario 1: Location autofill
+  Given the Student/Teacher scanned a valid campus QR code
+  When they enter the "New Report" screen
+  Then the "Campus", "Building", and "Room" fields appear automatically filled with the database information
 
 @US02
-Scenario: US02 - Scenario 2: Inmutabilidad de datos autocompletados
-  Given que el sistema autocompletó la ubicación mediante QR
-  When el Alumno/Docente visualiza el formulario
-  Then el sistema mantiene los campos en estado "Bloqueado/Solo Lectura" para evitar alteraciones manuales
-  And muestra un indicador visual que confirma el bloqueo
+Scenario: US02 - Scenario 2: Immutability of autofilled data
+  Given the system autofilled the location via QR
+  When the Student/Teacher views the form
+  Then the system keeps the fields in a "Locked/Read-only" state to prevent manual changes
+  And shows a visual indicator confirming the lock
 
 @US02
-Scenario: US02 - Scenario 3: Código QR válido pero no registrado
-  Given que el Alumno/Docente escanea un QR válido, pero no registrado en la base de datos
-  When el sistema intenta hacer el "match"
-  Then muestra una alerta "Ubicación no encontrada"
-  And redirige al flujo de ingreso manual desbloqueando los campos para su selección
+Scenario: US02 - Scenario 3: Valid QR code but not registered
+  Given the Student/Teacher scans a valid QR code that is not registered in the database
+  When the system tries to make the "match"
+  Then it shows a "Location not found" alert
+  And redirects to the manual entry flow, unlocking the fields for selection
 
 
-Rule: US03 - Ingreso manual de ubicación
+Rule: US03 - Manual location entry
 
 
-# Como Alumno/Docente Reportante
-# Quiero poder ingresar mi ubicación manualmente mediante listas desplegables
-# Para poder reportar la falla incluso si el código QR físico está arrancado o ilegible.
-
-@US03
-Scenario: US03 - Scenario 1: Selección manual en cascada
-  Given que el Alumno/Docente elige el ingreso manual
-  When selecciona una "Sede"
-  Then el sistema habilita el siguiente desplegable filtrando únicamente los pabellones de esa sede
-  And al elegir un pabellón, se filtran automáticamente las aulas correspondientes
+# As a Reporting Student/Teacher
+# I want to be able to enter my location manually via dropdown lists
+# So that I can report the issue even if the physical QR code is torn off or unreadable.
 
 @US03
-Scenario: US03 - Scenario 2: Obligatoriedad de jerarquía en ubicación
-  Given que el Alumno/Docente está en el formulario manual
-  When intenta interactuar con el desplegable de "Aula" sin haber elegido una "Sede" y "Pabellón" previos
-  Then el desplegable de "Aula" debe permanecer inactivo
-  And el sistema debe mostrar una ayuda visual indicando que debe seguir el orden jerárquico
+Scenario: US03 - Scenario 1: Cascading manual selection
+  Given the Student/Teacher chooses manual entry
+  When they select a "Campus"
+  Then the system enables the next dropdown, filtering only the buildings of that campus
+  And when choosing a building, the corresponding rooms are automatically filtered
 
 @US03
-Scenario: US03 - Scenario 3: Falla de conexión a base de datos
-  Given que el Alumno/Docente abre el formulario manual
-  When hay una caída de internet y las listas no pueden cargar desde el servidor
-  Then el sistema muestra el mensaje "Error de conexión. Toca para reintentar cargar las ubicaciones"
-  And mantiene un estado de carga hasta que la conexión se restablezca
+Scenario: US03 - Scenario 2: Mandatory location hierarchy
+  Given the Student/Teacher is on the manual form
+  When they try to interact with the "Room" dropdown without having chosen a "Campus" and "Building" first
+  Then the "Room" dropdown must remain inactive
+  And the system must show visual guidance indicating that the hierarchical order must be followed
+
+@US03
+Scenario: US03 - Scenario 3: Database connection failure
+  Given the Student/Teacher opens the manual form
+  When there is an internet outage and the lists cannot load from the server
+  Then the system shows the message "Connection error. Tap to retry loading locations"
+  And keeps a loading state until the connection is restored
 
 
-Rule: US04 - Componente de carga de evidencia fotográfica
+Rule: US04 - Photo evidence upload component
 
 
-# Como Alumno/Docente Reportante
-# Quiero adjuntar una foto del problema desde mi galería o cámara
-# Para proveer evidencia visual exacta al equipo de mantenimiento.
-
-@US04
-Scenario: US04 - Scenario 1: Carga exitosa de evidencia fotográfica
-  Given que el Alumno/Docente selecciona una foto de su galería o la captura con la cámara
-  When la imagen se procesa correctamente
-  Then el sistema muestra una miniatura de la foto en el formulario
-  And habilita un botón de "Eliminar" por si el Alumno/Docente desea cambiar la imagen
-
-@US04
-Scenario: US04 - Scenario 2: Límite de peso y formato de imagen
-  Given que el Alumno/Docente intenta adjuntar un archivo
-  When el sistema valida el archivo seleccionado
-  Then solo debe permitir extensiones JPG o PNG
-  And solo debe permitir un peso máximo de 5MB
-  And en caso de cumplir con los requisitos, se muestra una barra de progreso durante la carga
+# As a Reporting Student/Teacher
+# I want to attach a photo of the problem from my gallery or camera
+# So that I can provide exact visual evidence to the maintenance team.
 
 @US04
-Scenario: US04 - Scenario 3: Exceso de peso o formato inválido
-  Given que el Alumno/Docente elige un archivo de 8MB o un formato no permitido
-  When intenta cargarlo al formulario
-  Then la carga se detiene automáticamente
-  And el sistema muestra un mensaje de error "Archivo no permitido. Asegúrate que sea una imagen JPG/PNG de máximo 5MB"
+Scenario: US04 - Scenario 1: Successful photo evidence upload
+  Given the Student/Teacher selects a photo from their gallery or captures one with the camera
+  When the image is processed successfully
+  Then the system shows a thumbnail of the photo in the form
+  And enables a "Delete" button in case the Student/Teacher wants to change the image
+
+@US04
+Scenario: US04 - Scenario 2: Image size and format limit
+  Given the Student/Teacher tries to attach a file
+  When the system validates the selected file
+  Then it must only allow JPG or PNG extensions
+  And must only allow a maximum size of 5MB
+  And if the requirements are met, a progress bar is shown during the upload
+
+@US04
+Scenario: US04 - Scenario 3: Excessive size or invalid format
+  Given the Student/Teacher chooses an 8MB file or a disallowed format
+  When they try to upload it to the form
+  Then the upload stops automatically
+  And the system shows an error message "File not allowed. Make sure it's a JPG/PNG image of up to 5MB"
 
 
-Rule: US05 - Selección visual de categoría de falla
+Rule: US05 - Visual issue category selection
 
 
-# Como Alumno/Docente Reportante
-# Quiero elegir el tipo de problema tocando un botón visual
-# Para clasificar el problema rápidamente sin escribir.
+# As a Reporting Student/Teacher
+# I want to choose the type of problem by tapping a visual button
+# So that I can classify the problem quickly without typing.
 
 @US05
-Scenario: US05 - Scenario 1: Selección de chip de categoría
-  Given que el Alumno/Docente visualiza la lista de categorías
-  When toca la categoría "Mobiliario"
-  Then el chip cambia su estilo visual para indicar que está seleccionado
-  And se habilita el botón de "Enviar Reporte" si el resto de campos obligatorios están listos
+Scenario: US05 - Scenario 1: Category chip selection
+  Given the Student/Teacher views the list of categories
+  When they tap the "Furniture" category
+  Then the chip changes its visual style to indicate it is selected
+  And the "Send Report" button is enabled if the rest of the required fields are ready
 
 @US05
-Scenario: US05 - Scenario 2: Exclusividad mutua de categoría
-  Given que el Alumno/Docente ya tiene seleccionada la categoría "Mobiliario"
-  When toca la categoría "Eléctrico"
-  Then el sistema marca "Eléctrico" como la única opción activa
-  And desmarca automáticamente la selección anterior
-  And asegura que solo se envíe una categoría por reporte
+Scenario: US05 - Scenario 2: Mutual exclusivity of category
+  Given the Student/Teacher already has the "Furniture" category selected
+  When they tap the "Electrical" category
+  Then the system marks "Electrical" as the only active option
+  And automatically unmarks the previous selection
+  And ensures only one category is sent per report
 
 @US05
-Scenario: US05 - Scenario 3: Omisión de selección de categoría
-  Given que el Alumno/Docente intenta presionar el botón de envío
-  When no ha seleccionado ningún chip de categoría
-  Then el sistema impide el envío del formulario
-  And la sección de categorías muestra una alerta visual o un mensaje de "Selección obligatoria"
+Scenario: US05 - Scenario 3: Category selection omitted
+  Given the Student/Teacher tries to press the send button
+  When they have not selected any category chip
+  Then the system prevents the form from being submitted
+  And the category section shows a visual alert or a "Selection required" message
 
 
-Rule: US06 - Ingreso de descripción de texto breve
+Rule: US06 - Short text description entry
 
 
-# Como Alumno/Docente Reportante
-# Quiero disponer de un cuadro de texto en el formulario
-# Para agregar detalles específicos que la foto no pueda mostrar.
-
-@US06
-Scenario: US06 - Scenario 1: Ingreso de texto en descripción
-  Given que el Alumno/Docente selecciona el campo de "Descripción"
-  When escribe los detalles específicos de la falla detectada
-  Then el sistema visualiza el texto en tiempo real
-  And actualiza un contador de caracteres indicando el espacio disponible
+# As a Reporting Student/Teacher
+# I want to have a text box available on the form
+# So that I can add specific details that the photo cannot show.
 
 @US06
-Scenario: US06 - Scenario 2: Límite de caracteres en descripción
-  Given que el Alumno/Docente está redactando la descripción
-  When alcanza el límite máximo de 250 caracteres
-  Then el campo bloquea cualquier entrada de texto adicional
-  And el contador de caracteres resalta para advertir el límite
+Scenario: US06 - Scenario 1: Text entry in description
+  Given the Student/Teacher selects the "Description" field
+  When they type the specific details of the detected issue
+  Then the system displays the text in real time
+  And updates a character counter showing the available space
 
 @US06
-Scenario: US06 - Scenario 3: Sanitización de entradas
-  Given que el Alumno/Docente intenta pegar fragmentos de código o scripts
-  When el campo procesa la entrada de texto
-  Then el sistema limpia automáticamente los caracteres especiales no permitidos
-  And muestra un mensaje de advertencia "Se han removido caracteres no permitidos por seguridad"
+Scenario: US06 - Scenario 2: Character limit in description
+  Given the Student/Teacher is writing the description
+  When they reach the maximum limit of 250 characters
+  Then the field blocks any additional text input
+  And the character counter highlights to warn about the limit
+
+@US06
+Scenario: US06 - Scenario 3: Input sanitization
+  Given the Student/Teacher tries to paste code fragments or scripts
+  When the field processes the text input
+  Then the system automatically strips disallowed special characters
+  And shows a warning message "Characters not allowed for security reasons have been removed"
 
 
-Rule: US07 - Grabación de nota de voz como descripción
+Rule: US07 - Voice note recording as description
 
 
-# Como Alumno/Docente Reportante en movimiento
-# Quiero mantener presionado un botón de micrófono para grabar la descripción
-# Para enviar el reporte rápidamente si no puedo detenerme a escribir.
-
-@US07
-Scenario: US07 - Scenario 1: Grabación exitosa de nota de voz
-  Given que el Alumno/Docente mantiene presionado el botón de micrófono
-  When habla y suelta el botón tras terminar su mensaje
-  Then el sistema genera un archivo de audio comprimido
-  And lo adjunta al formulario mostrando un reproductor con el botón "Reproducir" y "Eliminar"
-
-@US07
-Scenario: US07 - Scenario 2: Límite de tiempo de grabación
-  Given que el Alumno/Docente está grabando una nota de voz
-  When la grabación alcanza los 30 segundos de duración
-  Then el sistema detiene la captura automáticamente
-  And guarda el fragmento grabado
-  And notifica al Alumno/Docente que se alcanzó el límite de tiempo
+# As a Reporting Student/Teacher on the move
+# I want to hold down a microphone button to record the description
+# So that I can submit the report quickly if I can't stop to type.
 
 @US07
-Scenario: US07 - Scenario 3: Grabación demasiado corta
-  Given que el Alumno/Docente presiona el botón de micrófono por accidente
-  When la grabación dura menos de 2 segundos antes de ser soltada
-  Then el sistema descarta el archivo automáticamente
-  And muestra un mensaje flotante "Grabación muy corta. Mantén presionado para grabar"
+Scenario: US07 - Scenario 1: Successful voice note recording
+  Given the Student/Teacher holds down the microphone button
+  When they speak and release the button after finishing their message
+  Then the system generates a compressed audio file
+  And attaches it to the form, showing a player with "Play" and "Delete" buttons
+
+@US07
+Scenario: US07 - Scenario 2: Recording time limit
+  Given the Student/Teacher is recording a voice note
+  When the recording reaches 30 seconds in duration
+  Then the system stops the capture automatically
+  And saves the recorded fragment
+  And notifies the Student/Teacher that the time limit was reached
+
+@US07
+Scenario: US07 - Scenario 3: Recording too short
+  Given the Student/Teacher accidentally presses the microphone button
+  When the recording lasts less than 2 seconds before being released
+  Then the system discards the file automatically
+  And shows a floating message "Recording too short. Hold to record"
 
 
-Rule: US08 - Pantalla de estado de éxito y generación de ticket
+Rule: US08 - Success status screen and ticket generation
 
 
-# Como Alumno/Docente Reportante
-# Quiero ver una pantalla de confirmación tras el envío
-# Para tener la seguridad visual de que mi reporte fue recibido y tener mi código de seguimiento.
+# As a Reporting Student/Teacher
+# I want to see a confirmation screen after submission
+# So that I have visual assurance that my report was received and get my tracking code.
 
 @US08
-Scenario: US08 - Scenario 1: Confirmación de envío del reporte
-  Given que el Alumno/Docente completó el formulario con datos válidos
-  When presiona el botón "Enviar Reporte"
-  Then el sistema muestra una pantalla de éxito con una ilustración o check verde
-  And visualiza de forma destacada el ID del ticket generado
-  And muestra un botón para "Volver al Inicio"
+Scenario: US08 - Scenario 1: Report submission confirmation
+  Given the Student/Teacher completed the form with valid data
+  When they press the "Send Report" button
+  Then the system shows a success screen with an illustration or green check
+  And prominently displays the generated ticket ID
+  And shows a "Back to Home" button
 
 @US08
-Scenario: US08 - Scenario 2: Nomenclatura del ticket
-  Given que el sistema procesa el nuevo reporte exitosamente
-  When genera el identificador único de seguimiento
-  Then este debe seguir obligatoriamente la estructura "TCK-YYYYMMDD-XXXX"
-  And el ID debe ser seleccionable para que el Alumno/Docente pueda copiarlo al portapapeles
+Scenario: US08 - Scenario 2: Ticket naming convention
+  Given the system processes the new report successfully
+  When it generates the unique tracking identifier
+  Then it must strictly follow the "TCK-YYYYMMDD-XXXX" structure
+  And the ID must be selectable so the Student/Teacher can copy it to the clipboard
 
 @US08
-Scenario: US08 - Scenario 3: Falla de servidor al enviar reporte
-  Given que el Alumno/Docente presiona el botón de enviar
-  When el servidor no responde por tiempo de espera o falta de conexión
-  Then la aplicación muestra una pantalla de error con el mensaje "Servidores ocupados temporalmente"
-  And ofrece la opción de guardar el reporte en la sección de "Borradores Pendientes"
-  And permite reintentar el envío más tarde
+Scenario: US08 - Scenario 3: Server failure when sending report
+  Given the Student/Teacher presses the send button
+  When the server does not respond due to timeout or lack of connection
+  Then the app shows an error screen with the message "Servers temporarily busy"
+  And offers the option to save the report in the "Pending Drafts" section
+  And allows retrying the submission later
 
 
-Rule: US09 - Control de flujo y salida de emergencia
+Rule: US09 - Flow control and emergency exit
 
 
-# Como Alumno/Docente Reportante
-# Quiero tener un botón de "Cancelar" o "Atrás" siempre disponible durante el reporte
-# Para poder abandonar el proceso si cometí un error o decidí no enviar la información.
-
-@US09
-Scenario: US09 - Scenario 1: Abandono de formulario con datos
-  Given que el Alumno/Docente ha ingresado información en el formulario
-  When presiona el botón "Cancelar" o la flecha de retroceso
-  Then el sistema lanza un mensaje de confirmación "¿Deseas descartar el reporte actual? Se perderán los datos"
+# As a Reporting Student/Teacher
+# I want to have a "Cancel" or "Back" button always available during the report
+# So that I can abandon the process if I made a mistake or decided not to send the information.
 
 @US09
-Scenario: US09 - Scenario 2: Salida de formulario vacío
-  Given que el Alumno/Docente entró al formulario, pero no ha ingresado ningún dato ni adjunto
-  When presiona el botón "Atrás" o "Cancelar"
-  Then el sistema lo redirige al Dashboard inmediatamente
-  And no muestra mensajes de confirmación
+Scenario: US09 - Scenario 1: Abandoning a form with data
+  Given the Student/Teacher has entered information in the form
+  When they press the "Cancel" button or the back arrow
+  Then the system shows a confirmation message "Do you want to discard the current report? The data will be lost"
 
 @US09
-Scenario: US09 - Scenario 3: Confirmación de descarte del reporte
-  Given que el Alumno/Docente ve el mensaje de confirmación tras intentar cancelar
-  When selecciona la opción "Sí, descartar"
-  Then el sistema elimina todos los datos temporales
-  And elimina todos los archivos adjuntos
-  And regresa a la pantalla de inicio
+Scenario: US09 - Scenario 2: Exiting an empty form
+  Given the Student/Teacher entered the form but has not entered any data or attachment
+  When they press the "Back" or "Cancel" button
+  Then the system redirects them to the Dashboard immediately
+  And shows no confirmation messages
+
+@US09
+Scenario: US09 - Scenario 3: Confirming report discard
+  Given the Student/Teacher sees the confirmation message after trying to cancel
+  When they select the "Yes, discard" option
+  Then the system deletes all temporary data
+  And deletes all attached files
+  And returns to the home screen
 

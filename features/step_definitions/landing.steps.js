@@ -1,91 +1,91 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 // =====================================================
-// US52 - Navegación por secciones informativas del Landing Page
+// US52 - Navigation through the Landing Page informational sections
 // File: landing-navigation.feature
 // =====================================================
 
-// US52 - Escenario 1: Navegación exitosa entre secciones
-Given('que el visitante se encuentra en el Landing Page de CampusLink', function () {
+// US52 - Scenario 1: Successful navigation between sections
+Given('the visitor is on the CampusLink Landing Page', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('selecciona una opción del menú superior', function () {
+When('they select an option from the top menu', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema lo dirige a la sección correspondiente dentro de la misma página', function () {
+Then('the system takes them to the corresponding section within the same page', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US52 - Escenario 2: Acceso a la sección de contacto
-Given('que el visitante desea solicitar información sobre CampusLink', function () {
+// US52 - Scenario 2: Access to the contact section
+Given('the visitor wants to request information about CampusLink', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('selecciona la opción {string}', function (option) {
+When('they select the {string} option', function (option) {
 // Reused step if another scenario selects a named navigation option.
 this.selectedOption = option;
 });
 
-Then('el sistema desplaza la página hacia el formulario de contacto', function () {
+Then('the system scrolls the page to the contact form', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US52 - Escenario 3: Navegación en dispositivo móvil
-Given('que el visitante accede al Landing Page desde un dispositivo móvil', function () {
+// US52 - Scenario 3: Navigation on a mobile device
+Given('the visitor accesses the Landing Page from a mobile device', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('utiliza el menú responsive', function () {
+When('they use the responsive menu', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema le permite navegar por las secciones principales sin pérdida de contenido', function () {
+Then('the system lets them navigate through the main sections without losing content', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US51 - Presentación inmediata de la propuesta de valor de CampusLink
+// US51 - Immediate display of CampusLink's value proposition
 // File: landing-sections.feature
 // =====================================================
 
-// US51 - Escenario 1: Visualización exitosa de la propuesta de valor
-Given('que el visitante ingresa al Landing Page de CampusLink', function () {
+// US51 - Scenario 1: Successful display of the value proposition
+Given('the visitor enters the CampusLink Landing Page', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('se carga la sección inicial del sitio', function () {
+When('the site\'s initial section loads', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra el título principal, una descripción de CampusLink y una imagen representativa del producto', function () {
+Then('the system shows the main title, a description of CampusLink, and a representative image of the product', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US51 - Escenario 2: Comprensión rápida del propósito del producto
-Given('que el visitante observa la sección principal del Landing Page', function () {
+// US51 - Scenario 2: Quick understanding of the product's purpose
+Given('the visitor views the Landing Page\'s main section', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('lee el mensaje introductorio de CampusLink', function () {
+When('they read CampusLink\'s introductory message', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema comunica que CampusLink permite reportar, ubicar y hacer seguimiento de incidencias del campus', function () {
+Then('the system communicates that CampusLink allows reporting, locating, and tracking campus incidents', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US51 - Escenario 3: Acceso inicial a acciones principales del Landing Page
-Given('que el visitante se encuentra en la sección inicial del Landing Page', function () {
+// US51 - Scenario 3: Initial access to the Landing Page's main actions
+Given('the visitor is on the Landing Page\'s initial section', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('revisa los elementos visibles del Hero', function () {
+When('they review the Hero\'s visible elements', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra accesos o llamadas a la acción relacionadas con conocer el producto o iniciar el recorrido por la página', function () {
+Then('the system shows entry points or calls to action related to learning about the product or starting to browse the page', function () {
 // Step prepared for basic Cucumber execution.
 });
 
@@ -95,387 +95,387 @@ Then('el sistema muestra accesos o llamadas a la acción relacionadas con conoce
 // They are defined only once to avoid duplicated step definition errors in Cucumber.
 // =====================================================
 
-Given('que el visitante navega hacia la sección {string}', function (sectionName) {
+Given('the visitor navigates to the {string} section', function (sectionName) {
 this.sectionName = sectionName;
 });
 
-Given('que el visitante se encuentra en la sección {string}', function (sectionName) {
+Given('the visitor is on the {string} section', function (sectionName) {
 this.sectionName = sectionName;
 });
 
-Given('que el visitante analiza la sección {string}', function (sectionName) {
+Given('the visitor analyzes the {string} section', function (sectionName) {
 this.sectionName = sectionName;
 });
 
-Given('que el visitante accede a la sección {string}', function (sectionName) {
+Given('the visitor accesses the {string} section', function (sectionName) {
 this.sectionName = sectionName;
 });
 
 // =====================================================
-// US53 - Comprensión del problema actual de gestión de incidencias
+// US53 - Understanding the current incident management problem
 // File: landing-sections.feature
 // =====================================================
 
-// US53 - Escenario 1: Visualización del problema actual
-When('revisa el contenido presentado sobre la situación actual', function () {
+// US53 - Scenario 1: Display of the current problem
+When('they review the content presented about the current situation', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra los problemas principales que CampusLink busca resolver', function () {
+Then('the system shows the main problems that CampusLink seeks to solve', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US53 - Escenario 2: Identificación de dificultades en la gestión de incidencias
-When('revisa las tarjetas informativas del problema', function () {
+// US53 - Scenario 2: Identifying difficulties in incident management
+When('they review the problem\'s informational cards', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema presenta dificultades como reportes dispersos, falta de seguimiento e información incompleta para soporte', function () {
+Then('the system presents difficulties such as scattered reports, lack of follow-up, and incomplete information for support', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US53 - Escenario 3: Relación entre el problema y la necesidad del campus
-When('compara la información presentada con la experiencia de reportar incidencias en un campus', function () {
+// US53 - Scenario 3: Relating the problem to the campus's need
+When('they compare the information presented with the experience of reporting incidents on a campus', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema permite comprender la necesidad de centralizar los reportes de incidencias', function () {
+Then('the system helps them understand the need to centralize incident reporting', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US54 - Comprensión de la solución propuesta por CampusLink
+// US54 - Understanding CampusLink's proposed solution
 // File: landing-sections.feature
 // =====================================================
 
-// US54 - Escenario 1: Visualización de la solución propuesta
-When('revisa el contenido presentado sobre CampusLink', function () {
+// US54 - Scenario 1: Display of the proposed solution
+When('they review the content presented about CampusLink', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra cómo CampusLink ayuda a reportar, ubicar y hacer seguimiento de incidencias', function () {
+Then('the system shows how CampusLink helps report, locate, and track incidents', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US54 - Escenario 2: Identificación de componentes principales de la solución
-When('revisa las tarjetas informativas de la solución', function () {
+// US54 - Scenario 2: Identifying the solution's main components
+When('they review the solution\'s informational cards', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema presenta componentes como reporte rápido, ubicación precisa, evidencia clara y seguimiento visible', function () {
+Then('the system presents components such as fast reporting, precise location, clear evidence, and visible tracking', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US54 - Escenario 3: Comprensión del valor diferencial de CampusLink
-When('interpreta la información presentada', function () {
+// US54 - Scenario 3: Understanding CampusLink's differential value
+When('they interpret the information presented', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema comunica que CampusLink centraliza el proceso de reporte y seguimiento de incidencias del campus', function () {
+Then('the system communicates that CampusLink centralizes the campus incident reporting and tracking process', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US55 - Explicación del funcionamiento del reporte de incidencias
+// US55 - Explaining how incident reporting works
 // File: landing-sections.feature
 // =====================================================
 
-// US55 - Escenario 1: Visualización del flujo de funcionamiento
-When('revisa los pasos presentados', function () {
+// US55 - Scenario 1: Display of the how-it-works flow
+When('they review the steps presented', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra una secuencia clara del proceso de reporte y seguimiento de incidencias', function () {
+Then('the system shows a clear sequence of the incident reporting and tracking process', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US55 - Escenario 2: Comprensión del proceso de reporte
-When('revisa el recorrido de uso de CampusLink', function () {
+// US55 - Scenario 2: Understanding the reporting process
+When('they review CampusLink\'s usage journey', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema explica que el usuario detecta una incidencia, escanea un QR, registra evidencia y envía el reporte a soporte', function () {
+Then('the system explains that the user detects an incident, scans a QR code, records evidence, and sends the report to support', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US55 - Escenario 3: Relación entre pasos del proceso y seguimiento del reporte
-When('observa la secuencia completa del funcionamiento', function () {
+// US55 - Scenario 3: Relating the process steps to report tracking
+When('they view the complete how-it-works sequence', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema comunica que el reporte puede ser recibido, atendido y seguido por el usuario', function () {
+Then('the system communicates that the report can be received, handled, and tracked by the user', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US56 - Visualización de beneficios principales del reporte centralizado
+// US56 - Display of the main benefits of centralized reporting
 // File: landing-sections.feature
 // =====================================================
 
-// US56 - Escenario 1: Visualización exitosa de beneficios
-When('revisa las tarjetas informativas', function () {
+// US56 - Scenario 1: Successful display of benefits
+When('they review the informational cards', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra los principales beneficios generados por CampusLink', function () {
+Then('the system shows the main benefits generated by CampusLink', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US56 - Escenario 2: Identificación de beneficios operativos
-When('revisa los beneficios presentados', function () {
+// US56 - Scenario 2: Identifying operational benefits
+When('they review the benefits presented', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema destaca beneficios como reporte rápido, ubicación precisa, evidencia clara, seguimiento transparente y priorización operativa', function () {
+Then('the system highlights benefits such as fast reporting, precise location, clear evidence, transparent tracking, and operational prioritization', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US56 - Escenario 3: Comprensión del impacto de los beneficios
-When('relaciona los beneficios con la gestión de incidencias del campus', function () {
+// US56 - Scenario 3: Understanding the impact of the benefits
+When('they relate the benefits to campus incident management', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema permite comprender cómo CampusLink mejora la comunicación entre usuarios y soporte', function () {
+Then('the system helps them understand how CampusLink improves communication between users and support', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US57 - Identificación de usuarios objetivo del producto
+// US57 - Identifying the product's target users
 // File: landing-sections.feature
 // =====================================================
 
-// US57 - Escenario 1: Visualización de usuarios objetivo
-When('revisa las tarjetas de perfiles', function () {
+// US57 - Scenario 1: Display of target users
+When('they review the profile cards', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra estudiantes, docentes y personal de soporte u operaciones como usuarios objetivo', function () {
+Then('the system shows students, teachers, and support or operations staff as target users', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US57 - Escenario 2: Comprensión del valor para estudiantes y docentes
-When('revisa los perfiles de estudiantes y docentes', function () {
+// US57 - Scenario 2: Understanding the value for students and teachers
+When('they review the student and teacher profiles', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema comunica que ambos perfiles pueden reportar incidencias y hacer seguimiento a sus solicitudes', function () {
+Then('the system communicates that both profiles can report incidents and track their requests', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US57 - Escenario 3: Comprensión del valor para soporte y operaciones
-When('revisa el perfil del personal de soporte u operaciones', function () {
+// US57 - Scenario 3: Understanding the value for support and operations
+When('they review the support or operations staff profile', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema comunica que este perfil puede recibir información más clara para atender incidencias', function () {
+Then('the system communicates that this profile can receive clearer information to handle incidents', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US60 - Acceso responsive al Landing Page
+// US60 - Responsive access to the Landing Page
 // File: landing-sections.feature
 // =====================================================
 
-// US60 - Escenario 1: Visualización responsive del Landing Page
-Given('que el visitante abre el Landing Page desde una pantalla móvil', function () {
+// US60 - Scenario 1: Responsive display of the Landing Page
+Given('the visitor opens the Landing Page from a mobile screen', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('navega por las secciones principales del sitio', function () {
+When('they navigate through the site\'s main sections', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema adapta textos, imágenes, tarjetas y navegación al tamaño de pantalla', function () {
+Then('the system adapts text, images, cards, and navigation to the screen size', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US60 - Escenario 2: Lectura del contenido en dispositivos móviles
-Given('que el visitante revisa el Landing Page desde un dispositivo móvil', function () {
+// US60 - Scenario 2: Reading content on mobile devices
+Given('the visitor reviews the Landing Page from a mobile device', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('observa las secciones informativas', function () {
+When('they view the informational sections', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema mantiene el contenido legible y ordenado sin generar desplazamiento horizontal innecesario', function () {
+Then('the system keeps the content readable and organized without causing unnecessary horizontal scrolling', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US60 - Escenario 3: Acceso responsive a secciones principales
-Given('que el visitante utiliza la versión mobile del Landing Page', function () {
+// US60 - Scenario 3: Responsive access to main sections
+Given('the visitor uses the mobile version of the Landing Page', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('interactúa con la navegación y las secciones del sitio', function () {
+When('they interact with the site\'s navigation and sections', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema permite acceder al contenido principal sin pérdida de información', function () {
+Then('the system allows access to the main content without losing information', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US62 - Reconocimiento de marca y cierre institucional del Landing Page
+// US62 - Brand recognition and institutional closing of the Landing Page
 // File: landing-sections.feature
 // =====================================================
 
-// US62 - Escenario 1: Visualización del footer
-Given('que el visitante llega al final del Landing Page', function () {
+// US62 - Scenario 1: Display of the footer
+Given('the visitor reaches the end of the Landing Page', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('observa la sección final', function () {
+When('they view the final section', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra el logo o nombre de CampusLink y un mensaje de cierre', function () {
+Then('the system shows the CampusLink logo or name and a closing message', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US62 - Escenario 2: Reconocimiento del equipo responsable
-Given('que el visitante se encuentra en el footer del Landing Page', function () {
+// US62 - Scenario 2: Recognizing the responsible team
+Given('the visitor is on the Landing Page\'s footer', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('revisa la información institucional final', function () {
+When('they review the final institutional information', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra la referencia al equipo Montimin como responsable del producto', function () {
+Then('the system shows the reference to the Montimin team as the product\'s owner', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US62 - Escenario 3: Cierre institucional del Landing Page
-Given('que el visitante analiza el cierre del Landing Page', function () {
+// US62 - Scenario 3: Institutional closing of the Landing Page
+Given('the visitor analyzes the Landing Page\'s closing', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('lee el mensaje final del sitio', function () {
+When('they read the site\'s final message', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema refuerza que CampusLink integra reporte, ubicación, evidencia y seguimiento de incidencias del campus en un solo lugar', function () {
+Then('the system reinforces that CampusLink brings together campus incident reporting, location, evidence, and tracking in one place', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US59 - Solicitud de información institucional sobre CampusLink
+// US59 - Request for institutional information about CampusLink
 // File: contact-form.feature
 // =====================================================
 
-// US59 - Escenario 1: Visualización del formulario de contacto
-// Reuses: Given('que el visitante accede a la sección {string}', ...)
+// US59 - Scenario 1: Display of the contact form
+// Reuses: Given('the visitor accesses the {string} section', ...)
 
-When('observa el formulario de solicitud institucional', function () {
+When('they view the institutional request form', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra campos para registrar datos de contacto, información de la institución e interés sobre CampusLink', function () {
+Then('the system shows fields to record contact details, institution information, and interest in CampusLink', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US59 - Escenario 2: Registro de datos institucionales
-Given('que el visitante se encuentra en el formulario de contacto', function () {
+// US59 - Scenario 2: Recording institutional data
+Given('the visitor is on the contact form', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('completa los campos institucionales requeridos', function (dataTable) {
+When('they fill in the required institutional fields', function (dataTable) {
 // The form data is stored for traceability during basic Cucumber execution.
 this.formData = dataTable.rowsHash();
 });
 
-Then('el sistema conserva la información ingresada para preparar la solicitud', function () {
+Then('the system retains the entered information to prepare the request', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US59 - Escenario 3: Envío de solicitud de información
-Given('que el visitante completó el formulario de contacto', function () {
+// US59 - Scenario 3: Submitting the information request
+Given('the visitor has completed the contact form', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-When('selecciona el botón {string}', function (buttonName) {
+When('they select the {string} button', function (buttonName) {
 // Reused action pattern for buttons or calls to action.
 this.selectedButton = buttonName;
 });
 
-Then('el sistema muestra o prepara la solicitud de información sobre CampusLink', function () {
+Then('the system displays or prepares the information request about CampusLink', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US61 - Acceso al inicio de sesión desde el Landing Page
+// US61 - Access to login from the Landing Page
 // File: login-access.feature
 // =====================================================
 
-// US61 - Escenario 1: Visualización del acceso de inicio de sesión
-// Reuses: Given('que el visitante se encuentra en el Landing Page de CampusLink', ...)
+// US61 - Scenario 1: Display of the login access
+// Reuses: Given('the visitor is on the CampusLink Landing Page', ...)
 
-When('observa la barra de navegación superior', function () {
+When('they view the top navigation bar', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra una opción visible para iniciar sesión', function () {
+Then('the system shows a visible option to log in', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US61 - Escenario 2: Selección del botón de inicio de sesión
-Given('que el visitante identifica la opción {string}', function (optionName) {
+// US61 - Scenario 2: Selecting the login button
+Given('the visitor identifies the {string} option', function (optionName) {
 // Step prepared for basic Cucumber execution.
 this.optionName = optionName;
 });
 
-// Reuses: When('selecciona el botón {string}', ...)
+// Reuses: When('they select the {string} button', ...)
 
-Then('el sistema prepara el acceso hacia la experiencia de ingreso de CampusLink', function () {
+Then('the system prepares access to the CampusLink login experience', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US61 - Escenario 3: Acceso al ingreso desde dispositivo móvil
-// Reuses: Given('que el visitante accede al Landing Page desde un dispositivo móvil', ...)
+// US61 - Scenario 3: Accessing login from a mobile device
+// Reuses: Given('the visitor accesses the Landing Page from a mobile device', ...)
 
-When('utiliza la navegación responsive para ubicar el acceso de inicio de sesión', function () {
+When('they use the responsive navigation to locate the login access', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema mantiene disponible la opción de ingreso sin pérdida de visibilidad', function () {
+Then('the system keeps the login option available without losing visibility', function () {
 // Step prepared for basic Cucumber execution.
 });
 
 // =====================================================
-// US58 - Exploración visual del demo mobile integrado
+// US58 - Visual exploration of the embedded mobile demo
 // File: mobile-demo.feature
 // =====================================================
 
-// US58 - Escenario 1: Visualización de la sección Vista de la app
-// Reuses: Given('que el visitante accede a la sección {string}', ...)
+// US58 - Scenario 1: Display of the App view section
+// Reuses: Given('the visitor accesses the {string} section', ...)
 
-When('observa el contenido visual del demo mobile', function () {
+When('they view the mobile demo\'s visual content', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema muestra una representación de la interfaz móvil de CampusLink', function () {
+Then('the system shows a representation of the CampusLink mobile interface', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US58 - Escenario 2: Reconocimiento de la experiencia mobile del producto
-// Reuses: Given('que el visitante se encuentra en la sección {string}', ...)
+// US58 - Scenario 2: Recognizing the product's mobile experience
+// Reuses: Given('the visitor is on the {string} section', ...)
 
-When('revisa la pantalla representativa de la aplicación', function () {
+When('they review the representative screen of the application', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema permite identificar una experiencia mobile relacionada con el ingreso o uso de CampusLink', function () {
+Then('the system lets them identify a mobile experience related to accessing or using CampusLink', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-// US58 - Escenario 3: Relación del demo mobile con las funcionalidades principales
-// Reuses: Given('que el visitante analiza la sección {string}', ...)
+// US58 - Scenario 3: Relating the mobile demo to the main features
+// Reuses: Given('the visitor analyzes the {string} section', ...)
 
-When('interpreta la representación visual del demo', function () {
+When('they interpret the demo\'s visual representation', function () {
 // Step prepared for basic Cucumber execution.
 });
 
-Then('el sistema comunica que CampusLink cuenta con una experiencia móvil orientada al reporte, ubicación, evidencia y seguimiento de incidencias', function () {
+Then('the system communicates that CampusLink has a mobile experience focused on reporting, locating, evidencing, and tracking incidents', function () {
 // Step prepared for basic Cucumber execution.
 });

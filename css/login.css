@@ -1,4 +1,4 @@
-.loginSalto {
+.loginSkip {
   position: absolute;
   left: 8px;
   top: -64px;
@@ -9,11 +9,11 @@
   font-weight: 600;
 }
 
-.loginSalto:focus {
+.loginSkip:focus {
   top: 8px;
 }
 
-.loginPagina {
+.loginPage {
   box-sizing: border-box;
   min-height: 100vh;
   display: grid;
@@ -34,35 +34,35 @@
   border: 1px solid #EEF1F6;
 }
 
-.loginSuperior {
+.loginTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
 
-.loginVolver {
+.loginBack {
   align-self: flex-start;
   color: #4B5563;
   font-size: 0.9375rem;
   font-weight: 600;
 }
 
-.loginVolver:hover {
+.loginBack:hover {
   color: #E30613;
 }
 
-.selectorIdioma--login {
+.langSelector--login {
   flex: none;
   min-height: 34px;
   background: #F8FAFC;
 }
-.selectorIdioma--login button {
+.langSelector--login button {
   min-height: 28px;
   min-width: 38px;
 }
 
-.loginMarca {
+.loginBrand {
   display: flex;
   justify-content: center;
 }
@@ -72,45 +72,45 @@
   height: auto;
 }
 
-.loginEncabezado {
+.loginHeader {
   display: flex;
   flex-direction: column;
   gap: 12px;
   text-align: center;
 }
 
-.loginTitulo {
+.loginTitle {
   color: #1F2933;
   font-size: clamp(1.75rem, 1.25rem + 1.8vw, 2.25rem);
   font-weight: 800;
   line-height: 1.15;
 }
 
-.loginTexto {
+.loginText {
   color: #4B5563;
   font-size: 1rem;
   line-height: 1.55;
 }
 
-.loginFormulario {
+.loginForm {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.loginCampo {
+.loginField {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.loginCampo label {
+.loginField label {
   color: #1F2933;
   font-size: 0.9375rem;
   font-weight: 700;
 }
 
-.loginCampo input {
+.loginField input {
   box-sizing: border-box;
   width: 100%;
   min-height: 52px;
@@ -123,27 +123,27 @@
   border-radius: 8px;
 }
 
-.loginCampo input::placeholder {
+.loginField input::placeholder {
   color: #9CA3AF;
 }
 
-.loginCampo input:focus {
+.loginField input:focus {
   border-color: #1F2933;
 }
 
-.loginCampo.estaInvalido input {
+.loginField.isInvalid input {
   border-color: #E02030;
 }
 
-.loginAyuda,
+.loginHelp,
 .loginError,
-.loginEstado,
-.loginRegistro {
+.loginStatus,
+.loginRegister {
   font-size: 0.875rem;
   line-height: 1.45;
 }
 
-.loginAyuda {
+.loginHelp {
   color: #6B7280;
 }
 
@@ -157,7 +157,7 @@
   min-height: 1.3em;
 }
 
-.loginEnlace {
+.loginLink {
   display: inline-flex;
   align-items: center;
   align-self: center;
@@ -170,22 +170,22 @@
   text-align: center;
 }
 
-.loginEnlace:hover {
+.loginLink:hover {
   color: #B00020;
 }
 
-.loginEnlaceSecundario {
+.loginLinkSecondary {
   align-self: center;
   color: #4B5563;
   font-weight: 600;
   text-align: center;
 }
 
-.loginEnlaceSecundario:hover {
+.loginLinkSecondary:hover {
   color: #E30613;
 }
 
-.loginBoton {
+.loginButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -198,22 +198,22 @@
   font-weight: 700;
 }
 
-.loginBoton:hover {
+.loginButton:hover {
   background: #B00020;
 }
 
-.loginEstado {
+.loginStatus {
   min-height: 1.4em;
   color: #166534;
   text-align: center;
   font-weight: 700;
 }
 
-.loginEstado.estaError {
+.loginStatus.isError {
   color: #B00020;
 }
 
-.loginRegistro {
+.loginRegister {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -223,14 +223,14 @@
   text-align: center;
 }
 
-.loginRegistro span {
+.loginRegister span {
   display: inline-flex;
   align-items: center;
   min-height: 32px;
 }
 
 @media (max-width: 560px) {
-  .loginPagina {
+  .loginPage {
     align-items: start;
     padding: 20px 16px;
   }

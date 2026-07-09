@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iniciar sesi&oacute;n | CampusLink</title>
+    <title>Log in | CampusLink</title>
     <meta
       name="description"
-      content="Acceso basico a CampusLink con correo institucional UPC"
+      content="Basic CampusLink access with a UPC institutional email"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,103 +16,103 @@
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/png" href="recursos/logo/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png" />
     <link rel="stylesheet" href="css/base.css?v=i18n-v2" />
     <link rel="stylesheet" href="css/login.css?v=i18n-v2" />
   </head>
   <body>
-    <a class="loginSalto" href="#formulario-login">Saltar al formulario</a>
+    <a class="loginSkip" href="#login-form">Skip to form</a>
 
-    <main class="loginPagina">
-      <section class="loginPanel" aria-labelledby="login-titulo">
-        <div class="loginSuperior">
+    <main class="loginPage">
+      <section class="loginPanel" aria-labelledby="login-title">
+        <div class="loginTop">
           <a
-            class="loginVolver"
+            class="loginBack"
             href="index.html"
-            aria-label="Volver a la landing de CampusLink"
-            data-preserva-idioma
+            aria-label="Back to the CampusLink landing page"
+            data-preserve-lang
           >
-            Volver
+            Back
           </a>
 
-          <div class="selectorIdioma selectorIdioma--login" role="group" aria-label="Selector de idioma">
-            <button type="button" data-idioma="es">ES</button>
+          <div class="langSelector langSelector--login" role="group" aria-label="Language selector">
+            <button type="button" data-lang="es">ES</button>
             <span aria-hidden="true">|</span>
-            <button type="button" data-idioma="en">EN</button>
+            <button type="button" data-lang="en">EN</button>
           </div>
         </div>
 
-        <div class="loginMarca">
+        <div class="loginBrand">
           <img
             class="loginLogo"
-            src="recursos/logo/campusLink-fondo-blanco.png"
+            src="assets/logo/campuslink-white-bg.png"
             alt="CampusLink"
           />
         </div>
 
-        <div class="loginEncabezado">
-          <h1 class="loginTitulo" id="login-titulo">Iniciar sesi&oacute;n</h1>
-          <p class="loginTexto">
-            Ingresa con tu correo institucional UPC para continuar en CampusLink.
+        <div class="loginHeader">
+          <h1 class="loginTitle" id="login-title">Log in</h1>
+          <p class="loginText">
+            Enter your UPC institutional email to continue in CampusLink.
           </p>
         </div>
 
-        <form class="loginFormulario" id="formulario-login" novalidate>
-          <div class="loginCampo" data-login-campo="correo">
-            <label for="correo">Correo institucional</label>
+        <form class="loginForm" id="login-form" novalidate>
+          <div class="loginField" data-login-field="correo">
+            <label for="email">Institutional email</label>
             <input
-              id="correo"
-              name="correo"
+              id="email"
+              name="email"
               type="email"
               inputmode="email"
               autocomplete="username"
-              placeholder="nombre@upc.edu.pe"
+              placeholder="name@upc.edu.pe"
               required
-              aria-describedby="correo-ayuda correo-error"
+              aria-describedby="email-help email-error"
             />
-            <p class="loginAyuda" id="correo-ayuda">
-              Usa tu cuenta institucional terminada en @upc.edu.pe.
+            <p class="loginHelp" id="email-help">
+              Use your institutional account ending in @upc.edu.pe.
             </p>
-            <p class="loginError" id="correo-error" aria-live="polite"></p>
+            <p class="loginError" id="email-error" aria-live="polite"></p>
           </div>
 
-          <div class="loginCampo" data-login-campo="clave">
-            <label for="clave">Contrase&ntilde;a</label>
+          <div class="loginField" data-login-field="clave">
+            <label for="password">Password</label>
             <input
-              id="clave"
-              name="clave"
+              id="password"
+              name="password"
               type="password"
               autocomplete="current-password"
-              placeholder="M&iacute;nimo 8 caracteres"
+              placeholder="Minimum 8 characters"
               minlength="8"
               required
-              aria-describedby="clave-ayuda clave-error"
+              aria-describedby="password-help password-error"
             />
-            <p class="loginAyuda" id="clave-ayuda">
-              Usa la contrase&ntilde;a de tu cuenta institucional.
+            <p class="loginHelp" id="password-help">
+              Use your institutional account password.
             </p>
-            <p class="loginError" id="clave-error" aria-live="polite"></p>
+            <p class="loginError" id="password-error" aria-live="polite"></p>
             <button
-              class="loginEnlace loginEnlaceSecundario"
+              class="loginLink loginLinkSecondary"
               type="button"
-              data-login-accion="recuperar"
+              data-login-action="recuperar"
             >
-              &iquest;Olvidaste tu contrase&ntilde;a?
+              Forgot your password?
             </button>
           </div>
 
-          <button class="loginBoton" type="submit">Iniciar sesi&oacute;n</button>
+          <button class="loginButton" type="submit">Log in</button>
 
-          <p class="loginRegistro">
-            <span>&iquest;No tienes cuenta?</span>
-            <button class="loginEnlace" type="button" data-login-accion="registro">
-              Crear cuenta
+          <p class="loginRegister">
+            <span>Don&rsquo;t have an account?</span>
+            <button class="loginLink" type="button" data-login-action="registro">
+              Create account
             </button>
           </p>
 
           <p
-            class="loginEstado"
-            id="login-estado"
+            class="loginStatus"
+            id="login-status"
             role="status"
             aria-live="polite"
           ></p>
