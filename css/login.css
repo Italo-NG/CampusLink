@@ -34,6 +34,13 @@
   border: 1px solid #EEF1F6;
 }
 
+.loginSuperior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
 .loginVolver {
   align-self: flex-start;
   color: #4B5563;
@@ -43,6 +50,16 @@
 
 .loginVolver:hover {
   color: #E30613;
+}
+
+.selectorIdioma--login {
+  flex: none;
+  min-height: 34px;
+  background: #F8FAFC;
+}
+.selectorIdioma--login button {
+  min-height: 28px;
+  min-width: 38px;
 }
 
 .loginMarca {

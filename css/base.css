@@ -46,6 +46,43 @@ button {
   color: inherit;
 }
 
+.selectorIdioma {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 3px;
+  gap: 2px;
+  border: 1px solid #D6DCE6;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #4B5563;
+  line-height: 1;
+}
+.selectorIdioma button {
+  box-sizing: border-box;
+  min-width: 40px;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #4B5563;
+}
+.selectorIdioma button:hover {
+  color: #E30613;
+}
+.selectorIdioma button.estaActivo {
+  background: #1F2933;
+  color: #FFFFFF;
+}
+.selectorIdioma span {
+  color: #D6DCE6;
+  font-size: 0.8125rem;
+}
+
 :focus-visible {
   outline: 3px solid #e02030;
   outline-offset: 3px;

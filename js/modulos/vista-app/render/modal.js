@@ -23,13 +23,13 @@ function renderSheetFiltros(data) {
       '<span class="vistaAppSheetHandle" aria-hidden="true"></span>' +
       '<div class="vistaAppSheetHead">' +
         '<h3 class="vistaAppTitulo">' + t(data.titulo) + '</h3>' +
-        '<button class="vistaAppSheetLimpiar" data-vista-accion="cerrar-modal">Limpiar</button>' +
-        '<button class="vistaAppSheetCerrar" data-vista-accion="cerrar-modal" aria-label="Cerrar">' + icono('x') + '</button>' +
+        '<button class="vistaAppSheetLimpiar" data-vista-accion="cerrar-modal">' + t('Limpiar') + '</button>' +
+        '<button class="vistaAppSheetCerrar" data-vista-accion="cerrar-modal" aria-label="' + t('Cerrar') + '">' + icono('x') + '</button>' +
       '</div>' +
       '<div class="vistaAppSheetCuerpo">' + grupos + '</div>' +
       '<div class="vistaAppSheetAcciones">' +
-        '<button class="vistaAppBoton vistaAppBoton--primario vistaAppBoton--alto" data-vista-accion="cerrar-modal">Aplicar filtros</button>' +
-        '<button class="vistaAppBoton vistaAppBoton--texto" data-vista-accion="cerrar-modal">Restablecer</button>' +
+        '<button class="vistaAppBoton vistaAppBoton--primario vistaAppBoton--alto" data-vista-accion="cerrar-modal">' + t('Aplicar filtros') + '</button>' +
+        '<button class="vistaAppBoton vistaAppBoton--texto" data-vista-accion="cerrar-modal">' + t('Restablecer') + '</button>' +
       '</div>' +
     '</div>' +
   '</div>';

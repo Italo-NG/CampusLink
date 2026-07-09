@@ -1,3 +1,5 @@
+import { traducirTexto } from './i18n.js';
+
 export function inicializarLogin() {
   var formulario = document.getElementById('formulario-login');
   if (!formulario) return;
@@ -26,16 +28,17 @@ export function inicializarLogin() {
   }
 
   function marcarCampo(input, mensaje) {
-    input.setCustomValidity(mensaje);
+    var texto = traducirTexto(mensaje);
+    input.setCustomValidity(texto);
     input.setAttribute('aria-invalid', 'true');
     var campo = campoDe(input);
     var error = errorDe(input);
     if (campo) campo.classList.add('estaInvalido');
-    if (error) error.textContent = mensaje;
+    if (error) error.textContent = texto;
   }
 
   function mostrarEstado(mensaje, error) {
-    estado.textContent = mensaje;
+    estado.textContent = traducirTexto(mensaje);
     estado.classList.toggle('estaError', !!error);
   }
 

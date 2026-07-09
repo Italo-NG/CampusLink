@@ -18,7 +18,7 @@ export function header(pantalla) {
     var clase = 'vistaAppHeaderRojo' + (data.compacto ? ' vistaAppHeaderRojo--docente' : '');
     var prompt = data.prompt ? '<div class="vistaAppSpacer16"></div><h3 class="vistaAppTitulo">' + t(data.prompt) + '</h3>' : '';
     var notificacion = data.notificaciones
-      ? '<button class="vistaAppIconBtn vistaAppNotificacion" data-vista-accion="pantalla" data-vista-destino="' + textoSeguro(data.notificaciones) + '" aria-label="Ver notificaciones">' + icono('bell') + '</button>'
+      ? '<button class="vistaAppIconBtn vistaAppNotificacion" data-vista-accion="pantalla" data-vista-destino="' + textoSeguro(data.notificaciones) + '" aria-label="' + t('Ver notificaciones') + '">' + icono('bell') + '</button>'
       : '';
     return '' +
       '<header class="' + clase + '">' +
@@ -82,7 +82,7 @@ export function header(pantalla) {
 }
 
 export function botonIcono(nombreIcono, destino, label) {
-  return '<button class="vistaAppIconBtn vistaAppIconBtn--claro" data-vista-accion="pantalla" data-vista-destino="' + textoSeguro(destino) + '" data-vista-direccion="atras" aria-label="' + textoSeguro(label) + '">' + icono(nombreIcono) + '</button>';
+  return '<button class="vistaAppIconBtn vistaAppIconBtn--claro" data-vista-accion="pantalla" data-vista-destino="' + textoSeguro(destino) + '" data-vista-direccion="atras" aria-label="' + t(label) + '">' + icono(nombreIcono) + '</button>';
 }
 
 export function tabbar(data, estado) {
@@ -108,11 +108,11 @@ export function tabbar(data, estado) {
     ];
   }
 
-  return '<nav class="vistaAppTabbar vistaAppTabbar--' + tipo + '" aria-label="Navegación del prototipo">' +
+  return '<nav class="vistaAppTabbar vistaAppTabbar--' + tipo + '" aria-label="' + t('Navegación del prototipo') + '">' +
     items.map(function (item) {
       var clase = 'vistaAppTab' + (item[0] === data.activo ? ' vistaAppTab--active' : '');
       var attrs = item[3] ? ' data-vista-accion="pantalla" data-vista-destino="' + textoSeguro(item[3]) + '" data-vista-transicion="fade"' : ' disabled';
-      return '<button class="' + clase + '"' + attrs + '><span class="vistaAppTabIcon">' + icono(item[1]) + '</span><span>' + textoSeguro(item[2]) + '</span></button>';
+      return '<button class="' + clase + '"' + attrs + '><span class="vistaAppTabIcon">' + icono(item[1]) + '</span><span>' + t(item[2]) + '</span></button>';
     }).join('') +
   '</nav>';
 }

@@ -17,9 +17,9 @@
     />
 
     <link rel="icon" type="image/png" href="recursos/logo/favicon.png" />
-    <link rel="stylesheet" href="css/base.css?v=vista-app-prototipo-v1" />
-    <link rel="stylesheet" href="css/layout.css?v=vista-app-prototipo-v1" />
-    <link rel="stylesheet" href="css/components.css?v=vista-app-prototipo-v1" />
+    <link rel="stylesheet" href="css/base.css?v=i18n-v2" />
+    <link rel="stylesheet" href="css/layout.css?v=i18n-v2" />
+    <link rel="stylesheet" href="css/components.css?v=i18n-v2" />
     <link rel="stylesheet" href="css/pages.css?v=vista-app-prototipo-v1" />
     <link
       rel="stylesheet"
@@ -37,7 +37,7 @@
       rel="stylesheet"
       href="css/vista-app/vista-app-responsive.css?v=vista-app-prototipo-v1"
     />
-    <link rel="stylesheet" href="css/responsive.css?v=vista-app-prototipo-v1" />
+    <link rel="stylesheet" href="css/responsive.css?v=i18n-v2" />
   </head>
   <body>
     <a class="saltoEnlace" href="#inicio">Saltar al contenido</a>
@@ -81,11 +81,24 @@
             <li><a href="#video-equipo">Video del equipo</a></li>
             <li><a href="#quienes-somos">Quiénes somos</a></li>
             <li><a href="#contacto">Contacto</a></li>
+            <li class="navIdiomaMovil">
+              <div class="selectorIdioma selectorIdioma--nav" role="group" aria-label="Selector de idioma">
+                <button type="button" data-idioma="es">ES</button>
+                <span aria-hidden="true">|</span>
+                <button type="button" data-idioma="en">EN</button>
+              </div>
+            </li>
           </ul>
         </nav>
 
         <div class="cabeceraAcciones">
-          <a class="boton-botonFantasma-navAcceso" href="login.html">
+          <div class="selectorIdioma selectorIdioma--cabecera" role="group" aria-label="Selector de idioma">
+            <button type="button" data-idioma="es">ES</button>
+            <span aria-hidden="true">|</span>
+            <button type="button" data-idioma="en">EN</button>
+          </div>
+
+          <a class="boton-botonFantasma-navAcceso" href="login.html" data-preserva-idioma>
             Iniciar sesión
           </a>
 
@@ -1089,6 +1102,6 @@
       </div>
     </footer>
 
-    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/index.js?v=i18n-v2"></script>
   </body>
 </html>

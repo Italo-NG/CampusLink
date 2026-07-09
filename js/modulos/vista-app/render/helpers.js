@@ -1,5 +1,6 @@
 import { icono } from './iconos.js';
 import { VISTA_APP_REGLAS } from '../datos/index.js';
+import { traducirTexto } from '../../i18n.js';
 
 var estadoActual = null;
 export function fijarEstadoRender(estado) { estadoActual = estado; }
@@ -32,7 +33,11 @@ export function plantilla(valor) {
 }
 
 export function t(valor) {
-  return textoSeguro(plantilla(valor));
+  return textoSeguro(traducirTexto(plantilla(valor)));
+}
+
+export function traducir(valor) {
+  return traducirTexto(plantilla(valor));
 }
 
 export function slugCampo(texto) {

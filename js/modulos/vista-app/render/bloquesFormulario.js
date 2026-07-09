@@ -1,5 +1,5 @@
 import { icono } from './iconos.js';
-import { t, textoSeguro, slugCampo, accionAtributos, normalizarCampo, autoTipoCampo, obtenerDatos } from './helpers.js';
+import { t, textoSeguro, slugCampo, accionAtributos, normalizarCampo, autoTipoCampo, obtenerDatos, traducir } from './helpers.js';
 import { leerDato } from '../datos/index.js';
 
 export function campoInput(fieldRaw, claseExtra) {
@@ -12,13 +12,13 @@ export function campoInput(fieldRaw, claseExtra) {
   if (valor == null) valor = field.valor || '';
 
   var requerido = !!datos.requeridos[ruta];
-  var atributosComunes = ' data-vista-campo="' + textoSeguro(ruta) + '" placeholder="' + textoSeguro(field.placeholder || '') + '"';
+  var atributosComunes = ' data-vista-campo="' + textoSeguro(ruta) + '" placeholder="' + textoSeguro(traducir(field.placeholder || '')) + '"';
   var control;
 
   if (field.dentro) {
     var visibleDentro = !!datos.clavesVisibles[ruta];
     var ojo = tipo === 'clave'
-      ? '<button class="vistaAppInputOjo" type="button" data-vista-accion="toggle-clave" data-vista-campo="' + textoSeguro(ruta) + '" aria-label="Mostrar u ocultar contraseña">' + icono(visibleDentro ? 'eye-off' : 'eye') + '</button>'
+      ? '<button class="vistaAppInputOjo" type="button" data-vista-accion="toggle-clave" data-vista-campo="' + textoSeguro(ruta) + '" aria-label="' + t('Mostrar u ocultar contraseña') + '">' + icono(visibleDentro ? 'eye-off' : 'eye') + '</button>'
       : '';
     var tipoDentro = tipo === 'clave' ? (visibleDentro ? 'text' : 'password') : (tipo === 'correo' ? 'email' : 'text');
     var errorDentro = requerido && field.mensajeRequerido
@@ -38,12 +38,12 @@ export function campoInput(fieldRaw, claseExtra) {
     var visible = !!datos.clavesVisibles[ruta];
     control = '<span class="vistaAppInputGrupo">' +
       '<input class="vistaAppInput' + (claseExtra || '') + '" type="' + (visible ? 'text' : 'password') + '" value="' + textoSeguro(valor) + '"' + atributosComunes + ' />' +
-      '<button class="vistaAppInputOjo" type="button" data-vista-accion="toggle-clave" data-vista-campo="' + textoSeguro(ruta) + '" aria-label="Mostrar u ocultar contraseña">' + icono(visible ? 'eye-off' : 'eye') + '</button>' +
+      '<button class="vistaAppInputOjo" type="button" data-vista-accion="toggle-clave" data-vista-campo="' + textoSeguro(ruta) + '" aria-label="' + t('Mostrar u ocultar contraseña') + '">' + icono(visible ? 'eye-off' : 'eye') + '</button>' +
     '</span>';
   } else if (tipo === 'busqueda') {
     return '<label class="vistaAppBuscador">' +
       '<span class="vistaAppBuscadorLupa">' + icono('lupa') + '</span>' +
-      '<input class="vistaAppInput vistaAppInput--busqueda" type="search" value="' + textoSeguro(valor) + '"' + atributosComunes + ' aria-label="' + textoSeguro(field.etiqueta) + '" />' +
+      '<input class="vistaAppInput vistaAppInput--busqueda" type="search" value="' + textoSeguro(valor) + '"' + atributosComunes + ' aria-label="' + t(field.etiqueta) + '" />' +
     '</label>';
   } else {
     var tipoHtml = tipo === 'correo' ? 'email' : 'text';
@@ -167,7 +167,7 @@ export function rating(block) {
   var seleccion = datos.rating || 0;
   var estrellas = [1, 2, 3, 4, 5].map(function (valor) {
     var activa = valor <= seleccion;
-    return '<button class="vistaAppEstrella' + (activa ? ' vistaAppEstrella--activa' : '') + '" data-vista-accion="seleccion" data-vista-campo="rating" data-vista-valor="' + valor + '" aria-label="Calificar con ' + valor + (valor === 1 ? ' estrella' : ' estrellas') + '">' + icono('estrella') + '</button>';
+    return '<button class="vistaAppEstrella' + (activa ? ' vistaAppEstrella--activa' : '') + '" data-vista-accion="seleccion" data-vista-campo="rating" data-vista-valor="' + valor + '" aria-label="' + t('Calificar con ' + valor + (valor === 1 ? ' estrella' : ' estrellas')) + '">' + icono('estrella') + '</button>';
   }).join('');
-  return '<div class="vistaAppRating" role="radiogroup" aria-label="Calificación de la atención">' + estrellas + '</div>';
+  return '<div class="vistaAppRating" role="radiogroup" aria-label="' + t('Calificación de la atención') + '">' + estrellas + '</div>';
 }

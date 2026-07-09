@@ -12,4 +12,8 @@ export function inicializarVistaApp() {
 
   conectarEventos(ctx);
   pintarPantalla(ctx, null);
+
+  window.addEventListener('campuslink:idioma', function () {
+    pintarPantalla(ctx, null);
+  });
 }

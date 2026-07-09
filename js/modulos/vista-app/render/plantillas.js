@@ -58,13 +58,13 @@ export function renderRegister(pantalla) {
     '<div class="vistaAppRegister">' +
       '<header class="vistaAppRegisterHeader">' +
         botonIcono('chevron-left', 'login-datos', 'Volver') +
-        '<h3 class="vistaAppTitulo">Crear cuenta</h3>' +
+        '<h3 class="vistaAppTitulo">' + t('Crear cuenta') + '</h3>' +
         '<span class="vistaAppIconBtn vistaAppIconBtn--claro" aria-hidden="true"></span>' +
       '</header>' +
       '<main class="vistaAppRegisterBody">' +
         '<section class="vistaAppRegisterIntro">' +
-          '<h4 class="vistaAppTitulo vistaAppTitulo--chico">Únete a CampusLink</h4>' +
-          '<p class="vistaAppTexto">Crea tu cuenta institucional para reportar incidencias y revisar su atención.</p>' +
+          '<h4 class="vistaAppTitulo vistaAppTitulo--chico">' + t('Únete a CampusLink') + '</h4>' +
+          '<p class="vistaAppTexto">' + t('Crea tu cuenta institucional para reportar incidencias y revisar su atención.') + '</p>' +
         '</section>' +
         '<div class="vistaAppRegisterForm">' + formGroups.map(function (block) {
           if (block.tipo === 'inputs') return authFields(block.fields);
@@ -90,15 +90,15 @@ export function renderConfig(pantalla, estado) {
   var rolActivo = estado.rol || 'estudiante';
   return '<div class="vistaAppScreen" data-vista-pantalla="' + textoSeguro(pantalla.id) + '">' +
     '<div class="vistaAppScroll"><div class="vistaAppInner vistaAppInner--top">' +
-      '<h3 class="vistaAppTitulo">Configura tu experiencia</h3>' +
-      '<p class="vistaAppTexto">Usaremos esta información para mostrarte funciones relevantes.</p>' +
+      '<h3 class="vistaAppTitulo">' + t('Configura tu experiencia') + '</h3>' +
+      '<p class="vistaAppTexto">' + t('Usaremos esta información para mostrarte funciones relevantes.') + '</p>' +
       '<div class="vistaAppSpacer8"></div>' +
-      '<h4 class="vistaAppTitulo vistaAppTitulo--chico">Sede principal</h4>' +
+      '<h4 class="vistaAppTitulo vistaAppTitulo--chico">' + t('Sede principal') + '</h4>' +
       options({ campo: 'sede', items: [{ texto: 'Monterrico' }, { texto: 'San Isidro' }, { texto: 'Villa' }, { texto: 'San Miguel' }] }) +
       '<div class="vistaAppSpacer8"></div>' +
-      '<h4 class="vistaAppTitulo vistaAppTitulo--chico">Tu rol</h4>' +
+      '<h4 class="vistaAppTitulo vistaAppTitulo--chico">' + t('Tu rol') + '</h4>' +
       '<div class="vistaAppBotonera">' + VISTA_APP_ROLES.map(function (rol) {
-        return '<button class="vistaAppOption ' + (rol.id === rolActivo ? 'vistaAppOption--active' : '') + '" data-vista-accion="rol" data-vista-destino="' + textoSeguro(rol.id) + '"><span>' + textoSeguro(rol.etiqueta) + '</span><span class="vistaAppOptionIcon">' + (rol.id === rolActivo ? icono('check') : '') + '</span></button>';
+        return '<button class="vistaAppOption ' + (rol.id === rolActivo ? 'vistaAppOption--active' : '') + '" data-vista-accion="rol" data-vista-destino="' + textoSeguro(rol.id) + '"><span>' + t(rol.etiqueta) + '</span><span class="vistaAppOptionIcon">' + (rol.id === rolActivo ? icono('check') : '') + '</span></button>';
       }).join('') + '</div>' +
       '<div class="vistaAppSpacer8"></div>' +
       boton({ texto: 'Continuar', continuarRol: true, variante: 'primario', clase: 'vistaAppBoton--alto' }) +

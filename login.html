@@ -17,21 +17,30 @@
     />
 
     <link rel="icon" type="image/png" href="recursos/logo/favicon.png" />
-    <link rel="stylesheet" href="css/base.css?v=login-basico-v1" />
-    <link rel="stylesheet" href="css/login.css?v=login-basico-v1" />
+    <link rel="stylesheet" href="css/base.css?v=i18n-v2" />
+    <link rel="stylesheet" href="css/login.css?v=i18n-v2" />
   </head>
   <body>
     <a class="loginSalto" href="#formulario-login">Saltar al formulario</a>
 
     <main class="loginPagina">
       <section class="loginPanel" aria-labelledby="login-titulo">
-        <a
-          class="loginVolver"
-          href="index.html"
-          aria-label="Volver a la landing de CampusLink"
-        >
-          Volver
-        </a>
+        <div class="loginSuperior">
+          <a
+            class="loginVolver"
+            href="index.html"
+            aria-label="Volver a la landing de CampusLink"
+            data-preserva-idioma
+          >
+            Volver
+          </a>
+
+          <div class="selectorIdioma selectorIdioma--login" role="group" aria-label="Selector de idioma">
+            <button type="button" data-idioma="es">ES</button>
+            <span aria-hidden="true">|</span>
+            <button type="button" data-idioma="en">EN</button>
+          </div>
+        </div>
 
         <div class="loginMarca">
           <img
@@ -112,6 +121,6 @@
       </section>
     </main>
 
-    <script type="module" src="js/login.js"></script>
+    <script type="module" src="js/login.js?v=i18n-v2"></script>
   </body>
 </html>
